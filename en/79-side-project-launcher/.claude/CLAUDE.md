@@ -1,37 +1,37 @@
 # Side Project Launcher Harness
 
-companyproject basis ideaverify→tech stack→MVP→developmentroadmap→launchchecklist A harness where an agent team collaborates to produce deliverables.
+A harness where an agent team collaborates to produce side project planning deliverables — idea validation, tech stack selection, MVP spec, development roadmap, and launch checklist.
 
-## structure
+## Structure
 
 ```
 .claude/
 ├── agents/
-│ ├── idea-validator.md — idea verify (market analysis, competition research, differentiation)
-│ ├── techstack-analyst.md — tech stack analysis ( standard, comparison, recommendation)
-│ ├── mvp-designer.md — MVP design (core feature, , )
-│ ├── roadmap-builder.md — roadmap writing (development schedule, milestone, launch strategy)
-│ └── launch-reviewer.md — cross-verification (idea↔technical↔MVP↔roadmap consistency)
+│   ├── idea-validator.md      — Idea validation (market analysis, competitive research, differentiation)
+│   ├── techstack-analyst.md   — Tech stack analysis (selection criteria, comparison, recommendations)
+│   ├── mvp-designer.md        — MVP design (core features, wireframes, spec)
+│   ├── roadmap-builder.md     — Roadmap creation (development schedule, milestones, launch strategy)
+│   └── launch-reviewer.md     — Cross-verification (idea ↔ tech ↔ MVP ↔ roadmap consistency)
 ├── skills/
-│ ├── side-project-launcher/
-│ │ └── skill.md — Orchestrator (team , workflow, error handling)
-│ ├── market-sizing-calculator/
-│ │ └── skill.md — market scale totalbasis (idea-validator)
-│ └── techstack-decision-matrix/
-│ └── skill.md — tech stack decision-making matrix (techstack-analyst)
-└── CLAUDE.md — file
+│   ├── side-project-launcher/
+│   │   └── skill.md           — Orchestrator (team coordination, workflow, error handling)
+│   ├── market-sizing-calculator/
+│   │   └── skill.md           — Market sizing calculator (for idea-validator)
+│   └── techstack-decision-matrix/
+│       └── skill.md           — Tech stack decision matrix (for techstack-analyst)
+└── CLAUDE.md                  — This file
 ```
 
-## usage
+## Usage
 
-`/side-project-launcher` skill , "companyproject basis " specialistannual request.
+Trigger the `/side-project-launcher` skill, or make a natural language request such as "Help me plan a side project."
 
-## deliverable
+## Deliverables
 
-all deliverable `_workspace/` save:
-- `00_input.md` — user input organization
-- `01_idea_validation.md` — idea verify report
-- `02_techstack_recommendation.md` — tech stack recommendationfrom
-- `03_mvp_spec.md` — MVP document
-- `04_roadmap_launch.md` — development roadmap + launch checklist
-- `05_review_report.md` — review report
+All deliverables are saved in the `_workspace/` directory:
+- `00_input.md` — Organized user input
+- `01_idea_validation.md` — Idea validation report
+- `02_techstack_recommendation.md` — Tech stack recommendation
+- `03_mvp_spec.md` — MVP spec document
+- `04_roadmap_launch.md` — Development roadmap + launch checklist
+- `05_review_report.md` — Review report

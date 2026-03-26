@@ -1,37 +1,37 @@
 # SOP Writer Harness
 
-standard operating procedure(SOP) processanalysis→procedure document→checklist→training materials→versionmanagement A harness where an agent team collaborates to produce deliverables.
+A harness where an agent team collaborates to produce Standard Operating Procedure (SOP) deliverables — process analysis, procedure documentation, checklists, training materials, and version control.
 
-## structure
+## Structure
 
 ```
 .claude/
 ├── agents/
-│ ├── process-analyst.md — process analysis (current work flow analysis, identification)
-│ ├── procedure-writer.md — procedure document writing (stageby procedure, decision-making minutebasis)
-│ ├── checklist-designer.md — checklist design (execution inspectiontable, quality )
-│ ├── training-developer.md — training materials work (learning guide, assessment document)
-│ └── version-controller.md — version management and cross-verification (change capability, consistency confirm)
+│   ├── process-analyst.md      — Process analysis (current workflow analysis, bottleneck identification)
+│   ├── procedure-writer.md     — Procedure documentation (step-by-step procedures, decision branches)
+│   ├── checklist-designer.md   — Checklist design (execution checklists, quality gates)
+│   ├── training-developer.md   — Training material creation (learning guides, assessment items)
+│   └── version-controller.md   — Version control and cross-verification (change history, consistency check)
 ├── skills/
-│ ├── sop-writer/
-│ │ └── skill.md — Orchestrator (team , workflow, error handling)
-│ ├── process-mapping/
-│ │ └── skill.md — process mapping method (process-analyst extension)
-│ └── checklist-design/
-│ └── skill.md — checklist design principle (checklist-designer extension)
-└── CLAUDE.md — file
+│   ├── sop-writer/
+│   │   └── skill.md           — Orchestrator (team coordination, workflow, error handling)
+│   ├── process-mapping/
+│   │   └── skill.md           — Process mapping methodology (for process-analyst)
+│   └── checklist-design/
+│       └── skill.md           — Checklist design principles (for checklist-designer)
+└── CLAUDE.md                  — This file
 ```
 
-## usage
+## Usage
 
-`/sop-writer` skill , "SOP create it" specialistannual request.
+Trigger the `/sop-writer` skill, or make a natural language request such as "Create an SOP for me."
 
-## deliverable
+## Deliverables
 
-all deliverable `_workspace/` save:
-- `00_input.md` — user input organization
-- `01_process_analysis.md` — process analysis result
-- `02_procedure_document.md` — tablelevel procedure document
-- `03_checklists.md` — checklist tax
-- `04_training_materials.md` — training materials
-- `05_version_control.md` — version management and verify report
+All deliverables are saved in the `_workspace/` directory:
+- `00_input.md` — Organized user input
+- `01_process_analysis.md` — Process analysis results
+- `02_procedure_document.md` — Standard procedure document
+- `03_checklists.md` — Checklist set
+- `04_training_materials.md` — Training materials
+- `05_version_control.md` — Version control and verification report

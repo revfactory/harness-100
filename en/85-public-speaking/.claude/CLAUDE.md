@@ -1,37 +1,37 @@
 # Public Speaking Harness
 
- comprehensive speechdocument→presentationversus→debatepreparationfrom→Q&Aexpectedanswer→rehearsalguide A harness where an agent team collaborates to produce deliverables.
+A harness where an agent team collaborates to produce comprehensive public speaking deliverables — speeches, presentation scripts, debate preparation, Q&A playbooks, and rehearsal guides.
 
-## structure
+## Structure
 
 ```
 .claude/
 ├── agents/
-│ ├── audience-analyst.md — audience analysis (target audience, context, expected)
-│ ├── speech-writer.md — speech/presentation work (speechdocument, presentationversus)
-│ ├── debate-preparer.md — debate preparation expert (, counterargument, gapdocument)
-│ ├── qa-strategist.md — Q&A strategy (expected question, answer strategy)
-│ └── rehearsal-coach.md — rehearsal value and cross-verification (delivercapability, consistency)
+│   ├── audience-analyst.md     — Audience analysis (target audience, context, expectations)
+│   ├── speech-writer.md        — Speech/presentation writer (speeches, presentation scripts)
+│   ├── debate-preparer.md      — Debate preparation expert (arguments, counterarguments, cross-examination)
+│   ├── qa-strategist.md        — Q&A strategist (anticipated questions, answer strategies)
+│   └── rehearsal-coach.md      — Rehearsal coach and cross-verification (delivery, consistency)
 ├── skills/
-│ ├── public-speaking/
-│ │ └── skill.md — Orchestrator (team , workflow, error handling)
-│ ├── rhetoric-patterns/
-│ │ └── skill.md — numbercompany pattern library (speech-writer extension)
-│ └── audience-engagement/
-│ └── skill.md — audience strategy (audience-analyst extension)
-└── CLAUDE.md — file
+│   ├── public-speaking/
+│   │   └── skill.md           — Orchestrator (team coordination, workflow, error handling)
+│   ├── rhetoric-patterns/
+│   │   └── skill.md           — Rhetoric pattern library (for speech-writer)
+│   └── audience-engagement/
+│       └── skill.md           — Audience engagement strategies (for audience-analyst)
+└── CLAUDE.md                  — This file
 ```
 
-## usage
+## Usage
 
-`/public-speaking` skill , "speechdocument " specialistannual request.
+Trigger the `/public-speaking` skill, or make a natural language request such as "Help me write a speech."
 
-## deliverable
+## Deliverables
 
-all deliverable `_workspace/` save:
-- `00_input.md` — user input organization
-- `01_audience_analysis.md` — audience analysis report
-- `02_speech_script.md` — speechdocument/presentation versus
-- `03_debate_prep.md` — debate preparationfrom
-- `04_qa_playbook.md` — Q&A expected answer
-- `05_rehearsal_guide.md` — rehearsal guide and verify report
+All deliverables are saved in the `_workspace/` directory:
+- `00_input.md` — Organized user input
+- `01_audience_analysis.md` — Audience analysis report
+- `02_speech_script.md` — Speech/presentation script
+- `03_debate_prep.md` — Debate preparation document
+- `04_qa_playbook.md` — Q&A anticipated answers playbook
+- `05_rehearsal_guide.md` — Rehearsal guide and verification report

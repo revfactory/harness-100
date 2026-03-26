@@ -1,37 +1,37 @@
 # Report Generator Harness
 
-work report datacollection→analysis→visualization→→summary A harness where an agent team collaborates to produce deliverables.
+A harness where an agent team collaborates to produce business report deliverables — data collection, analysis, visualization, writing, and executive summary.
 
-## structure
+## Structure
 
 ```
 .claude/
 ├── agents/
-│ ├── data-collector.md — data collection ( , figure , refinement)
-│ ├── analyst.md — data analysis (statistics, trend, insight derive)
-│ ├── visualizer.md — visualization design (chart, , infographic peopletax)
-│ ├── report-writer.md — report (structuredone report writing)
-│ └── executive-summarizer.md — summary and cross-verification (core summary, consistency confirm)
+│   ├── data-collector.md      — Data collection (source exploration, data extraction, cleansing)
+│   ├── analyst.md             — Data analysis (statistics, trends, insight generation)
+│   ├── visualizer.md          — Visualization design (charts, tables, infographic specs)
+│   ├── report-writer.md       — Report writing (structured report composition)
+│   └── executive-summarizer.md — Summary and cross-verification (executive summary, consistency check)
 ├── skills/
-│ ├── report-generator/
-│ │ └── skill.md — Orchestrator (team , workflow, error handling)
-│ ├── data-visualization-guide/
-│ │ └── skill.md — data visualization guide (visualizer extension)
-│ └── kpi-dashboard-patterns/
-│ └── skill.md — KPI dashboard design pattern (analyst extension)
-└── CLAUDE.md — file
+│   ├── report-generator/
+│   │   └── skill.md           — Orchestrator (team coordination, workflow, error handling)
+│   ├── data-visualization-guide/
+│   │   └── skill.md           — Data visualization guide (for visualizer)
+│   └── kpi-dashboard-patterns/
+│       └── skill.md           — KPI dashboard design patterns (for analyst)
+└── CLAUDE.md                  — This file
 ```
 
-## usage
+## Usage
 
-`/report-generator` skill , "work report create it" specialistannual request.
+Trigger the `/report-generator` skill, or make a natural language request such as "Create a business report for me."
 
-## deliverable
+## Deliverables
 
-all deliverable `_workspace/` save:
-- `00_input.md` — user input organization
-- `01_data_collection.md` — collectiondone data organization
-- `02_analysis_report.md` — analysis result
-- `03_visualization_spec.md` — visualization peopletax
-- `04_full_report.md` — final report
-- `05_executive_summary.md` — management summary and verify reporting
+All deliverables are saved in the `_workspace/` directory:
+- `00_input.md` — Organized user input
+- `01_data_collection.md` — Collected data summary
+- `02_analysis_report.md` — Analysis results
+- `03_visualization_spec.md` — Visualization specifications
+- `04_full_report.md` — Final report
+- `05_executive_summary.md` — Executive summary and verification report
