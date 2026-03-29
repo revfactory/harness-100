@@ -1,29 +1,29 @@
 ---
 name: license-compatibility-matrix
-description: "open source license compatibility , licenseper ofmatter,  license strategy, SPDX identification guide. 'license compatibility', 'license optional', 'MIT', 'Apache', 'GPL', 'LGPL', 'BSD', ' license', 'SPDX', 'license ' etc. open source license related   this  for. license-specialistof license analysis  -ize. , -based this actual license day creation this of scope ."
+description: "Open source license compatibility matrix, per-license obligations, dual licensing strategy, and SPDX identifier guide. Use this skill when making decisions related to open source licensing involving 'license compatibility', 'license selection', 'MIT', 'Apache', 'GPL', 'LGPL', 'BSD', 'dual license', 'SPDX', or 'license conflict'. Enhances the license analysis capabilities of license-specialist. Note: legal advice and actual license file generation are outside the scope of this skill."
 ---
 
-# License Compatibility Matrix — open source license compatibility guide
+# License Compatibility Matrix — Open Source License Compatibility Guide
 
-open source license optional, compatibility analysis, dependency license  resolution  before guide.
+A practical guide for open source license selection, compatibility analysis, and resolving dependency license conflicts.
 
-## week license 
+## Major License Comparison
 
-| license | type | upperfor for | modification items |   | network  |
-|---------|------|----------|----------|----------|-------------|
-| MIT |  | O | X | X | X |
-| Apache 2.0 |  | O | X | O | X |
-| BSD 2-Clause |  | O | X | X | X |
-| BSD 3-Clause |  | O | X | X | X |
-| MPL 2.0 |   | O | day  | O | X |
-| LGPL 2.1/3.0 |   | O | libraryonly | X | X |
-| GPL 2.0/3.0 |   | cases | O (before) | O(v3) | X |
-| AGPL 3.0 |   | cases | O (before) | O | O |
+| License | Type | Commercial Use | Modification Disclosure | Patent Protection | Network Clause |
+|---------|------|---------------|------------------------|------------------|----------------|
+| MIT | Permissive | O | X | X | X |
+| Apache 2.0 | Permissive | O | X | O | X |
+| BSD 2-Clause | Permissive | O | X | X | X |
+| BSD 3-Clause | Permissive | O | X | X | X |
+| MPL 2.0 | Weak Copyleft | O | Per file | O | X |
+| LGPL 2.1/3.0 | Weak Copyleft | O | Library only | X | X |
+| GPL 2.0/3.0 | Strong Copyleft | Conditional | O (full) | O (v3) | X |
+| AGPL 3.0 | Strong Copyleft | Conditional | O (full) | O | O |
 
-## compatibility 
+## Compatibility Matrix
 
 ```
-project license ↓  |  dependency license →
+Project License ↓  |  Dependency License →
                     | MIT | Apache | BSD | MPL | LGPL | GPL | AGPL
 ────────────────────┼─────┼────────┼─────┼─────┼──────┼─────┼──────
 MIT                 | ✅  | ✅     | ✅  | ✅  | ✅   | ❌  | ❌
@@ -34,40 +34,40 @@ LGPL 3.0            | ✅  | ✅     | ✅  | ✅  | ✅   | ✅  | ❌
 GPL 3.0             | ✅  | ✅     | ✅  | ✅  | ✅   | ✅  | ❌
 AGPL 3.0            | ✅  | ✅     | ✅  | ✅  | ✅   | ✅  | ✅
 
-✅  | ❌  | ✅* cases 
+✅ Compatible | ❌ Incompatible | ✅* Conditionally compatible
 ```
 
-**core rule:**
-- GPL dependency for → project before GPL -basedfor (this and)
-- AGPL dependency for → network servicealso  items of
-- Apache 2.0 ↔ GPL 2.0  (  )
+**Key Rules:**
+- Using a GPL dependency → the entire project must be GPL-licensed (viral effect)
+- Using an AGPL dependency → network services are also subject to source disclosure obligations
+- Apache 2.0 ↔ GPL 2.0 are incompatible (patent clause conflict)
 
-## license optional ofdecision tree
+## License Selection Decision Tree
 
 ```
-project target
-├── maximum   → MIT or Apache 2.0
-│   ├──   necessary → Apache 2.0
-│   └── maximum simple → MIT
-├── modification items  (day ) → MPL 2.0
-├── library,  allowed → LGPL 3.0
-├──  before items  → GPL 3.0
-├── SaaS included items  → AGPL 3.0
-└──  license (OSS + upperfor) → GPL + Commercial
+Project Goal
+├── Maximize adoption → MIT or Apache 2.0
+│   ├── Patent protection needed → Apache 2.0
+│   └── Maximum simplicity → MIT
+├── Require disclosure of modifications (per file) → MPL 2.0
+├── Library; allow linking → LGPL 3.0
+├── Require all derivatives to be open → GPL 3.0
+├── Require disclosure including SaaS → AGPL 3.0
+└── Dual license (OSS + commercial) → GPL + Commercial
 ```
 
-## dependency license  resolution
+## Dependency License Conflict Resolution
 
-###  patternand resolution
+### Conflict Patterns and Resolutions
 
-|  |  | resolution |
-|------|------|------|
-| MIT project + GPL dependency | GPL before |  package  or GPL transition |
-| Apache + GPL 2.0 |    | GPL 3.0 before for |
-| upperfor product + AGPL dependency |  items of |  package or license  |
-|  GPL before  | before compatibility | "GPL 2.0 or later" for |
+| Conflict | Problem | Resolution |
+|----------|---------|-----------|
+| MIT project + GPL dependency | GPL propagation | Find alternative package or switch to GPL |
+| Apache + GPL 2.0 | Patent clause incompatibility | Use GPL 3.0 version |
+| Commercial product + AGPL dependency | Source disclosure obligation | Find alternative package or purchase a license |
+| Mixed multiple GPL versions | Version compatibility | Use "GPL 2.0 or later" |
 
-### license audit also
+### License Audit Tools
 
 ```bash
 # Node.js
@@ -79,51 +79,51 @@ pip-licenses --format=json --with-urls
 # Go
 go-licenses check ./...
 
-# for
+# General purpose
 scancode-toolkit --json-pp output.json src/
 ```
 
-## SPDX license 
+## SPDX License Expressions
 
 ```
-# day license
+# Single license
 SPDX-License-Identifier: MIT
 
-# OR (optional possible)
+# OR (user's choice)
 SPDX-License-Identifier: MIT OR Apache-2.0
 
-# AND ( license  compliant)
+# AND (must comply with both licenses)
 SPDX-License-Identifier: MIT AND BSD-3-Clause
 
-# WITH (outside included)
+# WITH (includes exception)
 SPDX-License-Identifier: GPL-2.0-only WITH Classpath-exception-2.0
 ```
 
-##  license strategy
+## Dual Licensing Strategy
 
 ```
 Community Edition: AGPL 3.0
-├──  for possible
-├── modification + service provided   items of
-└── items/ open source projectin suitable
+├── Free to use
+├── Source disclosure required when distributing modifications or providing as a service
+└── Suitable for individual/small open source projects
 
-Enterprise Edition: upperfor license
-├── AGPL of 
-├── addition /supported included
-└──  customer upper
+Enterprise Edition: Commercial License
+├── AGPL obligations waived
+├── Additional features/support included
+└── Targeted at enterprise customers
 
-success : MongoDB(SSPL), Redis(RSALv2), MySQL(GPL+Commercial)
+Success examples: MongoDB (SSPL), Redis (RSALv2), MySQL (GPL+Commercial)
 ```
 
-## license of list
+## License Obligations Checklist
 
 ```markdown
-project deployment before confirmation:
-- [ ] all dependencyof license identification completed
-- [ ] license compatibility  verification completed
-- [ ] LICENSE dayin all 3 license included
-- [ ]  (NOTICE) day  (Apache 2.0 required)
-- [ ] GPL dependency for   items 
-- [ ] SPDX identification  dayin included
-- [ ] package.json/pyproject.tomlin license  people
+Before distributing the project, verify:
+- [ ] Licenses identified for all dependencies
+- [ ] License compatibility matrix verification complete
+- [ ] All third-party licenses included in the LICENSE file
+- [ ] Copyright notice (NOTICE) file prepared (required for Apache 2.0)
+- [ ] Source disclosure prepared when using GPL dependencies
+- [ ] SPDX identifiers included in source files
+- [ ] License field specified in package.json/pyproject.toml
 ```

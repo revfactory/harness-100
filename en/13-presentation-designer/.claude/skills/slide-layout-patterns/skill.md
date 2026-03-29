@@ -1,165 +1,165 @@
 ---
 name: slide-layout-patterns
-description: " Slide Layout Pattern Library. ///comparison/line etc. 20 Slide typeper optimal Layout, margins/grid , Color/ system visual-designer Extended Skill. 'Slide Layout', 'Slide Pattern', 'design system', 'grid', 'Typography', 'Color ' etc. Slide Visual Design when . , PPT/Keynote File of ."
+description: "A slide layout pattern library for presentations. An extension skill for visual-designer that provides optimal layouts for 20 slide types (title, content, data, comparison, timeline, etc.), margin and grid rules, and color/typography systems. Use for 'slide layout', 'slide pattern', 'design system', 'grid', 'typography', 'color palette', and similar slide visual design tasks. Note: actual PPT/Keynote file generation and animations are outside the scope of this skill."
 ---
 
 # Slide Layout Patterns — Slide Layout Pattern Library
 
 Layout patterns, grid systems, and design token references used by the visual-designer agent when producing slide decks.
 
-## subject Agent
+## Target Agent
 
-`visual-designer` — of Layout Patternand Slide Designin apply.
+`visual-designer` — Directly applies the layout patterns and design tokens from this skill to slide design.
 
-## grid system
+## Grid System
 
-### grid (16:9 = 1920x1080px )
-- ****: 80px
-- ****: 12 ( 127px, 20px)
-- ****: 6 ( 153px, 20px)
-- ****: 120px (to )
+### Base Grid (16:9 = 1920x1080px)
+- **Margins**: 80px on all sides
+- **Columns**: 12 columns (127px each, 20px gutter)
+- **Rows**: 6 rows (153px each, 20px gutter)
+- **Safe zone**: Inner 120px (to prevent projector clipping)
 
-### allocation
-| element | | |
-|------|------|------|
-| | 80~230px | 150px |
-| | during 250~880px | 630px |
-| | 900~1000px | 100px (page , to) |
+### Content Area Allocation
+| Element | Position | Height |
+|---------|----------|--------|
+| Title area | Top 80–230px | 150px |
+| Content area | Center 250–880px | 630px |
+| Footer bar | Bottom 900–1000px | 100px (page number, logo) |
 
-## 20 Slide Layout Pattern
+## 20 Slide Layout Patterns
 
-### 1. Slide
-- during , 56~72px, 24~32px
-- background: // Image + 
-- to: 
+### 1. Title Slide
+- Center-aligned, title 56–72px, subtitle 24–32px
+- Background: solid color / gradient / full-bleed image + overlay
+- Logo: bottom-left or bottom-right
 
-### 2. 
-- during 48~56px, 120px number
-- background: Brand Image
+### 2. Section Divider
+- Section name centered at 48–56px, section number at top-left in 120px numerals
+- Background: brand accent color or image
 
-### 3. Text before (Big Idea)
-- one sentence during 36~48px
-- margins vs, to 
-- vs 20 within
+### 3. Text Only (Big Idea)
+- Single sentence, center-aligned, 36–48px
+- Maximize whitespace; use font weight for impact
+- Maximum 20 words
 
-### 4. Text + Image ( )
-- 6 Text + 6 Image ( vs)
-- Image: , in 
-- Text: during 
+### 4. Text + Image (Left/Right Split)
+- Left 6 columns text + right 6 columns image (or reversed)
+- Image: full height, flush to edge
+- Text: vertically centered
 
-### 5. st
-- + 3~5 (7 secondsand )
-- : icon(24px) + (20px bold) + description(16px regular)
-- between: 1.6~1.8
+### 5. Bullet List
+- Title + 3–5 bullets (no more than 7)
+- Each bullet: icon (24px) + heading (20px bold) + description (16px regular)
+- Line height: 1.6–1.8
 
-### 6. number (Key Metric)
-- 1~3 core number vs to (80~120px)
-- /Text (18px)to in
-- background to 
+### 6. Number Highlight (Key Metric)
+- 1–3 key figures in large typography (80–120px)
+- Unit/context in smaller text (18px) below
+- Background color for emphasis
 
-### 7. 2 comparison
-- , Structure vs
-- vs icon during
-- Before/After, Competitive comparisonin 
+### 7. Two-Column Comparison
+- Left/right or top/bottom split, symmetrical structure
+- "vs" icon or divider line at center
+- Suitable for Before/After, competitive comparisons
 
-### 8. 3 
-- 3 ( 4)
-- : icon/Image + + description
-- , in 
+### 8. Three-Column Card
+- 3 equal-size cards (4 columns each)
+- Card: icon/image at top + title + description
+- Suitable for feature introductions, team profiles
 
-### 9. line ()
-- + 3~6 
-- : Date/ + description
-- → whenbetween Flow
+### 9. Timeline (Horizontal)
+- Horizontal line + 3–6 nodes
+- Node: date/phase + description
+- Left → right temporal flow
 
-### 10. process Flow
-- 3~5
-- : + icon + 
-- Structure
+### 10. Process Flow
+- 3–5 steps connected by arrows
+- Each step: number + icon + title
+- Linear or circular structure
 
-### 11. matrix (2x2)
-- 4, X/Y 
-- in placement
-- , matrix
+### 11. Matrix (2x2)
+- Four quadrants with X/Y axis labels
+- Items placed in each quadrant
+- Positioning map, priority matrix
 
-### 12. Image + Text 
-- Image 100%, (40~60% opacity)
-- Text: during, 
+### 12. Full-Bleed Image + Text Overlay
+- Image at 100%, semi-transparent overlay (40–60% opacity)
+- Text: bottom-left or centered, white
 
-### 13. /
-- icon (60px)
-- 28~36px italic
-- : name, , (16px)
+### 13. Quote / Testimonial
+- Large quotation mark icon (60px)
+- Quote text 28–36px italic
+- Attribution: name, title, company (16px)
 
-### 14. 
-- vs 5 x 7
-- background 
-- 12px, (number )
+### 14. Data Table
+- Maximum 5 columns × 7 rows
+- Header row highlighted with background color
+- Cell padding 12px, left-aligned (numbers right-aligned)
 
-### 15. /
-- + , to Current when
-- to st during grid
+### 15. Agenda / Table of Contents
+- Number + section name, current section highlighted
+- Left vertical list or center grid
 
-### 16. icon grid
-- 4~9 icon+ grid (2x2, 3x3)
-- icon (48~64px)
-- overview, line
+### 16. Icon Grid
+- 4–9 icons + labels in a grid (2×2, 3×3)
+- Uniform icon size (48–64px)
+- Feature overview, service lineup
 
-### 17. /Hierarchy
-- 3~5 
-- : core → : 
-- Strategy Hierarchy, Framework
+### 17. Pyramid / Hierarchy
+- 3–5 tier pyramid shape
+- Top: narrow core → Bottom: broad base
+- Strategy hierarchy, frameworks
 
-### 18. to/CTA
-- core Message during 
-- /URL/QR 
+### 18. Closing / CTA
+- Key message, center-aligned
+- Contact info / URL / QR code at bottom
 - Thank you + Next Steps
 
-### 19. UI/ 
-- duringin (//)
-- in 
+### 19. App UI / Mockup Showcase
+- Device mockup (phone / tablet / laptop) centered
+- Feature callout arrows on left and right
 
-### 20. to
-- line
-- and() → Current() → ()
-- per 
+### 20. Roadmap
+- Horizontal or diagonal timeline
+- Past (gray) → Present (accent color) → Future (dashed)
+- Quarterly milestones labeled
 
-## system
+## Design Token System
 
-### Typography scale
-| Role | | | between |
-|------|------|------|------|
-| Slide | 36~44px | Bold | 1.2 |
-| | 28~32px | SemiBold | 1.3 |
-| Body text | 18~22px | Regular | 1.6 |
-| Caption/ | 14~16px | Light | 1.4 |
-| number | 72~120px | Bold | 1.0 |
+### Typography Scale
+| Role | Size | Weight | Line Height |
+|------|------|--------|-------------|
+| Slide title | 36–44px | Bold | 1.2 |
+| Section title | 28–32px | SemiBold | 1.3 |
+| Body text | 18–22px | Regular | 1.6 |
+| Caption / footnote | 14–16px | Light | 1.4 |
+| Data figures | 72–120px | Bold | 1.0 |
 
-### 
-| | | |
-|------|------|------|
-| | Pretendard Bold | Inter Bold |
-| Body text | Pretendard Regular | Inter Regular |
-| | Pretendard Bold | DM Sans Bold |
-| | D2Coding | JetBrains Mono |
+### Recommended Fonts
+| Usage | Korean | English |
+|-------|--------|---------|
+| Headings | Pretendard Bold | Inter Bold |
+| Body | Pretendard Regular | Inter Regular |
+| Data | Pretendard Bold | DM Sans Bold |
+| Code | D2Coding | JetBrains Mono |
 
-### Color system
-| Role | | when |
-|------|------|------|
-| Primary | Brand | , CTA |
-| Secondary | | , icon |
-| Neutral-900 | of | Text |
-| Neutral-600 | duringbetween | Body text Text |
-| Neutral-200 | | background, |
-| Success | seconds | |
-| Warning | | of |
-| Danger | | |
+### Color System
+| Role | Token | Usage |
+|------|-------|-------|
+| Primary | Brand main color | Primary emphasis, CTA |
+| Secondary | Supporting color | Section dividers, icons |
+| Neutral-900 | Near black | Heading text |
+| Neutral-600 | Mid gray | Body text |
+| Neutral-200 | Light gray | Backgrounds, dividers |
+| Success | Green tones | Positive data |
+| Warning | Orange tones | Cautionary data |
+| Danger | Red tones | Negative data |
 
-### Slide 
-| | |
-|------|------|
-| Text | Slide vs 40 (6) |
-| | vs 5, one linein concept |
-| Color | Slide vs 3 (primary + neutral + accent) |
-| | 16px ( ) |
-| margins | 60%, margins 40% |
+### Slide Density Rules
+| Rule | Standard |
+|------|----------|
+| Text | Maximum 40 words per slide (6 lines) |
+| Bullets | Maximum 5; one concept per line |
+| Colors | Maximum 3 per slide (primary + neutral + accent) |
+| Font size | Minimum 16px (readability from back of room) |
+| Whitespace | Content area 60%, whitespace 40% |

@@ -1,158 +1,158 @@
 ---
 name: narrative-structure-patterns
-description: "Visual Storytellingof Narrative Structure Pattern Library. 3/5/hero's journey Structure, Emotion Curve Design, Scene before technique, Text-Image Balance Formula story-architect Extended Skill. 'Narrative Structure', 'Story arc', 'Emotion Curve', 'Scene before', ' Structure', 'Visual rhythm' etc. Story Design when . , Text writing Image of ."
+description: "Narrative structure pattern library for visual storytelling. Provides 3-act/5-act/hero's journey structures, emotion curve design, scene transition techniques, and text-image balance formulas as an extended skill for the story-architect agent. Use during story design for 'narrative structure', 'story arc', 'emotion curve', 'scene transition', 'story structure', 'visual rhythm', etc. Note: writing text or generating images is outside the scope of this skill."
 ---
 
 # Narrative Structure Patterns — Narrative Structure Pattern Library
 
 Narrative structures, emotion curves, and visual rhythm patterns used by the story-architect agent when designing visual stories.
 
-## subject Agent
+## Target Agent
 
-`story-architect` — of Structure Patternand Emotion Curve Story lean Designin apply.
+`story-architect` — Applies the structure patterns and emotion curves in this skill directly to story blueprint design.
 
-## Narrative Structure Pattern
+## Narrative Structure Patterns
 
-### 1. 3 Structure (Classic Three-Act)
-Visual inof Structure.
+### 1. Classic Three-Act Structure
+The most fundamental structure for visual essays.
 
-| | ratio | Role | Visual in application |
-|----|------|------|-----------------|
-| **1: ** | 25% | , introduction | in Image + introduction Text |
-| **2: development** | 50% | etc., , | Scene , vs, |
-| **3: ** | 25% | , afterglow, | Image + into |
+| Act | Proportion | Role | Visual Essay Application |
+|----|------------|------|--------------------------|
+| **Act 1: Setup** | 25% | World-building, introduce theme | Establishing image + introductory text |
+| **Act 2: Confrontation** | 50% | Conflict, depth, discovery | Scene intercutting, contrast, exploration |
+| **Act 3: Resolution** | 25% | Insight, afterglow, conclusion | Climax image + epilogue |
 
-### 2. 5 Structure (before)
- before narrative + Visual .
+### 2. Five-Chapter Structure (기승전결확)
+Traditional Korean narrative + visual expansion.
 
-| | Role | Image | Text |
-|----|------|----------|----------|
-| **** (introduction) | background, | and, | narration, |
-| **** (before) | , | , | , |
-| **before** (before) | before, | to, vs | Emotion, |
-| **** () | of, | and | , |
-| **** () | Engagement | lean Image | /secondsvs |
+| Chapter | Role | Image Tone | Text Tone |
+|---------|------|-----------|-----------|
+| **기** (Introduction) | Background, situation | Wide, static | Descriptive, neutral |
+| **승** (Development) | Deepening, expansion | Medium, dynamic | Observational, detailed |
+| **전** (Turning point) | Reversal, discovery | Close-up, contrast | Emotional, questioning |
+| **결** (Resolution) | Meaning, insight | Wide return | Reflective, quoted |
+| **확** (Extension) | Reader engagement | Open image | Question/Invitation |
 
-### 3. of (12 )
-Brand Story, , narrativein .
+### 3. The Hero's Journey (12-Stage Condensed)
+Suitable for brand stories, travel narratives, and coming-of-age stories.
 
-| | name | Visual in application | Image Suggestion |
-|------|------|-----------------|-----------|
-| 1 | daily life | of Current | daily life |
-| 2 | | of | when vs |
-| 3 | | | , |
-| 4 | | / | |
-| 5 | | when | , , |
-| 6~8 | whenand | , | Scene |
-| 9 | | vs before | /composition |
-| 10 | | / | , |
-| 11 | | | daily life |
-| 12 | daily life | when | |
+| Stage | Name | Visual Essay Application | Image Suggestion |
+|-------|------|--------------------------|-----------------|
+| 1 | Ordinary World | Protagonist's current state | Everyday ordinary scene |
+| 2 | The Call | Catalyst for change | Striking contrast |
+| 3 | Refusal | Hesitation | Crossroads, threshold |
+| 4 | Meeting the Mentor | Help/inspiration | Warm lighting |
+| 5 | Crossing the Threshold | Journey begins | Door, bridge, road |
+| 6–8 | Trials and Allies | Experience, growth | Multiple intercutting scenes |
+| 9 | Climax | Greatest challenge | Dramatic lighting/composition |
+| 10 | Reward | Discovery/achievement | Light, openness |
+| 11 | The Road Back | Return | Revisiting the ordinary world |
+| 12 | Return with Elixir | Grown perspective | Same but different landscape |
 
-### 4. Structure ()
-in, when , inin .
+### 4. Mosaic Structure (Non-linear)
+Suitable for photo essays, urban explorations, and sensory essays.
 
-- whenbetween **per **to composition
-- : 2~4Scene, of /
-- between **Visual **to ( Color, , )
-- of composition lean Structure
+- Organized by **thematic clusters** rather than chronological order
+- Each cluster: 2–4 scenes, one sense/theme
+- Clusters connected by **visual motifs** (recurring color, form, objects)
+- Open structure that lets readers freely construct meaning
 
-### 5. vs Structure (Juxtaposition)
-Before/After, and , of comparison.
+### 5. Juxtaposition Structure
+Before/After, light and shadow, comparison of two worlds.
 
-| Pattern | composition | and |
-|------|------|------|
-| A-B-A-B | placement | vsof rhythm |
-| A-A-A → B-B-B | before vs after | beforeof |
-| A+B when | / | Integration vs |
+| Pattern | Composition | Effect |
+|---------|-------------|--------|
+| A-B-A-B | Two subjects placed alternately | Rhythmic contrast |
+| A-A-A → B-B-B | First half vs second half | Shock of the turning point |
+| A+B simultaneously | Split screen/overlay | Integrated contrast |
 
 ## Emotion Curve Design
 
-### Emotion Pattern
+### Emotion Intensity Patterns
 
-#### 1. (Ascending)
+#### 1. Ascending
 ```
 Scene1 ━━ Scene2 ━━ Scene3 ━━ Scene4 ━━ Scene5
- 20% 35% 55% 80% 100%
+  20%     35%     55%     80%    100%
 ```
-, narrativein .
+Suitable for hopeful and coming-of-age narratives.
 
-#### 2. (Descending)
+#### 2. Descending
 ```
 Scene1 ━━ Scene2 ━━ Scene3 ━━ Scene4 ━━ Scene5
- 90% 70% 50% 30% 15%
+  90%     70%     50%     30%     15%
 ```
-, , narrative.
+Loss, memory, and decline narratives.
 
-#### 3. (Mountain)
+#### 3. Mountain
 ```
- Scene3
- ╱ ╲
- Scene2 Scene4
-╱ ╲
-Scene1 Scene5
+         Scene3
+        ╱      ╲
+  Scene2          Scene4
+╱                      ╲
+Scene1                   Scene5
 ```
- narrative arc. duringin .
+Classic narrative arc. Climax at center.
 
-#### 4. (Wave)
+#### 4. Wave
 ```
- ╱╲ ╱╲ ╱╲
-╱ ╲╱ ╲╱ ╲
+  ╱╲    ╱╲    ╱╲
+╱    ╲╱    ╲╱    ╲
 ```
-rhythm in. and of .
+Rhythmic essay. Repeated tension and release.
 
-#### 5. (Staircase)
+#### 5. Staircase
 ```
- ━━━
- ━━━╱
- ━━━╱
- ━━━╱
+               ━━━
+           ━━━╱
+       ━━━╱
+   ━━━╱
 ━━━╱
 ```
- . Scene .
+Gradual discovery. Each scene adds a new insight.
 
-## Visual rhythm (Image-Text placement)
+## Visual Rhythm (Image-Text Placement)
 
-### Pattern
+### Density Patterns
 
-| Pattern | Image:Text ratio | and | |
-|------|-----------------|------|------|
-| **Image ** | 70:30 | Visual | , |
-| **** | 50:50 | Information + | , |
-| **Text ** | 30:70 | , | , Analysis |
+| Pattern | Image:Text Ratio | Effect | Best For |
+|---------|-----------------|--------|----------|
+| **Image-dominant** | 70:30 | Visual immersion | Landscapes, sensory |
+| **Balanced** | 50:50 | Information + emotion | Documentary, reportage |
+| **Text-dominant** | 30:70 | Contemplation, depth | Philosophical, analytical |
 
-### Scene within placement Pattern
+### In-Scene Placement Patterns
 
-| Pattern | composition | rhythm |
-|------|------|--------|
-| ** → Text** | before Image in Text | rhythm - |
-| ** ** | Image + Text ( vs) | |
-| **Text ** | Image in Text | Integration, when |
-| **Caption ** | Image Caption | photography |
-| **Quote ** | + Text | Emotion |
+| Pattern | Composition | Rhythm |
+|---------|-------------|--------|
+| **Full-bleed → Text** | Full-page image followed by text block | Breathe - Contemplate |
+| **Left-right split** | Image left + text right (or reversed) | Parallel perception |
+| **Text overlay** | Text on top of image | Integrated, poetic |
+| **Caption below** | Short caption beneath image | Photo album |
+| **Quote insert** | Large quotation marks + emphasized text | Emotional anchor |
 
-## Scene before technique
+## Scene Transition Techniques
 
-| technique | description | Visual application |
-|------|------|-----------|
-| **** | before | Scene margins None |
-| **** | before | , margins |
-| **** | before | Image |
-| ** ** | /Color | of subject |
-| **Emotion ** | Emotion | Emotion, Scene |
-| **vs ** | to before | →, → |
-| **within ** | Text Scene | before Text |
+| Technique | Description | Visual Application |
+|-----------|-------------|-------------------|
+| **Cut** | Immediate transition | No gap between scenes |
+| **Fade** | Gradual transition | Gradient dividers, whitespace |
+| **Dissolve** | Overlap transition | Overlapping images |
+| **Motif match** | Shape/color connection | Different subjects with similar forms |
+| **Emotion match** | Emotional tone connection | Same emotion, different scene |
+| **Contrast cut** | Dramatic difference as transition | Dark→light, dense→empty |
+| **Narration bridge** | Text connects scenes | Insert transition text |
 
-## Scene Guide
+## Scene Count Guide
 
-| Story type | | optimal | vs |
-|-----------|------|------|------|
-| in | 3 | 5~6 | 8 |
-| in | 6 | 8~12 | 15 |
-| Story | 10 | 15~20 | 25 |
-| in | 8 | 12~16 | 20 |
+| Story Type | Minimum | Optimal | Maximum |
+|-----------|---------|---------|---------|
+| Short-form essay | 3 | 5–6 | 8 |
+| Standard essay | 6 | 8–12 | 15 |
+| Long-form story | 10 | 15–20 | 25 |
+| Photo essay | 8 | 12–16 | 20 |
 
-### Scene element
-- Image: 1~2 ( + )
-- Text: 50~150
-- Caption/: 10~30
+### Recommended Elements per Scene
+- Images: 1–2 (main + supporting)
+- Text: 50–150 words
+- Caption/Quote: 10–30 words

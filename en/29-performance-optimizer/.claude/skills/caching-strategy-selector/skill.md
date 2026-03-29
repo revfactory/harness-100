@@ -1,77 +1,77 @@
 ---
 name: caching-strategy-selector
-description: "caching strategy(Cache Aside, Write Through, Write Behind etc.) optional and Redis/Memcached for, TTL , cache invalid-ize pattern guide. 'caching strategy', 'Redis', 'cache invalid-ize', 'TTL', 'Cache Aside', 'Write Through', 'CDN caching', 'cache ' etc. caching   this  for. optimization-engineerof caching   -ize. , before performance profilingthis benchmark this of scope ."
+description: "Selection matrix for caching strategies (Cache Aside, Write Through, Write Behind, etc.), Redis/Memcached usage, TTL design, and cache invalidation pattern guide. Use this skill for caching design involving 'caching strategy', 'Redis', 'cache invalidation', 'TTL', 'Cache Aside', 'Write Through', 'CDN caching', 'cache stampede', and similar topics. Enhances the caching design capabilities of the optimization-engineer. Note: full performance profiling and benchmarking are outside the scope of this skill."
 ---
 
-# Caching Strategy Selector — caching strategy optional guide
+# Caching Strategy Selector — Caching Strategy Selection Guide
 
--based caching strategy optionaland and-basedas lower methodology.
+Methodology for selecting the appropriate caching strategy and implementing it effectively.
 
-## caching strategy 
+## Caching Strategy Comparison
 
 ### 1. Cache Aside (Lazy Loading)
 
 ```
-: App → Cache confirmation →  → DB query → Cache  → 
-: App → DB  → Cache invalid-ize(deletion)
+Read:  App → Check cache → Miss → Query DB → Store in cache → Return
+Write: App → Save to DB → Invalidate cache (delete)
 ```
 
-|  |  |
+| Pros | Cons |
 |------|------|
-|  for-based |  request upper  |
-| cache   DB  | -modification-  cases |
-| necessary dataonly cache | data day also  |
+| Most general-purpose | First request always misses |
+| Falls back to DB on cache failure | Read-modify-write race condition |
+| Only caches needed data | Data inconsistency window exists |
 
 ### 2. Write Through
 
 ```
-: App → Cache  → DB  (synchronous)
-: App → Cache confirmation → upper 
+Write: App → Save to cache → Save to DB (synchronous)
+Read:  App → Check cache → Always hits
 ```
 
-|  |  |
+| Pros | Cons |
 |------|------|
-| - consistency |  latency  |
-| cache upper  | forlower  dataalso cache |
+| Read-write consistency | Increased write latency |
+| Cache always up to date | Unused data is also cached |
 
 ### 3. Write Behind (Write Back)
 
 ```
-: App → Cache  → asynchronous as DB 
-: App → Cache confirmation → upper 
+Write: App → Save to cache → Save to DB asynchronously in batches
+Read:  App → Check cache → Always hits
 ```
 
-|  |  |
+| Pros | Cons |
 |------|------|
-|  performance -ize | cache   data  |
-| DB lower -ize |  complex |
+| Maximizes write performance | Data loss on cache failure |
+| Smooths out DB load | Complex to implement |
 
-### strategy optional 
+### Strategy Selection Matrix
 
-| requiredmatter | Cache Aside | Write Through | Write Behind |
-|---------|------------|---------------|-------------|
-|   | ★★★ | ★★ | ★★ |
-|   | ★ | ★ | ★★★ |
-| consistency important | ★★ | ★★★ | ★ |
-| performance important | ★★ | ★ | ★★★ |
-|  simple | ★★★ | ★★ | ★ |
-| data  impossible | ★★★ | ★★★ | ★ |
+| Requirement | Cache Aside | Write Through | Write Behind |
+|------------|------------|---------------|-------------|
+| Read-heavy | ★★★ | ★★ | ★★ |
+| Write-heavy | ★ | ★ | ★★★ |
+| Consistency critical | ★★ | ★★★ | ★ |
+| Performance critical | ★★ | ★ | ★★★ |
+| Simple implementation | ★★★ | ★★ | ★ |
+| No data loss tolerated | ★★★ | ★★★ | ★ |
 
-## cache invalid-ize pattern
+## Cache Invalidation Patterns
 
 ### 1. TTL (Time-To-Live)
 
 ```python
 # TTL configuration guide
 CACHE_TTL = {
-    "user_profile": 300,      # 5minutes — week change 
-    "product_list": 60,       # 1minutes — between change frequency
-    "stock_count": 10,        # 10seconds — week change
-    "config": 3600,           # 1between — of change  
-    "session": 86400,         # 24between — session countpeople
+    "user_profile": 300,      # 5 minutes — infrequently changed
+    "product_list": 60,       # 1 minute — moderately changed
+    "stock_count": 10,        # 10 seconds — frequently changed
+    "config": 3600,           # 1 hour — rarely changed
+    "session": 86400,         # 24 hours — session lifetime
 }
 
-# Jitter addition (cache  )
+# Add jitter (prevents cache stampede)
 import random
 ttl = base_ttl + random.randint(0, base_ttl // 10)
 ```
@@ -79,32 +79,32 @@ ttl = base_ttl + random.randint(0, base_ttl // 10)
 ### 2. Event-Based Invalidation
 
 ```python
-# event  invalid-ize
+# Event-driven invalidation
 @event_handler("user.updated")
 def invalidate_user_cache(event):
     cache.delete(f"user:{event.user_id}")
     cache.delete(f"user_profile:{event.user_id}")
-    # related  cachealso invalid-ize
+    # Also invalidate related list caches
     cache.delete("user_list:page:*")
 ```
 
 ### 3. Version-Based
 
 ```python
-# before keyas in invalid-ize
+# Invalidate all at once using a version key
 version = cache.get("product_version") or 1
 key = f"product_list:v{version}"
-# invalid-ize: beforeonly 
+# Invalidate: just increment the version
 cache.incr("product_version")
 ```
 
-## cache  resolution
+## Cache Problem Resolution
 
 ### Cache Stampede (Thundering Herd)
 
 ```
-: cache only   requestthis  DBin 
-resolution:
+Problem: On cache expiry, all concurrent requests hit the DB simultaneously
+Solutions:
 
 1. Mutex Lock
    if cache.miss(key):
@@ -117,7 +117,7 @@ resolution:
 
 2. Stale-While-Revalidate
    cache.set(key, data, ttl=300, stale_ttl=600)
-   # TTL only afterinalso stale data lower the renewal
+   # Return stale data after TTL expiry while refreshing in the background
 
 3. Probabilistic Early Expiry
    delta = ttl * beta * log(random())
@@ -128,53 +128,53 @@ resolution:
 ### Cache Penetration
 
 ```
-: lower  key repetition request →  DB 
-resolution:
-1.  filter:  possible before 
-2.  result caching: cache.set(key, NULL, ttl=60)
-3. request verification: validlower  key before 
+Problem: Repeated requests for non-existent keys → DB hit every time
+Solutions:
+1. Bloom filter: Pre-check for key existence
+2. Cache empty results: cache.set(key, NULL, ttl=60)
+3. Request validation: Block invalid keys upfront
 ```
 
 ### Cache Avalanche
 
 ```
-:  cache  only → DB andlower
-resolution:
-1. TTL variance: TTL + random jitter
-2. phased only: importantalsoper different TTL
-3. (Warm-up): deployment  cache before -based
+Problem: Large number of caches expire simultaneously → DB overload
+Solutions:
+1. TTL scatter: TTL + random jitter
+2. Staggered expiry: Different TTLs by importance
+3. Pre-warming (Warm-up): Pre-load cache before deployment
 ```
 
-## cache layer 
+## Cache Layer Design
 
 ```
-L1: as cache (process)
-    ├── for: ~100MB
-    ├── speed: ~0.1ms
-    └── suitable: configuration, constant,  
+L1: Local cache (in-process)
+    ├── Capacity: ~100MB
+    ├── Latency: ~0.1ms
+    └── Best for: config, constants, high-frequency reads
 
-L2: variance cache (Redis/Memcached)
-    ├── for: ~10GB
-    ├── speed: ~1ms
-    └── suitable: session, as, 
+L2: Distributed cache (Redis/Memcached)
+    ├── Capacity: ~10GB
+    ├── Latency: ~1ms
+    └── Best for: sessions, profiles, lists
 
 L3: CDN cache (CloudFront/Cloudflare)
-    ├── for: limited
-    ├── speed: edgefrom ~5ms
-    └── suitable: -based , API 
+    ├── Capacity: unlimited
+    ├── Latency: ~5ms from edge
+    └── Best for: static assets, API responses
 
-L4:  cache
+L4: Browser cache
     ├── Cache-Control: max-age, stale-while-revalidate
     └── ETag / Last-Modified
 ```
 
-## Redis data  optional
+## Redis Data Structure Selection
 
-|  | suitable | example |
-|------|------|------|
-| String | simple key-value | session, configuration,  |
-| Hash |   | user as |
-| List |   |   upper (LPUSH + LTRIM) |
-| Set |   |  user |
-| Sorted Set |  | ,  |
-| HyperLogLog |   | UV  |
+| Structure | Best For | Examples |
+|-----------|----------|---------|
+| String | Simple key-value | Sessions, config, counters |
+| Hash | Object fields | User profiles |
+| List | Recent items | Recently viewed products (LPUSH + LTRIM) |
+| Set | Unique collections | Online users |
+| Sorted Set | Rankings | Leaderboards, trending |
+| HyperLogLog | Approximate counting | UV counts |

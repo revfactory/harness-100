@@ -1,137 +1,138 @@
 ---
 name: threat-modeling
-description: "STRIDE, DREAD, Attack Tree etc. threat model methodologyand threat identification·evaluation· strategy count guide. 'STRIDE', 'DREAD', 'threat model', 'threat modeling', 'attack tree', 'attack surface', 'threat identification', 'security ' etc. system threat analysis  this  for. security-consultantand pentest-reporterof threat analysis  -ize. , actual penetration test executionthis CVE  this of scope ."
+description: "A guide to threat modeling methodologies (STRIDE, DREAD, Attack Tree, etc.) and strategies for identifying, evaluating, and responding to threats. Use this skill for system threat analysis involving 'STRIDE', 'DREAD', 'threat modeling', 'attack tree', 'attack surface', 'threat identification', 'security design', and similar topics. Enhances the threat analysis capabilities of security-consultant and pentest-reporter. Note: actual penetration test execution and CVE scanning are outside the scope of this skill."
 ---
 
-# Threat Modeling — threat model methodology guide
+# Threat Modeling — Threat Modeling Methodology Guide
 
-systemof security threat systematicas identificationand evaluationlower framework.
+A framework for systematically identifying and evaluating security threats in a system.
 
-## STRIDE threat classification
+## STRIDE Threat Classification
 
-| threat | people | security  |  pattern |
-|------|------|----------|----------|
-| **S**poofing |   | authentication | MFA, authentication |
-| **T**ampering | data  | integrity | HMAC,  people,  |
-| **R**epudiation |   |   | audit log,  |
-| **I**nformation Disclosure | information  |  | encryption,   |
-| **D**enial of Service | service rejection | availability | Rate Limiting, auto-scaling |
-| **E**levation of Privilege | permission upper | authorization | RBAC, minimum permission principle |
+| Threat | Description | Security Property | Response Pattern |
+|--------|-------------|------------------|-----------------|
+| **S**poofing | Identity impersonation | Authentication | MFA, certificates |
+| **T**ampering | Data modification | Integrity | HMAC, digital signatures, checksums |
+| **R**epudiation | Denial of actions | Non-repudiation | Audit logs, timestamps |
+| **I**nformation Disclosure | Information leakage | Confidentiality | Encryption, access control |
+| **D**enial of Service | Service disruption | Availability | Rate limiting, auto-scaling |
+| **E**levation of Privilege | Privilege escalation | Authorization | RBAC, principle of least privilege |
 
-## STRIDE -basedfor procedure
+## STRIDE Application Procedure
 
-### Step 1: system minutes (DFD )
+### Step 1: System Decomposition (DFD Construction)
 
 ```
 ┌────────┐    HTTPS     ┌──────────┐    SQL     ┌─────────┐
 │ Browser │ ──────────→ │ Web App  │ ────────→ │   DB    │
-│(external)   │ ←────────── │(Trust    │ ←──────── │(Trust   │
+│(external)│ ←────────── │(Trust    │ ←──────── │(Trust   │
 └────────┘             │ Boundary)│           │Boundary)│
                        └────┬─────┘           └─────────┘
                             │ REST API
                             ▼
                        ┌──────────┐
-                       │ external PG  │
-                       │(external)    │
+                       │ External │
+                       │   PG     │
+                       │(external)│
                        └──────────┘
 
-Trust Boundary( )from threatthis .
+Threats originate at Trust Boundaries.
 ```
 
-### Step 2: per STRIDE analysis
+### Step 2: Per-Component STRIDE Analysis
 
 ```markdown
 ## Browser → Web App (HTTPS)
-| threat |  | riskalso |  |
-|------|---------|--------|------|
-| S | session lowerthis |  | HttpOnly, Secure key |
-| T | between attack |  | TLS 1.3, HSTS |
-| R | people request | between | request as, authentication required |
-| I | before  also |  | TLS |
-| D | DDoS |  | WAF, Rate Limiting |
-| E | administrator API  |  | role    |
+| Threat | Scenario | Risk Level | Response |
+|--------|----------|-----------|----------|
+| S | Session hijacking | High | HttpOnly, Secure cookies |
+| T | Man-in-the-middle attack | High | TLS 1.3, HSTS |
+| R | Anonymous requests | Medium | Request logging, mandatory authentication |
+| I | Eavesdropping in transit | High | TLS |
+| D | DDoS | High | WAF, Rate Limiting |
+| E | Admin API access | High | Role-based access control |
 ```
 
-## DREAD risk evaluation
+## DREAD Risk Assessment
 
 ```
-each item 1~10 evaluation:
+Score each item 1–10:
 
-D (Damage):  
-R (Reproducibility):  forthis
-E (Exploitability): attack forthis
-A (Affected Users): impact user ratio
-D (Discoverability):  forthis
+D (Damage): Extent of damage
+R (Reproducibility): Ease of reproduction
+E (Exploitability): Ease of exploitation
+A (Affected Users): Proportion of impacted users
+D (Discoverability): Ease of discovery
 
-riskalso = (D + R + E + A + D) / 5
+Risk Score = (D + R + E + A + D) / 5
 
-etc.:
-├── 8~10: Critical (immediate )
-├── 5~7: High (planthe modification)
-├── 3~4: Medium (monitoring)
-└── 1~2: Low (countfor)
+Ratings:
+├── 8–10: Critical (respond immediately)
+├── 5–7: High (planned fix)
+├── 3–4: Medium (monitor)
+└── 1–2: Low (accept)
 ```
 
-### example evaluation
+### Example Assessment
 
 ```
-threat: SQL Injection in Login API
-├── Damage: 9 (before DB  possible)
-├── Reproducibility: 8 (automatic-ize also )
-├── Exploitability: 7 (items PoC count)
-├── Affected Users: 10 (before user)
-├── Discoverability: 9 (automatic as )
-└── riskalso: (9+8+7+10+9)/5 = 8.6 → Critical
+Threat: SQL Injection in Login API
+├── Damage: 9 (full DB exfiltration possible)
+├── Reproducibility: 8 (automated tooling available)
+├── Exploitability: 7 (multiple public PoCs exist)
+├── Affected Users: 10 (all users)
+├── Discoverability: 9 (detectable by automated scanners)
+└── Risk Score: (9+8+7+10+9)/5 = 8.6 → Critical
 ```
 
 ## Attack Tree
 
 ```
-target: administrator permission acquisition
-├── OR: authentication 
-│   ├── AND: SQL Injection +  password hash
-│   ├── session lowerthis
-│   │   ├── OR: XSSas key 
-│   │   └── OR: network  (HTTP)
-│   └──  administrator account
-├── OR: permission upper
-│   ├── IDOR (administrator API direct )
-│   ├── JWT  (role )
-│   └── API Gateway 
-└── OR: 
-    ├── administrator 
-    └── internal 
+Goal: Gain administrator privileges
+├── OR: Authentication bypass
+│   ├── AND: SQL Injection + weak password hash
+│   ├── Session hijacking
+│   │   ├── OR: Cookie theft via XSS
+│   │   └── OR: Network sniffing (HTTP)
+│   └── Default administrator account
+├── OR: Privilege escalation
+│   ├── IDOR (direct admin API call)
+│   ├── JWT tampering (role field)
+│   └── API Gateway bypass
+└── OR: Social engineering
+    ├── Administrator phishing
+    └── Insider collusion
 ```
 
-## attack  analysis
+## Attack Surface Analysis
 
-###  this attack 
+### Web Application Attack Surface
 
-|  |  |  item |
-|------|------|----------|
-| **external API** | REST/GraphQL endpoint | authentication, authorization,  verification |
-| **authentication** | log, token, session | root, session  |
-| **day as** | as, day | day type verification, as  |
-| **3 integration** | OAuth, Webhook, API | SSRF, token  |
-| ** interface** | Admin , API |  ,  separated |
-| **data ** | DB, cache, log | encryption,   |
+| Surface | Components | Review Items |
+|---------|-----------|-------------|
+| **External API** | REST/GraphQL endpoints | Authentication, authorization, input validation |
+| **Authentication** | Login, tokens, sessions | Brute force, session management |
+| **File upload** | Profile pictures, attachments | File type validation, path traversal |
+| **Third-party integrations** | OAuth, Webhook, API | SSRF, token exposure |
+| **Administrative interfaces** | Admin panel, API | Access control, network segmentation |
+| **Data storage** | DB, cache, logs | Encryption, access control |
 
-## threat model report template
+## Threat Modeling Report Template
 
 ```markdown
-# threat model report
+# Threat Modeling Report
 
-## system items
-- architecture thisthe (DFD)
--   identification
+## System Overview
+- Architecture diagram (DFD)
+- Trust boundary identification
 
-## threat 
-| ID | STRIDE | threat  | DREAD count | current  |  risk |
-|----|--------|-------------|-----------|----------|----------|
-| T1 | S | session lowerthis | 7.2 | HttpOnly key | between |
-| T2 | I | SQL Injection | 8.6 | parameter-ize query |  |
+## Threat List
+| ID | STRIDE | Threat Scenario | DREAD Score | Current Response | Residual Risk |
+|----|--------|----------------|-------------|-----------------|--------------|
+| T1 | S | Session hijacking | 7.2 | HttpOnly cookies | Medium |
+| T2 | I | SQL Injection | 8.6 | Parameterized queries | Low |
 
-## attack  
-## priorityper  plan
-##  risk countfor 
+## Attack Surface Summary
+## Prioritized Response Plan
+## Accepted Residual Risk List
 ```
