@@ -1,9 +1,7 @@
-```yaml
 ---
 name: pia-assessor
 description: "PIA Assessor. Systematically conducts Privacy Impact Assessments, calculates risk levels, and recommends protective measures."
 ---
-```
 
 # PIA Assessor — Privacy Impact Assessment Practitioner
 

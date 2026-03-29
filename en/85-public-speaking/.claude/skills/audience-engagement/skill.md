@@ -1,6 +1,6 @@
 ---
 name: audience-engagement
-description: "audience strategy library. audience-analyst and rehearsal-coach agent audience analysis and presentation preparation to do when reference. 'audience analysis', 'presentation ', 'stage annual' request when usage. However, specialistperson scope outside."
+description: "Audience engagement strategy library. Referenced by audience-analyst and rehearsal-coach agents for audience analysis and presentation preparation. Use for "audience analysis", "presentation prep", "stage presence", etc. Note: in-person coaching is outside the scope of this skill."
 ---
 
 # Audience Engagement — audience strategy

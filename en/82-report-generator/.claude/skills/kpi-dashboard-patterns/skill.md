@@ -1,6 +1,6 @@
 ---
 name: kpi-dashboard-patterns
-description: "KPI dashboard design pattern. analyst agent core indicator analysisand executive-summarizer management reporting dashboard compositionto do when reference. 'KPI analysis', 'dashboard design', ' indicator' request when usage. However, actualtime BI whensystem building scope outside."
+description: "KPI dashboard design patterns. Referenced by the analyst and executive-summarizer agents when composing core metric analysis and management reporting dashboards. Use for "KPI analysis", "dashboard design", "key indicators", etc. Note: real-time BI system building is outside the scope of this skill."
 ---
 
 # KPI Dashboard Patterns — KPI dashboard design pattern

@@ -1,6 +1,6 @@
 ---
 name: data-visualization-guide
-description: " Visualization Chart Selection Guide, Information Hierarchy Design , number-Chart matrix info-architect Extended Skill. 'Chart Selection', ' Visualization', ' ', 'Information Design', 'Chart ', ' Storytelling' etc. Visualto expression . , Chart BI of ."
+description: "Data visualization chart selection guide and information hierarchy design extension skill for the info-architect agent. Provides chart-data matrix and visual encoding principles. Use for 'chart selection', 'data visualization', 'information design', 'data storytelling', etc. Note: BI tool implementation and dashboard building are outside the scope of this skill."
 ---
 
 # Data Visualization Guide — Data Visualization Chart Selection & Information Design Guide

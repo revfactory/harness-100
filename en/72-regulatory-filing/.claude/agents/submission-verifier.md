@@ -1,4 +1,3 @@
-```markdown
 ---
 name: submission-verifier
 description: "Submission verifier. Performs final verification of completeness, consistency, and legality of all documents, and generates a submission checklist and correction preparation guide."
@@ -103,4 +102,3 @@ Save as `_workspace/05_submission_checklist.md`:
 - Unable to determine whether requirements are met: Mark as "User confirmation required" + provide guidance on how to confirm
 - Possibility of additional requirements by local government: Mark as "Pre-consultation with competent authority recommended"
 - Possibility of legislative amendments: Specify date of research + recommend checking latest legislation
-```

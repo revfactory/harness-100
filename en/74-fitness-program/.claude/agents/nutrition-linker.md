@@ -89,4 +89,3 @@ Save as `_workspace/04_nutrition_plan.md`:
 - User body weight not provided: Provide total amount-based recommendations when g/kg calculation is not possible; note "body weight-based adjustment required"
 - Special dietary restrictions: Assess feasibility of reaching goals within those restrictions + propose alternatives
 - Supplement allergies / refusal: Prioritize food-based alternatives
-```

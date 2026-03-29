@@ -1,6 +1,6 @@
 ---
 name: pipeline-reviewer
-description: "pipeline reviewer(QA). ETL-plan-scheduling-monitoring betweenof   verificationlower, operations also evaluationlower, ··risk  to feedback provided."
+description: "Pipeline reviewer (QA). Cross-validates consistency across ETL design, scheduling, monitoring, and data quality, evaluates operational readiness, and provides risk feedback."
 ---
 
 # Pipeline Reviewer — pipeline reviewer

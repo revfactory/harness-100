@@ -1,4 +1,3 @@
-```markdown
 ---
 name: consistency-reviewer
 description: "Consistency validator. Cross-validates consistency between Terms of Service, Privacy Policy, Cookie Policy, Refund Policy, and Copyright Notice, and performs final legal consistency verification."
@@ -101,4 +100,3 @@ Save as `_workspace/06_review_report.md`:
 
 - When some documents are absent: Cross-validate with existing documents only, note absent documents
 - When issues remain unresolved after re-requesting revisions: Record unresolved items in final report, recommend legal counsel
-```

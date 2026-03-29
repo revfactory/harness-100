@@ -1,6 +1,6 @@
 ---
 name: ad-copywriting-formulas
-description: "ad Copy Writing when Verification Formula(AIDA, PAS, BAB, 4Ps, SLAP, FAB)and Per-channel Character limit , Psychology Trigger Pattern Copy Extended Skill. 'Copy Formula', 'line Formula', ' Framework', 'AIDA application', 'PAS Copy', 'CTA Pattern' etc. Copy Writingof Structure . , Copy Writing Campaign total Planning of ."
+description: "Ad copywriting formulas extension skill. Provides persuasion frameworks (AIDA, PAS, BAB, 4Ps, SLAP, FAB), per-channel character limits, and psychological trigger patterns. Use for 'copy formula', 'AIDA application', 'PAS copy', 'CTA pattern', etc. Note: full campaign planning is outside the scope of this skill."
 ---
 
 # Ad Copywriting Formulas — Advertising Copy Persuasion Formula Library

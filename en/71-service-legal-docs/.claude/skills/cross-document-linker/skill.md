@@ -1,4 +1,3 @@
-```markdown
 ---
 name: cross-document-linker
 description: "A document linking tool that manages cross-references and consistency across service legal documents. The 'consistency-reviewer' and each specialist agent MUST use this skill's linking matrix and check rules to maintain consistent definitions, clauses, and terminology across documents. Use for 'cross-document consistency', 'cross-reference management', 'terminology unification', etc. Note: authoring individual documents is outside the scope of this skill."
@@ -103,4 +102,3 @@ Document version synchronization:
 
 - Cross-application of E-Commerce Act, Terms Regulation Act, and Personal Information Protection Act
 - Detailed checklist: see `references/cross-check-templates.md`
-```

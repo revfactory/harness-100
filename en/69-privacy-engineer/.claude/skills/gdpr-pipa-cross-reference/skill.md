@@ -1,4 +1,3 @@
-```markdown
 ---
 name: gdpr-pipa-cross-reference
 description: "Cross-reference database for GDPR and Korea's Personal Information Protection Act (PIPA). The 'privacy-law-analyst' and 'consent-designer' agents must use this skill's article mappings and gap analysis when analyzing multi-jurisdiction privacy requirements and designing consent forms. Use for 'GDPR vs PIPA comparison', 'legal requirements cross-analysis', 'global compliance strategies', etc. Note: data flow mapping and technical safeguard design are outside the scope of this skill."
@@ -118,4 +117,3 @@ Minimum requirements for simultaneously satisfying both laws for global services
 
 - Based on GDPR 2016/679 and Korea's Personal Information Protection Act (2023 comprehensive revision)
 - Detailed article mapping: see `references/gdpr-pipa-article-map.md`
-```

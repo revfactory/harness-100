@@ -1,6 +1,6 @@
 ---
 name: rhetoric-patterns
-description: "numbercompany pattern library. speech-writer and debate-preparer agent persuasioncapability speech and buildingto do when reference. 'numbercompany', ' structure', 'persuasion technique' request when usage. However, actual presentation nature training scope outside."
+description: "Rhetoric pattern library. Referenced by speech-writer and debate-preparer agents for crafting persuasive speeches and arguments. Use for "rhetoric", "speech structure", "persuasion technique", etc. Note: in-person presentation coaching is outside the scope of this skill."
 ---
 
 # Rhetoric Patterns — numbercompany pattern library

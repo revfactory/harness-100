@@ -1,4 +1,3 @@
-```markdown
 ---
 name: unfair-terms-detector
 description: "A specialized tool for detecting unfair contract terms and suggesting revisions. The 'tos-specialist' and 'consistency-reviewer' agents MUST use this skill's judgment criteria and revision patterns when drafting or validating terms of service. Use for 'unfair terms detection', 'terms of service law violation checks', 'FTC standard application', and similar tasks. Note: drafting privacy policies or cookie policies is outside the scope of this skill."
@@ -112,4 +111,3 @@ Grade:
 
 - Based on the Act on the Regulation of Terms and Conditions and the Fair Trade Commission review guidelines
 - Detailed case law: see `references/unfair-terms-cases.md`
-```

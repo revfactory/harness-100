@@ -1,6 +1,6 @@
 ---
 name: data-visualization-guide
-description: "data visualization guide. visualizer agent chart·graph designto do when reference visualization principle and chart optional framework. 'chart optional', 'visualization guide' request when usage. However, actual BI tool work dashboard building scope outside."
+description: "Data visualization guide. Referenced by the visualizer agent when designing charts and graphs. Provides visualization principles and chart selection framework. Use for "chart selection", "visualization guide", etc. Note: actual BI tool dashboard building is outside the scope of this skill."
 ---
 
 # Data Visualization Guide — data visualization guide

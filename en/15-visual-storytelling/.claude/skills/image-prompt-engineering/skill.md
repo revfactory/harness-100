@@ -1,6 +1,6 @@
 ---
 name: image-prompt-engineering
-description: "AI Image (Gemini/DALL-E/Midjourney) Prompt Writing Guide. compositionper Prompt , Style before, Consistency technique, Prompt Pattern image-prompter Extended Skill. 'Image Prompt', 'AI Image Style', 'Prompt Writing', 'composition ', 'Style Consistency', ' Prompt' etc. AI Image Prompt Optimization when . , Image candidates of ."
+description: "AI image prompt engineering guide for Gemini/DALL-E/Midjourney. Provides composition-based prompt structures, style keywords, consistency techniques, and prompt patterns as an image-prompter extension skill. Use for 'image prompt', 'AI image style', 'prompt writing', 'composition design', 'style consistency', etc. Note: actual image generation is outside the scope of this skill."
 ---
 
 # Image Prompt Engineering — AI Image Prompt Writing Guide

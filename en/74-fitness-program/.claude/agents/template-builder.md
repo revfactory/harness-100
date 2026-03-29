@@ -117,4 +117,3 @@ Save as `_workspace/05_tracking_template.md`:
 - Excessive tracking items: Categorize as required/optional to reduce recording burden
 - Missing measurement tools: Provide alternative measurement methods (e.g., waist circumference instead of body fat calipers)
 rs)
-```

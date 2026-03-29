@@ -1,6 +1,6 @@
 ---
 name: presentation-designer
-description: "of Planning, Storyboard, Slide Deck, Speaker notes an agent team collaborates to in production to line. ' ', 'Presentation Planning', 'PPT composition', 'Slide Deck ', 'Presentation and', ' ', ' Deck', ' Slide', 'Presentation vs ', ' Presentation ' etc. production beforein . casein Presentation Coaching . , PowerPoint/Keynote File , Slide to, Presentation of ."
+description: "Full presentation production pipeline where an agent team collaborates to produce story planning, storyboards, slide decks, and speaker notes. Use for "presentation planning", "PPT composition", "slide deck", "speaker notes", etc. Note: PowerPoint/Keynote file generation, actual slide rendering, and live presentation coaching are outside the scope of this skill."
 ---
 
 # Presentation Designer — Presentation Full Production Pipeline

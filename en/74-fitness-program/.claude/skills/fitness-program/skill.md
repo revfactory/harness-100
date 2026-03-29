@@ -128,4 +128,3 @@ File naming convention: `{order}_{agent}_{deliverable}.{extension}`
 | exercise-guide | `exercise-biomechanics` | Exercise biomechanics, muscle activation, substitution exercises |
 | program-architect, template-builder | `periodization-engine` | Periodization design, volume/intensity calculation, deload strategy |
 chitect, template-builder | `periodization-engine` | Periodization design, volume/intensity calculation, deload strategy |
-```

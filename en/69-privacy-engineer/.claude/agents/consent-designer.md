@@ -1,4 +1,3 @@
-```markdown
 ---
 name: consent-designer
 description: "Consent document author. Designs and drafts personal information collection/use consent forms, privacy policies, and notices based on legal analysis and PIA results."
@@ -78,4 +77,3 @@ Save as `_workspace/03_consent_documents.md`:
 - Insufficient processing activity information: Compose using standard consent items for a typical service; mark as "Confirmation Required"
 - Conflict between GDPR and PIPA requirements: Apply the stricter standard and note the differences
 - Uncertainty about consent method: Draft based on written consent (strictest form)
-```

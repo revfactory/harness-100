@@ -1,4 +1,3 @@
-```markdown
 ---
 name: form-filling-guide
 description: "Item-by-item filling guide for administrative forms (applications, business plans). The 'document-drafter' and 'attachment-preparer' agents MUST use the filling rules and writing patterns from this skill when preparing applications and attachments. Used for 'how to fill out an application', 'form completion tips', 'form writing guide', etc. Note: requirement research and submission validation are outside the scope of this skill."
@@ -120,4 +119,3 @@ When user information is not available:
 
 - Always verify the latest forms from each relevant jurisdiction
 - Detailed form completion examples: refer to `references/form-examples.md`
-```

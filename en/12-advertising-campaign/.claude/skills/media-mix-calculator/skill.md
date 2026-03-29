@@ -1,6 +1,6 @@
 ---
 name: media-mix-calculator
-description: "Media mix Design when GRP/CPM/CPC/CPA/ROAS etc. core Metrics Calculation Formula, Budget allocation Model, Per-channel Benchmark Extended Skill. ' Metrics Calculation', 'CPM Calculation', 'ROAS Analysis', 'Budget allocation', ' comparison', 'Per-channel Benchmark' etc. of Analysis . , ad Platform whenbetween Optimization of ."
+description: "Media mix calculator extension skill. Provides core metric formulas (GRP/CPM/CPC/CPA/ROAS), budget allocation models, and per-channel benchmarks. Use for 'metrics calculation', 'CPM calculation', 'ROAS analysis', 'budget allocation', 'per-channel benchmark', etc. Note: ad platform optimization is outside the scope of this skill."
 ---
 
 # Media Mix Calculator — Media Metrics Calculation & Budget Allocation Models

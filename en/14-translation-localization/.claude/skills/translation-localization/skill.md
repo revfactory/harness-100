@@ -1,6 +1,6 @@
 ---
 name: translation-localization
-description: " Translation, Localization, Cultural adaptation, Terminology Management an agent team collaborates to Translation line. ' Translation', 'to Translation', ' Localization', 'Translation ', 'Glossary ', ' ', ' Localization', ' Translation', ' Translation', ' Translation' etc. Translation·Localization beforein . Translation casein quality verification Localization application . , whenbetween , CAT (Trados/MemoQ) , DTP(Desktop Publishing) of ."
+description: "Full translation and localization pipeline where an agent team collaborates to produce translation, cultural adaptation, terminology management, and quality review. Use for "translate this", "localization", "glossary", "multilingual translation", etc. Note: CAT tool integration (Trados/MemoQ) and DTP (Desktop Publishing) are outside the scope of this skill."
 ---
 
 # Translation & Localization — Translation & Localization Full Pipeline

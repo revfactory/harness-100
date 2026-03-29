@@ -1,4 +1,3 @@
-```markdown
 ---
 name: exercise-biomechanics
 description: "Biomechanical analysis of exercise movements and safe execution guides. When the 'exercise-guide' agent explains exercise movements and presents alternative exercises, it must utilize the muscle activation data, joint load analysis, and injury prevention guides from this skill. Use for 'exercise form guide', 'muscle activation', 'injury prevention', 'alternative exercises', etc. However, program design and nutrition strategy are outside the scope of this skill."
@@ -139,4 +138,3 @@ Hip: Pigeon stretch
 
 - Based on NSCA and ACSM guidelines
 - Detailed movement analysis: See `references/exercise-details.md`
-```

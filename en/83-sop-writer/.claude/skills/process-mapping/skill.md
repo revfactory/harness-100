@@ -1,6 +1,6 @@
 ---
 name: process-mapping
-description: "process mapping method. process-analyst agent work flow analysisand visualizationto do when reference mapping technique and tabletechnique. 'SIPOC', 'process map', 'Value Stream Map' request when usage. However, BPM whensystem building specialist development scope outside."
+description: "Process mapping methodology. Referenced by the process-analyst agent when analyzing workflows and creating visual process maps. Use for "SIPOC", "process map", "Value Stream Map", etc. Note: BPM system building and specialist development are outside the scope of this skill."
 ---
 
 # Process Mapping — process mapping method

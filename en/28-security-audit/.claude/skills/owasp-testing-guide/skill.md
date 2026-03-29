@@ -1,6 +1,6 @@
 ---
 name: owasp-testing-guide
-description: "OWASP Top 10  security test methodology, vulnerabilityper attack , detection , modification guide. 'OWASP', 'Top 10', 'XSS', 'SQL Injection', 'CSRF', 'SSRF', 'Injection', 'security test methodology', 'vulnerability test' etc.  this security test  this  for. code-analystand pentest-reporterof security analysis  -ize. , actual penetration test executionthis network  this of scope ."
+description: "OWASP Top 10 security testing methodology guide. Provides per-vulnerability attack vectors, detection methods, and remediation guidance. Use for "OWASP", "Top 10", "XSS", "SQL Injection", "CSRF", "SSRF", "security test methodology", etc. Referenced by code-analyst and pentest-reporter for security analysis. Note: actual penetration test execution and network scanning are outside the scope of this skill."
 ---
 
 # OWASP Testing Guide — OWASP Top 10 security test guide

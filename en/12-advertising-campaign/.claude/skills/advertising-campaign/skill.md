@@ -1,6 +1,6 @@
 ---
 name: advertising-campaign
-description: "ad Campaignof TargetAnalysis, Copy, Creative Design, an agent team collaborates to in Campaign line. 'ad Campaign Planning', 'ad Copy ', ' ', 'banner ad ', ' ad Planning', 'search ad ', 'Target Analysis', 'ad Creative', 'SNS ad Strategy' etc. ad Campaign production beforein . Copy Creative casein Review . , ad Platform(Google Ads, Meta Business Suite) API , whenbetween and vswhen , ad production(/illustration) of ."
+description: "Full advertising campaign pipeline where an agent team collaborates to produce target analysis, ad copy, creative design, and media plans. Use for 'ad campaign planning', 'ad copy', 'banner ad', 'search ad', 'target analysis', 'ad creative', 'SNS ad strategy', etc. Note: ad platform API integration (Google Ads, Meta Business Suite) and actual ad production/illustration are outside the scope of this skill."
 ---
 
 # Advertising Campaign — Advertising Campaign Full Production Pipeline

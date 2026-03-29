@@ -110,4 +110,3 @@ Save to `_workspace/01_program_design.md` and `_workspace/02_weekly_schedule.md`
 - Equipment limitations: Program using bodyweight/dumbbell/band substitution exercises
 nsult a physician"
 - Equipment limitations: Program with bodyweight / dumbbell / band substitution exercises
-```

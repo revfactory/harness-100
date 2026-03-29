@@ -1,4 +1,3 @@
-```markdown
 ---
 name: requirements-investigator
 description: "Licensing & permit requirements investigator. Researches relevant laws, notifications, and administrative rules, then systematically compiles all preliminary information needed for applications — including jurisdictional authority, permit requirements, required documents, processing times, and fees."
@@ -91,4 +90,3 @@ Save as `_workspace/01_requirements_research.md`:
 - If web search fails: Proceed based on general legal knowledge, but note "Latest law verification required"
 - Possibility of law amendments: Record the date of research and insert a note recommending verification with the jurisdictional authority
 - Differences in local ordinances: Separately flag items that require verification of the relevant regional ordinance
-```

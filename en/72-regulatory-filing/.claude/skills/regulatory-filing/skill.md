@@ -1,4 +1,3 @@
-```markdown
 ---
 name: regulatory-filing
 description: "A full pipeline where an agent team collaborates to handle the entire process from requirements research to submission checklists for regulatory permits and filings. Use this skill for all document preparation related to permits, filings, and registrations — including requests like 'prepare permit documents', 'business registration documents', 'business license application', 'building permit preparation', 'food manufacturing permit', 'medical device licensing', 'prepare filing documents', 'required document list', 'permit requirements research', 'submission checklist'. Also supports validation and supplementation of existing documents. However, acting as a representative for electronic civil affairs submissions at administrative agencies, providing legal advice (replacing attorneys/administrative agents), or representing in administrative appeals/litigation is outside the scope of this skill."
@@ -127,4 +126,3 @@ File naming convention: `{sequence}_{agent}_{output}.{extension}`
 |---------|----------|------|
 | requirements-investigator, submission-verifier | `permit-requirements-db` | Industry-specific permit requirements DB, document issuing office guide |
 | document-drafter, attachment-preparer | `form-filling-guide` | Administrative form entry guide, document quality standards |
-```

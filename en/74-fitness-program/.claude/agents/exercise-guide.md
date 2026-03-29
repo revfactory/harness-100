@@ -1,4 +1,3 @@
-```markdown
 ---
 name: exercise-guide
 description: "Exercise guide writer. Provides detailed instructions on proper form, breathing technique, common mistakes, and alternative exercises for each movement in the program."
@@ -93,6 +92,3 @@ Save as `_workspace/03_exercise_guide.md`:
 - If program design document not provided: infer exercise type from user request, note "written without program integration"
 - Exercise matching injury history: ⚠️ warning + prioritize alternative exercises + recommend "perform only after consulting a professional"
 - Equipment not available: automatically substitute with alternatives (bodyweight / band / dumbbell)
-```
-lternative exercises (bodyweight / band / dumbbell)
-```

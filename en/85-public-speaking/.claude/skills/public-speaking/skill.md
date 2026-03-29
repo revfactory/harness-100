@@ -1,6 +1,6 @@
 ---
 name: public-speaking
-description: " comprehensive preparation agent team to speechdocument→presentationversus→debatepreparationfrom→Q&Aexpectedanswer→rehearsalguideto Korean creation Full pipeline. 'speechdocument ', 'presentation preparationplease do', 'presentation versus', 'debate preparation', 'value writing', 'basisspeech', 'investment value', 'presentation annual guide', 'Q&A preparation', 'interview presentation preparation' etc. preparation before skill usage. existing presentation material debatepreparation·Q&A·rehearsal guide degreeKRW. However, actual specialistperson(PowerPoint/Keynote file creation), /, actualtime presentation is outside this skill's scope."
+description: "Full public speaking preparation pipeline where an agent team collaborates to produce speech scripts, presentation outlines, debate preparation, Q&A playbooks, and rehearsal guides. Use for "write a speech", "presentation prep", "debate preparation", "Q&A preparation", etc. Note: PowerPoint/Keynote file creation, live coaching, and real-time presentation are outside the scope of this skill."
 ---
 
 # Public Speaking — comprehensive pipeline

@@ -1,6 +1,6 @@
 ---
 name: checklist-design
-description: "checklist design principle. checklist-designer agent execution inspectiontable and quality designto do when reference. 'checklist design', 'quality ', 'inspectiontable writing' request when usage. However, checklist development specialist whensystem building scope outside."
+description: "Checklist design principles. Referenced by the checklist-designer agent when designing execution checklists and quality gates. Use for "checklist design", "quality gate", "inspection checklist", etc. Note: checklist application system building is outside the scope of this skill."
 ---
 
 # Checklist Design — checklist design principle

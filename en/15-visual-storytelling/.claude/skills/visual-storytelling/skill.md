@@ -1,6 +1,6 @@
 ---
 name: visual-storytelling
-description: "Visual Storytellingof Story Design, Text writing, AI Image (Gemini), HTML Layout, Integration Editing an agent team collaborates to production to line. 'Visual Story ', 'in Planning', 'Image+ combination', 'Visual in', 'Story page production', ' Story', 'Visual Planning', 'Image in', ' Story', 'Visual Narrative' etc. Imageand Text Storytelling productionin . Text Image casein Layout Integration . , video Editing, DTP, (JS ) of ."
+description: "Full visual storytelling pipeline where an agent team collaborates to produce story design, essay writing, AI image generation (Gemini), HTML layout, and editorial review. Use for "visual story", "image+text combination", "visual narrative", "story page production", etc. Note: video editing, DTP, and JavaScript interactivity are outside the scope of this skill."
 ---
 
 # Visual Storytelling — Visual Storytelling Full Production Pipeline

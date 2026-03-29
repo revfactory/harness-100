@@ -1,4 +1,3 @@
-```markdown
 ---
 name: process-architect
 description: "Process designer. Designs the full lifecycle of personal data processing, specifies technical and administrative safeguards, and defines operational processes."
@@ -103,4 +102,3 @@ Save as `_workspace/04_process_design.md`:
 - If technical environment information is absent: Design based on a standard web service architecture; note "Environment confirmation required"
 - If PIA report is absent: Apply standard safeguards as the baseline
 - If legal requirements conflict with technical constraints: Propose alternative technologies; prioritize legal obligations
-```

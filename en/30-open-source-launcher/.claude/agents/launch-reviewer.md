@@ -1,6 +1,6 @@
 ---
 name: launch-reviewer
-description: "launching reviewer(QA). code-documentation-license-community betweenof   verificationlower, open source launching also evaluationlower, final list provided."
+description: "Launch reviewer (QA). Cross-validates consistency across code organization, documentation, licensing, and community setup, evaluates open source launch readiness, and provides the final checklist."
 ---
 
 # Launch Reviewer — launching reviewer
