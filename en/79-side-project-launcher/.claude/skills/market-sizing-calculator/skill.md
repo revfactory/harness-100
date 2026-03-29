@@ -1,151 +1,151 @@
 ---
 name: market-sizing-calculator
-description: "companyproject market scale estimationand revenue model verify market scale totalbasis. 'idea-validator' agent idea marketnature verifyto do when this skill's TAM/SAM/SOM framework, revenue model total, competition analysis matrix must be utilized. 'market scale estimation', 'revenue model verify', 'competition analysis' etc. However, tech stack MVP design is outside this skill's scope."
+description: "A market sizing calculator for estimating a side project's market scale and validating its revenue model. The 'idea-validator' agent must use this skill's TAM/SAM/SOM framework, revenue model calculations, and competitive analysis matrix when validating the market viability of an idea. Use for 'market size estimation', 'revenue model validation', 'competitive analysis', and similar requests. However, tech stack selection and MVP design are outside the scope of this skill."
 ---
 
-# Market Sizing Calculator — market scale totalbasis
+# Market Sizing Calculator — Market Size Calculator
 
-companyproject market opportunity qualityas estimationand revenue possiblenature verify.
+Quantitatively estimates a side project's market opportunity and validates revenue potential.
 
-## TAM/SAM/SOM framework
+## TAM/SAM/SOM Framework
 
-### and calculation
-
-```
-TAM (Total Addressable Market): overall market scale
- → applicable problem overall re- client × annualbetween expense 
-
-SAM (Serviceable Addressable Market): possible market
- → TAM × degree//platform constraint 
-
-SOM (Serviceable Obtainable Market): actual possible market
- → SAM × realistic market point (1person companyproject: 0.1-1%)
-```
-
-### Top-Down method
+### Definitions and Calculation Methods
 
 ```
-examplewhen: developmentspecialist interview preparation web
+TAM (Total Addressable Market): Total market size
+  → Total potential customers with the problem × Annual spend intent
 
-TAM: before taxtotal developmentspecialist 2,700people × annual $50 expense 
- = $13.500M
+SAM (Serviceable Addressable Market): Accessible market
+  → TAM × Geographic / language / platform constraint filters
 
-SAM: Korean user (Korean developmentspecialist approx. 50people) × $50
- = $2,500
-
-SOM: 1% market point possible (1person operations)
- = $25 only (approx. 3.300M KRW/year)
+SOM (Serviceable Obtainable Market): Realistically obtainable market
+  → SAM × Realistic market share (1-person side project: 0.1–1%)
 ```
 
-### Bottom-Up method
+### Top-Down Method
 
 ```
-examplewhen: developmentspecialist interview preparation web
+Example: Developer interview preparation web app
 
-month beforeexchange expected:
- blog/SNS → documentspecialist: month 10,000people
- KRW beforeexchange: 10% = 1,000people
- beforeexchange: 5% = 50people
- month : 9,900KRW
+TAM: 27 million software developers worldwide × $50/year spend intent
+   = $1.35 billion
 
-MRR = 50 × 9,900 = 495,000KRW
-ARR = 5940,000 KRW
+SAM: Korean language users (approx. 500,000 Korean developers) × $50
+   = $25 million
 
-nature scenario (12months after):
- documentspecialist 3 → MRR 1500,000 KRW → ARR 1,8000,000 KRW
+SOM: 1% market share achievable (1-person operation)
+   = $250,000 (approx. 330,000,000 KRW/year)
 ```
 
-## revenue model typeby total
-
-### model (SaaS)
+### Bottom-Up Method
 
 ```
-core indicator:
- MRR = user × month 
- ARR = MRR × 12
- LTV = ARPU / rate
- CAC = cost / specialist
+Example: Developer interview preparation web app
 
-casebeforenature standard:
- LTV/CAC > 3 
- rate < 5%/month 
- number duration < 12months
+Expected monthly paid conversions:
+  Blog/SNS → Visitors: 10,000/month
+  Sign-up conversion: 10% = 1,000 users
+  Paid conversion: 5% = 50 users
+  Monthly subscription: 9,900 KRW
 
-examplewhen:
- 100people × 9,900KRW/month = MRR 990,000 KRW
- month 5% → pyeongbalanced numberpeople 20months
- LTV = 9,900 × 20 = 198,000KRW
- CAC 30,000KRW → LTV/CAC = 6.6 ✅
+MRR = 50 × 9,900 = 495,000 KRW
+ARR = 5,940,000 KRW
+
+Growth scenario (after 12 months):
+  3× visitors → MRR 1,500,000 KRW → ARR 18,000,000 KRW
 ```
 
-### premium model (Freemium)
+## Revenue Model Calculations by Type
+
+### Subscription Model (SaaS)
 
 ```
-free user → beforeexchange: 2-5% (general)
-premium price: free versus feature differentiation
+Core metrics:
+  MRR = Paid users × Monthly subscription price
+  ARR = MRR × 12
+  LTV = ARPU / Churn rate
+  CAC = Marketing cost / New paid subscribers
 
-examplewhen:
- free 10,000people → beforeexchange 3% = 300people
- month 19,900KRW → MRR 5970,000 KRW
+Health benchmarks:
+  LTV/CAC > 3 (good)
+  Churn rate < 5%/month (good)
+  Payback period < 12 months
+
+Example:
+  100 users × 9,900 KRW/month = MRR 990,000 KRW
+  Monthly churn 5% → Average lifetime 20 months
+  LTV = 9,900 × 20 = 198,000 KRW
+  Ad CAC 30,000 KRW → LTV/CAC = 6.6 ✅
 ```
 
-### daynature 
+### Freemium Model
 
 ```
-expected = × beforeexchange
+Free users → Paid conversion rate: 2–5% (typical)
+Premium price: Feature differentiation vs. free tier
 
-examplewhen (degree ):
- blog month document 10,000 × beforeexchange 1% = 100case
- price 29,000KRW → month 2900,000 KRW
+Example:
+  Free: 10,000 users → Paid conversion 3% = 300 users
+  Monthly 19,900 KRW → MRR 5,970,000 KRW
 ```
 
-## competition analysis matrix
-
-### positioning 
+### One-Time Purchase
 
 ```
-price
- High ┌─────────┐
- │ [competitionB] │ [?opportunity]
- │ │
- │ │
- Low │ [competitionA] │ 
- └─────────┘
- Low High
- feature/differentiation
+Expected sales = Exposure × Conversion rate
+
+Example (digital product):
+  Blog monthly visits 10,000 × purchase conversion 1% = 100 sales
+  Price 29,000 KRW → Monthly 2,900,000 KRW
 ```
 
-### competition comparisontable
+## Competitive Analysis Matrix
+
+### Positioning Map
+
+```
+Price
+  High ┌─────────┐
+       │ [Comp B] │ [?Opportunity]
+       │          │
+       │          │
+  Low  │ [Comp A] │ [Us]
+       └─────────┘
+       Low      High
+         Features/Differentiation
+```
+
+### Competitive Comparison Table
 
 ```markdown
-| item | | competitionA | competitionB | competitionC |
-|------|------|-------|-------|-------|
-| price | free/9.9k | free | $19/month | free |
-| core feature 1 | ✅ | ✅ | ✅ | ❌ |
-| core feature 2 | ✅ | ❌ | ✅ | ✅ |
-| differentiation feature | ✅ | ❌ | ❌ | ❌ |
-| Korean degreeKRW | ✅ | ❌ | ❌ | ✅ |
-| day | ✅ | ❌ | ✅ | ❌ |
+| Item | Us | Competitor A | Competitor B | Competitor C |
+|------|----|-------------|-------------|-------------|
+| Price | Free/9.9k KRW | Free | $19/month | Free |
+| Core Feature 1 | ✅ | ✅ | ✅ | ❌ |
+| Core Feature 2 | ✅ | ❌ | ✅ | ✅ |
+| Differentiating Feature | ✅ | ❌ | ❌ | ❌ |
+| Korean Language Support | ✅ | ❌ | ❌ | ✅ |
+| Mobile | ✅ | ❌ | ✅ | ❌ |
 ```
 
-## companyproject revenue actualcurrent possiblenature score
+## Side Project Revenue Viability Score
 
 ```
-actualcurrent possiblenature = (market_size × 0.2) + (differentiation × 0.25) + (executionpossible × 0.3) + (revenuemodel × 0.25)
+Viability = (market_size × 0.2) + (differentiation × 0.25) + (execution_feasibility × 0.3) + (revenue_model × 0.25)
 
-market size: SOM > 100M: 5, 5+: 4, 1+: 3, less than: 2
-differentiation: reportquality: 5, : 4, report: 3, approx.: 2, None: 1
-execution possible: technical report+time minute: 5, learning needed: 3, : 1
-revenue model: verify: 5, company case: 4, actualquality: 3, actual: 2
+Market size:   SOM > 100M KRW: 5, 50M+: 4, 10M+: 3, below: 2
+Differentiation: Unique: 5, Strong: 4, Moderate: 3, Weak: 2, None: 1
+Execution feasibility: Skills + ample time: 5, Learning needed: 3, Difficult: 1
+Revenue model: Validated: 5, Similar precedents: 4, Experimental: 3, Uncertain: 2
 
-etc.grade:
- 4.0+: 🟢 — number
- 3.0-3.9: 🟡 review — MVP verify
- 2.0-2.9: 🟠 re- — 
- 2.0 less than: 🔴 risk — idea re-
+Grade scale:
+  4.0+:   🟢 Promising — proceed immediately
+  3.0–3.9: 🟡 Review — validate with MVP
+  2.0–2.9: 🟠 Reconsider — consider pivot
+  below 2.0: 🔴 At Risk — re-explore idea
 ```
 
-## reference
+## Reference
 
-- companyproject scale realistic figure usage
-- detailed market analysis: `references/market-analysis-guide.md` reference
+- Use realistic figures appropriate for side project scale
+- Detailed market analysis: see `references/market-analysis-guide.md`

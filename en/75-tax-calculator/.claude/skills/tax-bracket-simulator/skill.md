@@ -1,4 +1,3 @@
-```markdown
 ---
 name: tax-bracket-simulator
 description: "A tax bracket analyzer that simulates tax liability by bracket and identifies tax-saving points. The 'tax-engine' and 'strategy-advisor' agents must use this skill's tax rate tables, calculation formulas, and bracket analysis methods when computing taxes and building tax-saving strategies. Use for 'tax bracket analysis', 'tax liability simulation', 'marginal rate calculation', etc. Note: deduction optimization and income classification are outside the scope of this skill."
@@ -137,4 +136,3 @@ Long-term Holding Special Deduction:
 
 - Income Tax Act Article 55, Special Tax Treatment Control Act
 - Detailed tax rate history: see `references/tax-rate-history.md`
-```

@@ -1,165 +1,165 @@
 ---
 name: financial-ratio-analyzer
-description: "itemsperson financial casebeforenature diagnosis financial ratio analysis tool. 'financial-analyst' and 'finance-reviewer' agent financial status diagnosisand figure verifyto do when this skill's financial ratio official, casebeforenature standard, diagnosis framework must be utilized. 'financial casebeforenature diagnosis', 'financial ratio analysis', 'total financial inspection' etc. However, investment strategy tax savings approach is outside this skill's scope."
+description: "A financial ratio analysis tool for diagnosing personal financial health. The 'financial-analyst' and 'finance-reviewer' agents must use this skill's financial ratio formulas, health benchmarks, and diagnostic framework when evaluating financial status and verifying figures. Use for 'financial health diagnosis', 'financial ratio analysis', 'household financial checkup', and similar requests. However, investment strategy and tax optimization are outside the scope of this skill."
 ---
 
-# Financial Ratio Analyzer — itemsperson financial ratio analysisbasis
+# Financial Ratio Analyzer — Personal Financial Ratio Analyzer
 
-itemsperson/ financial casebeforenature core ratio diagnosisand, improvement direction present.
+Diagnoses the financial health of individuals and households using core ratios and provides improvement directions.
 
-## core financial ratio 8
+## 8 Core Financial Ratios
 
-### 1. savingsrate (Savings Rate)
-
-```
-savingsrate = (month savings + investment) / taxafter month × 100
-
-: 20%+ quality: 10-20% risk: 10% less than
-
-taxdepartment standard:
- 20versus: 15%+ (asset naturebasis)
- 30versus: 20%+ (within preparation)
- 40versus: 25%+ (training·retirement preparation)
- 50versus: 30%+ (retirement during)
-```
-
-### 2. nature (Consumption Ratio)
+### 1. Savings Rate
 
 ```
-nature = month expense / taxafter month × 100
+Savings Rate = (Monthly savings + Investments) / After-tax monthly income × 100
 
-: 60% or less quality: 60-80% risk: 80% exceeding
+Good: 20%+    Adequate: 10–20%    At Risk: below 10%
 
-50/30/20 rule:
- required expense(week··): 50% or less
- optional expense(·): 30% or less
- savings·investment·debtexchange: 20% or more
+Benchmarks by age:
+  20s: 15%+ (asset-building phase)
+  30s: 20%+ (preparing for home purchase)
+  40s: 25%+ (education costs / retirement prep)
+  50s: 30%+ (retirement focus)
 ```
 
-### 3. specialist ratio (Emergency Fund)
+### 2. Consumption Ratio
 
 ```
-specialist ratio = asset / month required expense
+Consumption Ratio = Monthly consumer spending / After-tax monthly income × 100
 
-: 6months+ quality: 3-6months risk: 3months less than
+Good: 60% or less    Adequate: 60–80%    At Risk: above 80%
 
-asset: reportexample + CMA + MMF (i.e.when current possible)
-required expense: week + + + insurance + communication + versusexchange
+50/30/20 Rule:
+  Essential expenses (housing, food, transport): 50% or less
+  Discretionary expenses (leisure, shopping): 30% or less
+  Savings + investments + debt repayment: 20% or more
 ```
 
-### 4. debtratio (Debt-to-Asset)
+### 3. Emergency Fund Ratio
 
 ```
-debtratio = total debt / total asset × 100
+Emergency Fund Ratio = Liquid assets / Monthly essential expenses
 
-: 40% or less quality: 40-60% risk: 60% exceeding
+Good: 6 months+    Adequate: 3–6 months    At Risk: below 3 months
 
-included debt: weekreportversus, creditversus, specialist, , to dodepartment
-included asset: department, asset, , report etc.
+Liquid assets: checking accounts + CMA + MMF (immediately cashable)
+Essential expenses: housing + food + transport + insurance + telecom + loan repayments
 ```
 
-### 5. totaldebtexchangeratio (DTI)
+### 4. Debt-to-Asset Ratio
 
 ```
-DTI = annualbetween debt KRW exchange / annual × 100
+Debt-to-Asset Ratio = Total liabilities / Total assets × 100
 
-: 30% or less quality: 30-40% risk: 40% exceeding
+Good: 40% or less    Adequate: 40–60%    At Risk: above 60%
 
- versus company standard:
- weekreportversus DTI Korean: 40-60% (degreeby)
- DSR(all versus): 40% within
+Liabilities include: mortgage, personal loans, student loans, credit card loans, installment payments
+Assets include: real estate, financial assets, severance fund, deposits, etc.
 ```
 
-### 6. week departmentrate (Housing Cost Ratio)
+### 5. Debt-to-Income Ratio (DTI)
 
 ```
-week departmentrate = (monthtax or versusinterest+management) / taxafter month × 100
+DTI = Annual debt principal + interest payments / Annual income × 100
 
-: 25% or less quality: 25-30% risk: 30% exceeding
+Good: 30% or less    Adequate: 30–40%    At Risk: above 40%
 
-included item: monthtax/versusinterest, management, week insurance
-un-included: KRW exchangeminute (asset nature)
+Bank lending standards:
+  Mortgage DTI limit: 40–60% (varies by region)
+  DSR (all loans): within 40%
 ```
 
-### 7. insurance qualitynature ratio
+### 6. Housing Cost Ratio
 
 ```
-insurance ratio = month insurance total / taxafter month × 100
+Housing Cost Ratio = (Monthly rent or loan interest + maintenance) / After-tax monthly income × 100
 
-: 7-10% : 15% exceeding insufficient: 5% less than
+Good: 25% or less    Adequate: 25–30%    At Risk: above 30%
 
-recommended report scope:
- companyinsurance: annual × 5-10
- /actual: required
- 3versus : diagnosis 3,0000,000 KRW+
+Included: monthly rent / loan interest, maintenance fees, home insurance
+Excluded: principal repayment (counts as asset building)
 ```
 
-### 8. investmentasset ratio
+### 7. Insurance Adequacy Ratio
 
 ```
-investmentasset ratio = (week++ETF+) / total asset × 100
+Insurance Ratio = Total monthly premiums / After-tax monthly income × 100
 
-recommended ratio = 100 - (%)
- 25tax: 75% investment / 25% planbefore
- 35tax: 65% / 35%
- 45tax: 55% / 45%
- 55tax: 45% / 55%
+Good: 7–10%    Excessive: above 15%    Insufficient: below 5%
+
+Recommended coverage:
+  Death benefit: 5–10× annual income
+  Medical/indemnity: required
+  Critical illness: diagnosis benefit 30,000,000 KRW+
 ```
 
-## comprehensive financial casebeforenature score
+### 8. Investment Asset Ratio
 
 ```
-comprehensive score = Σ(ratioby score × duringvalue) / Σ(duringvalue)
+Investment Asset Ratio = (Stocks + Funds + ETFs + Bonds) / Total financial assets × 100
 
-ratioby score:
- : 100point
- quality: 60point
- risk: 20point
-
-duringvalue:
- savingsrate: 3.0
- specialist: 2.5
- debtratio: 2.5
- DTI: 2.0
- nature: 1.5
- week: 1.5
- insurance: 1.0
- investment: 1.0
-
-etc.grade:
- A(85+): casebefore — quality asset nature possible
- B(70-84): casebefore — balanced status
- C(55-69): report — daydepartment improvement needed
- D(40-54): approx. — systematic improvement needed
- F(40 less than): risk — grade financial structure
+Recommended ratio = 100 − Age (%)
+  Age 25: 75% investment / 25% safe
+  Age 35: 65% / 35%
+  Age 45: 55% / 45%
+  Age 55: 45% / 55%
 ```
 
-## financial diagnosis report capability 
+## Comprehensive Financial Health Score
+
+```
+Comprehensive Score = Σ(Ratio score × Weight) / Σ(Weights)
+
+Score by status:
+  Good:     100 points
+  Adequate: 60 points
+  At Risk:  20 points
+
+Weights:
+  Savings Rate:     3.0
+  Emergency Fund:   2.5
+  Debt-to-Asset:    2.5
+  DTI:              2.0
+  Consumption:      1.5
+  Housing Cost:     1.5
+  Insurance:        1.0
+  Investment:       1.0
+
+Grade scale:
+  A (85+):   Very healthy — aggressive asset building possible
+  B (70–84): Healthy — well-balanced status
+  C (55–69): Average — some improvement needed
+  D (40–54): Weak — systematic improvement needed
+  F (<40):   At Risk — urgent financial restructuring required
+```
+
+## Financial Diagnosis Report Output Format
 
 ```markdown
-## itemsperson financial casebeforenature diagnosis
+## Personal Financial Health Diagnosis
 
-**diagnosisday**: [dayspecialist] | **comprehensive etc.grade**: [A/B/C/D/F] | **score**: [XX/100]
+**Diagnosis Date**: [date] | **Overall Grade**: [A/B/C/D/F] | **Score**: [XX/100]
 
-### core ratio dashboard
-| ratio | current | standard | | improvement direction |
-|------|--------|------|------|----------|
-| savingsrate | X% | 20%+ | 🟢/🟡/🔴 | - |
-| specialist | Xmonths | 6months+ | 🟢/🟡/🔴 | - |
-| debtratio | X% | 40% or less | 🟢/🟡/🔴 | - |
+### Core Ratio Dashboard
+| Ratio | Current | Benchmark | Status | Improvement Direction |
+|-------|---------|-----------|--------|----------------------|
+| Savings Rate | X% | 20%+ | 🟢/🟡/🔴 | - |
+| Emergency Fund | X months | 6 months+ | 🟢/🟡/🔴 | - |
+| Debt-to-Asset | X% | 40% or less | 🟢/🟡/🔴 | - |
 | DTI | X% | 30% or less | 🟢/🟡/🔴 | - |
 
-### i.e.when improvement needed (🔴)
-1. [item]: current X% → goal X% (improvement method)
+### Immediate Improvement Required (🔴)
+1. [Item]: Current X% → Target X% (improvement method)
 
-### improvement (🟡)
-1. [item]: current X% → goal X%
+### Improvement Recommended (🟡)
+1. [Item]: Current X% → Target X%
 
-### item (🟢)
-1. [item]: standard 
+### Healthy Items (🟢)
+1. [Item]: Meets benchmark
 ```
 
-## reference
+## Reference
 
-- Korean totaldegreeresearch, KRW standard reflected
-- detailed diagnosis model: `references/financial-diagnosis.md` reference
+- Reflects Bank of Korea Household Finance and Welfare Survey and Financial Supervisory Service standards
+- Detailed diagnostic model: see `references/financial-diagnosis.md`

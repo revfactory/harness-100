@@ -1,4 +1,3 @@
-```markdown
 ---
 name: legal-writing-methodology
 description: "Professional methodology for drafting legal opinions and strategy reports. The 'opinion-writer' and 'strategy-advisor' agents must utilize the document structure, argumentation techniques, and citation formats in this skill when drafting legal opinions or formulating strategies. Used for 'legal opinion drafting', 'legal document structure', 'argumentation methods', etc. Note: case law research and legal doctrine analysis are outside the scope of this skill."
@@ -147,4 +146,3 @@ Decision Criteria:
 
 - Refer to the Korean Bar Association opinion template
 - Detailed writing examples: see `references/legal-writing-examples.md`
-```

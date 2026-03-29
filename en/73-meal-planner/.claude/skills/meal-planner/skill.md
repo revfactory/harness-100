@@ -1,4 +1,3 @@
-```markdown
 ---
 name: meal-planner
 description: "A full pipeline where an agent team collaborates to handle everything from nutritional analysis to cooking guides for meal management. Use this skill for any meal, nutrition, or recipe-related requests such as 'create a meal plan', 'weekly meal plan', 'diet meal plan', 'bulking meal plan', 'diabetic meal plan', 'baby food plan', 'grocery list', 'analyze my nutrition', 'give me a recipe', 'meal prep plan', 'calorie count', 'manage my diet'. If an existing meal plan is provided, supports nutritional analysis and improvement. Does NOT cover medical nutrition therapy (MNT) prescriptions, food safety certification, or restaurant menu development consulting."
@@ -127,6 +126,3 @@ File naming convention: `{order}_{agent}_{deliverable}.{extension}`
 |---------|----------|------|
 | nutritionist, meal-designer | `nutrition-calculator` | BMR/TDEE calculation, macro distribution formulas |
 | recipe-writer, meal-designer | `ingredient-substitution-engine` | Allergy substitutions, dietary restriction handling |
-```
-ner | `ingredient-substitution-engine` | Allergy substitutes, dietary restriction handling |
-```

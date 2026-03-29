@@ -1,37 +1,37 @@
 # Meeting Strategist Harness
 
-meeting strategy document agenda itemstructuredesign→backgroundmaterialresearch→decision-makingframework→meetingrecordtemplate→ A harness where an agent team collaborates to produce deliverables.
+A harness where an agent team collaborates to produce a complete meeting strategy document set, covering agenda structure design, background research, decision-making frameworks, meeting record templates, and follow-up plans.
 
-## structure
+## Structure
 
 ```
 .claude/
 ├── agents/
-│ ├── agenda-architect.md — agenda item design (meeting purpose, structure, time allocation)
-│ ├── background-researcher.md — background research (related data, stakeholder analysis)
-│ ├── framework-designer.md — decision-making framework (judgment standard, option assessment)
-│ ├── template-builder.md — document template (meetingrecord, reporting )
-│ └── followup-planner.md — and cross-verification (execution tracking, QA)
+│   ├── agenda-architect.md        — Agenda design (meeting purpose, structure, time allocation)
+│   ├── background-researcher.md   — Background research (relevant data, stakeholder analysis)
+│   ├── framework-designer.md      — Decision-making framework (evaluation criteria, option assessment)
+│   ├── template-builder.md        — Document templates (meeting minutes, reporting forms)
+│   └── followup-planner.md        — Follow-up plan and cross-validation (execution tracking, QA)
 ├── skills/
-│ ├── meeting-strategist/
-│ │ └── skill.md — Orchestrator (team , workflow, error handling)
-│ ├── decision-frameworks/
-│ │ └── skill.md — decision-making framework library (framework-designer extension)
-│ └── facilitation-techniques/
-│ └── skill.md — facilitation technique (agenda-architect extension)
-└── CLAUDE.md — file
+│   ├── meeting-strategist/
+│   │   └── skill.md               — Orchestrator (team coordination, workflow, error handling)
+│   ├── decision-frameworks/
+│   │   └── skill.md               — Decision-making framework library (framework-designer extension)
+│   └── facilitation-techniques/
+│       └── skill.md               — Facilitation techniques (agenda-architect extension)
+└── CLAUDE.md                      — This file
 ```
 
-## usage
+## Usage
 
-`/meeting-strategist` skill , "meeting preparation material create it" specialistannual request.
+Trigger the `/meeting-strategist` skill, or make a natural language request such as "prepare meeting materials" or "create a meeting agenda."
 
-## deliverable
+## Deliverables
 
-all deliverable `_workspace/` save:
-- `00_input.md` — user input organization
-- `01_agenda_design.md` — agenda item structure designfrom
-- `02_background_brief.md` — background material 
-- `03_decision_framework.md` — decision-making framework
-- `04_meeting_templates.md` — meetingrecord and reporting template
-- `05_followup_plan.md` — and verify report
+All deliverables are saved in the `_workspace/` directory:
+- `00_input.md` — Organized user input
+- `01_agenda_design.md` — Agenda structure design document
+- `02_background_brief.md` — Background research brief
+- `03_decision_framework.md` — Decision-making framework
+- `04_meeting_templates.md` — Meeting minutes and reporting templates
+- `05_followup_plan.md` — Follow-up plan and validation report

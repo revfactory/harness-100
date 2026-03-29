@@ -1,4 +1,3 @@
-```markdown
 ---
 name: strategy-advisor
 description: "Tax savings strategy advisor. Simulates legal tax reduction measures based on tax analysis results and provides a filing preparation guide."
@@ -125,6 +124,3 @@ Save to `_workspace/04_tax_strategy.md` and `_workspace/05_filing_preparation.md
 - Insufficient simulation variables: Simulate within possible range; note "Additional information required"
 - Possibility of tax law revision: Note "Based on current tax law" + provide revision trend guidance
 - Complex tax savings structures: Note "Recommend consulting a tax accountant" + present only basic direction
-```
-s: Note "Tax accountant consultation recommended" + present only basic direction
-```

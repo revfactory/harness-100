@@ -1,110 +1,110 @@
 ---
 name: competency-model
-description: "competency model design framework. jd-writer and screening-expert agent jobby core competency definitionand assessment standard establishto do when reference. 'competency model', 'job competency', 'skill matrix' request when usage. However, personcompany assessment whensystem building grade total design scope outside."
+description: "Competency model design framework. Referenced by jd-writer and screening-expert agents when defining role-specific core competencies and establishing evaluation criteria. Use for 'competency model', 'job competencies', 'skills matrix' requests. Out of scope: building performance management systems and designing compensation structures."
 ---
 
-# Competency Model — competency model design
+# Competency Model — Competency Model Design
 
-jd-writer / screening-expert agent competency based hiring design competency .
+Enhances the competency-based hiring design capabilities of the jd-writer and screening-expert agents.
 
-## competency model structure
+## Competency Model Structure
 
-### 3total competency framework
+### 3-Layer Competency Framework
 
-| total | description | examplewhen |
-|------|------|------|
-| core competency (Core) | beforecompany | client during, , |
-| leadership competency | managementspecialist or more | vision present, , decision-making |
-| job competency (Functional) | job | , data analysis, specialistperson |
+| Layer | Description | Examples |
+|-------|-------------|---------|
+| Core Competencies | Company-wide | Customer focus, collaboration, integrity |
+| Leadership Competencies | Manager level and above | Vision setting, coaching, decision-making |
+| Functional Competencies | Role-specific | Programming, data analysis, design |
 
-### competency level (Proficiency Level)
+### Competency Proficiency Levels
 
-| level | people | description | quality grade |
-|------|------|------|----------|
-| L1 | basis | perform, basic | /person |
-| L2 | execution | perform, tablelevel work | week |
-| L3 | | situation response, degree also possible | when |
-| L4 | specialist | level impact, | / |
-| L5 | | total level specialistnature, strategy | + |
+| Level | Name | Description | Typical Grade |
+|-------|------|-------------|--------------|
+| L1 | Foundation | Performs under supervision; basic understanding | Intern / Entry-level |
+| L2 | Practitioner | Performs independently; handles standard tasks | Junior |
+| L3 | Skilled | Handles complex situations; can mentor others | Senior |
+| L4 | Expert | Organizational impact; drives innovation | Lead / Manager |
+| L5 | Master | Industry-level expertise; strategic influence | Director+ |
 
-### competency template
-
-```markdown
-## competency: [competencypeople]
-
-### definition
-[Korean sentence definition]
-
-### action indicator (Behavioral Indicator)
-
-**L1 (basis)**
-- [ possibleKorean action 1]
-- [ possibleKorean action 2]
-
-**L2 (execution)**
-- [ possibleKorean action 1]
-- [ possibleKorean action 2]
-
-**L3 **
-- [ possibleKorean action 1]
-- [ possibleKorean action 2]
-
-### assessment method
-- interview question: [structure question]
-- task: [actualbasis task]
-- reference: [confirm point]
-```
-
-## jobby competency mapping examplewhen
-
-### degree
-
-| competency | week(L2) | when(L3) | (L4) |
-|------|----------|----------|---------|
-| capability | ★★★ required | ★★★ required | ★★★ required |
-| whensystem design | ★ basis | ★★★ required | ★★★ required |
-| code review | ★ number | ★★★ | ★★★ |
-| | - | ★★ preferred | ★★★ required |
-| technical strategy | - | ★ | ★★★ week also |
-
-## JD writing competency annualtotal
-
-### STAR based qualification requirement
+### Competency Definition Card Template
 
 ```markdown
-## qualification requirement
+## Competency: [Competency Name]
 
-### required (Must-have)
-- [competency 1] L3 or more: [specific /performance standard]
- example: "versusscale (DAU 100+) whensystem operations 2year or more"
-- [competency 2] L2 or more: [specific standard]
+### Definition
+[One-sentence definition]
 
-### preferred (Nice-to-have) 
-- [competency 3]: [specific standard]
-- [competency 4]: [specific standard]
+### Behavioral Indicators
 
-### minute (action technical)
-- [competency 1 L3 action indicator specialistannual technical]
-- [competency 2 L3 action indicator specialistannual technical]
+**L1 (Foundation)**
+- [Observable behavior 1]
+- [Observable behavior 2]
+
+**L2 (Practitioner)**
+- [Observable behavior 1]
+- [Observable behavior 2]
+
+**L3 (Skilled)**
+- [Observable behavior 1]
+- [Observable behavior 2]
+
+### Assessment Methods
+- Interview question: [Structured question]
+- Task: [Practical task]
+- Reference check: [Verification points]
 ```
 
-## screening matrix
+## Competency Mapping Examples by Role
 
-| assessment item | point | PASS standard | confirm method |
-|----------|------|----------|----------|
-| required competency A | 30 | 21point+ | capabilityfrom + task |
-| required competency B | 25 | 18point+ | capabilityfrom + interview |
-| preferred competency C | 15 | - | capabilityfrom |
-| document qualitynature | 15 | 10point+ | interview |
-| nature re-capability | 15 | 10point+ | interview |
-| **total** | **100** | **70point+** | |
+### Software Engineer
 
-## quality checklist
+| Competency | Junior (L2) | Senior (L3) | Lead (L4) |
+|------------|------------|------------|---------|
+| Coding ability | ★★★ Required | ★★★ Required | ★★★ Required |
+| System design | ★ Foundation | ★★★ Required | ★★★ Required |
+| Code review | ★ Passive | ★★★ Active | ★★★ Leads |
+| Mentoring | — | ★★ Preferred | ★★★ Required |
+| Technical strategy | — | ★ Participates | ★★★ Leads |
 
-| item | standard |
-|------|------|
-| competency number | job 5~8items |
-| level | L1~L5 action indicator specific |
-| required/preferred | required 3~4items, preferred 2~3items |
-| assessment method | competencyby 1items or more |
-| degree | natureby/annual duringquality tablecurrent |
+## Linking Competencies to JD Writing
+
+### STAR-Based Qualification Requirements
+
+```markdown
+## Qualifications
+
+### Must-Have
+- [Competency 1] at L3 or above: [Specific experience / performance criteria]
+  Example: "2+ years operating high-traffic systems (1M+ DAU)"
+- [Competency 2] at L2 or above: [Specific criteria]
+
+### Nice-to-Have
+- [Competency 3]: [Specific criteria]
+- [Competency 4]: [Specific criteria]
+
+### What We're Looking For (Behavioral Description)
+- [L3 behavioral indicators of Competency 1, written naturally]
+- [L3 behavioral indicators of Competency 2, written naturally]
+```
+
+## Screening Matrix
+
+| Evaluation Item | Points | PASS Threshold | Assessment Method |
+|----------------|--------|---------------|------------------|
+| Must-have competency A | 30 | 21+ | Resume + task |
+| Must-have competency B | 25 | 18+ | Resume + interview |
+| Nice-to-have competency C | 15 | — | Resume |
+| Culture fit | 15 | 10+ | Interview |
+| Growth potential | 15 | 10+ | Interview |
+| **Total** | **100** | **70+** | |
+
+## Quality Checklist
+
+| Item | Standard |
+|------|---------|
+| Number of competencies | 5–8 per role |
+| Level definitions | Specific behavioral indicators for L1–L5 |
+| Must-have / Nice-to-have | 3–4 must-have, 2–3 nice-to-have |
+| Assessment methods | At least 1 per competency |
+| Bias prevention | Gender / age neutral language |

@@ -1,4 +1,3 @@
-```markdown
 ---
 name: deduction-optimizer-engine
 description: "A deduction optimization engine that maximizes income deductions and tax credits through optimal combinations. The 'deduction-optimizer' agent must use this skill's deduction limit tables, priority algorithms, and simulation methods when analyzing deduction items and deriving optimal combinations. Used for 'deduction optimization', 'tax credit maximization', 'year-end tax settlement simulation', etc. However, income classification and tax calculation are outside the scope of this skill."
@@ -131,4 +130,3 @@ Optimal strategy:
 
 - Based on the Income Tax Act and Restriction of Special Taxation Act (must verify annual amendments)
 - Detailed deduction requirements: refer to `references/deduction-details.md`
-```

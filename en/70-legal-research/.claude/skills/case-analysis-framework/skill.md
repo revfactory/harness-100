@@ -1,4 +1,3 @@
-```markdown
 ---
 name: case-analysis-framework
 description: "A systematic framework for case analysis and issue structuring methodology. The 'case-searcher' and 'legal-analyst' agents must use this skill's IRAC framework, case analysis matrix, and issue structuring techniques when searching, analyzing cases, and deriving legal principles. Used for 'case analysis', 'issue organization', 'legal principle derivation', etc. However, drafting opinions or developing strategy is outside the scope of this skill."
@@ -142,4 +141,3 @@ Results:
 
 - Utilize the Supreme Court Comprehensive Legal Information system and the Ministry of Government Legislation's National Law Information Center
 - Detailed legal principle patterns: see `references/legal-doctrine-patterns.md`
-```

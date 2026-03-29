@@ -1,129 +1,129 @@
 ---
 name: meeting-strategist
-description: "meeting strategy document agent team to agenda itemstructuredesign→backgroundmaterialresearch→decision-makingframework→meetingrecordtemplate→to Korean creation Full pipeline. 'meeting preparationplease do', 'meeting agenda item create it', 'un- preparation material', 'meeting strategy', 'decision-making meeting design', 'company agenda item', 'project meeting', 'team un- preparation', ' design' etc. meeting preparation before skill usage. existing agenda item backgroundmaterial·framework·template writing degreeKRW. However, actual meeting progress(meeting whensystem operations), meetingactual exampleapprox., attendee schedule is outside this skill's scope."
+description: "Full pipeline skill where an agent team collaborates to produce a complete meeting strategy document set — from agenda structure design through background research, decision-making frameworks, meeting record templates, and follow-up plans — in a single run. Use this skill for all meeting preparation needs: 'prepare meeting materials', 'create a meeting agenda', 'meeting prep docs', 'meeting strategy', 'decision meeting design', 'board agenda', 'project kickoff meeting', 'team meeting prep', 'workshop design', etc. If an existing agenda is provided, the skill supports background research, framework design, and template creation. Note: actual meeting facilitation (running a video conferencing system), room booking, and attendee scheduling are outside this skill's scope."
 ---
 
-# Meeting Strategist — meeting strategy document Full pipeline
+# Meeting Strategist — Meeting Strategy Document Full Pipeline
 
-meeting strategy document agenda itemstructuredesign→backgroundmaterialresearch→decision-makingframework→meetingrecordtemplate→ An agent team collaborates to generate all deliverables at once.
+An agent team collaborates to produce a complete meeting strategy document set in a single run: agenda structure design → background research → decision-making framework → meeting record templates → follow-up plan.
 
-## execution mode
+## Execution Mode
 
-**agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
+**Agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
 
-## agent composition
+## Agent Composition
 
-| agent | file | role | type |
-|---------|------|------|------|
-| agenda-architect | `.claude/agents/agenda-architect.md` | agenda item structure, time allocation, attendee role | general-purpose |
-| background-researcher | `.claude/agents/background-researcher.md` | background data, stakeholder, case research | general-purpose |
-| framework-designer | `.claude/agents/framework-designer.md` | judgment standard, option matrix, method | general-purpose |
-| template-builder | `.claude/agents/template-builder.md` | meetingrecord, basisrecorddegree, trackingtable template | general-purpose |
-| followup-planner | `.claude/agents/followup-planner.md` | execution tracking, cross-verification | general-purpose |
+| Agent | File | Role | Type |
+|-------|------|------|------|
+| agenda-architect | `.claude/agents/agenda-architect.md` | Agenda structure, time allocation, attendee roles | general-purpose |
+| background-researcher | `.claude/agents/background-researcher.md` | Background data, stakeholder analysis, case research | general-purpose |
+| framework-designer | `.claude/agents/framework-designer.md` | Evaluation criteria, option matrix, consensus methods | general-purpose |
+| template-builder | `.claude/agents/template-builder.md` | Meeting minutes, decision records, action item tracker templates | general-purpose |
+| followup-planner | `.claude/agents/followup-planner.md` | Execution tracking, cross-validation | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1: preparation (Orchestrator directly perform)
+### Phase 1: Preparation (Orchestrator performs directly)
 
 1. Extract from user input:
- - **meeting type**: basisreporting/decision-making/person/problem//
- - **meeting purpose**: natureandspecialist specific goal
- - **attendee**: personKRW, role, grade
- - **time**: example time
- - **existing material** (optional): before meetingrecord, agenda item plan, related report
-2. `_workspace/` Create the directory at the project root
+    - **Meeting type**: regular reporting / decision-making / brainstorming / problem-solving / kickoff / retrospective
+    - **Meeting purpose**: specific goal to be achieved
+    - **Attendees**: headcount, roles, seniority
+    - **Duration**: planned meeting length
+    - **Existing materials** (optional): previous meeting minutes, agenda draft, related reports
+2. Create the `_workspace/` directory at the project root
 3. Organize input and save to `_workspace/00_input.md`
-4. If existing files are provided, copy them to `_workspace/`and skip the corresponding Phase
-5. Determine the **execution mode** based on the scope of the request
+4. If existing files are provided, copy them to `_workspace/` and skip the corresponding phase
+5. **Determine the execution mode** based on the scope of the request
 
-### Phase 2: team composition and execution
+### Phase 2: Team Assembly and Execution
 
-| order | task | responsible | dependency | deliverable |
-|------|------|------|------|--------|
-| 1 | agenda item structure design | architect | None | `_workspace/01_agenda_design.md` |
-| 2a | background material research | researcher | task 1 | `_workspace/02_background_brief.md` |
-| 2b | decision-making framework | designer | task 1 | `_workspace/03_decision_framework.md` |
-| 3 | document template creation | builder | task 1, 2b | `_workspace/04_meeting_templates.md` |
-| 4 | and verify | planner | task 2a, 2b, 3 | `_workspace/05_followup_plan.md` |
+| Order | Task | Owner | Dependency | Deliverable |
+|-------|------|-------|------------|-------------|
+| 1 | Agenda structure design | architect | None | `_workspace/01_agenda_design.md` |
+| 2a | Background research | researcher | Task 1 | `_workspace/02_background_brief.md` |
+| 2b | Decision-making framework | designer | Task 1 | `_workspace/03_decision_framework.md` |
+| 3 | Document template creation | builder | Tasks 1, 2b | `_workspace/04_meeting_templates.md` |
+| 4 | Follow-up plan and validation | planner | Tasks 2a, 2b, 3 | `_workspace/05_followup_plan.md` |
 
-task 2a(backgroundresearch) and 2b(framework) ** execution**. task 1(agenda item) only dependency.
+Tasks 2a (background research) and 2b (framework) run **in parallel** — both depend only on Task 1 (agenda).
 
-**teamKRW between flow:**
-- architect complete → researcherto needed background material list deliver, designerto decision-making agenda item+initial option deliver
-- researcher complete → designerto data+constraintcondition deliver, builderto companybefore information deliver
-- designer complete → builderto basisrecord +table deliver
-- planner all deliverable cross-verification. 🔴 required revision findings when Request revision from the relevant agent -> rework -> re-verify (up to 2 rounds)
+**Inter-team communication flow:**
+- architect complete → forward required background material list to researcher; forward decision items + initial options to designer
+- researcher complete → forward data + constraints to designer; forward pre-meeting context to builder
+- designer complete → forward recording forms + voting forms to builder
+- planner cross-validates all deliverables. When 🔴 required revisions are found, request rework from the relevant agent → rework → re-verify (up to 2 rounds)
 
-### Phase 3: integration and final deliverable
+### Phase 3: Integration and Final Deliverables
 
-1. `_workspace/` Verify all files in the directory
-2. verify reportConfirm that all critical revisions from the review report have been addressed
+1. Verify all files in the `_workspace/` directory
+2. Confirm that all 🔴 required revisions from the validation report have been addressed
 3. Report the final summary to the user:
- - agenda item designfrom — `01_agenda_design.md`
- - background material — `02_background_brief.md`
- - decision-making framework — `03_decision_framework.md`
- - meeting document template — `04_meeting_templates.md`
- - — `05_followup_plan.md`
+    - Agenda design document — `01_agenda_design.md`
+    - Background brief — `02_background_brief.md`
+    - Decision-making framework — `03_decision_framework.md`
+    - Meeting document templates — `04_meeting_templates.md`
+    - Follow-up plan — `05_followup_plan.md`
 
-## task scaleby mode
+## Mode by Request Scope
 
-| user request pattern | execution mode | deploy agent |
-|----------------|----------|-------------|
-| "meeting preparationplease do", "meeting strategy document overall" | **Full pipeline** | 5people beforeKRW |
-| "agenda item only " | **agenda item mode** | architect + planner |
-| " agenda itemas backgroundmaterial researchplease do" (agenda item provide) | **research mode** | researcher + planner |
-| "decision-making framework" | **framework mode** | designer + planner |
-| "meetingrecord template only create it" | **template mode** | builder |
+| User Request Pattern | Execution Mode | Agents Deployed |
+|---------------------|---------------|----------------|
+| "Prepare meeting materials", "full meeting strategy document" | **Full pipeline** | All 5 agents |
+| "Just draft the agenda" | **Agenda mode** | architect + planner |
+| "Research background for this agenda" (agenda provided) | **Research mode** | researcher + planner |
+| "Decision-making framework only" | **Framework mode** | designer + planner |
+| "Just create a meeting minutes template" | **Template mode** | builder only |
 
-**existing file utilization**: user agenda item, before meetingrecord etc. provide applicable stage case.
+**Using existing files**: If the user provides an agenda, previous meeting minutes, or other materials, skip the corresponding phase.
 
-## data deliver protocol
+## Data Transfer Protocol
 
-| strategy | method | also |
-|------|------|------|
-| File-based | `_workspace/` | Store and share major deliverables |
+| Strategy | Method | Purpose |
+|----------|--------|---------|
+| File-based | `_workspace/` directory | Store and share major deliverables |
 | Message-based | SendMessage | Real-time key information transfer, revision requests |
 
-File naming convention: `{}_{agent}_{deliverable}.{extensionspecialist}`
+File naming convention: `{sequence}_{agent}_{deliverable}.{extension}`
 
-## error handling
+## Error Handling
 
-| error type | strategy |
-|----------|------|
-| meeting purpose people | userto meeting type and goal confirm question |
-| attendee information None | role(facilitator/frombasis/attendee) design |
-| web search failure | user provide material and day degree based task, "external data un-secure" specify |
-| agent failure | Retry once -> proceed without that deliverable |
-| verifyfrom 🔴 findings | Request revision from the relevant agent -> rework -> re-verify (up to 2 rounds) |
+| Error Type | Strategy |
+|------------|----------|
+| Meeting purpose unclear | Ask user to confirm meeting type and goal |
+| No attendee information | Design with generic roles (facilitator / secretary / attendee) |
+| Web search failure | Work from user-provided materials and general knowledge; note "External data not obtained" |
+| Agent failure | Retry once → if still failing, proceed without that deliverable |
+| 🔴 found in validation | Request revision from relevant agent → rework → re-verify (up to 2 rounds) |
 
-## test scenario
+## Test Scenarios
 
-### flow
-**Prompt**: "next week management meeting preparationplease do. 2025year basis company plan purpose, 3items agenda item : company decision, personcapability KRW plan, budget allocation. attendee CEO, CFO, COO, company, HR company. 2time meeting."
-**expected result**:
-- agenda item design: 3items agenda item time allocation, progress method, nature standard
-- background material: each agenda itemby data, stakeholder analysis, value
-- framework: 3items agenda item assessment standard, option matrix, RAPID
-- template: meetingrecord, decision basisrecorddegree, trackingtable
-- : execution plan + consistency matrix beforeitem confirm
+### Normal Flow
+**Prompt**: "Prepare next week's executive meeting. The purpose is to finalize the 2025 H2 business plan, with 3 agenda items: new business entry decision, headcount plan, and marketing budget allocation. Attendees are CEO, CFO, COO, Marketing Director, and HR Director. It's a 2-hour meeting."
+**Expected output**:
+- Agenda design: time allocation, facilitation method, and success criteria for 3 agenda items
+- Background brief: data, stakeholder analysis, and benchmarks for each item
+- Framework: evaluation criteria, option matrix, and RAPID for 3 decision items
+- Templates: meeting minutes, decision record, action item tracker
+- Follow-up: execution plan + all consistency matrix items confirmed
 
-### existing agenda item utilization flow
-**Prompt**: " agenda itemas meeting backgroundmaterial framework create it" + agenda item file provide
-**expected result**:
-- agenda item design case
-- providedone agenda item `_workspace/01_agenda_design.md` company
-- researcher + designer + builder + planner deploy
+### Existing Agenda Flow
+**Prompt**: "Create background materials and a decision framework for this agenda" + agenda file provided
+**Expected output**:
+- Skip agenda design phase
+- Copy provided agenda to `_workspace/01_agenda_design.md`
+- Deploy researcher + designer + builder + planner
 
-### error flow
-**Prompt**: "team meeting preparationplease do"
-**expected result**:
-- meeting purpose and agenda item people userto confirm question
-- answer basedas task progress
-- verify report "user input based estimation — agenda item needed" specify
+### Error Flow
+**Prompt**: "Prepare a team meeting"
+**Expected output**:
+- Meeting purpose and agenda items are unclear → ask user for confirmation
+- Proceed with work based on the answer
+- Note in validation report: "Estimated from user input — agenda confirmation required"
 
-## agentby extension skill
+## Extension Skills by Agent
 
-| extension skill | | target agent | role |
-|----------|------|-------------|------|
-| decision-frameworks | `.claude/skills/decision-frameworks/skill.md` | framework-designer | DACI, during matrix, expected analysis, method |
-| facilitation-techniques | `.claude/skills/facilitation-techniques/skill.md` | agenda-architect, followup-planner | facilitation technique, time management, pattern |
+| Extension Skill | Path | Target Agent | Role |
+|----------------|------|-------------|------|
+| decision-frameworks | `.claude/skills/decision-frameworks/skill.md` | framework-designer | DACI, weighted matrix, expected value analysis, consensus methods |
+| facilitation-techniques | `.claude/skills/facilitation-techniques/skill.md` | agenda-architect, followup-planner | Facilitation techniques, time management, retrospective patterns |

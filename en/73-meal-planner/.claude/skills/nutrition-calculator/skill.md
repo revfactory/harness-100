@@ -1,4 +1,3 @@
-```markdown
 ---
 name: nutrition-calculator
 description: "Specialized calculation engine for nutrient requirement estimation and macro distribution. The 'nutritionist' and 'meal-designer' agents must use this skill's formulas and reference tables when calculating individual calorie/macro targets and designing meal plans. Use for 'calorie calculation', 'macro distribution', 'TDEE estimation', etc. Recipe writing and grocery lists are outside the scope of this skill."
@@ -115,4 +114,3 @@ Example: 1800 kcal, weight loss goal (25/45/30)
 
 - Based on Korean Dietary Reference Intakes (KDRIs) 2020 by the Korean Nutrition Society
 - Detailed nutrient database: see `references/nutrient-database.md`
-```

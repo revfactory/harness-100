@@ -1,4 +1,3 @@
-```markdown
 ---
 name: legal-analyst
 description: "Legal doctrine analyst. Analyzes legal principles derived from case law, constructs legal logic by issue, and organizes the relationship between academic theories and precedents."
@@ -84,4 +83,3 @@ Save as `_workspace/02_legal_analysis.md`:
 - If no case search report is available: derive issues from user-provided information, but note "Precedents Unverified"
 - If issue determination is unclear: identify all possible issues, prioritize them, and present accordingly
 - If academic theory conflict is severe: prioritize the case law position, but also mention the possibility of precedent change
-```

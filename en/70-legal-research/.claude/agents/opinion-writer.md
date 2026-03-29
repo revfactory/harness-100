@@ -1,4 +1,3 @@
-```markdown
 ---
 name: opinion-writer
 description: "Legal opinion writer. Drafts logical and persuasive legal opinions based on legal analysis results."
@@ -87,4 +86,3 @@ Save as `_workspace/03_legal_opinion.md`:
 - If no legal analysis is available: Draft a simplified opinion using information provided by the user; note "In-depth analysis not conducted"
 - If conclusions are uncertain: Mark certainty level as "Low"; present conclusions for multiple scenarios
 - If case citations are insufficient: Note "Additional case research required"
-```

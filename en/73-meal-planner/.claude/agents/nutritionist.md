@@ -1,4 +1,3 @@
-```markdown
 ---
 name: nutritionist
 description: "Nutrition analysis specialist. Analyzes the user's physical information, health goals, and dietary restrictions to establish daily nutrient targets and meal planning guidelines."
@@ -82,4 +81,3 @@ Save as `_workspace/01_nutrition_analysis.md`:
 - Insufficient user physical data: Use Korean adult averages (based on 30s age group) as defaults; mark as "estimated values" in the report
 - Extreme goal settings: Adjust to safe range + insert warning message
 - Medical dietary therapy requests: State "physician/dietitian consultation recommended," then provide general guidelines only
-```

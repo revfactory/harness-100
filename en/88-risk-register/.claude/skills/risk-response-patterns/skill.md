@@ -1,146 +1,146 @@
 ---
 name: risk-response-patterns
-description: "risk response strategy pattern library. response-strategist and monitoring-planner agent risk response plan establishto do when reference. 'risk response', 'mitigation strategy', 'response plan' request when usage. However, insurance design legal risk specialistdocument scope outside."
+description: "Risk response strategy pattern library. Referenced by the response-strategist and monitoring-planner agents when developing risk response plans. Use for requests involving 'risk response', 'mitigation strategy', or 'response plan'. Does not cover insurance product design or legal risk advisory."
 ---
 
-# Risk Response Patterns — risk response strategy pattern
+# Risk Response Patterns — Risk Response Strategy Patterns
 
-response-strategist / monitoring-planner agent response plan establish competency .
+Enhances the response plan development capabilities of the response-strategist and monitoring-planner agents.
 
-## 4versus response strategy 
+## Four Core Response Strategies (Threats)
 
-| strategy | description | quality condition | cost |
-|------|------|----------|------|
-| **avoidance (Avoid)** | risk cause | score ≥16, possible | High |
-| **transfer (Transfer)** | 3specialistto responsibility before | financialquality impact, specialistnature insufficient | duringbetween |
-| **mitigation (Mitigate)** | probability/impact decrease | versusdepartmentminute risk | duringbetween |
-| **acceptance (Accept)** | risk number | score ≤4, cost > and | Low |
+| Strategy | Description | When to Use | Cost |
+|----------|-------------|-------------|------|
+| **Avoid** | Eliminate the risk cause | Score ≥ 16, elimination feasible | High |
+| **Transfer** | Shift responsibility to a third party | Financial impact, insufficient expertise | Medium |
+| **Mitigate** | Reduce probability or impact | Most risks | Medium |
+| **Accept** | Tolerate the risk | Score ≤ 4, or cost > benefit | Low |
 
-### strategyby detailed pattern
+### Detailed Patterns by Strategy
 
-#### avoidance (Avoid)
-
-```
-pattern:
-- scope : risk feature excluded
-- technical change: verifydone technical versus
-- schedule annual: minuteKorean time secure
-- change: nature vendor
-
-examplewhen:
- risk: "technical A plannature un-verify"
- avoidance: "verifydone technical B versus, feature limitation acceptance"
- cost: development ₩3 only addition, feature 20% 
-```
-
-#### transfer (Transfer)
+#### Avoid
 
 ```
-pattern:
-- insurance: re-/company risk
-- sourcing: specialistnature insufficient 
-- totalapprox.: /person 
-- report: nature report
+Patterns:
+- Scope reduction: Exclude high-risk features
+- Technology substitution: Replace with a proven technology
+- Schedule extension: Allocate sufficient time
+- Vendor change: Switch to a more reliable supplier
 
-examplewhen:
- risk: "delivery date degreeannualas personKorean cancellation fee"
- transfer: "vendor and delivery date annual cancellation fee totalapprox."
- cost: totalapprox. 5% 
+Example:
+  Risk: "Stability of new Technology A is unverified"
+  Avoid: "Replace with proven Technology B; accept feature limitations"
+  Cost: +₩30M in development cost, 20% feature reduction
 ```
 
-#### mitigation (Mitigate)
+#### Transfer
 
 ```
-probability decrease pattern:
-- companybefore verify (PoC, Pilot)
-- training/training
-- review/number process
-- during/
+Patterns:
+- Insurance: Cover disaster or accident risks
+- Outsourcing: Delegate areas requiring specialist expertise
+- Contractual: Include penalty / incentive clauses
+- Warranty: Require vendor performance guarantees
 
-impact decrease pattern:
-- example specialistKRW secure
-- versus approach preparation
-- stageby implementation (pointquality)
-- monitoring 
-
-examplewhen:
- risk: "core personcapability " (probability 3, impact 5 = 15)
- mitigation: "degree tax + personcapability degree"
- residual: probability 3, impact 3 = 9 (🟡)
+Example:
+  Risk: "Penalty exposure due to delivery delay"
+  Transfer: "Link subcontractor contract to delivery-date penalty clause"
+  Cost: 5% increase in contract unit price
 ```
 
-#### acceptance (Accept)
+#### Mitigate
 
 ```
-quality acceptance:
-- example (Contingency)
-- versus plan establish (Plan B)
-- setting + response procedure
+Probability Reduction Patterns:
+- Upfront validation (PoC, Pilot)
+- Training and education
+- Review and inspection processes
+- Redundancy and backup
 
-numberquality acceptance:
-- occurrence when versus (score ≤4)
-- cost versus response value Low
+Impact Reduction Patterns:
+- Secure reserve resources
+- Prepare alternative approaches
+- Phased implementation (incremental delivery)
+- Enhanced monitoring
+
+Example:
+  Risk: "Key staff attrition" (Probability 3, Impact 5 = Score 15)
+  Mitigate: "Knowledge-sharing sessions + designate backup personnel"
+  Residual: Probability 3, Impact 3 = Score 9 (🟡)
 ```
 
-## risk response planfrom template
+#### Accept
+
+```
+Active Acceptance:
+- Allocate contingency reserve
+- Develop contingency plan (Plan B)
+- Set trigger + define response procedure
+
+Passive Acceptance:
+- Handle if and when the risk occurs (Score ≤ 4)
+- Response cost is not justified relative to the risk value
+```
+
+## Risk Response Plan Template
 
 ```markdown
-## risk R01: [riskpeople]
+## Risk R01: [Risk Name]
 
-### current assessment
-- probability: [N] / impact: [N] / score: [N×N] / etc.grade: 
+### Current Assessment
+- Probability: [N] / Impact: [N] / Score: [N×N] / Grade: [color]
 
-### response strategy: [avoidance/transfer/mitigation/acceptance]
+### Response Strategy: [Avoid / Transfer / Mitigate / Accept]
 
-### response action
-| # | action | responsible | deadline | cost | status |
-|---|------|------|------|------|------|
-| 1 | [ action] | [name] | [date] | [amount] | progressduring |
-| 2 | [ action] | [name] | [date] | [amount] | un-number |
+### Response Actions
+| # | Action | Owner | Deadline | Cost | Status |
+|---|--------|-------|----------|------|--------|
+| 1 | [Specific action] | [Name] | [Date] | [Amount] | In Progress |
+| 2 | [Specific action] | [Name] | [Date] | [Amount] | Not Started |
 
-### residual risk
-- response after probability: [N] / impact: [N] / score: [N×N]
+### Residual Risk
+- Post-response Probability: [N] / Impact: [N] / Score: [N×N]
 
-### /basis report
-- KRI: [indicator] > [total] when nature
-- monitoring cycle: [weekbetween/monthbetween]
+### Trigger / Early Warning
+- KRI: [Indicator] > [Threshold] → Activate
+- Monitoring Frequency: [Weekly / Monthly]
 
-### versus plan (Plan B)
-- [response failure when gap]
+### Contingency Plan (Plan B)
+- [Fallback if primary response fails]
 ```
 
-## risk monitoring dashboard
+## Risk Monitoring Dashboard
 
-### risk (current vs goal)
+### Risk Heat Map (Current vs. Target)
 
 ```
-current status:
-🔴 : 2case (R01, R05)
-🟠 High: 3case (R02, R07, R09)
-🟡 report: 5case
-🟢 Low: 8case
+Current Status:
+🔴 Extreme: 2 items (R01, R05)
+🟠 High:    3 items (R02, R07, R09)
+🟡 Medium:  5 items
+🟢 Low:     8 items
 
-response after goal:
-🔴 : 0case
-🟠 High: 1case (R05)
-🟡 report: 4case
-🟢 Low: 13case
+Post-Response Target:
+🔴 Extreme: 0 items
+🟠 High:    1 item (R05)
+🟡 Medium:  4 items
+🟢 Low:     13 items
 ```
 
-### trend tracking
+### Trend Tracking
 
-| risk | beforemonth | month | tax | reason |
-|--------|------|------|------|------|
-| R01 | 🔴 20 | 🟠 12 | ↓ improvement | mitigation action and |
-| R05 | 🟠 15 | 🔴 16 | ↑ | issue findings |
+| Risk | Previous Period | Current Period | Trend | Reason |
+|------|----------------|---------------|-------|--------|
+| R01 | 🔴 20 | 🟠 12 | ↓ Improved | Mitigation actions effective |
+| R05 | 🟠 15 | 🔴 16 | ↑ Deteriorated | New issue identified |
 
-## quality checklist
+## Quality Checklist
 
-| item | standard |
-|------|------|
-| response strategy | 4versus strategy during specifyquality optional |
-| action nature | responsible+deadline+cost specify |
-| residual risk | response after re-assessment figure |
-| | KRI + total setting |
-| Plan B | /High etc.grade versusplan |
-| cost and | response cost < risk EMV |
+| Item | Criterion |
+|------|-----------|
+| Response Strategy | Explicitly selected from the 4 core strategies |
+| Action Specificity | Owner + deadline + cost specified |
+| Residual Risk | Re-assessed score after response applied |
+| Triggers | KRI + threshold defined |
+| Plan B | Contingency plan provided for Extreme/High risks |
+| Cost-Benefit | Response cost < risk EMV |

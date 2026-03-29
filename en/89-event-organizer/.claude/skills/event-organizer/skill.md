@@ -1,125 +1,125 @@
 ---
 name: event-organizer
-description: "event concept basis, venue·logistics, program design, promotion, execution plan, companyafter assessment agent team to Korean creation Full pipeline. 'event basis', 'event preparation', ' basis', 'taxun- preparation', ' design', ' event', 'beforewhen basis', ' basis', 'event program', 'event promotion', 'event checklist', 'event budget' etc. event basis·operations before skill usage. scale team department versusscale to all scale applied possible. However, actual venue exampleapprox., processing, actualtime technical operations, quality person work is outside this skill's scope."
+description: "Full pipeline where an agent team collaborates to produce event concept planning, venue and logistics, program design, promotion, execution plan, and post-event evaluation all at once. Use this skill for all event planning and operations requests — 'plan an event', 'prepare a conference', 'design a seminar', 'set up a workshop', 'networking event', 'exhibition planning', 'festival planning', 'event program', 'event promotion', 'event checklist', 'event budget', etc. Applicable to all scales from small team gatherings to large conferences. Out of scope: actual venue booking, payment processing, real-time live streaming operations, and physical print production."
 ---
 
-# Event Organizer — event basis·operations Full pipeline
+# Event Organizer — Full Event Planning and Operations Pipeline
 
-event concept→venue→program→promotion→execution→companyafterassessment An agent team collaborates to generate all deliverables at once.
+An agent team collaborates to produce all deliverables — concept → venue → program → promotion → execution → post-event evaluation — in a single workflow.
 
-## execution mode
+## Execution Mode
 
-**agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
+**Agent Team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
 
-## agent composition
+## Agent Composition
 
-| agent | file | role | type |
-|---------|------|------|------|
-| concept-planner | `.claude/agents/concept-planner.md` | concept, goal, target, budget | general-purpose |
-| logistics-manager | `.claude/agents/logistics-manager.md` | venue, flow of movement, equipment, planbefore | general-purpose |
-| program-designer | `.claude/agents/program-designer.md` | , tax, speaker | general-purpose |
-| promotion-lead | `.claude/agents/promotion-lead.md` | channelstrategy, promotioncontent, etc.record | general-purpose |
-| evaluation-analyst | `.claude/agents/evaluation-analyst.md` | KPI, document, ROI, | general-purpose |
+| Agent | File | Role | Type |
+|-------|------|------|------|
+| concept-planner | `.claude/agents/concept-planner.md` | Concept, goals, target audience, budget | general-purpose |
+| logistics-manager | `.claude/agents/logistics-manager.md` | Venue, flow, equipment, safety | general-purpose |
+| program-designer | `.claude/agents/program-designer.md` | Timetable, sessions, speakers | general-purpose |
+| promotion-lead | `.claude/agents/promotion-lead.md` | Channel strategy, promotional content, registration | general-purpose |
+| evaluation-analyst | `.claude/agents/evaluation-analyst.md` | KPI, survey, ROI, lessons learned | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1: preparation (Orchestrator directly perform)
+### Phase 1: Preparation (Orchestrator performs directly)
 
 1. Extract from user input:
- - **event purpose**: for eventperson
- - **event type**: /taxun-///beforewhen/ etc.
- - **scale**: expected attendee number
- - **budget** (optional): total budget or 1person budget
- - **daywhen/venue** (optional): or condition
- - **constraint condition** (optional): number requirements
-2. `_workspace/` Create the directory at the project root
-3. Organize input and save to `_workspace/00_input.md`
-4. existing material `_workspace/` companyand applicable Phase 
-5. Determine the **execution mode** based on the scope of the request
+    - **Event Purpose**: What the event is for
+    - **Event Type**: Conference / Seminar / Workshop / Networking / Exhibition / Festival / etc.
+    - **Scale**: Expected number of attendees
+    - **Budget** (optional): Total budget or per-person budget
+    - **Date / Venue** (optional): Confirmed or preferred conditions
+    - **Constraints** (optional): Special requirements
+2. Create the `_workspace/` directory at the project root
+3. Organize the input and save to `_workspace/00_input.md`
+4. If existing materials are available, copy to `_workspace/` and adjust the relevant Phase accordingly
+5. **Determine the execution mode** based on the scope of the request
 
-### Phase 2: team composition and execution
+### Phase 2: Team Assembly and Execution
 
-| order | task | responsible | dependency | deliverable |
-|------|------|------|------|--------|
-| 1 | concept basis | planner | None | `_workspace/01_concept_plan.md` |
-| 2a | logistics | logistics | task 1 | `_workspace/02_logistics_plan.md` |
-| 2b | program design | designer | task 1 | `_workspace/03_program_design.md` |
-| 3 | promotion plan | promotion | task 1, 2a, 2b | `_workspace/04_promotion_plan.md` |
-| 4 | assessment framework | analyst | task 1, 2a, 2b, 3 | `_workspace/05_evaluation_framework.md` |
+| Order | Task | Owner | Dependency | Deliverable |
+|-------|------|-------|-----------|------------|
+| 1 | Concept planning | planner | None | `_workspace/01_concept_plan.md` |
+| 2a | Logistics | logistics | Task 1 | `_workspace/02_logistics_plan.md` |
+| 2b | Program design | designer | Task 1 | `_workspace/03_program_design.md` |
+| 3 | Promotion plan | promotion | Tasks 1, 2a, 2b | `_workspace/04_promotion_plan.md` |
+| 4 | Evaluation framework | analyst | Tasks 1, 2a, 2b, 3 | `_workspace/05_evaluation_framework.md` |
 
-task 2a(logistics) and 2b(program) ** execution**. task 1(concept) only dependency.
+Tasks 2a (logistics) and 2b (program) run **in parallel** — both depend only on Task 1 (concept).
 
-**teamKRW between flow:**
-- planner complete → logisticsto scale·budget·, designerto ·target·message deliver
-- logistics + designer → between↔program consistency confirm
-- logistics + designer complete → promotionto venue·program information deliver
-- promotion complete → analystto promotion KPI deliver
-- analyst all deliverable cross-verification, dayvalue findings when revision request (versus 2)
+**Inter-team communication flow:**
+- planner complete → send scale/budget/format to logistics; send theme/target/message to designer
+- logistics + designer share outputs → verify space ↔ program consistency
+- logistics + designer complete → send venue and program information to promotion
+- promotion complete → send promotion KPIs to analyst
+- analyst cross-verifies all deliverables; requests revisions on discrepancies (up to 2 rounds)
 
-### Phase 3: integration and final deliverable
+### Phase 3: Integration and Final Deliverables
 
-1. `_workspace/` Verify all files in the directory
-2. analyst consistency verify result reflected
+1. Verify all files in `_workspace/`
+2. Reflect analyst's consistency verification results
 3. Report the final summary to the user
 
-## task scaleby mode
+## Mode by Request Scale
 
-| user request pattern | execution mode | deploy agent |
-|----------------|----------|-------------|
-| "event overall basisplease do" | **Full pipeline** | 5people beforeKRW |
-| "program only designplease do" | **program mode** | planner + designer |
-| "event promotion strategy" | **promotion mode** | planner + promotion |
-| "event checklist only create it" | **checklist mode** | logistics |
-| "companyafter assessment report create it" (event complete after) | **assessment mode** | analyst |
+| User Request Pattern | Execution Mode | Agents Deployed |
+|----------------------|----------------|----------------|
+| "Plan the full event" | **Full Pipeline** | All 5 agents |
+| "Design the program only" | **Program Mode** | planner + designer |
+| "Just the event promotion strategy" | **Promotion Mode** | planner + promotion |
+| "Just create the event checklist" | **Checklist Mode** | logistics only |
+| "Create the post-event evaluation report" (after event) | **Evaluation Mode** | analyst only |
 
-## data deliver protocol
+## Data Transfer Protocol
 
-| strategy | method | also |
-|------|------|------|
-| File-based | `_workspace/` | Store and share major deliverables |
-| Message-based | SendMessage | Real-time key information transfer, revision requests |
-| Task-based | TaskCreate/TaskUpdate | Progress tracking, dependency management |
+| Strategy | Method | Purpose |
+|----------|--------|---------|
+| File-based | `_workspace/` directory | Store and share primary deliverables |
+| Message-based | SendMessage | Real-time key information transfer and revision requests |
+| Task-based | TaskCreate / TaskUpdate | Progress tracking and dependency management |
 
-File naming convention: `{}_{agent}_{deliverable}.{extensionspecialist}`
+File naming convention: `{sequence}_{agent}_{deliverable}.{extension}`
 
-## error handling
+## Error Handling
 
-| error type | strategy |
-|----------|------|
-| event information insufficient | planner typeby basic template provide, "[detailed needed]" specify |
-| budget un- | 3degree scale(/during/versus)by scenario provide |
-| venue un- | logistics requirements checklist and recommendation standard provide |
-| agent failure | Retry once -> proceed without that deliverable |
-| consistency dayvalue | analyst revision request → re-task (versus 2) |
+| Error Type | Strategy |
+|------------|---------|
+| Insufficient event information | planner provides type-specific default templates; marks "[Needs elaboration]" |
+| Budget undecided | Provide scenarios for 3 scales (small / medium / large) |
+| Venue undecided | logistics provides requirements checklist and selection criteria |
+| Agent failure | Retry once → if still failing, proceed without that deliverable |
+| Consistency discrepancy | analyst requests revision → rework (up to 2 rounds) |
 
-## test scenario
+## Test Scenarios
 
-### flow
-**Prompt**: "200people scale AI technical basisplease do. budget 50,000 KRW, fromfrom next itemsand ."
-**expected result**:
-- concept: AI ·case, SMART goal, budget allocation
-- logistics: from 200people venue requirements, flow of movement, D-day timeline
-- program: +tax 5~6items, speaker , MC when
-- promotion: D-60 timeline, SNS when, email when
-- assessment: KPI total, documentdegree, ROI analysis framework
+### Normal Flow
+**Prompt**: "Plan an AI technology conference for 200 attendees. Budget is KRW 50 million, in Seoul, next month."
+**Expected results**:
+- Concept: AI conference theme/slogan, SMART goals, budget allocation
+- Logistics: Seoul 200-person venue requirements, flow design, D-day timeline
+- Program: Keynote + 5–6 sessions, speaker profiles, MC cue sheet
+- Promotion: D-60 timeline, social media series, email sequence
+- Evaluation: KPI measurement system, survey, ROI analysis framework
 
-### departmentminute request flow
-**Prompt**: "next week team program only . 20people, ."
-**expected result**:
-- program mode (planner + designer)
-- , , 
-- scale betweenKorean deliverable
+### Partial Request Flow
+**Prompt**: "Just build the program for a half-day team workshop next week. 20 people."
+**Expected results**:
+- Program Mode (planner + designer)
+- Half-day workshop timetable, icebreakers, interactive activities
+- Concise deliverables tailored for small-scale event
 
-### error flow
-**Prompt**: "event basisplease do, also "
-**expected result**:
-- planner event type 5degree proposal (purposeby)
-- each typeby scale/budget/duration guideperson provide
-- user optional after Full pipeline progress
+### Error Flow
+**Prompt**: "Plan an event — nothing has been decided yet."
+**Expected results**:
+- planner proposes 5 event types (by purpose)
+- Provides scale / budget / duration guidelines for each type
+- Proceeds to full pipeline after user selection
 
-## agentby extension skill
+## Per-Agent Extension Skills
 
-| extension skill | | target agent | role |
-|----------|------|-------------|------|
-| budget-planning | `.claude/skills/budget-planning/skill.md` | concept-planner, logistics-manager | budget category, calculation template, from guide |
-| venue-evaluation | `.claude/skills/venue-evaluation/skill.md` | logistics-manager | venue assessment scorecard, company checklist, totalapprox. confirm |
+| Extension Skill | Path | Target Agent | Role |
+|-----------------|------|-------------|------|
+| budget-planning | `.claude/skills/budget-planning/skill.md` | concept-planner, logistics-manager | Budget categories, calculation templates, sponsorship guide |
+| venue-evaluation | `.claude/skills/venue-evaluation/skill.md` | logistics-manager | Venue evaluation scorecard, site visit checklist, contract review |

@@ -1,140 +1,140 @@
 ---
 name: roi-calculator
-description: "ROI calculation framework. pricing-strategist and solution-architect agent proposal investment versus revenue to do when reference. 'ROI total', 'costanalysis', 'TCO' request when usage. However, financial company tax scope outside."
+description: "ROI calculation framework. Referenced by the pricing-strategist and solution-architect agents when quantifying return on investment for a proposal. Use when 'ROI calculation', 'cost-benefit analysis', or 'TCO' is requested. Note: financial auditing and tax consulting are outside this skill's scope."
 ---
 
-# ROI Calculator — ROI calculation framework
+# ROI Calculator — ROI Calculation Framework
 
-pricing-strategist / solution-architect agent investmentrevenue analysis tablelevel.
+Standardizes investment return analysis for the pricing-strategist and solution-architect agents.
 
-## ROI basic official
-
-```
-ROI = (profit / totalinvestmentcost) × 100
-
-profit = total revenue - total cost
-totalinvestmentcost = initial investment + operations cost
-```
-
-## TCO (Total Cost of Ownership) analysis
-
-### cost category
-
-| category | item | calculation standard |
-|---------|------|----------|
-| initial investment | , , building | daywhen |
-| implementation cost | , , training | project duration |
-| operations cost | maintenancereportnumber, personcase, person | annualbetween |
-| cost | nature , opportunitycost, risk | estimation |
-
-### TCO comparison template
-
-| cost item | current(AS-IS) | proposal(TO-BE) | gap |
-|----------|-----------|-----------|------|
-| initial investment | ₩0 | ₩500M | +₩500M |
-| annualbetween operations | ₩300M | ₩100M | -₩200M |
-| 3year TCO | ₩900M | ₩800M | -₩100M |
-| 5year TCO | ₩1500M | ₩1000M | -₩500M |
-
-## Payback Period (investmentnumberduration)
+## Basic ROI Formula
 
 ```
- investmentnumberduration = initial investment / annualbetween currentflow
+ROI = (Net Profit / Total Investment Cost) × 100
 
-examplewhen:
- initial investment: ₩500M
- annualbetween reduction: ₩200M
- Payback = 5 / 2 = 2.5year
+Net Profit = Total Revenue (Benefits) - Total Costs
+Total Investment Cost = Initial Investment + Operating Costs
 ```
 
-## NPV (currentvalue)
+## TCO (Total Cost of Ownership) Analysis
+
+### Cost Categories
+
+| Category | Items | Calculation Basis |
+|----------|-------|------------------|
+| Initial investment | Licensing, hardware, implementation | One-time |
+| Implementation costs | Consulting, customization, training | Project duration |
+| Operating costs | Maintenance, labor, infrastructure | Annual |
+| Hidden costs | Productivity loss, opportunity cost, risk | Estimated |
+
+### TCO Comparison Template
+
+| Cost Item | Current (AS-IS) | Proposed (TO-BE) | Difference |
+|-----------|----------------|-----------------|-----------|
+| Initial investment | $0 | $500K | +$500K |
+| Annual operating cost | $300K | $100K | -$200K |
+| 3-year TCO | $900K | $800K | -$100K |
+| 5-year TCO | $1,500K | $1,000K | -$500K |
+
+## Payback Period
 
 ```
-NPV = Σ [CF_t / (1+r)^t] - initialinvestment
+Simple Payback Period = Initial Investment / Annual Net Cash Flow
 
-CF_t = tyear also currentflow
-r = to doperson (report WACC or goalrevenuerate)
-t = annualgap (1~N)
-
-judgment standard:
- NPV > 0 → investment value 
- NPV < 0 → investment basiseach
+Example:
+  Initial Investment: $500K
+  Annual Savings: $200K
+  Payback = $500K / $200K = 2.5 years
 ```
 
-### NPV total template
-
-| annual also | currentflow | to dopersontotalnumber(10%) | currentvalue |
-|------|---------|-------------|---------|
-| 0 | -₩500M | 1.000 | -₩500M |
-| 1 | ₩1.500M | 0.909 | ₩1.3600M |
-| 2 | ₩200M | 0.826 | ₩1.6500M |
-| 3 | ₩2.500M | 0.751 | ₩1.8800M |
-| 4 | ₩2.500M | 0.683 | ₩1.7100M |
-| 5 | ₩2.500M | 0.621 | ₩1.5500M |
-| **NPV** | | | **₩3.1500M** |
-
-## IRR (withindepartmentrevenuerate)
+## NPV (Net Present Value)
 
 ```
-IRR = NPV = 0 to doperson
+NPV = Σ [CF_t / (1+r)^t] - Initial Investment
 
-judgment standard:
- IRR > WACC → investment value 
- IRR > goalrevenuerate → investment capabilityquality
+CF_t = Net cash flow in year t
+r    = Discount rate (typically WACC or target rate of return)
+t    = Year number (1 to N)
 
-tablecurrent:
- " investment IRR 28%, 
- company revenuerate 15% "
+Decision rule:
+  NPV > 0 → Investment is worthwhile
+  NPV < 0 → Reject the investment
 ```
 
-## naturequality 
+### NPV Calculation Template
 
-### categoryby calculation method
+| Year | Cash Flow | Discount Factor (10%) | Present Value |
+|------|----------|----------------------|--------------|
+| 0 | -$500K | 1.000 | -$500K |
+| 1 | $150K | 0.909 | $136K |
+| 2 | $200K | 0.826 | $165K |
+| 3 | $250K | 0.751 | $188K |
+| 4 | $250K | 0.683 | $171K |
+| 5 | $250K | 0.621 | $155K |
+| **NPV** | | | **$315K** |
 
-| type | calculation method | examplewhen |
-|----------|----------|------|
-| time reduction | reduction time × whengrade × annualbetween number | 20h × ₩5 only × 50 = ₩5 only |
-| error decrease | error casenumber decrease × case cost | 100case × ₩50 only = ₩5 only |
-| nature | processing increase × case revenue | +200case × ₩10 only = ₩2 only |
-| rate decrease | decrease personKRW × hiringcost | 5people × ₩2 only = ₩100M |
-| client | NPS → re- → sales | between estimation |
+## IRR (Internal Rate of Return)
 
-## scenario analysis
+```
+IRR = The discount rate at which NPV = 0
 
-| scenario | | ROI | Payback |
-|---------|------|-----|---------|
-| reportnumberquality (Pessimistic) | 50%, cost 120% | 85% | 3.2year |
-| basic (Base) | 100%, cost 100% | 180% | 2.1year |
-| quality (Optimistic) | 130%, cost 90% | 290% | 1.4year |
+Decision rule:
+  IRR > WACC → Investment is worthwhile
+  IRR > target rate of return → Investment is attractive
 
-**proposal **: reportnumberquality scenariofrom also investment value persuasioncapability .
+How to present:
+  "This investment's IRR is 28%, which substantially
+   exceeds our required return of 15%."
+```
 
-## proposal ROI tablecurrent guide
+## Quantifying Qualitative Benefits
 
-### Korean degree ROI summary
+### Calculation Methods by Benefit Type
+
+| Benefit Type | Calculation Method | Example |
+|-------------|-------------------|---------|
+| Time savings | Hours saved × hourly rate × annual occurrences | 20h × $50 × 50 = $50K |
+| Error reduction | Errors reduced × cost per error | 100 errors × $500 = $50K |
+| Productivity gain | Volume increase × revenue per unit | +200 units × $100 = $20K |
+| Reduced turnover | Employees retained × hiring cost | 5 people × $20K = $100K |
+| Customer satisfaction | NPS improvement → repurchase rate → revenue | Indirect estimate |
+
+## Scenario Analysis
+
+| Scenario | Assumptions | ROI | Payback |
+|----------|------------|-----|---------|
+| Conservative (Pessimistic) | 50% benefits, 120% costs | 85% | 3.2 years |
+| Base Case | 100% benefits, 100% costs | 180% | 2.1 years |
+| Optimistic | 130% benefits, 90% costs | 290% | 1.4 years |
+
+**Proposal recommendation**: The investment case must be compelling even under the conservative scenario.
+
+## ROI Presentation Guide for Proposals
+
+### One-Page ROI Summary
 
 ```
 ┌──────────────────────────────┐
-│ investment summary │
-│ total investment: ₩500M │
-│ 3year ROI: 180% │
-│ Payback: 2.1year │
-│ NPV: ₩3.1500M (to doperson 10%) │
-│ │
-│ core Top 3: │
-│ 1. operations reduction: annual ₩200M │
-│ 2. nature : annual ₩8 only │
-│ 3. error cost decrease: annual ₩5 only │
+│  Investment Summary           │
+│  Total Investment: $500K      │
+│  3-Year ROI: 180%             │
+│  Payback Period: 2.1 years    │
+│  NPV: $315K (10% discount)    │
+│                               │
+│  Top 3 Benefits:              │
+│  1. Operating savings: $200K/yr│
+│  2. Productivity gain: $80K/yr │
+│  3. Error cost reduction: $50K/yr│
 └──────────────────────────────┘
 ```
 
-## quality checklist
+## Quality Checklist
 
-| item | standard |
-|------|------|
-| cost completeness | TCO 4versus category |
-| basis | each calculation specify |
-| scenario | reportnumberquality/basic/quality 3items |
-| to doperson | basis specify (WACC etc.) |
-| whentotal | minimum 3year, recommended 5year |
-| risk | key also analysis |
+| Item | Standard |
+|------|---------|
+| Cost completeness | All 4 TCO categories covered |
+| Benefit basis | Calculation logic stated for each benefit |
+| Scenarios | Conservative / Base / Optimistic — 3 scenarios |
+| Discount rate | Basis stated (WACC, etc.) |
+| Time horizon | Minimum 3 years; 5 years recommended |
+| Risk | Sensitivity analysis on key assumptions |

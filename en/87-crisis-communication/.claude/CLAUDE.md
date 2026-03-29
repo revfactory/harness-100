@@ -1,37 +1,37 @@
 # Crisis Communication Harness
 
-crisis situation occurrence when situationidentify→messagestrategy→press release→Q&A→monitoringto agent team to integration crisis package creation .
+When a crisis occurs, an agent team collaborates to produce an integrated crisis communication package covering situation assessment, message strategy, press release, Q&A, and monitoring.
 
-## structure
+## Structure
 
 ```
 .claude/
 ├── agents/
-│ ├── situation-analyst.md — situation analysis (companyactualtotal, stakeholder, crisisetc.grade)
-│ ├── message-strategist.md — message strategy (coremessage, tone, channelstrategy)
-│ ├── press-release-writer.md — press release writing (officialdocument, timeline)
-│ ├── qa-preparer.md — Q&A preparation (expectedquestion, answerguide, when)
-│ └── media-monitor.md — media monitoring (tracking, riskdegree, afterwithinresponse)
+│   ├── situation-analyst.md      — Situation analysis (facts, stakeholders, crisis grade)
+│   ├── message-strategist.md     — Message strategy (core messages, tone, channel strategy)
+│   ├── press-release-writer.md   — Press release writing (official statements, timeline)
+│   ├── qa-preparer.md            — Q&A preparation (anticipated questions, answer guide, briefing sheet)
+│   └── media-monitor.md          — Media monitoring (public sentiment tracking, risk detection, follow-up response)
 ├── skills/
-│ ├── crisis-communication/
-│ │ └── skill.md — Orchestrator (team , workflow, error handling)
-│ ├── stakeholder-mapping/
-│ │ └── skill.md — stakeholder mapping framework (situation-analyst extension)
-│ └── media-response-templates/
-│ └── skill.md — media response template (press-release-writer extension)
-└── CLAUDE.md — file
+│   ├── crisis-communication/
+│   │   └── skill.md              — Orchestrator (team coordination, workflow, error handling)
+│   ├── stakeholder-mapping/
+│   │   └── skill.md              — Stakeholder mapping framework (situation-analyst extension)
+│   └── media-response-templates/
+│       └── skill.md              — Media response templates (press-release-writer extension)
+└── CLAUDE.md                     — This file
 ```
 
-## usage
+## Usage
 
-`/crisis-communication` skill , "crisis response communication preparationplease do" specialistannual request.
+Trigger the `/crisis-communication` skill, or make a natural-language request such as "Prepare a crisis response communication plan."
 
-## deliverable
+## Deliverables
 
-all deliverable `_workspace/` save:
-- `00_input.md` — user input organization
-- `01_situation_analysis.md` — situation analysis report
-- `02_message_strategy.md` — message strategyfrom
-- `03_press_release.md` — press release/official document
-- `04_qa_briefing.md` — Q&A when
-- `05_monitoring_plan.md` — monitoring plan and afterwithin response guide
+All deliverables are saved in the `_workspace/` directory:
+- `00_input.md` — Structured user input
+- `01_situation_analysis.md` — Situation analysis report
+- `02_message_strategy.md` — Message strategy document
+- `03_press_release.md` — Press release / official statement
+- `04_qa_briefing.md` — Q&A briefing sheet
+- `05_monitoring_plan.md` — Monitoring plan and follow-up response guide

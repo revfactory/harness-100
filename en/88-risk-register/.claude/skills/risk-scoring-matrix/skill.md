@@ -1,129 +1,129 @@
 ---
 name: risk-scoring-matrix
-description: "risk assessment matrix and analysis tool. assessment-analyst agent risk probability and impact systematicas assessmentto do when reference. 'risk matrix', 'probability impact analysis', 'risk score' request when usage. However, insurance total risk model scope outside."
+description: "Risk assessment matrix and quantitative analysis tools. Referenced by the assessment-analyst agent when systematically assessing risk probability and impact. Use for requests involving 'risk matrix', 'probability-impact analysis', or 'risk scoring'. Does not cover actuarial analysis or financial risk modeling."
 ---
 
-# Risk Scoring Matrix — risk assessment matrix
+# Risk Scoring Matrix — Risk Assessment Matrix
 
-assessment-analyst agent risk /nature assessment tablelevel.
+Standardizes quantitative and qualitative risk assessment for the assessment-analyst agent.
 
-## 5x5 probability-impact matrix
+## 5×5 Probability-Impact Matrix
 
-### probability etc.grade
+### Probability Scale
 
-| etc.grade | score | probability scope | description |
-|------|------|----------|------|
-| Low | 1 | <5% | occurrencedegree |
-| Low | 2 | 5~20% | possiblenature Low |
-| report | 3 | 20~50% | occurrenceto do number |
-| High | 4 | 50~80% | occurrence possiblenature High |
-| High | 5 | >80% | actual |
+| Level | Score | Probability Range | Description |
+|-------|-------|------------------|-------------|
+| Very Low | 1 | < 5% | Rarely occurs |
+| Low | 2 | 5–20% | Low likelihood |
+| Medium | 3 | 20–50% | May occur |
+| High | 4 | 50–80% | Likely to occur |
+| Very High | 5 | > 80% | Almost certain |
 
-### impact etc.grade
+### Impact Scale
 
-| etc.grade | score | schedule | cost | quality | scope |
-|------|------|------|------|------|------|
-| un- | 1 | <1week | <1% | un-un- | un-un- |
-| un- | 2 | 1~2week | 1~5% | daydepartment | daydepartment feature |
-| report | 3 | 2~4week | 5~10% | key | key feature |
-| each | 4 | 1~3month | 10~25% | beforequality | core feature |
-| valuepeople | 5 | >3month | >25% | usage impossible | project failure |
+| Level | Score | Schedule | Cost | Quality | Scope |
+|-------|-------|----------|------|---------|-------|
+| Negligible | 1 | < 1 week | < 1% | Negligible | Negligible |
+| Minor | 2 | 1–2 weeks | 1–5% | Some areas | Some features |
+| Moderate | 3 | 2–4 weeks | 5–10% | Key areas | Key features |
+| Significant | 4 | 1–3 months | 10–25% | Pervasive | Core features |
+| Critical | 5 | > 3 months | > 25% | Unusable | Project failure |
 
-### risk score = probability × impact
+### Risk Score = Probability × Impact
 
 ```
- impact
- 1 2 3 4 5
- ┌───┬───┬───┬───┬───┐
-5 │ 5 │10 │15 │20 │25 │ 
-4 │ 4 │ 8 │12 │16 │20 │ rate
-3 │ 3 │ 6 │ 9 │12 │15 │
-2 │ 2 │ 4 │ 6 │ 8 │10 │
+        Impact
+     1   2   3   4   5
+  ┌───┬───┬───┬───┬───┐
+5 │ 5 │10 │15 │20 │25 │  P
+4 │ 4 │ 8 │12 │16 │20 │  r
+3 │ 3 │ 6 │ 9 │12 │15 │  o
+2 │ 2 │ 4 │ 6 │ 8 │10 │  b
 1 │ 1 │ 2 │ 3 │ 4 │ 5 │
- └───┴───┴───┴───┴───┘
+  └───┴───┴───┴───┴───┘
 
-etc.grade: 🟢 1~4 Low | 🟡 5~9 report | 🟠 10~15 High | 🔴 16~25 
+Rating: 🟢 1–4 Low | 🟡 5–9 Medium | 🟠 10–15 High | 🔴 16–25 Extreme
 ```
 
-## risk category classification (RBS)
+## Risk Category Classification (RBS)
 
 ### Risk Breakdown Structure
 
 ```
-project risk
-├── technical risk
-│ ├── technical 
-│ ├── technical nature
-│ ├── integration issue
-│ └── nature/quality
-├── management risk
-│ ├── schedule estimation
-│ ├── specialistKRW nature
-│ ├── scope change
-│ └── company
-├── external risk
-│ ├── /grade
-│ ├── change
-│ ├── market 
-│ └── environment/re-
-└── risk
- ├── personcapability 
- ├── priority change
- ├── budget 
- └── change
+Project Risks
+├── Technical Risks
+│   ├── Technical Complexity
+│   ├── Technology Maturity
+│   ├── Integration Issues
+│   └── Performance / Quality
+├── Management Risks
+│   ├── Schedule Estimation
+│   ├── Resource Availability
+│   ├── Scope Changes
+│   └── Communication
+├── External Risks
+│   ├── Vendor / Supply Chain
+│   ├── Regulatory Changes
+│   ├── Market Shifts
+│   └── Environmental / Disaster
+└── Organizational Risks
+    ├── Staff Attrition
+    ├── Priority Changes
+    ├── Budget Cuts
+    └── Organizational Restructuring
 ```
 
-## quality risk analysis
+## Quantitative Risk Analysis
 
 ### EMV (Expected Monetary Value)
 
 ```
-EMV = probability × impact(amount)
+EMV = Probability × Impact (monetary amount)
 
-: EMV = 30% × (-₩500M) = -₩1.500M
-opportunity: EMV = 40% × (+₩300M) = +₩1.200M
+Threat:      EMV = 30% × (−₩500M) = −₩150M
+Opportunity: EMV = 40% × (+₩300M) = +₩120M
 
-project total EMV = Σ individual EMV
-→ example(Contingency Reserve) calculation basis
+Project Total EMV = Σ Individual EMVs
+→ Basis for calculating Contingency Reserve
 ```
 
-### also analysis (Tornado Diagram)
+### Sensitivity Analysis (Tornado Diagram)
 
 ```
-numberby impact scope (project cost standard):
+Impact range by variable (based on project cost):
 
-exchange ████████████████████ ±₩300M
-personcase ███████████████ ±₩2.200M
-delivery date degreeannual ██████████ ±₩1.500M
-quality issue ████████ ±₩1.200M
- change ██████ ±₩0.800M
+Exchange rate fluctuation  ████████████████████ ±₩300M
+Labor cost                 ███████████████ ±₩220M
+Delivery delay             ██████████ ±₩150M
+Quality issues             ████████ ±₩120M
+Regulatory change          ██████ ±₩80M
 
-→ exchange Korean number → management
+→ Exchange rate is the most sensitive variable → prioritize management
 ```
 
-## risk etc.recorddepartment template
+## Risk Register Template
 
-| ID | risk | category | probability | impact | score | etc.grade | response | responsible | status |
-|----|--------|---------|------|------|------|------|------|------|------|
-| R01 | [description] | technical | 4 | 5 | 20 | 🔴 | mitigation | [name] | nature |
-| R02 | [description] | management | 3 | 3 | 9 | 🟡 | acceptance | [name] | monitoring |
+| ID | Risk | Category | Probability | Impact | Score | Grade | Response | Owner | Status |
+|----|------|----------|------------|--------|-------|-------|---------|-------|--------|
+| R01 | [Description] | Technical | 4 | 5 | 20 | 🔴 | Mitigate | [Name] | Active |
+| R02 | [Description] | Management | 3 | 3 | 9 | 🟡 | Accept | [Name] | Monitoring |
 
-## KRI (Key Risk Indicator) design
+## KRI (Key Risk Indicator) Design
 
-| KRI | total | cycle | |
-|-----|--------|----------|--------|
-| schedule SPI | <0.9 | weekbetween | schedule risk re-assessment |
-| cost CPI | <0.9 | monthbetween | budget risk re-assessment |
-| rate | >5% | sprint | quality risk re-assessment |
-| rate | >15% | monthbetween | personcapability risk re-assessment |
+| KRI | Threshold | Measurement Frequency | Trigger |
+|-----|-----------|----------------------|---------|
+| Schedule SPI | < 0.9 | Weekly | Re-assess schedule risk |
+| Cost CPI | < 0.9 | Monthly | Re-assess budget risk |
+| Defect rate | > 5% | Per sprint | Re-assess quality risk |
+| Attrition rate | > 15% | Monthly | Re-assess resource risk |
 
-## quality checklist
+## Quality Checklist
 
-| item | standard |
-|------|------|
-| matrix | 5x5 probability-impact applied |
-| category | RBS 4versus category |
-| analysis | EMV or scenario analysis |
-| KRI | risk 1items or more |
-| etc.grade standard | 4stage |
-| cycle | risk re-assessment schedule specify |
+| Item | Criterion |
+|------|-----------|
+| Matrix | 5×5 probability-impact applied |
+| Categories | All 4 RBS categories covered |
+| Quantitative Analysis | EMV or scenario analysis completed |
+| KRIs | At least 1 KRI per risk |
+| Grade Criteria | 4-level color coding applied |
+| Update Cadence | Risk re-assessment schedule specified |

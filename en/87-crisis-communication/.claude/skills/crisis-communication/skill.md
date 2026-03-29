@@ -1,137 +1,137 @@
 ---
 name: crisis-communication
-description: "crisis situation occurrence when situationidentify, messagestrategy, press release, Q&A, monitoringto agent team to integration crisis package Korean creation Full pipeline. 'crisis response', 'crisis communication', 'press release writing', 'crisismanagement', 'crisis management', 'grade response', ' response', 'basisspecialist preparation', 'official document', 'crisis strategy', 'companydocument writing', ' response', 'data response', 'companycase company response' etc. crisis situation communication before skill usage. crisis type degree also crisis response framework provide. However, actual rate specialistdocument, insurance , company/company versus, actualtime SNS monitoring API annual is outside this skill's scope."
+description: "Full crisis communication pipeline. When a crisis occurs, an agent team collaborates to generate an integrated crisis package — covering situation assessment, message strategy, press release, Q&A, and monitoring — in a single run. Use this skill for any organizational crisis communication need, including: 'crisis response', 'crisis communication', 'press release writing', 'crisis management', 'emergency response', 'media response', 'press conference preparation', 'official statement', 'crisis communication strategy', 'apology drafting', 'product recall response', 'data breach response', 'incident response'. Provides a universal crisis response framework even when the crisis type is not yet specified. Does not cover actual legal counsel, insurance claims, civil or criminal litigation representation, or real-time social media monitoring API integration."
 ---
 
-# Crisis Communication — crisis Full pipeline
+# Crisis Communication — Crisis Communication Full Pipeline
 
-crisis situation situationidentify→messagestrategy→press release→Q&A→monitoring An agent team collaborates to generate all deliverables at once.
+When a crisis occurs, an agent team collaborates to generate all deliverables in a single run, covering situation assessment → message strategy → press release → Q&A → monitoring.
 
-## execution mode
+## Execution Mode
 
-**agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
+**Agent Team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
 
-## agent composition
+## Agent Composition
 
-| agent | file | role | type |
-|---------|------|------|------|
-| situation-analyst | `.claude/agents/situation-analyst.md` | companyactualtotal, stakeholder, crisisetc.grade | general-purpose |
-| message-strategist | `.claude/agents/message-strategist.md` | coremessage, tone, channelstrategy | general-purpose |
-| press-release-writer | `.claude/agents/press-release-writer.md` | press release, officialdocument, withindepartmentdegree | general-purpose |
-| qa-preparer | `.claude/agents/qa-preparer.md` | expectedquestion, answerguide, when | general-purpose |
-| media-monitor | `.claude/agents/media-monitor.md` | tracking, 2gapcrisisdegree, judgment | general-purpose |
+| Agent | File | Role | Type |
+|-------|------|------|------|
+| situation-analyst | `.claude/agents/situation-analyst.md` | Facts, stakeholders, crisis grade | general-purpose |
+| message-strategist | `.claude/agents/message-strategist.md` | Core messages, tone, channel strategy | general-purpose |
+| press-release-writer | `.claude/agents/press-release-writer.md` | Press release, official statements, internal notices | general-purpose |
+| qa-preparer | `.claude/agents/qa-preparer.md` | Anticipated questions, answer guide, briefing sheet | general-purpose |
+| media-monitor | `.claude/agents/media-monitor.md` | Sentiment tracking, secondary crisis detection, resolution criteria | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1: preparation (Orchestrator directly perform)
+### Phase 1: Preparation (Orchestrator performs directly)
 
 1. Extract from user input:
- - **crisis situation**: day occurrence
- - ** information**: people, scale, 
- - **current status**: press coverage department, withindepartment persondegree timing, initial response department
- - **constraint condition** (optional): legal issue, matters, time constraint
- - **existing document** (optional): existing press release, withindepartment report etc.
-2. `_workspace/` Create the directory at the project root
-3. Organize input and save to `_workspace/00_input.md`
-4. existing document `_workspace/` companyand applicable Phase 
-5. Determine the **execution mode** based on the scope of the request ( "task scaleby mode" reference)
+    - **Crisis situation**: What happened
+    - **Organization information**: Name, size, industry
+    - **Current status**: Whether media has reported, when internally discovered, whether initial response has occurred
+    - **Constraints** (optional): Legal issues, regulatory considerations, time constraints
+    - **Existing documents** (optional): Prior press releases, internal reports
+2. Create the `_workspace/` directory at the project root.
+3. Organize the input and save to `_workspace/00_input.md`.
+4. If existing documents are provided, copy them to `_workspace/` and adjust the relevant phases accordingly.
+5. **Determine the execution mode** based on the scope of the request (see "Mode by Scope" below).
 
-### Phase 2: team composition and execution
+### Phase 2: Team Assembly and Execution
 
-team compositionand task to do. task between dependency total next and :
+Assemble the team and assign tasks. Task dependencies are as follows:
 
-| order | task | responsible | dependency | deliverable |
-|------|------|------|------|--------|
-| 1 | situation analysis | analyst | None | `_workspace/01_situation_analysis.md` |
-| 2 | message strategy | strategist | task 1 | `_workspace/02_message_strategy.md` |
-| 3a | press release writing | writer | task 1, 2 | `_workspace/03_press_release.md` |
-| 3b | Q&A preparation | preparer | task 1, 2 | `_workspace/04_qa_briefing.md` |
-| 4 | monitoring plan | monitor | task 1, 2, 3a, 3b | `_workspace/05_monitoring_plan.md` |
+| Order | Task | Owner | Dependencies | Deliverable |
+|-------|------|-------|-------------|------------|
+| 1 | Situation analysis | analyst | None | `_workspace/01_situation_analysis.md` |
+| 2 | Message strategy | strategist | Task 1 | `_workspace/02_message_strategy.md` |
+| 3a | Press release writing | writer | Tasks 1, 2 | `_workspace/03_press_release.md` |
+| 3b | Q&A preparation | preparer | Tasks 1, 2 | `_workspace/04_qa_briefing.md` |
+| 4 | Monitoring plan | monitor | Tasks 1, 2, 3a, 3b | `_workspace/05_monitoring_plan.md` |
 
-task 3a(press release) and 3b(Q&A) ** execution**. task 2(messagestrategy) only dependency when whenworkto do number .
+Tasks 3a (press release) and 3b (Q&A) are executed **in parallel**. Both depend only on Task 2 (message strategy) and can begin simultaneously.
 
-**teamKRW between flow:**
-- analyst complete → strategistto crisisetc.grade·stakeholder· deliver
-- strategist complete → writerto coremessage·tone·No-Go Phrases deliver, preparerto stakeholderby message deliver
-- writer complete → preparerto official documentplan deliver (Q&A consistency secure)
-- preparer complete → monitorto expected question pattern deliver
-- monitor all deliverable cross-verificationto message consistency, scenario, inspection
+**Inter-agent communication flow:**
+- analyst completes → delivers crisis grade, stakeholder analysis, and facts to strategist
+- strategist completes → delivers core messages, tone, and No-Go Phrases to writer; delivers stakeholder-specific messages to preparer
+- writer completes → delivers final copy to preparer (for Q&A consistency)
+- preparer completes → delivers anticipated question patterns to monitor
+- monitor cross-verifies all deliverables for message consistency, missing scenarios, and timing conflicts
 
-### Phase 3: integration and final deliverable
+### Phase 3: Integration and Final Deliverables
 
- verify result basedas final deliverable organization:
+Finalize deliverables based on the monitor's verification results:
 
-1. `_workspace/` Verify all files in the directory
-2. message consistency issue findings applicable agent revision request (versus 2)
+1. Verify all files in `_workspace/`.
+2. If message consistency issues are found, request revisions from the relevant agent (maximum 2 iterations).
 3. Report the final summary to the user:
- - situation analysis report — `01_situation_analysis.md`
- - message strategyfrom — `02_message_strategy.md`
- - press release/document — `03_press_release.md`
- - Q&A when — `04_qa_briefing.md`
- - monitoring plan — `05_monitoring_plan.md`
+    - Situation Analysis Report — `01_situation_analysis.md`
+    - Message Strategy Document — `02_message_strategy.md`
+    - Press Release / Official Statement — `03_press_release.md`
+    - Q&A Briefing Sheet — `04_qa_briefing.md`
+    - Monitoring Plan — `05_monitoring_plan.md`
 
-## task scaleby mode
+## Mode by Scope
 
-user request scope according to deploy agent :
+Adjust the agents deployed based on the scope of the user's request:
 
-| user request pattern | execution mode | deploy agent |
-|----------------|----------|-------------|
-| "crisis response overall preparationplease do", "Full package" | **Full pipeline** | 5people beforeKRW |
-| "press release only " | **press release mode** | analyst + strategist + writer |
-| "basisspecialist Q&A preparationplease do" | **Q&A mode** | analyst + strategist + preparer |
-| "crisis situation analysis only please do" | **analysis mode** | analyst |
-| " press release reviewplease do" (existing file) | **review mode** | strategist + monitor |
+| User Request Pattern | Execution Mode | Agents Deployed |
+|---------------------|---------------|----------------|
+| "Prepare full crisis response package" | **Full Pipeline** | All 5 agents |
+| "Write the press release only" | **Press Release Mode** | analyst + strategist + writer |
+| "Prepare Q&A for the press conference" | **Q&A Mode** | analyst + strategist + preparer |
+| "Analyze the crisis situation only" | **Analysis Mode** | analyst only |
+| "Review this press release" (existing file) | **Review Mode** | strategist + monitor |
 
-**existing file utilization**: user existing press release, withindepartment report etc. provide, applicable file `_workspace/` qualityKorean position companyand applicable stage case.
+**Using existing files**: If the user provides an existing press release or internal report, copy the file to the appropriate location in `_workspace/` and skip the corresponding phase.
 
-## data deliver protocol
+## Data Transfer Protocol
 
-| strategy | method | also |
-|------|------|------|
-| File-based | `_workspace/` | Store and share major deliverables |
+| Strategy | Method | Purpose |
+|----------|--------|---------|
+| File-based | `_workspace/` directory | Store and share major deliverables |
 | Message-based | SendMessage | Real-time key information transfer, revision requests |
 | Task-based | TaskCreate/TaskUpdate | Progress tracking, dependency management |
 
-File naming convention: `{}_{agent}_{deliverable}.{extensionspecialist}`
+File naming convention: `{sequence}_{agent}_{deliverable}.{extension}`
 
-## error handling
+## Error Handling
 
-| error type | strategy |
-|----------|------|
-| crisis information insufficient | analyst scenario basedas task, "[information limitation]" specify |
-| web search failure | company crisis type day patternas versus, report " un-confirm" specify |
-| legal judgment needed | ⚖️ tablebasis after ratereview needed matters by also organization, reportnumberquality version |
-| agent failure | Retry once -> proceed without that deliverable, final reporting specify |
-| message day findings | applicable agent revision request → re-task (versus 2) |
+| Error Type | Strategy |
+|-----------|---------|
+| Insufficient crisis information | analyst works from assumption-based scenarios; note "[Information Limited]" |
+| Web search fails | Replace with general patterns for the relevant crisis type; note "Precedent unconfirmed" in report |
+| Legal judgment required | Mark ⚖️ and compile legal review items separately; provide conservative version in parallel |
+| Agent failure | Retry once → if still failing, proceed without that deliverable; note the omission in the final report |
+| Message inconsistency found | Request revision from relevant agent → rework (maximum 2 iterations) |
 
-## test scenario
+## Test Scenarios
 
-### flow
-**Prompt**: " company from client itemspersoninformation 5 only case . press coverage before withindepartmentfrom 30minute before findings. crisis response communication overall preparationplease do."
-**expected result**:
-- situation analysis: data crisisetc.grade Critical , itemspersoninformationreport risk, stakeholder 6items or more
-- message strategy: 3C core message, response, No-Go Phrases 5items or more
-- press release: + press release + CEO fromKorean
-- Q&A: categoryby expected question 20items or more, question response
-- monitoring: channelby , standard, crisis judgment standard
+### Normal Flow
+**Prompt**: "50,000 customer records were leaked from our app. It hasn't been reported yet, and we discovered it internally 30 minutes ago. Prepare the full crisis communication response."
+**Expected Results**:
+- Situation analysis: Data breach rated Critical, Personal Data Protection Act violation risk identified, 6+ stakeholder groups
+- Message strategy: 3C core messages, Golden Hour response plan, 5+ No-Go Phrases
+- Press release: Holding statement + full press release + CEO letter
+- Q&A: 20+ anticipated questions by category, trap question responses
+- Monitoring: Channel-specific keywords, alert thresholds, crisis resolution criteria
 
-### departmentminute request flow
-**Prompt**: "withinday basisspecialistperson Q&A only grade preparationplease do. situation ."
-**expected result**:
-- Q&A mode beforeexchange (analyst + strategist + preparer)
-- question (planbeforenature, report, scope, cause, re-degree)
-- versusperson 1-degree + degree document
+### Partial Request Flow
+**Prompt**: "We have a press conference tomorrow and urgently need Q&A only. The situation is a product recall."
+**Expected Results**:
+- Switch to Q&A Mode (analyst + strategist + preparer)
+- Recall-specific questions (safety, compensation, recall scope, cause, preventive measures)
+- Spokesperson one-page card + bridge phrases
 
-### error flow
-**Prompt**: "crisis response preparationplease do, situation SNSfrom "
-**expected result**:
-- analyst "[information limitation]" specify after SNS crisis type scenario 3items present
-- each scenarioby core message preparation
-- i.e.when provide
+### Error Flow
+**Prompt**: "Prepare a crisis response — I'm not sure of the details, but there's an uproar on social media."
+**Expected Results**:
+- analyst notes "[Information Limited]" and presents 3 social media crisis type assumption scenarios
+- Prepares core message variations for each scenario
+- Provides a general-purpose holding statement immediately
 
-## agentby extension skill
+## Agent Extension Skills
 
-| extension skill | | target agent | role |
-|----------|------|-------------|------|
-| stakeholder-mapping | `.claude/skills/stakeholder-mapping/skill.md` | situation-analyst, message-strategist | stakeholder mapping, crisis etc.grade, timeline |
-| media-response-templates | `.claude/skills/media-response-templates/skill.md` | press-release-writer, qa-preparer | press release template, Q&A ABT structure, prohibited tablecurrent |
+| Extension Skill | Path | Target Agents | Role |
+|----------------|------|--------------|------|
+| stakeholder-mapping | `.claude/skills/stakeholder-mapping/skill.md` | situation-analyst, message-strategist | Stakeholder mapping, crisis grading, timeline |
+| media-response-templates | `.claude/skills/media-response-templates/skill.md` | press-release-writer, qa-preparer | Press release templates, Q&A ABT structure, prohibited expressions |

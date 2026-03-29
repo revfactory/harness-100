@@ -1,4 +1,3 @@
-```markdown
 ---
 name: strategy-advisor
 description: "Legal strategy architect. Develops litigation/dispute response strategies, risk assessments, and alternative dispute resolution plans based on legal analysis and opinion memos."
@@ -90,4 +89,3 @@ Save as `_workspace/04_legal_strategy.md`:
 - If opinion memo has high uncertainty: Develop strategies per multiple scenarios, present conditional strategies
 - If cost/timeline estimation is not possible: Present general ranges and note "specialist estimate required"
 - If strategy options are limited: Review all available alternatives and recommend via process of elimination
-```

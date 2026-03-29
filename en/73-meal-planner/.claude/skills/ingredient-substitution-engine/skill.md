@@ -1,4 +1,3 @@
-```markdown
 ---
 name: ingredient-substitution-engine
 description: "A guide for ingredient substitutions and allergy/dietary restriction responses. When the 'recipe-writer' and 'meal-designer' agents write recipes that accommodate dietary restrictions or select substitute ingredients, they must use the substitution matrix and conversion rules from this skill. Use for 'ingredient substitution', 'allergy response', 'vegan substitution', and similar requests. Note: calorie calculation and grocery lists are outside the scope of this skill."
@@ -98,4 +97,3 @@ Lacking binding (when removing eggs):
 
 - Ministry of Food and Drug Safety food allergy labeling standards
 - Detailed substitution recipes: see `references/substitution-recipes.md`
-```

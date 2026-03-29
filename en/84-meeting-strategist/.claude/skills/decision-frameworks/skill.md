@@ -1,141 +1,138 @@
 ---
 name: decision-frameworks
-description: "decision-making framework library. framework-designer agent meeting decision-making structure designto do when reference. 'decision-making matrix', 'DACI', 'option assessment' request when usage. However, actual table whensystem decision-making specialist tool building scope outside."
+description: "Decision-making framework library. Referenced by the framework-designer agent when designing decision structures for meetings. Use when 'decision matrix', 'DACI', or 'option evaluation' is requested. Note: building actual voting systems or decision automation tools is outside this skill's scope."
 ---
 
-# Decision Frameworks — decision-making framework library
+# Decision Frameworks — Decision-Making Framework Library
 
-framework-designer agent decision-making structure design framework .
+A collection of frameworks that strengthen the framework-designer agent's ability to design decision structures for meetings.
 
-## decision-making typeby framework mapping
+## Framework Mapping by Decision Type
 
-| decision-making type | also | recommendation framework | quality meeting |
-|-------------|--------|---------------|----------|
-| specialistday | Low | | 10minute |
-| during option optional | duringbetween | during assessment matrix | 30minute decision-making |
-| strategyquality direction | High | DACI + scenario | 60minute strategy meeting |
-| specialistKRW allocation | High | priority matrix | minutebasis plan |
-| risk judgment | High | expected analysis | KRW reporting |
+| Decision Type | Complexity | Recommended Framework | Suitable Meeting |
+|--------------|------------|----------------------|-----------------|
+| Binary choice | Low | Pros and cons table | 10-min stand-up |
+| Multiple option selection | Medium | Weighted scoring matrix | 30-min decision session |
+| Strategic direction | High | DACI + scenario analysis | 60-min strategy meeting |
+| Resource allocation | High | Priority matrix | Quarterly planning |
+| Risk judgment | High | Expected value analysis | Executive briefing |
 
-## DACI framework
+## DACI Framework
 
-| role | description | personKRW |
-|------|------|------|
-| **D**river | decision-making process week also | 1people |
-| **A**pprover | final person | 1people |
-| **C**ontributor | /information provide | Npeople |
-| **I**nformed | result report target | Npeople |
+| Role | Description | Count |
+|------|-------------|-------|
+| **D**river | Leads the decision-making process | 1 person |
+| **A**pprover | Gives final approval | 1 person |
+| **C**ontributor | Provides input and information | N people |
+| **I**nformed | Receives notification of the outcome | N people |
 
-### DACI document template
+### DACI Document Template
 
 ```markdown
-## decision-making: [title]
-- deadline: 2025-01-31
-- Driver: [name/]
-- Approver: [name/]
+## Decision: [Title]
+- Deadline: 2025-01-31
+- Driver: [name / title]
+- Approver: [name / title]
 - Contributors: [name list]
 - Informed: [name list]
 
-### background
-[ decision neededKorean]
+### Background
+[Why this decision is needed]
 
-### option
-| option | description | advantage | disadvantage | cost | schedule |
-|------|------|------|------|------|------|
+### Options
+| Option | Description | Pros | Cons | Cost | Timeline |
+|--------|-------------|------|------|------|----------|
 | A | ... | ... | ... | ... | ... |
 | B | ... | ... | ... | ... | ... |
 
-### plan
-[Driver and basis]
+### Recommendation
+[Driver's recommendation and rationale]
 
-### decision
-[Approver final decision] — daywhen: ____
+### Decision
+[Approver's final decision] — Date: ____
 ```
 
-## during assessment matrix (Weighted Scoring)
+## Weighted Scoring Matrix
 
-### design procedure
-
-```
-1. assessment standard (5~7items)
-2. duringvalue to do (total 100%)
-3. each option standardby 1~5point assessment
-4. during score = score × duringvalue
-5. totalpoint comparison → point option optional
-```
-
-### template
-
-| standard | duringvalue | option A | option B | option C |
-|------|--------|--------|--------|--------|
-| cost | 30% | 4 (1.2) | 3 (0.9) | 5 (1.5) |
-| implementation difficulty | 25% | 3 (0.75) | 5 (1.25) | 2 (0.5) |
-| strategy qualitynature | 25% | 5 (1.25) | 3 (0.75) | 4 (1.0) |
-| risk | 20% | 4 (0.8) | 4 (0.8) | 3 (0.6) |
-| **totalpoint** | **100%** | **4.0** | **3.7** | **3.6** |
-
-## 2x2 priority matrix
-
-### Eisenhower matrix
+### Design Procedure
 
 ```
- grade
- High Low
- ┌───────────┬───────────┐
-│ DO NOW │ SCHEDULE │
-│ i.e.when execution │ schedule establish │
- ├───────────┼───────────┤
-during│ DELEGATE │ ELIMINATE│
-│ │ │
-├───────────┴───────────┤
-│ │
-│ │
- └───────────────────────┘
+1. Define evaluation criteria (5–7 criteria)
+2. Assign weights (total = 100%)
+3. Score each option per criterion on a 1–5 scale
+4. Weighted score = raw score × weight
+5. Compare totals → select highest-scoring option
 ```
 
-### Impact-Effort matrix
+### Template
 
-| | capability Low | capability High |
-|---|---------|---------|
-| ** High** | Quick Win (i.e.when) | Major Project (plan) |
-| ** Low** | Fill-in ( when) | Thankless Task (basis) |
+| Criterion | Weight | Option A | Option B | Option C |
+|-----------|--------|---------|---------|---------|
+| Cost efficiency | 30% | 4 (1.2) | 3 (0.9) | 5 (1.5) |
+| Implementation difficulty | 25% | 3 (0.75) | 5 (1.25) | 2 (0.5) |
+| Strategic fit | 25% | 5 (1.25) | 3 (0.75) | 4 (1.0) |
+| Risk | 20% | 4 (0.8) | 4 (0.8) | 3 (0.6) |
+| **Total** | **100%** | **4.0** | **3.7** | **3.6** |
 
-## expected analysis (Expected Value)
+## 2×2 Priority Matrix
+
+### Eisenhower Matrix
 
 ```
-expected = Σ (result × probability)
-
-option A:
- nature(70%): +5000,000 KRW → 3500,000 KRW
- failure(30%): -2000,000 KRW → -600,000 KRW
- expected: +2900,000 KRW
-
-option B:
- nature(90%): +2000,000 KRW → 1800,000 KRW
- failure(10%): -500,000 KRW → -50,000 KRW
- expected: +1750,000 KRW
-
-→ expected standard option A optional
-→ However, risk also option B optional (versus loss )
+              Urgency
+          High         Low
+  ┌───────────┬───────────┐
+  │  DO NOW   │  SCHEDULE │
+Im│  Act now  │  Plan it  │
+po├───────────┼───────────┤
+rt│  DELEGATE │  ELIMINATE│
+  │  Hand off │  Remove   │
+  └───────────┴───────────┘
 ```
 
-## derive method
+### Impact-Effort Matrix
 
-| method | description | quality situation |
-|------|------|----------|
-| Fist of Five | 1~5 when tablewhen | confirm |
-| Dot Voting | eachspecialist allocation | number option |
-| Roman Voting | 👍/👎/✊ when | confirm |
-| Gradients of Agreement | 8stage | un-Korean gap |
-| Decision Sprint | debate+table | time limitation |
+| | Low Effort | High Effort |
+|---|-----------|------------|
+| **High Impact** | Quick Win (do immediately) | Major Project (plan carefully) |
+| **Low Impact** | Fill-in (do when available) | Thankless Task (eliminate) |
 
-## quality checklist
+## Expected Value Analysis
 
-| item | standard |
-|------|------|
-| role | DACI or etc. role |
-| assessment standard | companybefore done standard 5~7items |
-| option number | 2~5items (exceeding when companybefore ) |
-| data basis | each option quality basis |
-| method | companybefore done method |
-| deadline | decision-making person specify |
+```
+Expected Value = Σ (Outcome × Probability)
+
+Option A:
+  Success (70%): +$500K → $350K
+  Failure (30%): -$200K → -$60K
+  Expected Value: +$290K
+
+Option B:
+  Success (90%): +$200K → $180K
+  Failure (10%): -$50K → -$5K
+  Expected Value: +$175K
+
+→ By expected value, select Option A
+→ However, if risk tolerance is low, select Option B (consider maximum loss)
+```
+
+## Consensus Methods
+
+| Method | Description | Best For |
+|--------|-------------|---------|
+| Fist of Five | Show 1–5 fingers simultaneously | Quick consensus check |
+| Dot Voting | Each person distributes sticker votes | Narrowing down many options |
+| Roman Voting | 👍/👎/✊ simultaneously | Simple approve/reject |
+| Gradients of Agreement | 8-level agreement spectrum | Surfacing nuanced differences |
+| Decision Sprint | Time-boxed discussion + vote | Time-constrained decisions |
+
+## Quality Checklist
+
+| Item | Standard |
+|------|---------|
+| Role definition | DACI or equivalent roles assigned |
+| Evaluation criteria | 5–7 pre-agreed criteria |
+| Number of options | 2–5 (pre-filter if more) |
+| Data basis | Quantitative basis for each option |
+| Consensus method | Pre-agreed voting/consensus approach |
+| Deadline | Decision deadline explicitly stated |

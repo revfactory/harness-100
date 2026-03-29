@@ -1,4 +1,3 @@
-```markdown
 ---
 name: income-analyst
 description: "Income analysis specialist. Classifies the user's income by type, calculates the tax base, and analyzes applicable tax rates and tax brackets."
@@ -100,6 +99,3 @@ Save as `_workspace/01_income_analysis.md`:
 - Insufficient income information: Analyze with provided information only, note "Additional income verification required"
 - Unclear tax year: Apply latest tax law standards, note "Attribution year verification required"
 - Complex income structure: Recommend consulting a tax accountant + provide general analysis
-```
-ith a tax accountant + provide general analysis
-```

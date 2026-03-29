@@ -1,37 +1,37 @@
 # Wedding Planner Harness
 
-wedding preparation comprehensive timelinedesign→budgetmanagementtable→vendorcomparisontable→checklist→invitationdocument A harness where an agent team collaborates to produce deliverables.
+A harness where an agent team collaborates to produce comprehensive wedding preparation deliverables: timeline design, budget management table, vendor comparison table, checklist, and invitation wording.
 
-## structure
+## Structure
 
 ```
 .claude/
 ├── agents/
-│ ├── timeline-designer.md — timeline design (D-day , monthby to do day)
-│ ├── budget-controller.md — budget management (itemby allocation, tracking, reduction)
-│ ├── vendor-analyst.md — vendor comparison (wedding hall·studio/dress/makeup·honeymoon research)
-│ ├── checklist-builder.md — checklist + invitation (to do day, document writing)
-│ └── wedding-reviewer.md — cross-verification (timeline↔budget↔vendor↔checklist consistency)
+│   ├── timeline-designer.md   — Timeline design (D-day countdown, monthly tasks)
+│   ├── budget-controller.md   — Budget management (category allocation, tracking, cost reduction)
+│   ├── vendor-analyst.md      — Vendor comparison (wedding hall, studio/dress/makeup, honeymoon research)
+│   ├── checklist-builder.md   — Checklist + invitation wording (task list, wording drafts)
+│   └── wedding-reviewer.md    — Cross-verification (timeline↔budget↔vendor↔checklist consistency)
 ├── skills/
-│ ├── wedding-planner/
-│ │ └── skill.md — Orchestrator (team , workflow, error handling)
-│ ├── vendor-negotiation-guide/
-│ │ └── skill.md — vendor comparison·negotiation guide (vendor-analyst)
-│ └── wedding-budget-optimizer/
-│ └── skill.md — wedding budget optimization (budget-controller)
-└── CLAUDE.md — file
+│   ├── wedding-planner/
+│   │   └── skill.md           — Orchestrator (team coordination, workflow, error handling)
+│   ├── vendor-negotiation-guide/
+│   │   └── skill.md           — Wedding vendor comparison and negotiation guide (for vendor-analyst)
+│   └── wedding-budget-optimizer/
+│       └── skill.md           — Wedding budget optimization (for budget-controller)
+└── CLAUDE.md                  — This file
 ```
 
-## usage
+## Usage
 
-`/wedding-planner` skill , "wedding preparation " specialistannual request.
+Trigger the `/wedding-planner` skill, or make a natural language request such as "help me plan my wedding."
 
-## deliverable
+## Deliverables
 
-all deliverable `_workspace/` save:
-- `00_input.md` — user input organization
-- `01_timeline.md` — wedding preparation timeline
-- `02_budget.md` — budget managementtable
-- `03_vendor_comparison.md` — vendor comparisontable
-- `04_checklist_invitation.md` — checklist + invitation document
-- `05_review_report.md` — review report
+All deliverables are saved in the `_workspace/` directory:
+- `00_input.md` — Organized user input
+- `01_timeline.md` — Wedding preparation timeline
+- `02_budget.md` — Budget management table
+- `03_vendor_comparison.md` — Vendor comparison table
+- `04_checklist_invitation.md` — Checklist + invitation wording
+- `05_review_report.md` — Review report

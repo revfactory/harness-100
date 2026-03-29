@@ -1,151 +1,151 @@
 ---
 name: compound-interest-simulator
-description: " and simulation and basis asset nature example tool. 'investment-advisor' and 'tax-strategist' agent investment revenue simulationand retirement specialist designto do when this skill's official, scenario comparison, retirement goal total must be utilized. ' total', 'asset nature example', 'retirement specialist simulation' etc. However, budget design tax total is outside this skill's scope."
+description: "A compound interest simulation and long-term asset growth projection tool. The 'investment-advisor' and 'tax-strategist' agents must use this skill's compound formulas, scenario comparisons, and retirement goal calculations when simulating investment returns and designing retirement funds. Use for 'compound interest calculation', 'asset growth projection', 'retirement fund simulation', and similar requests. However, budget design and tax calculation are outside the scope of this skill."
 ---
 
-# Compound Interest Simulator — simulator
+# Compound Interest Simulator — Compound Interest Simulator
 
- and simulation, asset nature example, retirement specialist total.
+Compound interest simulation, asset growth projection, and reverse retirement fund calculation.
 
-## core official
+## Core Compound Interest Formulas
 
-### daywhen 
+### Lump-Sum Compound Interest
 
 ```
 FV = PV × (1 + r)^n
 
-FV: un- value (Future Value)
-PV: current value (Present Value)
-r: annual revenuerate (number)
-n: duration (year)
+FV: Future Value
+PV: Present Value (current value)
+r: Annual return rate (decimal)
+n: Duration (years)
 
-examplewhen: 1,0000,000 KRW annual 7% 30year investment
- FV = 1,000 only × (1.07)^30 = 7,6120,000 KRW
+Example: Invest 10,000,000 KRW at 7% annual return for 30 years
+  FV = 10,000,000 × (1.07)^30 = 76,120,000 KRW
 ```
 
-### basis quality (month)
+### Regular Contribution Compound Interest (Monthly)
 
 ```
 FV = PMT × [(1 + r/12)^(12n) - 1] / (r/12)
 
-PMT: month quality
-r: annual revenuerate
-n: duration (year)
+PMT: Monthly contribution
+r: Annual return rate
+n: Duration (years)
 
-examplewhen: month 500,000 KRW annual 7% 20year quality
- FV = 50 only × [(1.00583)^240 - 1] / 0.00583
- = 50 only × 520.9 = 200M 6,0450,000 KRW
- (KRW 100M 2,0000,000 KRW, revenue 100M 4,0450,000 KRW)
+Example: Contribute 500,000 KRW/month at 7% annual return for 20 years
+  FV = 500,000 × [(1.00583)^240 - 1] / 0.00583
+     = 500,000 × 520.9 = 260,450,000 KRW
+  (Principal: 120,000,000 KRW, Returns: 140,450,000 KRW)
 ```
 
-### retirement specialist (needed month quality)
+### Retirement Fund Reverse Calculation (Required Monthly Contribution)
 
 ```
 PMT = FV × (r/12) / [(1 + r/12)^(12n) - 1]
 
-examplewhen: 20year after 500M needed, annual 7% expectedrevenue
- PMT = 500M × 0.00583 / [(1.00583)^240 - 1]
- = 500M × 0.00192 = 95.90,000 KRW/month
+Example: Need 500,000,000 KRW in 20 years, expected 7% annual return
+  PMT = 500,000,000 × 0.00583 / [(1.00583)^240 - 1]
+     = 500,000,000 × 0.00192 = 959,000 KRW/month
 ```
 
-## 72 (asset 2 duration)
+## Rule of 72 (Time to Double Assets)
 
 ```
-asset 2 annualnumber ≈ 72 / annual revenuerate(%)
+Years to double ≈ 72 / Annual return rate (%)
 
-annual revenuerateby 2 duration:
- 3%: 24year
- 5%: 14.4year
- 7%: 10.3year
- 10%: 7.2year
- 12%: 6year
- 15%: 4.8year
+Doubling time by annual return rate:
+  3%:  24 years
+  5%:  14.4 years
+  7%:  10.3 years
+  10%: 7.2 years
+  12%: 6 years
+  15%: 4.8 years
 ```
 
-## asset by expectedrevenuerate
+## Expected Return Rates by Asset Class
 
-| asset | annual expectedrevenuerate | nature(tablelevelgap) | nature |
-|------|-------------|---------------|------|
-| example/quality | 3-4% | 0% | KRW report, person less than |
-|  | 3-5% | 3-5% | planquality, total |
-| (company) | 4-7% | 5-8% | within revenue |
-| week(within) | 7-10% | 15-20% | basis nature, |
-| week | 7-10% | 14-18% | minute |
-| week | 8-12% | 20-25% | nature·risk |
-| department | 5-8% | 10-15% | dividend+whentaxgap |
-| | 3-6% | 15-20% | person degree |
+| Asset | Annual Expected Return | Volatility (Std Dev) | Characteristics |
+|-------|----------------------|----------------------|-----------------|
+| Savings/Deposits | 3-4% | 0% | Principal guaranteed, below inflation |
+| Bonds (Government) | 3-5% | 3-5% | Stable, inverse rate relationship |
+| Bonds (Corporate) | 4-7% | 5-8% | Higher yield within bonds |
+| Stocks (Domestic) | 7-10% | 15-20% | Long-term growth, high volatility |
+| Stocks (Developed markets) | 7-10% | 14-18% | Global diversification |
+| Stocks (Emerging markets) | 8-12% | 20-25% | High growth and risk |
+| Real Estate (REITs) | 5-8% | 10-15% | Dividend + capital gains |
+| Gold | 3-6% | 15-20% | Inflation hedge |
 
-## scenario comparison simulation
+## Scenario Comparison Simulation
 
-### annual revenuerate gap impact (month 1000,000 KRW, 30year)
+### Impact of Annual Return Rate Difference (Monthly 1,000,000 KRW, 30 years)
 
-| annual revenuerate | total KRW | final asset | revenue | revenuerate(total) |
-|----------|---------|----------|------|-----------|
-| 3% | 3.600M | 5.800M | 2.200M | 61% |
-| 5% | 3.600M | 8.300M | 4.700M | 131% |
-| 7% | 3.600M | 12.200M | 8.600M | 239% |
-| 10% | 3.600M | 22.600M | 19.000M | 528% |
+| Annual Return | Total Principal | Final Assets | Returns | Return Rate (Total) |
+|--------------|----------------|--------------|---------|---------------------|
+| 3% | 360,000,000 | 580,000,000 | 220,000,000 | 61% |
+| 5% | 360,000,000 | 830,000,000 | 470,000,000 | 131% |
+| 7% | 360,000,000 | 1,220,000,000 | 860,000,000 | 239% |
+| 10% | 360,000,000 | 2,260,000,000 | 1,900,000,000 | 528% |
 
-### whenwork timing gap impact (month 500,000 KRW, annual 7%)
+### Impact of Starting Time (Monthly 500,000 KRW, 7% annual return)
 
-| whenwork | investment duration | KRW | final asset | notes |
-|----------|----------|------|----------|------|
-| 25tax | 35year | 2.100M | 10.800M | day whenwork |
-| 30tax | 30year | 1.800M | 6.100M | 5year gap -4.700M |
-| 35tax | 25year | 1.500M | 4.100M | |
-| 40tax | 20year | 1.200M | 2.600M | |
+| Starting Age | Investment Period | Principal | Final Assets | Notes |
+|-------------|-----------------|-----------|--------------|-------|
+| 25 | 35 years | 210,000,000 | 1,080,000,000 | Early start |
+| 30 | 30 years | 180,000,000 | 610,000,000 | 5-year gap: -470,000,000 |
+| 35 | 25 years | 150,000,000 | 410,000,000 | |
+| 40 | 20 years | 120,000,000 | 260,000,000 | |
 
-## retirement design total
+## Retirement Planning Calculations
 
-### retirement specialist needed calculation
-
-```
-month × 12 × retirement after duration(year) × person 
-
-reportnumberquality total (person 3%, investmentrevenue 5%):
- actual revenuerate = 5% - 3% = 2%
-
-25year retirement , month 3000,000 KRW needed when:
- needed specialist = 300 only × 12 / 0.02 × [1 - (1.02)^(-25)]
- ≈ 7.000M KRW
-
-4% person rule (between):
- retirement specialist = annualbetween / 0.04
- = 3,6000,000 KRW / 0.04 = 9.000M KRW
-```
-
-### pension number reflected
+### Required Retirement Fund
 
 ```
-done needed specialist = total needed specialist - pension current
+Monthly expenses × 12 × Post-retirement years × Inflation adjustment
 
-pension expected number (2024 standard, 20year ):
- month pyeongbalanced 3000,000 KRW → month approx. 60-800,000 KRW
- month pyeongbalanced 5000,000 KRW → month approx. 100-1200,000 KRW
+Conservative calculation (inflation 3%, investment return 5%):
+  Real return rate = 5% - 3% = 2%
 
-gap itemsperson assetas preparation
+25 years of retirement, needing 3,000,000 KRW/month:
+  Required fund = 3,000,000 × 12 / 0.02 × [1 - (1.02)^(-25)]
+               ≈ 700,000,000 KRW
+
+4% Withdrawal Rule (simple method):
+  Retirement fund = Annual living expenses / 0.04
+  = 36,000,000 KRW / 0.04 = 900,000,000 KRW
 ```
 
-## simulation capability 
+### National Pension Adjustment
+
+```
+Adjusted required fund = Total required fund - National pension present value
+
+Expected national pension payout (2024 standard, 20 years of contributions):
+  Monthly average income 3,000,000 KRW → approx. 600,000–800,000 KRW/month
+  Monthly average income 5,000,000 KRW → approx. 1,000,000–1,200,000 KRW/month
+
+Prepare the gap through personal assets
+```
+
+## Simulation Output Format
 
 ```markdown
-## asset nature simulation
+## Asset Growth Simulation
 
-**initial investment**: X0,000 KRW | **month quality**: X0,000 KRW | **expected revenuerate**: X%
-**investment duration**: Xyear
+**Initial Investment**: X KRW | **Monthly Contribution**: X KRW | **Expected Return**: X%
+**Investment Period**: X years
 
-| annualgap | KRW total | asset value | revenue | revenuerate |
-|------|----------|----------|------|--------|
-| 5year | X0,000 KRW | X0,000 KRW | X0,000 KRW | X% |
-| 10year | X0,000 KRW | X0,000 KRW | X0,000 KRW | X% |
-| 15year | X0,000 KRW | X0,000 KRW | X0,000 KRW | X% |
-| 20year | X0,000 KRW | X0,000 KRW | X0,000 KRW | X% |
-| 30year | X0,000 KRW | X0,000 KRW | X0,000 KRW | X% |
+| Year | Cumulative Principal | Asset Value | Returns | Return Rate |
+|------|---------------------|-------------|---------|-------------|
+| 5    | X KRW | X KRW | X KRW | X% |
+| 10   | X KRW | X KRW | X KRW | X% |
+| 15   | X KRW | X KRW | X KRW | X% |
+| 20   | X KRW | X KRW | X KRW | X% |
+| 30   | X KRW | X KRW | X KRW | X% |
 
-**core insight**: [ and degree timing, tax savings utilization when addition and etc.]
+**Key Insight**: [Point when compound effect becomes significant, additional gains from tax-advantaged accounts, etc.]
 ```
 
-## reference
+## Reference
 
-- revenuerate un- reportdegree 
-- detailed simulation model: `references/simulation-models.md` reference
+- Past returns do not guarantee future performance
+- Detailed simulation models: see `references/simulation-models.md`

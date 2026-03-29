@@ -1,4 +1,3 @@
-```markdown
 ---
 name: tax-engine
 description: "Tax calculation engine. Applies tax rates to the tax base to compute the calculated tax amount, then reflects deductions, reductions, and prepaid taxes to derive the final payable (or refundable) tax amount."
@@ -112,6 +111,3 @@ Save as `_workspace/03_tax_calculation.md`:
 - Input figure discrepancy: Cross-validate figures from income analyst and deduction specialist; flag any discrepancies explicitly
 - Calculation error possibility: Perform double verification on critical calculations
 - If penalty taxes apply: Provide separate guidance on non-filing, underreporting, and late-payment penalty taxes
-```
-and late payment penalty taxes
-```

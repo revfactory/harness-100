@@ -1,124 +1,124 @@
 ---
 name: hiring-pipeline
-description: "hiring process JDwriting, sourcing, screening, interview design, assessment, offerto agent team to Korean creation Full pipeline. 'hiring', 'talent hiring', 'JD writing', 'job description', 'hiringposting', 'interview question', 'interview design', 'hiring process', 'sourcing strategy', 'screening', 'offer', 'hiring pipeline', 'hiring', 'talent secure' etc. hiring before skill usage. However, actual hiring platform(ATS) annual, grade whensystem etc.record, hiring totalapprox.from legal capability report, reference execution is outside this skill's scope."
+description: "Full pipeline where an agent team collaborates to produce all hiring process deliverables — JD writing, sourcing, screening, interview design, evaluation, and offer — at once. Use this skill for all recruitment-related requests: 'hire someone', 'talent acquisition', 'write a JD', 'job description', 'job posting', 'interview questions', 'interview design', 'hiring process', 'sourcing strategy', 'screening', 'offer letter', 'hiring pipeline', 'recruiting', etc. Out of scope: ATS platform integration, payroll system enrollment, legal enforceability of employment contracts, and conducting reference checks."
 ---
 
-# Hiring Pipeline — hiring process Full pipeline
+# Hiring Pipeline — Full Recruitment Process Pipeline
 
-hiring JDwriting→sourcing→screening→interview→assessment→offer An agent team collaborates to generate all deliverables at once.
+An agent team collaborates to produce all deliverables — JD writing → sourcing → screening → interview → evaluation → offer — in a single workflow.
 
-## execution mode
+## Execution Mode
 
-**agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
+**Agent Team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
 
-## agent composition
+## Agent Composition
 
-| agent | file | role | type |
-|---------|------|------|------|
-| jd-writer | `.claude/agents/jd-writer.md` | job description, hiringposting | general-purpose |
-| sourcing-specialist | `.claude/agents/sourcing-specialist.md` | channelstrategy, value | general-purpose |
-| screening-expert | `.claude/agents/screening-expert.md` | fromassessment, task, screening | general-purpose |
-| interview-designer | `.claude/agents/interview-designer.md` | structureinterview, question, evaluation form | general-purpose |
-| offer-coordinator | `.claude/agents/offer-coordinator.md` | finalassessment, report, offer | general-purpose |
+| Agent | File | Role | Type |
+|-------|------|------|------|
+| jd-writer | `.claude/agents/jd-writer.md` | Job description, job posting | general-purpose |
+| sourcing-specialist | `.claude/agents/sourcing-specialist.md` | Channel strategy, outreach | general-purpose |
+| screening-expert | `.claude/agents/screening-expert.md` | Resume evaluation, take-home task, screening | general-purpose |
+| interview-designer | `.claude/agents/interview-designer.md` | Structured interview, questions, scorecard | general-purpose |
+| offer-coordinator | `.claude/agents/offer-coordinator.md` | Final evaluation, compensation, offer | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1: preparation (Orchestrator directly perform)
+### Phase 1: Preparation (Orchestrator performs directly)
 
 1. Extract from user input:
- - **degree**: hiringto do job, grade
- - ** information**: companypeople, team composition, document
- - **hiring condition**: , , grade scope
- - **grade**: hiring deadline, hiring personKRW
- - **existing material** (optional): existing JD, applicant current status
-2. `_workspace/` Create the directory at the project root
-3. Organize input and save to `_workspace/00_input.md`
-4. existing material `_workspace/` companyand applicable Phase 
-5. Determine the **execution mode** based on the scope of the request
+    - **Position**: Role and level to hire for
+    - **Company Information**: Company name, team structure, culture
+    - **Hiring Conditions**: Employment type, work arrangement, salary range
+    - **Urgency**: Hiring deadline, number of openings
+    - **Existing Materials** (optional): Current JD, applicant status
+2. Create the `_workspace/` directory at the project root
+3. Organize the input and save to `_workspace/00_input.md`
+4. If existing materials are available, copy to `_workspace/` and adjust the relevant Phase accordingly
+5. **Determine the execution mode** based on the scope of the request
 
-### Phase 2: team composition and execution
+### Phase 2: Team Assembly and Execution
 
-| order | task | responsible | dependency | deliverable |
-|------|------|------|------|--------|
+| Order | Task | Owner | Dependency | Deliverable |
+|-------|------|-------|-----------|------------|
 | 1 | JD writing | writer | None | `_workspace/01_job_description.md` |
-| 2 | sourcing strategy | sourcing | task 1 | `_workspace/02_sourcing_strategy.md` |
-| 3 | screening design | screening | task 1 | `_workspace/03_screening_framework.md` |
-| 4 | interview design | interview | task 1, 3 | `_workspace/04_interview_design.md` |
-| 5 | assessment·offer | offer | task 1, 2, 3, 4 | `_workspace/05_evaluation_offer.md` |
+| 2 | Sourcing strategy | sourcing | Task 1 | `_workspace/02_sourcing_strategy.md` |
+| 3 | Screening design | screening | Task 1 | `_workspace/03_screening_framework.md` |
+| 4 | Interview design | interview | Tasks 1, 3 | `_workspace/04_interview_design.md` |
+| 5 | Evaluation and offer | offer | Tasks 1, 2, 3, 4 | `_workspace/05_evaluation_offer.md` |
 
-task 2(sourcing) and 3(screening) ** execution**. task 1(JD) only dependency.
+Tasks 2 (sourcing) and 3 (screening) run **in parallel** — both depend only on Task 1 (JD).
 
-**teamKRW between flow:**
-- writer complete → sourcingto target ·EVP, screeningto competency·assessmentstandard deliver
-- sourcing complete → offerto market report level deliver
-- screening complete → interviewto confirm needed competency deliver
-- interview complete → offerto evaluation form structure·hiring recommendation standard deliver
-- offer overall pipeline cross-verification, dayvalue findings when revision request (versus 2)
+**Inter-team communication flow:**
+- writer complete → send target profile and EVP to sourcing; send competencies and criteria to screening
+- sourcing complete → send market compensation levels to offer
+- screening complete → send competencies requiring deeper evaluation to interview
+- interview complete → send scorecard structure and hiring recommendation criteria to offer
+- offer cross-verifies the entire pipeline; requests revisions on discrepancies (up to 2 rounds)
 
-### Phase 3: integration and final deliverable
+### Phase 3: Integration and Final Deliverables
 
-1. `_workspace/` Verify all files in the directory
-2. offer consistency verify result reflected
+1. Verify all files in `_workspace/`
+2. Reflect offer coordinator's consistency verification results
 3. Report the final summary to the user
 
-## task scaleby mode
+## Mode by Request Scale
 
-| user request pattern | execution mode | deploy agent |
-|----------------|----------|-------------|
-| "hiring process overall designplease do" | **Full pipeline** | 5people beforeKRW |
-| "JD only " | **JD mode** | writer |
-| "interview question create it" | **interview mode** | writer + interview |
-| " JD sourcing strategy " (existing JD) | **sourcing mode** | sourcing |
-| "hiring screening standard create it" | **screening mode** | writer + screening |
+| User Request Pattern | Execution Mode | Agents Deployed |
+|----------------------|----------------|----------------|
+| "Design the full hiring process" | **Full Pipeline** | All 5 agents |
+| "Just write the JD" | **JD Mode** | writer only |
+| "Create interview questions" | **Interview Mode** | writer + interview |
+| "Build a sourcing strategy for this JD" (existing JD) | **Sourcing Mode** | sourcing only |
+| "Create a screening framework" | **Screening Mode** | writer + screening |
 
-## data deliver protocol
+## Data Transfer Protocol
 
-| strategy | method | also |
-|------|------|------|
-| File-based | `_workspace/` | Store and share major deliverables |
-| Message-based | SendMessage | Real-time key information transfer, revision requests |
-| Task-based | TaskCreate/TaskUpdate | Progress tracking, dependency management |
+| Strategy | Method | Purpose |
+|----------|--------|---------|
+| File-based | `_workspace/` directory | Store and share primary deliverables |
+| Message-based | SendMessage | Real-time key information transfer and revision requests |
+| Task-based | TaskCreate / TaskUpdate | Progress tracking and dependency management |
 
-File naming convention: `{}_{agent}_{deliverable}.{extensionspecialist}`
+File naming convention: `{sequence}_{agent}_{deliverable}.{extension}`
 
-## error handling
+## Error Handling
 
-| error type | strategy |
-|----------|------|
-| job information insufficient | writer tablelevel JD template + guide provide |
-| grade information None | sourcing market value research, 3stage scope proposal |
-| web search failure | day degree based JD/sourcing strategy, "[market data un-reflected]" specify |
-| agent failure | Retry once -> proceed without that deliverable |
-| consistency dayvalue | offer revision request → re-task (versus 2) |
+| Error Type | Strategy |
+|------------|---------|
+| Insufficient job information | writer provides standard JD template + customization guide |
+| No compensation information | sourcing researches market benchmarks and proposes a 3-tier range |
+| Web search failure | Use general knowledge for JD / sourcing strategy; mark "[Market data not reflected]" |
+| Agent failure | Retry once → if still failing, proceed without that deliverable |
+| Consistency discrepancy | offer requests revision → rework (up to 2 rounds) |
 
-## test scenario
+## Test Scenarios
 
-### flow
-**Prompt**: "when developmentspecialist 1people hiring . salary 8~100M, KRW possible, Korean plan hiringand ."
-**expected result**:
-- JD: when competency 5items, capabilityqualityperson hiringposting, assessment standard
-- sourcing: LinkedIn Boolean , value template 3, channelby strategy
-- screening: test + whensystem design task, before screening 5document
-- interview: technical interview + document interview, STAR question 10items+
-- offer: market value versus report, offer, negotiation guide
+### Normal Flow
+**Prompt**: "I need to hire 1 senior backend engineer. Salary range KRW 80M–100M, remote work available, want to hire within a month."
+**Expected results**:
+- JD: 5 senior backend competencies, compelling job posting, evaluation criteria
+- Sourcing: LinkedIn Boolean queries, 3 outreach templates, channel-by-channel strategy
+- Screening: Coding test + system design task, 5 phone screening questions
+- Interview: Technical interview (live coding) + culture interview, 10+ STAR questions
+- Offer: Compensation benchmarked against market, offer letter, negotiation guide
 
-### departmentminute request flow
-**Prompt**: " JD interview question only create it" + JD file
-**expected result**:
-- interview mode (writer + interview)
-- existing JD based competency after structure interview question design
-- writer competency standard plan only report
+### Partial Request Flow
+**Prompt**: "Create interview questions for this JD" + JD file
+**Expected results**:
+- Interview Mode (writer + interview)
+- Extract competencies from existing JD and design structured interview questions
+- writer supplements only the competency criteria draft
 
-### error flow
-**Prompt**: "hiring jobpersondegree "
-**expected result**:
-- writer work content/goal questionas job analysis whenwork
-- company job 3items value proposal
-- minimumKorean information plan JD writing after user confirm request
+### Error Flow
+**Prompt**: "I need to hire someone but I'm not sure what the role is"
+**Expected results**:
+- writer begins job analysis by asking about tasks and goals
+- Proposes benchmarks for 3 similar roles
+- Writes a draft JD with minimal information and asks user to confirm
 
-## agentby extension skill
+## Per-Agent Extension Skills
 
-| extension skill | | target agent | role |
-|----------|------|-------------|------|
-| competency-model | `.claude/skills/competency-model/skill.md` | jd-writer, screening-expert | competency definition, level total, screening matrix |
-| interview-scorecard | `.claude/skills/interview-scorecard/skill.md` | interview-designer | structure interview, BEI question , degree |
+| Extension Skill | Path | Target Agent | Role |
+|-----------------|------|-------------|------|
+| competency-model | `.claude/skills/competency-model/skill.md` | jd-writer, screening-expert | Competency definitions, proficiency levels, screening matrix |
+| interview-scorecard | `.claude/skills/interview-scorecard/skill.md` | interview-designer | Structured interview design, BEI question bank, bias prevention |

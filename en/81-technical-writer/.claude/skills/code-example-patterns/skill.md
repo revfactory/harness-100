@@ -1,30 +1,30 @@
 ---
 name: code-example-patterns
-description: "technical document code example pattern library. doc-writer agent code example, writingto do when reference. 'code example pattern', ' code writing' request when usage. However, actual code file test execution scope outside."
+description: "Code example pattern library for technical documentation. Referenced by the doc-writer agent when writing code examples and tutorials. Use when 'code example patterns' or 'writing tutorial code' is requested. Actual code compilation and test execution are outside this skill's scope."
 ---
 
-# Code Example Patterns — code example pattern library
+# Code Example Patterns — Code Example Pattern Library
 
-doc-writer agent technical document includedto do code example quality pattern.
+Patterns that improve the quality of code examples the doc-writer agent includes in technical documentation.
 
-## 5stage example structure
+## 5-Step Example Structure
 
 ```
-1. goal — " code X perform"
-2. companybefore condition — library, environment number, setting
-3. core code — minimum work example
-4. execution result — expected capability
-5. extension point — "next stage Y to do number "
+1. Goal declaration — "This code performs X"
+2. Prerequisites — Libraries, environment variables, configuration
+3. Core code — Minimal working example
+4. Execution result — Expected output
+5. Extension point — "As a next step, you can do Y"
 ```
 
-## example vs example
+## Good Example vs. Bad Example
 
-** example** ( None):
+**Bad example** (no context):
 ```python
 result = client.process(data)
 ```
 
-** example** (specialistbasisquality):
+**Good example** (self-contained):
 ```python
 # pip install example-sdk
 from example_sdk import Client
@@ -32,79 +32,79 @@ from example_sdk import Client
 client = Client(api_key="your-api-key")
 data = {"name": "test", "value": 42}
 result = client.process(data)
-print(result.status) # "success"
+print(result.status)  # "success"
 ```
 
-## by style guide
+## Style Guide by Language
 
 ### Python
-- order: tablelevel → from → 
-- type included (3.10+)
-- docstring: Google style (Args, Returns, Raises)
-- f-string usage, format degree
+- Import order: standard library → third-party → local
+- Include type hints (Python 3.10+)
+- Docstrings: Google style (Args, Returns, Raises)
+- Use f-strings; avoid format()
 
 ### TypeScript
-- ESM import usage (require degree)
-- async/await usage (Promise degree)
-- person/type specify
-- try/catch error processing
+- Use ESM imports (avoid require)
+- Use async/await (avoid Promise chaining)
+- Explicitly declare interfaces and types
+- Handle errors with try/catch
 
 ### cURL
-- (\)as readability secure
-- environmentnumber information minute
-- expected annotationas included
+- Use line continuation (`\`) for readability
+- Separate sensitive information into environment variables
+- Include expected response as a comment
 
-## code composition pattern
+## Tutorial Code Composition Patterns
 
-### pattern 1: pointquality building (Progressive Build)
+### Pattern 1: Progressive Build
 ```
-Step 1: minimum work code
-Step 2: input processing addition
-Step 3: error processing addition
-Step 4: setting external
-Step 5: code
+Step 1: Minimal working code
+Step 2: Add input handling
+Step 3: Add error handling
+Step 4: Externalize configuration
+Step 5: Production-ready code
 ```
-each stagefrom **change departmentminute only **, existing code `...`as approx..
+At each step, **highlight only the changed parts**; abbreviate existing code with `...`.
 
-### pattern 2: problem- 
+### Pattern 2: Problem–Solution Pair
 ```markdown
-#### problem: [specific problem description]
-#### : [code and method]
+#### Problem: [Specific problem description]
+#### Solution: [Resolution method with code]
 ```
 
-### pattern 3: comparison 
-| method | advantage | disadvantage | code |
-|------|------|------|------|
-| basis | | | `result = fetch` |
-| basis | nature | | `result = await fetch` |
+### Pattern 3: Comparison Table
+| Approach | Advantages | Disadvantages | Code |
+|----------|------------|---------------|------|
+| Synchronous | Simple | Blocking | `result = fetch()` |
+| Asynchronous | Performance | Complexity | `result = await fetch()` |
 
-## code annotation rule
+## Code Comment Rules
 
-| rule | description |
-|------|------|
-| WHY annotation | "" writingdegree |
-| WHAT prohibited | "" code specialist |
-| Korean annotation | Korean documentfrom Korean |
-| TODO prohibited | example un-nature prohibited |
-| description | "actual environmentfrom..." annotation |
+| Rule | Description |
+|------|-------------|
+| WHY comments | Explain *why* it was written this way |
+| No WHAT comments | *What* is expressed by the code itself |
+| Localized comments | Use the document's language for comments |
+| No TODO | No incomplete items in examples |
+| Hardcoding note | Add "In production, use..." comment |
 
-## information processing
+## Handling Sensitive Information
 
 ```python
-# : environmentnumber
+# Correct: environment variable
 api_key = os.environ["API_KEY"]
 
-# document placeholder
-api_key = "your-api-key-here" # actual 
+# Documentation placeholder
+api_key = "your-api-key-here"  # Replace with your actual key
 ```
 
-## quality checklist
+## Quality Checklist
 
-| item | standard |
-|------|------|
-| specialistbasisnature | import~executionto company-basis work |
-| error processing | try/catch included |
-| type information | number/un-/exchange type specify |
-| execution result | expected capability included |
-| information | when None |
-| version specify | /library version |
+| Item | Standard |
+|------|----------|
+| Self-contained | Copy-paste from import to execution and it works |
+| Error handling | try/catch included |
+| Type information | Types specified for variables / parameters / return values |
+| Execution result | Expected output included |
+| Sensitive information | No hardcoded secrets |
+| Version specified | Language and library version stated |

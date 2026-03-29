@@ -1,4 +1,3 @@
-```markdown
 ---
 name: deduction-optimizer
 description: "Deduction optimization specialist. Reviews every income deduction, tax credit, and exemption item without omission, and derives the optimal combination to maximize deduction benefits."
@@ -110,4 +109,3 @@ Save as `_workspace/02_deduction_optimization.md`:
 - Insufficient deduction documentation: Mark as "Documentation verification required" + calculate with estimated deduction amount
 - Risk of duplicate deductions: Issue a clear warning and provide guidance on correct application
 - Impact of tax law amendments: Specify the applicable tax year + notify of potential changes
-```

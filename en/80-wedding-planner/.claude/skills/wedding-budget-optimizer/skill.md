@@ -1,184 +1,184 @@
 ---
 name: wedding-budget-optimizer
-description: "wedding budget itemby allocation and cost reduction strategy optimization budget management tool. 'budget-controller' and 'wedding-reviewer' agent budget allocationand cost verifyto do when this skill's budget allocation official, cost standardtable, approx. strategy must be utilized. 'wedding budget allocation', 'cost reduction', 'budget simulation' etc. However, vendor comparison timeline design is outside this skill's scope."
+description: "A budget management tool that optimizes per-category allocation and cost reduction strategies for a wedding budget. When the 'budget-controller' and 'wedding-reviewer' agents allocate budgets and verify costs, they must use this skill's budget allocation formulas, cost reference table, and savings strategies. Use for 'wedding budget allocation', 'cost reduction', and 'budget simulation' contexts. Vendor comparison and timeline design are outside this skill's scope."
 ---
 
-# Wedding Budget Optimizer — wedding budget optimization tool
+# Wedding Budget Optimizer — Wedding Budget Optimization Tool
 
-wedding budget itemby allocation ratio, cost standard, approx. strategy provide.
+Provides per-category allocation ratios, cost standards, and savings strategies for a wedding budget.
 
-## wedding cost structure (Korean 2024-2025)
+## Wedding Cost Structure (Korea, 2024–2025)
 
-### overall cost pyeongbalanced
-
-```
-Korean pyeongbalanced wedding cost (2024):
- totalcost: approx. 2.5-3.500M KRW (both families )
- 
-composition:
- week(beforetax/): 1.5-2.500M KRW (50-70%)
- ceremony·: 2,000-5,0000,000 KRW (10-15%)
- wedding gifts·betrothal gifts: 1,000-3,0000,000 KRW (5-10%)
- trousseau: 1,000-2,0000,000 KRW (3-7%)
- honeymoon: 200-6000,000 KRW (2-3%)
-```
-
-### ceremony cost taxdepartment allocation (ceremony 3,0000,000 KRW standard)
-
-| item | ratio | amount | notes |
-|------|------|------|------|
-| catering cost (company) | 40-50% | 1,200-1,5000,000 KRW | 200people × 6-7.50,000 KRW |
-| studio/dress/makeup | 15-25% | 450-7500,000 KRW | ++ |
-| ceremony | 5-10% | 150-3000,000 KRW | versus (catering cost by also when) |
-| invitation | 2-3% | 60-900,000 KRW | 250 standard |
-| company·congratulatory song | 1-3% | 30-900,000 KRW | |
-| ·decoration | 3-5% | 90-1500,000 KRW | department, decoration |
-| return gifts | 2-3% | 60-900,000 KRW | guest |
-| traditional ceremony | 1-2% | 30-600,000 KRW | traditional ceremony, versus |
-| example | 5-10% | 150-3000,000 KRW | |
-
-## budget allocation official
-
-### guest number based catering cost calculation
+### Overall Cost Averages
 
 ```
-catering cost total = expected guest × 1person catering cost × (1 + VAT)
+Korean Average Wedding Costs (2024):
+  Total cost: approximately ₩250,000,000–350,000,000 (both families combined)
 
-report totalnumber:
- versus 200people → actual expected: 160-180people (80-90%)
- versus 300people → actual expected: 230-260people (77-87%)
-
-planbefore : guaranteed headcount = actual expected × 0.9 ( planbefore)
+Breakdown:
+  Housing (lease / purchase): ₩150,000,000–250,000,000 (50–70%)
+  Ceremony and party: ₩20,000,000–50,000,000 (10–15%)
+  Wedding gifts and betrothal gifts: ₩10,000,000–30,000,000 (5–10%)
+  Trousseau: ₩10,000,000–20,000,000 (3–7%)
+  Honeymoon: ₩2,000,000–6,000,000 (2–3%)
 ```
 
-### congratulatory money example
+### Detailed Ceremony Cost Allocation (Based on ₩30,000,000 Ceremony Budget)
+
+| Item | Ratio | Amount | Notes |
+|------|-------|--------|-------|
+| Catering (meals) | 40–50% | ₩12,000,000–15,000,000 | 200 guests × ₩60,000–75,000 |
+| Studio/dress/makeup | 15–25% | ₩4,500,000–7,500,000 | Studio + dress + makeup |
+| Venue rental | 5–10% | ₩1,500,000–3,000,000 | Rental fee (if separate from catering) |
+| Invitations | 2–3% | ₩600,000–900,000 | 250 pieces |
+| MC and wedding song | 1–3% | ₩300,000–900,000 | |
+| Flowers and décor | 3–5% | ₩900,000–1,500,000 | Bouquet, venue floral decoration |
+| Return gifts | 2–3% | ₩600,000–900,000 | Guest return gifts |
+| Paebaek | 1–2% | ₩300,000–600,000 | Paebaek food, ceremonial attire rental |
+| Contingency reserve | 5–10% | ₩1,500,000–3,000,000 | Emergency fund |
+
+## Budget Allocation Formulas
+
+### Guest-Based Catering Cost Calculation
 
 ```
-expected congratulatory money = Σ(totalby personKRW × expected amount)
+Total catering cost = Expected guests × per-person cost × (1 + VAT rate)
 
-totalby pyeongbalanced congratulatory money (2024):
- person: 10-300,000 KRW
- : 5-100,000 KRW
- : 5-70,000 KRW
- degreeperson: 3-50,000 KRW
+Attendance adjustment factors:
+  Invited 200 → Expected actual attendance: 160–180 guests (80–90%)
+  Invited 300 → Expected actual attendance: 230–260 guests (77–87%)
 
-congratulatory money = congratulatory money / catering cost total
- general: 60-80%
- guest : 80-100% (catering cost possible)
+Safety margin: Minimum guaranteed headcount = Expected actual attendance × 0.9 (conservative)
 ```
 
-## cost reduction strategy TOP 10
-
-### approx. (1000,000 KRW+ reduction)
+### Congratulatory Gift Estimation
 
 ```
-1. off-season·week before ceremony (catering cost 10-15% to doperson + versus reduction)
- reduction: 150-3000,000 KRW
+Expected congratulatory gifts = Σ(guests by relationship × expected amount)
 
-2. studio/dress/makeup individual totalapprox. (package versus nature comparison)
- reduction: 100-2000,000 KRW (situationby)
+Average congratulatory gift amounts by relationship (2024):
+  Relatives: ₩100,000–300,000
+  Colleagues: ₩50,000–100,000
+  Friends: ₩50,000–70,000
+  Acquaintances: ₩30,000–50,000
 
-3. guest number optimization (needed versus basis)
- reduction: versus 50people decrease × 70,000 KRW = 3500,000 KRW
-
-4. element (departmentminute DIY)
- - invitation: day invitation (80-90% reduction)
- - return gifts: directly (50% reduction)
- - : degreeperson (1000,000 KRW reduction)
+Gift coverage ratio = Total congratulatory gifts / Total catering cost
+  Typical: 60–80%
+  Many guests: 80–100% (can offset catering cost)
 ```
 
-### duringbetween approx. (30-1000,000 KRW reduction)
+## Top 10 Cost Reduction Strategies
+
+### Large Savings (₩1,000,000+ reduction)
 
 ```
-5. totalapprox. to doperson (10-20% by)
- reduction: 50-1000,000 KRW
+1. Off-season or Saturday morning ceremony (10–15% catering discount + venue savings)
+   Savings: ₩1,500,000–3,000,000
 
-6. degreeperson items to doperson (un- weddingKorean through)
- reduction: 30-500,000 KRW
+2. Individual studio/dress/makeup contracts (compare value vs. package)
+   Savings: ₩1,000,000–2,000,000 (situation-dependent)
 
-7. usage (income versus)
- reduction: 30-500,000 KRW
+3. Guest count optimization (reduce unnecessary invitations)
+   Savings: 50 fewer guests × ₩70,000 = ₩3,500,000
 
-8. return gifts person 
- reduction: 20-400,000 KRW
+4. DIY wedding elements (partial self-arrangement)
+   - Invitations: Mobile invitations (80–90% reduction)
+   - Return gifts: Direct purchase (50% reduction)
+   - Videography: Use a friend (₩1,000,000 reduction)
 ```
 
-### work approx. (300,000 KRW or less)
+### Medium Savings (₩300,000–1,000,000 reduction)
 
 ```
-9. day invitation ( versus)
- reduction: 20-300,000 KRW
+5. Bridal fair contract discount (10–20% special pricing)
+   Savings: ₩500,000–1,000,000
 
-10. traditional ceremony directly preparation 
- reduction: 15-250,000 KRW
+6. Referral discount (through already-married friends)
+   Savings: ₩300,000–500,000
+
+7. Use seasonal flowers (instead of imported flowers)
+   Savings: ₩300,000–500,000
+
+8. Return gifts purchased online directly
+   Savings: ₩200,000–400,000
 ```
 
-## budget levelby scenario
-
-### approx. (2,0000,000 KRW)
+### Small Savings (under ₩300,000)
 
 ```
-catering cost: 150people × 60,000 KRW = 9000,000 KRW
-studio/dress/makeup: 1500,000 KRW (during package)
-ceremony: 1000,000 KRW (day wedding hall off-season)
-invitation: 100,000 KRW (day)
-·decoration: 500,000 KRW
-basis: 1500,000 KRW
-example: 1400,000 KRW
-→ congratulatory moneyas catering cost departmentminute possible
+9. Mobile invitations (replacing printed)
+   Savings: ₩200,000–300,000
+
+10. Prepare paebaek food yourself (with family help)
+    Savings: ₩150,000–250,000
 ```
 
-### tablelevel (3,5000,000 KRW)
+## Budget Scenarios by Level
+
+### Economy (₩20,000,000)
 
 ```
-catering cost: 200people × 80,000 KRW = 1,6000,000 KRW
-studio/dress/makeup: 4000,000 KRW (duringgrade package)
-ceremony: 2000,000 KRW
-invitation: 500,000 KRW (person+day)
-·decoration: 1000,000 KRW
-company·congratulatory song: 500,000 KRW
-return gifts: 500,000 KRW
-traditional ceremony: 400,000 KRW
-: 800,000 KRW
-example: 3300,000 KRW
+Catering: 150 guests × ₩60,000 = ₩9,000,000
+Studio/dress/makeup: ₩1,500,000 (mid-low package)
+Venue: ₩1,000,000 (standard wedding hall, off-season)
+Invitations: ₩100,000 (mobile)
+Flowers and décor: ₩500,000
+Other: ₩1,500,000
+Contingency reserve: ₩1,400,000
+→ Congratulatory gifts can offset a significant portion of catering cost
 ```
 
-### premium (5,0000,000 KRW)
+### Standard (₩35,000,000)
 
 ```
-catering cost: 250people × 120,000 KRW = 3,0000,000 KRW 
-studio/dress/makeup: 7000,000 KRW (premium)
-ceremony: 3000,000 KRW ( versus)
-invitation: 800,000 KRW
-·decoration: 2000,000 KRW
-company: 800,000 KRW
-return gifts: 800,000 KRW
-: 1500,000 KRW
-basis: 2000,000 KRW
-example: 2100,000 KRW
+Catering: 200 guests × ₩80,000 = ₩16,000,000
+Studio/dress/makeup: ₩4,000,000 (mid-tier package)
+Venue: ₩2,000,000
+Invitations: ₩500,000 (printed + mobile)
+Flowers and décor: ₩1,000,000
+MC and wedding song: ₩500,000
+Return gifts: ₩500,000
+Paebaek: ₩400,000
+Videography: ₩800,000
+Contingency reserve: ₩3,300,000
 ```
 
-## budget management trackingtable
+### Premium (₩50,000,000)
+
+```
+Catering: 250 guests × ₩120,000 = ₩30,000,000 (hotel)
+Studio/dress/makeup: ₩7,000,000 (premium)
+Venue: ₩3,000,000 (hotel rental)
+Invitations: ₩800,000
+Flowers and décor: ₩2,000,000
+MC: ₩800,000
+Return gifts: ₩800,000
+Videography (directed): ₩1,500,000
+Other: ₩2,000,000
+Contingency reserve: ₩2,100,000
+```
+
+## Budget Management Tracking Table
 
 ```markdown
-## wedding budget trackingtable
+## Wedding Budget Tracking Table
 
-**total budget**: X0,000 KRW | ****: X0,000 KRW | ****: X0,000 KRW | **progressrate**: X%
+**Total Budget**: ₩X | **Spent**: ₩X | **Remaining**: ₩X | **Progress**: X%
 
-| item | budget | deposit | final payment | total | status |
-|------|------|--------|------|---------|------|
-| wedding hall | X0,000 KRW | X0,000 KRW | X0,000 KRW | X0,000 KRW | ✅ totalapprox. |
-| studio/dress/makeup | X0,000 KRW | - | - | - | 🔍 comparison during |
-| honeymoon | X0,000 KRW | - | - | - | ⏳ un-number |
+| Item | Budget | Deposit | Final Payment | Total Spent | Status |
+|------|--------|---------|---------------|-------------|--------|
+| Wedding hall | ₩X | ₩X | ₩X | ₩X | ✅ Contracted |
+| Studio/dress/makeup | ₩X | - | - | - | 🔍 Comparing |
+| Honeymoon | ₩X | - | - | - | ⏳ Not started |
 
-### department schedule
-| dayspecialist | vendor | amount | type | |
-|------|------|------|------|------|
-| D-180 | wedding hall | X0,000 KRW | deposit | |
-| D-30 | wedding hall | X0,000 KRW | final payment | guest number after |
+### Payment Schedule
+| Date | Vendor | Amount | Type | Notes |
+|------|--------|--------|------|-------|
+| D-180 | Wedding hall | ₩X | Deposit | |
+| D-30 | Wedding hall | ₩X | Final payment | After guest count confirmed |
 ```
 
-## reference
+## Reference
 
-- Korean market 2024-2025 standard
-- detailed cost data: `references/wedding-cost-data.md` reference
+- Based on the Korean wedding market 2024–2025
+- Detailed cost data: see `references/wedding-cost-data.md`

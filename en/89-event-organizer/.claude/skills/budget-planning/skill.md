@@ -1,88 +1,88 @@
 ---
 name: budget-planning
-description: "event budget plan framework. concept-planner and logistics-manager agent event budget establishand managementto do when reference. 'event budget', 'cost calculation', 'budget allocation' request when usage. However, total processing tax scope outside."
+description: "Event budget planning framework. Referenced by concept-planner and logistics-manager agents when building and managing event budgets. Use for 'event budget', 'cost estimation', 'budget allocation' requests. Out of scope: accounting processing and tax filing."
 ---
 
-# Budget Planning — event budget plan
+# Budget Planning — Event Budget Planning
 
-concept-planner / logistics-manager agent budget establish competency .
+Enhances the budget development capabilities of the concept-planner and logistics-manager agents.
 
-## event budget category
+## Event Budget Categories
 
-### cost structure (tablelevel allocation)
+### Cost Structure (Standard Allocation)
 
-| category | ratio | taxdepartment item |
-|---------|------|----------|
-| venue | 25~35% | versus, departmentversuswhen, insurance |
-| catering | 20~30% | , from, equipment |
-| content | 15~20% | speaker, content work, equipment |
-| | 10~15% | promotion, person, degree |
-| operations | 10~15% | personcapability, , reportplan |
-| example | 5~10% | actualnature versus |
+| Category | Ratio | Line Items |
+|----------|-------|-----------|
+| Venue | 25–35% | Rental fee, ancillary facilities, insurance |
+| Catering | 20–30% | Food and beverages, service staff, equipment |
+| Content | 15–20% | Speaker fees, content production, equipment |
+| Marketing | 10–15% | Promotion, print materials, digital |
+| Operations | 10–15% | Staff, transportation, security |
+| Contingency | 5–10% | Buffer for uncertainty |
 
-### budget scaleby guide
+### Budget Scale Guide
 
-| scale | personKRW | budget scope | person cost |
-|------|------|----------|----------|
-| scale | ~50people | ₩300~800 only | ₩6~16 only |
-| duringscale | 50~200people | ₩800~3000 only | ₩8~15 only |
-| versusscale | 200~1000people | ₩3000~1.500M | ₩10~15 only |
-| | 1000people+ | ₩1.500M~ | ₩12~20 only |
+| Scale | Attendees | Budget Range | Per-Person Cost |
+|-------|-----------|-------------|----------------|
+| Small | ~50 | KRW 3M–8M | KRW 60K–160K |
+| Medium | 50–200 | KRW 8M–30M | KRW 80K–150K |
+| Large | 200–1,000 | KRW 30M–150M | KRW 100K–150K |
+| Mega | 1,000+ | KRW 150M+ | KRW 120K–200K |
 
-## budget calculation template
+## Budget Calculation Template
 
 ```markdown
-# [eventpeople] budget planfrom
+# [Event Name] Budget Plan
 
-## basic information
-- daywhen: [date/time]
-- venue: [venuepeople]
-- expected personKRW: [N]people
-- total budget: ₩[amount]
+## Basic Information
+- Date/Time: [Date/Time]
+- Venue: [Venue Name]
+- Expected Attendees: [N]
+- Total Budget: KRW [Amount]
 
-## detailed budget
+## Detailed Budget
 
-| item | | quantity | total | notes |
-|------|------|------|------|------|
-| **[venue]** | | | **₩[total]** | |
-| versus | ₩ | 1 | ₩ | |
-| equipment versus | ₩ | N | ₩ | |
-| **[catering]** | | | **₩[total]** | |
-| company | ₩ | Npeople | ₩ | |
-| / and | ₩ | Npeople | ₩ | |
-| **[content]** | | | **₩[total]** | |
-| speaker case | ₩ | Npeople | ₩ | |
-| **totaltotal** | | | **₩[total]** | |
-| example (10%) | | | ₩ | |
-| **final total** | | | **₩** | |
+| Item | Unit Cost | Quantity | Subtotal | Notes |
+|------|-----------|----------|----------|-------|
+| **[Venue]** | | | **KRW [Subtotal]** | |
+| Rental fee | KRW | 1 | KRW | |
+| Equipment rental | KRW | N | KRW | |
+| **[Catering]** | | | **KRW [Subtotal]** | |
+| Meals | KRW | N persons | KRW | |
+| Beverages / Refreshments | KRW | N persons | KRW | |
+| **[Content]** | | | **KRW [Subtotal]** | |
+| Speaker honorarium | KRW | N persons | KRW | |
+| **Subtotal** | | | **KRW [Total]** | |
+| Contingency (10%) | | | KRW | |
+| **Grand Total** | | | **KRW** | |
 ```
 
-## cost reduction strategy
+## Cost Reduction Strategies
 
-| strategy | reduction and | risk |
-|------|----------|--------|
-| weekduring items | venue 30~50% | rate decrease |
-| before whenwork | company 1 approx. | |
-| companywithin venue | versus 100% | scale limitation |
-| from | 20~50% | constraint |
-| | venue·catering | technical cost increase |
-| basis exampleapprox. | 10~20% | annualnature decrease |
+| Strategy | Reduction Effect | Risk |
+|----------|-----------------|------|
+| Weekday event | Venue 30–50% savings | Lower attendance |
+| Morning start | Save 1 meal | Inconvenient travel |
+| In-house venue | 100% venue savings | Scale limitations |
+| Sponsorship | 20–50% savings | Branding constraints |
+| Hybrid format | Reduced venue and catering | Higher tech costs |
+| Early booking | 10–20% savings | Reduced flexibility |
 
-## from guide
+## Sponsorship Pricing Guide
 
-| etc.grade | | proposal amount |
-|------|------|----------|
-| | eventpeople included, basisspeech, before | total budget 30~50% |
-| | department+presentation+ before | total budget 15~25% |
-| | department++person | total budget 8~15% |
-| actual | +person | total budget 3~8% |
+| Tier | Benefits | Suggested Amount |
+|------|---------|-----------------|
+| Title | Event name inclusion, keynote slot, full exposure | 30–50% of total budget |
+| Platinum | Booth + presentation + logo (front) | 15–25% of total budget |
+| Gold | Booth + logo + print materials | 8–15% of total budget |
+| Silver | Logo + print materials | 3–8% of total budget |
 
-## quality checklist
+## Quality Checklist
 
-| item | standard |
-|------|------|
-| example | total budget 5~10% |
-| person cost | total standard scope within |
-| / | minute specify |
-| schedule | deposit/interim payment/final payment |
-| cost | when cancellation fee calculation |
+| Item | Standard |
+|------|---------|
+| Contingency | 5–10% of total budget |
+| Per-person cost | Within industry benchmark range |
+| Fixed / Variable | Clearly distinguished |
+| Payment schedule | Deposit / progress payment / final payment |
+| Cancellation cost | Cancellation penalty calculated |

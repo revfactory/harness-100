@@ -1,122 +1,122 @@
 ---
 name: side-project-launcher
-description: "companyproject basis A pipeline where an agent team collaborates for comprehensive planning. 'companyproject basis', 'company project idea', ' project', 'MVP ', ' reporting ', 'service launch', '1person development', 'indie hacking', 'week project', 'tech stack ', 'company ' etc. companyproject basis before skill usage. existing idea case also tech stack MVP design degreeKRW. However, actual code writing, specialistperson whenplan work, person/from versus is outside this skill's scope."
+description: "A pipeline where an agent team collaborates to comprehensively plan a side project. Use this skill for requests like 'help me plan a side project', 'side project idea', 'toy project', 'I want to build an MVP', 'I want to launch an app', 'service launch', 'solo development', 'indie hacking', 'weekend project', 'what tech stack should I use', 'side hustle', and other side project planning needs. Also supports tech stack selection and MVP design when an idea already exists. However, actual code writing, design mockup creation, and domain/server purchase assistance are outside the scope of this skill."
 ---
 
-# Side Project Launcher — companyproject basis pipeline
+# Side Project Launcher — Side Project Planning Pipeline
 
-ideaverify→tech stack→MVP→developmentroadmap→launchchecklist An agent team collaborates to generate all deliverables at once.
+An agent team collaborates to generate idea validation, tech stack selection, MVP spec, development roadmap, and launch checklist all at once.
 
-## execution mode
+## Execution Mode
 
-**agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
+**Agent Team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
 
-## agent composition
+## Agent Composition
 
-| agent | file | role | type |
-|---------|------|------|------|
-| idea-validator | `.claude/agents/idea-validator.md` | market analysis, competition research, differentiation verify | general-purpose |
-| techstack-analyst | `.claude/agents/techstack-analyst.md` | tech stack comparison, recommendation, person design | general-purpose |
-| mvp-designer | `.claude/agents/mvp-designer.md` | core feature definition, , | general-purpose |
-| roadmap-builder | `.claude/agents/roadmap-builder.md` | development schedule, launch strategy, checklist | general-purpose |
-| launch-reviewer | `.claude/agents/launch-reviewer.md` | cross-verification, execution possiblenature confirm | general-purpose |
+| Agent | File | Role | Type |
+|-------|------|------|------|
+| idea-validator | `.claude/agents/idea-validator.md` | Market analysis, competitive research, differentiation validation | general-purpose |
+| techstack-analyst | `.claude/agents/techstack-analyst.md` | Tech stack comparison, recommendations, infrastructure design | general-purpose |
+| mvp-designer | `.claude/agents/mvp-designer.md` | Core feature definition, wireframes, spec | general-purpose |
+| roadmap-builder | `.claude/agents/roadmap-builder.md` | Development schedule, launch strategy, checklist | general-purpose |
+| launch-reviewer | `.claude/agents/launch-reviewer.md` | Cross-verification, feasibility confirmation | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1: preparation (Orchestrator directly perform)
+### Phase 1: Preparation (Performed directly by orchestrator)
 
 1. Extract from user input:
- - **idea**: , problem
- - **development competency** (optional): usage possibleKorean technical, development level
- - ** time** (optional): week deploy possible time
- - **budget** (optional): month operations cost Korean
- - **existing file** (optional): basisfrom, etc.
-2. `_workspace/` Create the directory at the project root
-3. Organize input and save to `_workspace/00_input.md`
-4. If existing files are provided, copy them to `_workspace/`and skip the corresponding Phase
+    - **Idea**: What to build, what problem to solve
+    - **Development Skills** (optional): Available technologies, development experience level
+    - **Available Time** (optional): Hours available per week
+    - **Budget** (optional): Monthly operating cost limit
+    - **Existing Files** (optional): Planning documents, wireframes, etc.
+2. Create `_workspace/` directory at the project root
+3. Organize the input and save to `_workspace/00_input.md`
+4. If existing files are provided, copy them to `_workspace/` and skip the corresponding Phase
 5. Determine the **execution mode** based on the scope of the request
 
-### Phase 2: team composition and execution
+### Phase 2: Team Assembly and Execution
 
-| order | task | responsible | dependency | deliverable |
-|------|------|------|------|--------|
-| 1 | idea verify | validator | None | `_workspace/01_idea_validation.md` |
-| 2 | tech stack | techstack | task 1 | `_workspace/02_techstack_recommendation.md` |
-| 3 | MVP design | designer | task 1, 2 | `_workspace/03_mvp_spec.md` |
-| 4 | roadmap·launch | roadmap | task 2, 3 | `_workspace/04_roadmap_launch.md` |
-| 5 | launch review | reviewer | task 1~4 | `_workspace/05_review_report.md` |
+| Order | Task | Assigned To | Dependencies | Deliverable |
+|-------|------|-------------|--------------|-------------|
+| 1 | Idea validation | validator | None | `_workspace/01_idea_validation.md` |
+| 2 | Tech stack selection | techstack | Task 1 | `_workspace/02_techstack_recommendation.md` |
+| 3 | MVP design | designer | Tasks 1, 2 | `_workspace/03_mvp_spec.md` |
+| 4 | Roadmap and launch | roadmap | Tasks 2, 3 | `_workspace/04_roadmap_launch.md` |
+| 5 | Launch review | reviewer | Tasks 1–4 | `_workspace/05_review_report.md` |
 
-**teamKRW between flow:**
-- validator complete → techstackto project type·difficulty, designerto UVP·differentiation point, roadmapto market deliver
-- techstack complete → designerto technical constraint·implementation difficulty, roadmapto learning time·technical risk deliver
-- designer complete → roadmapto featureby time·priority deliver
-- reviewer all deliverable cross-verification. 🔴 required revision findings when Request revision from the relevant agent -> rework -> re-verify (up to 2 rounds)
+**Inter-team Communication Flow:**
+- validator completes → delivers project type and difficulty to techstack, UVP and differentiation points to designer, market timing to roadmap
+- techstack completes → delivers technical constraints and implementation difficulty to designer, learning time and technical risks to roadmap
+- designer completes → delivers per-feature time estimates and priorities to roadmap
+- launch-reviewer cross-validates all deliverables. If 🔴 Must Fix, sends revision request → rework → re-validate (up to 2 times)
 
-### Phase 3: integration and final deliverable
+### Phase 3: Integration and Final Deliverables
 
-1. `_workspace/` Verify all files in the directory
-2. review reportConfirm that all critical revisions from the review report have been addressed
+1. Verify all files in `_workspace/`
+2. Confirm that all 🔴 Must Fix items from the review report have been addressed
 3. Report the final summary to the user
 
-## task scaleby mode
+## Execution Modes by Request Scale
 
-| user request pattern | execution mode | deploy agent |
-|----------------|----------|-------------|
-| "companyproject overall basis" | **Full pipeline** | 5people beforeKRW |
-| " idea verifyplease do" | **verify mode** | validator + reviewer |
-| "tech stack recommendationplease do" (idea ) | **technical mode** | validator + techstack + reviewer |
-| "MVP " (technical decision) | **MVP mode** | designer + roadmap + reviewer |
-| "launch checklist create it" | **launch mode** | roadmap + reviewer |
+| User Request Pattern | Execution Mode | Agents Deployed |
+|---------------------|----------------|-----------------|
+| "Full side project planning" | **Full Pipeline** | All 5 |
+| "Validate this idea" | **Validation Mode** | validator + reviewer |
+| "Recommend a tech stack" (idea exists) | **Technical Mode** | validator + techstack + reviewer |
+| "Design the MVP spec" (tech decided) | **MVP Mode** | designer + roadmap + reviewer |
+| "Create a launch checklist" | **Launch Mode** | roadmap + reviewer |
 
-**existing file utilization**: user basisfrom, tech stack decision etc. provide applicable stage case.
+**Existing file utilization**: If the user provides planning documents, tech stack decisions, etc., skip the corresponding phase.
 
-## data deliver protocol
+## Data Transfer Protocol
 
-| strategy | method | also |
-|------|------|------|
-| File-based | `_workspace/` | Store and share major deliverables |
+| Strategy | Method | Purpose |
+|----------|--------|---------|
+| File-based | `_workspace/` directory | Storing and sharing main deliverables |
 | Message-based | SendMessage | Real-time key information transfer, revision requests |
 | Task-based | TaskCreate/TaskUpdate | Progress tracking, dependency management |
 
-File naming convention: `{}_{agent}_{deliverable}.{extensionspecialist}`
+File naming convention: `{number}_{agent}_{deliverable}.{extension}`
 
-## error handling
+## Error Handling
 
-| error type | strategy |
-|----------|------|
-| idea un-present | trend based idea 3items proposal after optional also |
-| development None | code/code recommendation, learning roadmap included |
-| web search failure | general market degreeas analysis, "data limitation" specify |
-| agent failure | Retry once -> proceed without that deliverable, note the gap in the review report |
-| reviewfrom 🔴 findings | Request revision from the relevant agent -> rework -> re-verify (up to 2 rounds) |
+| Error Type | Strategy |
+|-----------|----------|
+| No idea provided | Suggest 3 trend-based ideas, guide selection |
+| No development experience | Prioritize no-code/low-code recommendations, include learning roadmap |
+| Web search failure | Analyze with general market knowledge, note "data limitation" |
+| Agent failure | Retry once → if still fails, proceed without that deliverable, note omission in review |
+| 🔴 found in review | Send revision request → rework → re-validate (up to 2 times) |
 
-## test scenario
+## Test Scenarios
 
-### flow
-**Prompt**: "developmentspecialist interview preparation week web companyproject . React week developmentto do ."
-**expected result**:
-- verify: interview preparation market analysis, existing service(LeetCode, ) versus differentiation
-- technical: React + Supabase + Vercel recommendation, free utilization
-- MVP: core feature 3~5items, , data model
-- roadmap: 4week sprint, Product Hunt launch strategy
-- review: overall consistency verify, risk matrix
+### Normal Flow
+**Prompt**: "I want to build a web app as a side project to help developers prepare for interviews. I know React and will work on it on weekends."
+**Expected Results**:
+- Validation: Interview prep market analysis, differentiation from existing services (LeetCode, etc.)
+- Technical: React + Supabase + Vercel recommendation, free tier utilization
+- MVP: 3–5 core features, text wireframes, data model
+- Roadmap: 4-week sprints, Product Hunt launch strategy
+- Review: Full consistency check, risk matrix
 
-### existing file utilization flow
-**Prompt**: "un- idea verify tech stack also . MVP only " + basisfrom department
-**expected result**:
-- MVP mode: designer + roadmap + reviewer deploy
-- validator, techstack case
+### Existing File Utilization Flow
+**Prompt**: "I've already validated the idea and decided on the tech stack. Just design the MVP spec" + planning doc attached
+**Expected Results**:
+- MVP Mode: designer + roadmap + reviewer deployed
+- validator and techstack phases skipped
 
-### error flow
-**Prompt**: " reporting idea "
-**expected result**:
-- validator user company question or trend based idea 3items proposal
-- optional after Full pipeline progress
-- review report "idea stage" specify
+### Error Flow
+**Prompt**: "I want to build something but I don't have an idea"
+**Expected Results**:
+- validator asks about user interests or proposes 3 trend-based ideas
+- Select one, then proceed with full pipeline
+- Review report notes "in idea exploration phase"
 
-## agentby extension skill
+## Agent Extension Skills
 
-| agent | extension skill | also |
-|---------|----------|------|
-| idea-validator | `market-sizing-calculator` | TAM/SAM/SOM calculation, revenue model verify |
-| techstack-analyst | `techstack-decision-matrix` | tech stack comparison matrix, person cost total |
+| Agent | Extension Skill | Purpose |
+|-------|----------------|---------|
+| idea-validator | `market-sizing-calculator` | TAM/SAM/SOM calculation, revenue model validation |
+| techstack-analyst | `techstack-decision-matrix` | Tech stack comparison matrix, infrastructure cost calculation |

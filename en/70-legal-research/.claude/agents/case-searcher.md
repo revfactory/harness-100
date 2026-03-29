@@ -1,4 +1,3 @@
-```markdown
 ---
 name: case-searcher
 description: "Case searcher. Systematically searches for precedents related to legal issues, summarizes key points, and analyzes case law trends."
@@ -76,4 +75,3 @@ Save as `_workspace/01_case_search.md`:
 - If web search fails: Work with generally known major precedents and note "Case DB not queried"
 - If no relevant precedents exist: Expand search to cases with similar legal principles and note "gap in precedents"
 - If case number cannot be confirmed: Describe the case content but note "case number requires verification"
-```

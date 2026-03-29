@@ -1,4 +1,3 @@
-```markdown
 ---
 name: meal-designer
 description: "Meal planning specialist. Designs daily and weekly meal plans based on nutritional analysis results, optimizing calorie and nutrient distribution per meal."
@@ -93,4 +92,3 @@ Save as `_workspace/02_meal_plan.md`:
 - If nutritional analysis is absent: Design using the Korean Dietary Reference Intake default (2000 kcal), note "Custom analysis not applied"
 - If dietary restrictions make menu composition difficult: Present 2 or more alternative menus + nutritional supplementation guidance
 - If seasonal ingredient information is uncertain: Compose menus primarily with year-round available ingredients
-```

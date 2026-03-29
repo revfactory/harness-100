@@ -1,4 +1,3 @@
-```markdown
 ---
 name: legal-research
 description: "Full legal research pipeline. An agent team collaborates to perform case search → legal doctrine analysis → opinion drafting → strategy formulation in one pass. Use this skill for all legal research tasks including 'legal research', 'case search', 'legal doctrine analysis', 'legal opinion', 'litigation strategy', 'legal issue analysis', 'legal review', 'dispute response strategy', 'legal risk analysis', 'legal advisory materials', etc. However, actual legal advice (attorney opinion letters), litigation/arbitration representation, direct integration with legal databases (comprehensive legal information systems), and notarization of legal documents are outside the scope of this skill."
@@ -118,4 +117,3 @@ File naming convention: `{sequence}_{agent}_{deliverable}.{extension}`
 |---------|----------|------|
 | case-searcher, legal-analyst | `case-analysis-framework` | IRAC framework, case analysis matrix |
 | opinion-writer, strategy-advisor | `legal-writing-methodology` | Legal opinion structure, argumentation techniques, strategy frameworks |
-```

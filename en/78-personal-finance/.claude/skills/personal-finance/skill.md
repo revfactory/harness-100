@@ -1,125 +1,125 @@
 ---
 name: personal-finance
-description: "itemsperson financialmanagement A pipeline where an agent team collaborates for comprehensive planning. 'financialmanagement ', 'totaldepartment organization', ' ', 'investment ', 'tax savings method', 'annual optimization', 'retirement preparation', 'budget ', 'savings plan', 're-', 'assetmanagement', 'financialdesign' etc. itemsperson financial before skill usage. existing totaldepartment data case analysisdepartment whenworkto do number . However, actual execution, , tax versus is outside this skill's scope."
+description: "A pipeline where an agent team collaborates to comprehensively design personal financial management. Use this skill for requests like 'help me manage my finances', 'organize my budget', 'how to save money', 'how to invest', 'tax savings tips', 'year-end tax optimization', 'retirement planning', 'create a budget', 'savings plan', 'wealth building', 'asset management', 'financial planning', and other personal finance needs. Supports starting from analysis when existing household budget data is available. However, actual financial transaction execution, securities trading, and tax filing services are outside the scope of this skill."
 ---
 
-# Personal Finance — itemsperson financialmanagement comprehensive pipeline
+# Personal Finance — Personal Financial Management Comprehensive Pipeline
 
-incomeexpenseanalysis→budgetdesign→investmentstrategy→tax savingsapproach→retirementdesign An agent team collaborates to generate all deliverables at once.
+An agent team collaborates to generate income/expense analysis, budget design, investment strategy, tax optimization, and retirement planning all at once.
 
-## execution mode
+## Execution Mode
 
-**agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
+**Agent Team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
 
-## agent composition
+## Agent Composition
 
-| agent | file | role | type |
-|---------|------|------|------|
-| financial-analyst | `.claude/agents/financial-analyst.md` | incomeexpense analysis, financialcasebeforenature diagnosis | general-purpose |
-| budget-planner | `.claude/agents/budget-planner.md` | budget design, savings plan | general-purpose |
-| investment-advisor | `.claude/agents/investment-advisor.md` | assetallocation, portfolio design | general-purpose |
-| tax-strategist | `.claude/agents/tax-strategist.md` | tax savings strategy, retirement design | general-purpose |
-| finance-reviewer | `.claude/agents/finance-reviewer.md` | cross-verification, figure consistency confirm | general-purpose |
+| Agent | File | Role | Type |
+|-------|------|------|------|
+| financial-analyst | `.claude/agents/financial-analyst.md` | Income/expense analysis, financial health diagnosis | general-purpose |
+| budget-planner | `.claude/agents/budget-planner.md` | Budget design, savings plan | general-purpose |
+| investment-advisor | `.claude/agents/investment-advisor.md` | Asset allocation, portfolio design | general-purpose |
+| tax-strategist | `.claude/agents/tax-strategist.md` | Tax optimization strategy, retirement planning | general-purpose |
+| finance-reviewer | `.claude/agents/finance-reviewer.md` | Cross-verification, figure consistency confirmation | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1: preparation (Orchestrator directly perform)
+### Phase 1: Preparation (Performed directly by orchestrator)
 
 1. Extract from user input:
- - ** information**: month income, type(/company/from)
- - **expense information** (optional): month expense within or versusquality scale
- - **asset·debt** (optional): report asset, versus current status
- - **financial goal** (optional): savings, investment, within , retirement etc.
- - **existing file** (optional): totaldepartment data, existing financial plan etc.
-2. `_workspace/` Create the directory at the project root
-3. Organize input and save to `_workspace/00_input.md`
-4. If existing files are provided, copy them to `_workspace/`and skip the corresponding Phase
+    - **Income Information**: Monthly income, income type (employment/business/freelance)
+    - **Expense Information** (optional): Monthly expense breakdown or approximate scale
+    - **Assets and Liabilities** (optional): Current assets, loan status
+    - **Financial Goals** (optional): Savings, investment, home purchase, retirement, etc.
+    - **Existing Files** (optional): Budget data, existing financial plans, etc.
+2. Create `_workspace/` directory at the project root
+3. Organize the input and save to `_workspace/00_input.md`
+4. If existing files are provided, copy them to `_workspace/` and skip the corresponding Phase
 5. Determine the **execution mode** based on the scope of the request
 
-### Phase 2: team composition and execution
+### Phase 2: Team Assembly and Execution
 
-| order | task | responsible | dependency | deliverable |
-|------|------|------|------|--------|
-| 1 | incomeexpense analysis | analyst | None | `_workspace/01_financial_analysis.md` |
-| 2 | budget design | planner | task 1 | `_workspace/02_budget_plan.md` |
-| 3a | investment strategy | advisor | task 1, 2 | `_workspace/03_investment_strategy.md` |
-| 3b | tax savings·retirement design | strategist | task 1, 2 | `_workspace/04_tax_strategy.md` |
-| 4 | comprehensive review | reviewer | task 1~3 | `_workspace/05_review_report.md` |
+| Order | Task | Assigned To | Dependencies | Deliverable |
+|-------|------|-------------|--------------|-------------|
+| 1 | Income/expense analysis | analyst | None | `_workspace/01_financial_analysis.md` |
+| 2 | Budget design | planner | Task 1 | `_workspace/02_budget_plan.md` |
+| 3a | Investment strategy | advisor | Tasks 1, 2 | `_workspace/03_investment_strategy.md` |
+| 3b | Tax optimization / retirement design | strategist | Tasks 1, 2 | `_workspace/04_tax_strategy.md` |
+| 4 | Comprehensive review | reviewer | Tasks 1–3 | `_workspace/05_review_report.md` |
 
-task 3a(investment) and 3b(tax savings) ** execution**. task 2(budget) only dependency when whenworkto do number .
+Tasks 3a (investment) and 3b (tax) run **in parallel**. Both depend only on Task 2 (budget) so they can start simultaneously.
 
-**teamKRW between flow:**
-- analyst complete → plannerto expense structure·reduction possible item, advisorto investment possible amount·risk nature, strategistto structure·tax department deliver
-- planner complete → advisorto investment possible month amount, strategistto savings·investment plan deliver
-- advisor ↔ strategist: tax utilization current status 
-- reviewer all deliverable cross-verification. 🔴 required revision findings when Request revision from the relevant agent -> rework -> re-verify (up to 2 rounds)
+**Inter-team Communication Flow:**
+- analyst completes → delivers expense structure and reduction opportunities to planner, investable amount and risk profile to advisor, income structure and tax burden to strategist
+- planner completes → delivers investable monthly amount to advisor, savings and investment plan to strategist
+- advisor ↔ strategist: mutually share tax-advantaged product utilization status
+- finance-reviewer cross-validates all deliverables. If 🔴 Must Fix, sends revision request → rework → re-validate (up to 2 times)
 
-### Phase 3: integration and final deliverable
+### Phase 3: Integration and Final Deliverables
 
-1. `_workspace/` Verify all files in the directory
-2. review reportConfirm that all critical revisions from the review report have been addressed
+1. Verify all files in `_workspace/`
+2. Confirm that all 🔴 Must Fix items from the review report have been addressed
 3. Report the final summary to the user
 
-## task scaleby mode
+## Execution Modes by Request Scale
 
-| user request pattern | execution mode | deploy agent |
-|----------------|----------|-------------|
-| "financialmanagement comprehensive design" | **Full pipeline** | 5people beforeKRW |
-| "budget only " | **budget mode** | analyst + planner + reviewer |
-| "investment " | **investment mode** | analyst + advisor + reviewer |
-| "tax savings method " | **tax savings mode** | analyst + strategist + reviewer |
-| "retirement design please do" | **retirement mode** | analyst + strategist + reviewer |
-| " totaldepartment analysisplease do" | **analysis mode** | analyst + reviewer |
+| User Request Pattern | Execution Mode | Agents Deployed |
+|---------------------|----------------|-----------------|
+| "Comprehensive financial planning" | **Full Pipeline** | All 5 |
+| "Just create a budget" | **Budget Mode** | analyst + planner + reviewer |
+| "How should I invest" | **Investment Mode** | analyst + advisor + reviewer |
+| "Tell me how to save on taxes" | **Tax Mode** | analyst + strategist + reviewer |
+| "Help me plan for retirement" | **Retirement Mode** | analyst + strategist + reviewer |
+| "Analyze this budget" | **Analysis Mode** | analyst + reviewer |
 
-**existing file utilization**: totaldepartment data, existing budgettable etc. provide applicable stage case.
+**Existing file utilization**: If budget data or existing budget tables are provided, skip the corresponding phase.
 
-## data deliver protocol
+## Data Transfer Protocol
 
-| strategy | method | also |
-|------|------|------|
-| File-based | `_workspace/` | Store and share major deliverables |
+| Strategy | Method | Purpose |
+|----------|--------|---------|
+| File-based | `_workspace/` directory | Storing and sharing main deliverables |
 | Message-based | SendMessage | Real-time key information transfer, revision requests |
 | Task-based | TaskCreate/TaskUpdate | Progress tracking, dependency management |
 
-File naming convention: `{}_{agent}_{deliverable}.{extensionspecialist}`
+File naming convention: `{number}_{agent}_{deliverable}.{extension}`
 
-## error handling
+## Error Handling
 
-| error type | strategy |
-|----------|------|
-| financial data un-provide | Korean pyeongbalanced data simulation, " data" specify |
-| web search failure | general ·tax standard applied, "data limitation" specify |
-| investment possible amount 0KRW | secure + debt exchange strategyas beforeexchange |
-| agent failure | Retry once -> proceed without that deliverable, note the gap in the review report |
-| reviewfrom 🔴 findings | Request revision from the relevant agent -> rework -> re-verify (up to 2 rounds) |
+| Error Type | Strategy |
+|-----------|----------|
+| Financial data not provided | Simulate with average household data, mark as "sample data" |
+| Web search failure | Apply general interest/tax rate standards, note "data limitation" |
+| Investable amount is 0 | Switch to emergency fund + debt repayment priority strategy |
+| Agent failure | Retry once → if still fails, proceed without that deliverable, note omission in review |
+| 🔴 found in review | Send revision request → rework → re-validate (up to 2 times) |
 
-## test scenario
+## Test Scenarios
 
-### flow
-**Prompt**: "monthgrade 4000,000 KRW personperson financialmanagement overallqualityas . monthtax 700,000 KRW, savings and ."
-**expected result**:
-- analysis: 4000,000 KRW income versus expense structure However, savingsrate un- 
-- budget: 50/30/20 based budgettable, minimum month 800,000 KRW savings goal
-- investment: reportspecialist target planquality portfolio, pensionsavings 
-- tax savings: annual optimization, pensionsavings tax utilization
-- review: figure cross-verification, execution possiblenature confirm
+### Normal Flow
+**Prompt**: "I'm a salaried worker earning 4,000,000 KRW/month and need comprehensive financial guidance. Monthly rent is 700,000 KRW and I'm barely saving anything."
+**Expected Results**:
+- Analysis: Diagnose expense structure relative to 4,000,000 KRW income, flag low savings rate
+- Budget: 50/30/20-based budget table, minimum monthly savings goal of 800,000 KRW
+- Investment: Stable beginner-friendly portfolio, pension savings prioritized
+- Tax: Year-end tax optimization, pension savings tax credit utilization
+- Review: Figure cross-verification, feasibility confirmation
 
-### existing file utilization flow
-**Prompt**: " totaldepartment data investment strategy " + totaldepartment file department
-**expected result**:
-- totaldepartment `_workspace/01_financial_analysis.md` based data utilization
-- investment mode: analyst(data organization) + advisor + reviewer deploy
+### Existing File Utilization Flow
+**Prompt**: "Build an investment strategy from this budget data" + budget file attached
+**Expected Results**:
+- Use budget as `_workspace/01_financial_analysis.md` base data
+- Investment mode: analyst (data organization) + advisor + reviewer deployed
 
-### error flow
-**Prompt**: " ?"
-**expected result**:
-- financial data insufficient → analyst basic question or pyeongbalanced data simulation
-- goal people → planner →duringbasis→basis stageby goal proposal
-- review report "actual data input when also " specify
+### Error Flow
+**Prompt**: "I want to save money — where do I start?"
+**Expected Results**:
+- Insufficient financial data → analyst asks basic questions or simulates with average data
+- Unclear goal → planner proposes stage-by-stage goals: emergency fund → mid-term → long-term
+- Review report notes "accuracy improves with actual data input"
 
-## agentby extension skill
+## Agent Extension Skills
 
-| agent | extension skill | also |
-|---------|----------|------|
-| investment-advisor, tax-strategist | `compound-interest-simulator` | total, asset nature example, retirement design |
-| financial-analyst, finance-reviewer | `financial-ratio-analyzer` | financial ratio analysis, casebeforenature However, score |
+| Agent | Extension Skill | Purpose |
+|-------|----------------|---------|
+| investment-advisor, tax-strategist | `compound-interest-simulator` | Compound interest calculation, asset growth projection, retirement planning |
+| financial-analyst, finance-reviewer | `financial-ratio-analyzer` | Financial ratio analysis, health diagnosis, scoring |

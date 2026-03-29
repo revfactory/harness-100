@@ -1,139 +1,138 @@
 ---
 name: vendor-negotiation-guide
-description: " vendor(wedding hall·studio/dress/makeup·honeymoon etc.) comparison and negotiation strategy guide. 'vendor-analyst' and 'budget-controller' agent vendor comparisonand estimate analysisto do when this skill's vendor comparison matrix, price standardtable, negotiation must be utilized. 'vendor comparison', 'estimate analysis', ' negotiation' etc. However, timeline design checklist writing is outside this skill's scope."
+description: "Comparison and negotiation strategy guide for wedding vendors (wedding halls, studio/dress/makeup, honeymoon, etc.). When the 'vendor-analyst' and 'budget-controller' agents compare vendors and analyze quotes, they must use this skill's vendor comparison matrix, pricing reference table, and negotiation tips. Use for 'vendor comparison', 'quote analysis', and 'wedding negotiation' contexts. Timeline design and checklist creation are outside this skill's scope."
 ---
 
-# Vendor Negotiation Guide — vendor comparison·negotiation guide
+# Vendor Negotiation Guide — Wedding Vendor Comparison and Negotiation Guide
 
- vendorby price standard, comparison point, negotiation strategy provide.
+Provides pricing standards, comparison points, and negotiation strategies by vendor type.
 
-## key vendor typeby price standard (2024-2025)
+## Pricing Standards by Major Vendor Type (2024–2025)
 
-### wedding hall
+### Wedding Halls
 
-| type | price scope (1person) | guaranteed headcount | characteristic |
-|------|-----------------|---------|------|
-| day wedding hall | 6-100,000 KRW | 150-250people | nature, nature |
-| (4nature) | 10-150,000 KRW | 200-300people | service, weekgap |
-| (5nature) | 15-300,000 KRW | 200-400people | premium |
-| | 8-150,000 KRW | 80-150people | between |
-| | 400-8000,000 KRW (versus) | 50-200people | specialist also High |
-| | 5-80,000 KRW or | 30-80people | scale |
+| Type | Price Range (per person) | Minimum Headcount | Characteristics |
+|------|--------------------------|-------------------|-----------------|
+| Standard wedding hall | ₩60,000–100,000 | 150–250 guests | Value for money, accessibility |
+| Hotel (4-star) | ₩100,000–150,000 | 200–300 guests | Service quality, parking |
+| Hotel (5-star) | ₩150,000–300,000 | 200–400 guests | Premium |
+| House wedding | ₩80,000–150,000 | 80–150 guests | Private space |
+| Outdoor wedding | ₩4,000,000–8,000,000 (venue rental) | 50–200 guests | High flexibility |
+| Small wedding | ₩50,000–80,000 or flat rate | 30–80 guests | Intimate scale |
 
-** cost checklist**:
+**Hidden cost checklist**:
 ```
-□ catering cost VAT (10%) by also department
-□ weekgap (free versusnumber confirm)
-□ congratulatory money numbernumber
-□ addition time usage
-□ traditional ceremonyactual usage
-□ / KRW usage
-□ guest / cost
-□ sound system/people addition
-□ guaranteed headcount un- when 
-```
-
-### studio/dress/makeup (··)
-
-| item | price scope | included content | weekmatters |
-|------|----------|----------|---------|
-| | 80-3000,000 KRW | KRW 200-500, report 30-80 | addition report cost confirm |
-| | 50-2000,000 KRW | + 2-3 | taxfrom by also department |
-| | 40-1000,000 KRW | rehearsal+ | by also |
-| package | 150-5000,000 KRW | 3 integration | individual versus 10-20% to doperson |
-
-**studio/dress/makeup addition cost **:
-```
-□ KRW addition ( 1-30,000 KRW)
-□ report addition ( 3-50,000 KRW)
-□ (50-1000,000 KRW+)
-□ taxfrom (, day: 10-300,000 KRW)
-□ department (: 15-300,000 KRW)
-□ rehearsal addition 
-□ /specialist 
-□ (: 50-1500,000 KRW)
+□ VAT (10%) separate from catering cost
+□ Parking fees (confirm number of free spaces)
+□ Congratulatory gift collection fee
+□ Overtime usage charges
+□ Paebaek room usage fee
+□ Photo zone / outdoor garden usage fee
+□ Guest envelope and meal ticket costs
+□ Audio / lighting add-on fees
+□ Penalty for falling below minimum headcount
 ```
 
-### basis vendor
+### Studio / Dress / Makeup
 
-| item | price scope | notes |
-|------|----------|------|
-| invitation | 1,000-5,000KRW | 200 standard 20-1000,000 KRW |
-| wedding gifts (degree) | 100-5000,000 KRW+ | 0.3-0.5ct standard |
-| honeymoon | 200-6000,000 KRW | ~ |
-| MC | 30-1000,000 KRW | specialist MC standard |
-| congratulatory song | free-500,000 KRW | degreeperson/specialist number |
-| traditional ceremony | 20-500,000 KRW | versus, , traditional ceremony |
+| Item | Price Range | Included | Cautions |
+|------|-------------|----------|----------|
+| Studio | ₩800,000–3,000,000 | 200–500 original shots, 30–80 retouched | Confirm extra retouching fees |
+| Dress | ₩500,000–2,000,000 | 2–3 outfits (ceremony + shoot) | Accessories may be separate |
+| Makeup | ₩400,000–1,000,000 | Rehearsal + ceremony | Mother's makeup may be separate |
+| Package | ₩1,500,000–5,000,000 | All three bundled | Typically 10–20% off individual total |
 
-## vendor comparison matrix
+**Studio/dress/makeup hidden cost traps**:
+```
+□ Additional original shots (₩10,000–30,000 per shot)
+□ Additional retouching (₩30,000–50,000 per shot)
+□ Dress grade upgrade (₩500,000–1,000,000+)
+□ Accessories (tiara, veil: ₩100,000–300,000)
+□ Bouquet (fresh flowers: ₩150,000–300,000)
+□ Additional rehearsal shoot
+□ Album / frame upgrade
+□ Videography (₩500,000–1,500,000)
+```
+
+### Other Vendors
+
+| Item | Price Range | Notes |
+|------|-------------|-------|
+| Invitations | ₩1,000–5,000 per piece | ₩200,000–1,000,000 for 200 pieces |
+| Wedding gifts (rings) | ₩1,000,000–5,000,000+ | Based on 0.3–0.5ct diamond |
+| Honeymoon | ₩2,000,000–6,000,000 | Southeast Asia to Europe |
+| MC | ₩300,000–1,000,000 | Professional MC rate |
+| Wedding song performer | Free–₩500,000 | Acquaintance or professional singer |
+| Paebaek food | ₩200,000–500,000 | Dates, chestnuts, ceremonial table |
+
+## Vendor Comparison Matrix
 
 ```markdown
-| comparison item | vendor A | vendor B | vendor C |
-|----------|--------|--------|--------|
-| price | X0,000 KRW | X0,000 KRW | X0,000 KRW |
-| included within | [detailed] | [detailed] | [detailed] |
-| addition cost | [detailed] | [detailed] | [detailed] |
-| position/nature | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ |
-| review/pyeong | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| exampleapprox. possibleday | [schedule] | [schedule] | [schedule] |
-| peak season to doperson | 10% | None | 15% |
-| **totalcost estimation** | **X0,000 KRW** | **X0,000 KRW** | **X0,000 KRW** |
+| Comparison Item | Vendor A | Vendor B | Vendor C |
+|-----------------|----------|----------|----------|
+| Price | ₩X | ₩X | ₩X |
+| Included items | [Details] | [Details] | [Details] |
+| Additional costs | [Details] | [Details] | [Details] |
+| Location / accessibility | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ |
+| Reviews / reputation | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Available dates | [Schedule] | [Schedule] | [Schedule] |
+| Off-season discount | 10% | None | 15% |
+| **Total estimated cost** | **₩X** | **₩X** | **₩X** |
 ```
 
-## negotiation strategy
+## Negotiation Strategies
 
-### periodby negotiationcapability
+### Negotiating Power by Season
 
-| period | negotiationcapability | strategy |
-|------|--------|------|
-| off-season (7-8month, 1-2month) | High | to doperson 15-20% request possible |
-| levelpeak season (3-4month, 9-10month) | duringbetween | department service request |
-| peak season (5-6month, 11-12month) | Low | basis exampleapprox. to doperson only possible |
-| dayday·day | Low | day versus to doperson quality |
-| day before | duringbetween | after versus 10-15% |
+| Period | Negotiating Power | Strategy |
+|--------|-------------------|----------|
+| Off-season (July–August, January–February) | High | Can request 15–20% discount |
+| Semi-peak (March–April, September–October) | Medium | Request add-on services |
+| Peak season (May–June, November–December) | Low | Only early-booking discounts possible |
+| Sunday / public holiday | Low | Less discount than Saturday |
+| Saturday morning | Medium | 10–15% cheaper than afternoon |
 
-### negotiation point TOP 10
-
-```
-1. "catering cost to doperson" — guest number negotiation (200people+: 5-10% to doperson possible)
-2. "guaranteed headcount " — actual expected 
-3. "VAT included" — departmenttax included total negotiation
-4. "time annual" — 30minute-1time free annual
-5. "weekgap addition" — free weekgap versusnumber versus
-6. "traditional ceremonyactual free" — by also 
-7. "KRW addition" — studio/dress/makeup KRW 50-100 addition
-8. " " — etc.grade included
-9. "rehearsal addition" — free 1 addition
-10. " condition" — minuteto dodepartment, numbernumber 
-```
-
-### negotiation template
+### Top 10 Negotiation Points
 
 ```
-" wedding hall also comparison duringperson, [vendorpeople] package from
- . catering cost [X]0,000 KRWfrom possibleto do?"
-
-"budget [X]cause, scope withinfrom
-regarding compositionas proposalweekactual number ?"
-
-"basic composition , [addition item] includedweekwhen
- totalapprox.."
+1. "Reduce catering cost per person" — Negotiate with guest count (200+: 5–10% possible)
+2. "Lower minimum headcount" — Adjust to realistic expected attendance
+3. "VAT-inclusive price" — Negotiate all-in total including tax
+4. "Time extension" — Free 30-minute to 1-hour extension
+5. "Additional parking" — Expand free parking allocation
+6. "Paebaek room at no charge" — Waive separate fee
+7. "Extra original shots" — Add 50–100 shots to studio/dress/makeup package
+8. "Dress grade upgrade" — Include higher tier dress
+9. "Extra rehearsal makeup session" — One free additional session
+10. "Payment terms" — Installment plan, waive card processing fee
 ```
 
-## totalapprox. before required confirm matters
+### Negotiation Script Templates
 
 ```
-□ deposit·final payment department schedule and ratio
-□ ·change when cancellation fee condition
-□ re-degree·before when response ( company )
-□ included within detailed list (from)
-□ addition cost occurrence possible item (from)
-□ guest number change possible timing (D-7 etc.)
-□ responsible / 
-□ review company/ provide scope
+"I'm comparing several wedding halls, and I really like [Vendor Name]'s package.
+Could you bring the catering cost down from [₩X]?"
+
+"My budget is [₩X]. Could you put together the best possible package within that range?"
+
+"I'm happy with the basic package, but if you can include [additional item],
+I'd be ready to sign the contract today."
 ```
 
-## reference
+## Required Pre-Contract Verification
 
-- Korean market 2024-2025 standard, degree·periodby 
-- detailed vendor list: `references/vendor-database.md` reference
+```
+□ Deposit and final payment schedule and ratio
+□ Cancellation and change penalty terms
+□ Response policy for force majeure / epidemic (lessons from COVID-19)
+□ Detailed written list of included items
+□ Written list of potential additional charges
+□ Deadline for changing guest count (e.g., D-7)
+□ Assigned planner / coordinator
+□ Scope of review photos / video provided
+```
+
+## Reference
+
+- Based on the Korean wedding market 2024–2025; subject to variation by region and season
+- Detailed vendor list: see `references/vendor-database.md`

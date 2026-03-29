@@ -1,4 +1,3 @@
-```markdown
 ---
 name: tax-calculator
 description: "A full pipeline where an agent team collaborates to handle the entire process of tax calculation and tax-saving strategy development. Use this skill for requests related to tax calculation, tax savings, and tax filing such as: 'calculate my taxes', 'year-end tax settlement simulation', 'how much will my comprehensive income tax be', 'tax-saving methods', 'tax credit optimization', 'pension savings tax credit', 'business income tax', 'freelancer taxes', 'capital gains tax calculation', 'effective tax rate analysis'. If existing tax documents are available, it supports analysis and optimization. However, replacing certified tax accountant or CPA work, acting as a tax agent or filing on behalf of clients, and representing tax appeals or adjudications are outside the scope of this skill."
@@ -126,7 +125,3 @@ Filename convention: `{order}_{agent}_{output}.{extension}`
 |---------|----------|------|
 | deduction-optimizer | `deduction-optimizer-engine` | Deduction limit tables, optimization algorithm, credit card allocation |
 | tax-engine, strategy-advisor | `tax-bracket-simulator` | Tax bracket analysis, tax simulation, marginal tax rate calculation |
-```
-deduction-optimizer-engine` | Deduction limit table, optimization algorithm, credit card allocation |
-| tax-engine, strategy-advisor | `tax-bracket-simulator` | Tax bracket analysis, tax amount simulation, marginal tax rate calculation |
-```

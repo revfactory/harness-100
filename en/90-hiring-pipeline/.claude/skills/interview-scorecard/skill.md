@@ -1,142 +1,142 @@
 ---
 name: interview-scorecard
-description: "structure interview design and evaluation form framework. interview-designer agent interview process designand assessment standard tablelevelto do when reference. 'interview design', 'evaluation form', 'structure interview' request when usage. However, interview actualwhen pass scope outside."
+description: "Structured interview design and evaluation scorecard framework. Referenced by the interview-designer agent when designing interview processes and standardizing evaluation criteria. Use for 'interview design', 'evaluation scorecard', 'structured interview' requests. Out of scope: conducting interviews and making hiring decisions."
 ---
 
-# Interview Scorecard — structure interview design
+# Interview Scorecard — Structured Interview Design
 
-interview-designer agent interview process design competency .
+Enhances the interview process design capabilities of the interview-designer agent.
 
-## structure interview principle
+## Structured Interview Principles
 
-### structure vs structure
+### Unstructured vs. Structured
 
-| item | structure | structure |
-|------|---------|--------|
-| question | interviewer specialist | companybefore design |
-| assessment | /person | scorecard |
-| example also | 0.2~0.4 | 0.5~0.7 |
-| legal risk | High | Low |
-| interviewer | High | minimization |
+| Item | Unstructured | Structured |
+|------|-------------|-----------|
+| Questions | Interviewer's discretion | Pre-designed |
+| Evaluation | Gut feel / impression | Scorecard |
+| Predictive validity | 0.2–0.4 | 0.5–0.7 |
+| Legal risk | High | Low |
+| Interviewer bias | High | Minimized |
 
-### interview typeby purpose
+### Interview Types and Their Purposes
 
-| type | purpose | time | competency assessment |
-|------|------|------|----------|
-| action interview (BEI) | action based competency | 45~60minute | skill |
-| technical interview | technicalquality competency | 60~90minute | skill |
-| interview | problem capability | 45~60minute | analysis/ |
-| document interview | qualitynature | 30~45minute | value/ also |
-| presentation | communication | 30~45minute | presentation/persuasion |
+| Type | Purpose | Duration | Competencies Assessed |
+|------|---------|----------|----------------------|
+| Behavioral Interview (BEI) | Past behavior-based competency | 45–60 min | Soft skills |
+| Technical Interview | Technical competency | 60–90 min | Hard skills |
+| Case Interview | Problem-solving ability | 45–60 min | Analytical / logical reasoning |
+| Culture Interview | Organizational fit | 30–45 min | Values / attitude |
+| Presentation | Communication ability | 30–45 min | Presentation / persuasion |
 
-## BEI (Behavioral Event Interview) question design
+## BEI (Behavioral Event Interview) Question Design
 
-### STAR question official
+### STAR Question Formula
 
 ```
-S (Situation): situation question → specific context
-T (Task): task → person role
-A (Action): action → specificas 
-R (Result): result → quality performance, 
+S (Situation): Situation question → specific context
+T (Task): Task → the person's role
+A (Action): Action → what specifically was done
+R (Result): Result → quantitative outcome, lessons learned
 
-question pattern:
-"[competency] needed specificperson basis weektax.
- when situation , role,
- specificas action , result ?"
+Question pattern:
+"Tell me about a specific experience where [competency] was required.
+ What was the situation, what was your role,
+ what specific actions did you take, and what was the outcome?"
 ```
 
-### competencyby question (examplewhen)
+### Question Bank by Competency (Examples)
 
-| competency | question | afterwithin question |
-|------|------|----------|
-| problem | " technicalquality problem Korean ?" | "versusplan ?", " method optional?" |
-| | "teamKRW and ?" | " ?", "result?" |
-| leadership | "team goal natureKorean ?" | " ?", "teamKRW ?" |
-| learning | " technical ?" | " learning?", " ?" |
+| Competency | Question | Follow-up Questions |
+|------------|---------|-------------------|
+| Problem-solving | "Tell me about the most difficult technical problem you've solved." | "What alternatives did you have?", "Why did you choose that approach?" |
+| Collaboration | "Tell me about a time you had a conflict with a teammate." | "How did you resolve it?", "What was the outcome?" |
+| Leadership | "Tell me about a time you led a team to achieve a goal." | "What challenges did you face?", "How did the team respond?" |
+| Learning agility | "Tell me about a time you had to quickly learn a new technology." | "How did you approach the learning?", "How long did it take?" |
 
-## assessment scorecard design
+## Evaluation Scorecard Design
 
-### 4point also (recommendation)
+### 4-Point Scale (Recommended)
 
-| score | etc.grade | standard |
-|------|------|------|
-| 4 | month (Strong Hire) | expected exceeding, i.e.when |
-| 3 | quality (Hire) | expected , planquality perform |
-| 2 | insufficient (Lean No) | departmentminute , risk re- |
-| 1 | un- (No Hire) | standard un- |
+| Score | Rating | Criteria |
+|-------|--------|---------|
+| 4 | Outstanding (Strong Hire) | Exceeds expectations; immediate impact |
+| 3 | Qualified (Hire) | Meets expectations; reliable performance |
+| 2 | Marginal (Lean No) | Partially meets; risk exists |
+| 1 | Unqualified (No Hire) | Below criteria |
 
-### scorecard template
+### Scorecard Template
 
 ```markdown
-# interview evaluation form
+# Interview Evaluation Form
 
-- candidate: _________ | job: _________
-- interviewer: _________ | daywhen: _________
+- Candidate: _________ | Position: _________
+- Interviewer: _________ | Date: _________
 
-## competencyby assessment
+## Competency Assessment
 
-| competency | question | answer summary | score(1~4) |
-|------|------|----------|-----------|
-| [competency 1] | [question] | [core content] |  |
-| [competency 2] | [question] | [core content] |  |
-| [competency 3] | [question] | [core content] |  |
+| Competency | Question | Answer Summary | Score (1–4) |
+|------------|---------|---------------|------------|
+| [Competency 1] | [Question] | [Key content] | [ ] |
+| [Competency 2] | [Question] | [Key content] | [ ] |
+| [Competency 3] | [Question] | [Key content] | [ ] |
 
-## comprehensive assessment
-- totalpoint: __ / __ (pyeongbalanced: __.__)
-- comprehensive : □ Strong Hire □ Hire □ Lean No □ No Hire
-- strength: 
-- matters: 
-- matters: 
+## Overall Assessment
+- Total Score: __ / __ (Average: __.__)
+- Overall Verdict: □ Strong Hire  □ Hire  □ Lean No  □ No Hire
+- Strengths:
+- Concerns:
+- Additional Notes:
 
-frompeople: _________ daywhen: _________
+Signature: _________ Date: _________
 ```
 
-## interviewer degree
+## Interviewer Bias Prevention
 
-### key and response
+### Key Biases and Countermeasures
 
-| | description | response |
-|------|------|------|
-| after and | person | competencyby assessment |
-| companynature | and Korean company | Korean interviewer |
-| | judgment confirm only | STAR question |
-| nature | degree afterreport basis00M | i.e.when score basisrecord |
-| versus/ | score | examplewhen provide |
+| Bias | Description | Countermeasure |
+|------|-------------|---------------|
+| Halo effect | Drawn in by first impression | Evaluate each competency independently |
+| Similarity bias | Preference for candidates like yourself | Diverse interviewer panel |
+| Confirmation bias | Seeking only to confirm initial judgment | Enforce STAR questions |
+| Recency bias | Best recall of the last candidate | Record scores immediately |
+| Leniency / severity | Score inflation or deflation | Provide anchor examples |
 
-### interviewer guideperson
+### Interviewer Guidelines
 
 ```
 DO:
-- all afterreportto day question
-- answer during (after score)
-- STAR afterwithin questionas identify
-- (10 versusbasis)
+- Ask all candidates the same questions
+- Take notes during answers (score immediately after)
+- Use STAR follow-up questions to probe deeper
+- Allow silence (wait 10 seconds)
 
 DON'T:
-- also question ("annual X when?")
-- itemspersonquality question (, , value)
-- interview during pass/fail grade
-- afterreport and comparison grade
+- Ask leading questions ("You obviously do X, right?")
+- Ask personal questions (family, religion, politics)
+- Mention pass/fail during the interview
+- Compare candidates to one another during the interview
 ```
 
-## hiring pipeline beforeexchange value
+## Hiring Pipeline Conversion Rate Benchmarks
 
-| stage | beforeexchange | calculation |
-|------|--------|------|
-| degreeKRW → from and | 20~30% | 100people → 25people |
-| from → 1gap interview | 40~60% | 25people → 12people |
-| 1gap → 2gap interview | 40~60% | 12people → 6people |
-| 2gap → final interview | 50~70% | 6people → 3people |
-| final → offer | 60~80% | 3people → 2people |
-| offer → number | 70~90% | 2people → 1.5people |
+| Stage | Conversion Rate | Example |
+|-------|----------------|---------|
+| Application → Resume pass | 20–30% | 100 → 25 |
+| Resume → Round 1 interview | 40–60% | 25 → 12 |
+| Round 1 → Round 2 interview | 40–60% | 12 → 6 |
+| Round 2 → Final interview | 50–70% | 6 → 3 |
+| Final → Offer | 60–80% | 3 → 2 |
+| Offer → Acceptance | 70–90% | 2 → 1.5 |
 
-## quality checklist
+## Quality Checklist
 
-| item | standard |
-|------|------|
-| structure | question companybefore design, day applied |
-| STAR | all BEI question STAR structure |
-| scorecard | 4point , examplewhen |
-| degree | interviewer guide deployment |
-| afterwithin question | competency 2~3items preparation |
-| basisrecord | i.e.when basisrecord, 24time within |
+| Item | Standard |
+|------|---------|
+| Structure | Questions pre-designed and applied consistently |
+| STAR | All BEI questions follow STAR structure |
+| Scorecard | 4-point scale with anchor examples |
+| Bias prevention | Interviewer guidelines distributed |
+| Follow-up questions | 2–3 prepared per competency |
+| Recording | Recorded immediately; submitted within 24 hours |

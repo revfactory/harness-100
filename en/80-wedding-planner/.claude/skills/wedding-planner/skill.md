@@ -1,127 +1,127 @@
 ---
 name: wedding-planner
-description: "wedding preparation A pipeline where an agent team collaborates for comprehensive planning. 'wedding preparation ', ' ', 'wedding budget', 'wedding hall recommendation', 'studio/dress/makeup comparison', 'invitation document', 'wedding checklist', 'honeymoon plan', 'betrothal gifts preparation', 'trousseau list', 'wedding timeline' etc. wedding preparation before skill usage. item only neededKorean case also applicable departmentminute only degreeKRW. However, actual vendor exampleapprox. versus, processing, marriage registration versus is outside this skill's scope."
+description: "A pipeline where an agent team collaborates to comprehensively plan wedding preparation. Use this skill for all wedding preparation topics: 'help me plan my wedding', 'wedding plan', 'wedding budget', 'wedding hall recommendation', 'studio/dress/makeup comparison', 'invitation wording', 'wedding checklist', 'honeymoon plan', 'betrothal gifts preparation', 'trousseau list', 'wedding timeline', and similar requests. Partial support is available when only specific items are needed. However, actual vendor booking, payment processing, and marriage registration filing are outside this skill's scope."
 ---
 
-# Wedding Planner — wedding preparation comprehensive pipeline
+# Wedding Planner — Comprehensive Wedding Preparation Pipeline
 
-timelinedesign→budgetmanagementtable→vendorcomparisontable→checklist→invitationdocument An agent team collaborates to generate all deliverables at once.
+An agent team collaborates to generate the timeline, budget table, vendor comparison table, checklist, and invitation wording all at once.
 
-## execution mode
+## Execution Mode
 
-**agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
+**Agent team** — 5 agents communicate directly via SendMessage and cross-verify each other's work.
 
-## agent composition
+## Agent Composition
 
-| agent | file | role | type |
-|---------|------|------|------|
-| timeline-designer | `.claude/agents/timeline-designer.md` | D-day , monthby schedule | general-purpose |
-| budget-controller | `.claude/agents/budget-controller.md` | budget allocation, cost reduction | general-purpose |
-| vendor-analyst | `.claude/agents/vendor-analyst.md` | vendor research, comparisontable | general-purpose |
-| checklist-builder | `.claude/agents/checklist-builder.md` | checklist, invitation document | general-purpose |
-| wedding-reviewer | `.claude/agents/wedding-reviewer.md` | cross-verification, consistency confirm | general-purpose |
+| Agent | File | Role | Type |
+|-------|------|------|------|
+| timeline-designer | `.claude/agents/timeline-designer.md` | D-day countdown, monthly schedule | general-purpose |
+| budget-controller | `.claude/agents/budget-controller.md` | Budget allocation, cost reduction | general-purpose |
+| vendor-analyst | `.claude/agents/vendor-analyst.md` | Vendor research, comparison table | general-purpose |
+| checklist-builder | `.claude/agents/checklist-builder.md` | Checklist, invitation wording | general-purpose |
+| wedding-reviewer | `.claude/agents/wedding-reviewer.md` | Cross-verification, consistency check | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1: preparation (Orchestrator directly perform)
+### Phase 1: Preparation (Orchestrator performs directly)
 
 1. Extract from user input:
- - **wedding ceremony date**: D-day or example period
- - **wedding type** (optional): wedding hall///
- - **budget** (optional): total budget or itemby budget
- - **guest scale** (optional): expected guest number
- - **by request** (optional): degree, style, etc.
- - **existing file** (optional): existing checklist, budgettable etc.
-2. `_workspace/` Create the directory at the project root
+    - **Wedding date**: D-day or target period
+    - **Wedding type** (optional): Wedding hall / hotel / outdoor / small wedding
+    - **Budget** (optional): Total budget or per-category budget
+    - **Guest count** (optional): Expected number of guests
+    - **Special requests** (optional): Region, style, religion, etc.
+    - **Existing files** (optional): Existing checklist, budget table, etc.
+2. Create the `_workspace/` directory at the project root
 3. Organize input and save to `_workspace/00_input.md`
-4. If existing files are provided, copy them to `_workspace/`and skip the corresponding Phase
+4. If existing files are provided, copy them to `_workspace/` and skip the corresponding phase
 5. Determine the **execution mode** based on the scope of the request
 
-### Phase 2: team composition and execution
+### Phase 2: Team Assembly and Execution
 
-| order | task | responsible | dependency | deliverable |
-|------|------|------|------|--------|
-| 1 | timeline design | timeline | None | `_workspace/01_timeline.md` |
-| 2a | budget management | budget | task 1 | `_workspace/02_budget.md` |
-| 2b | vendor comparison | vendor | task 1 | `_workspace/03_vendor_comparison.md` |
-| 3 | checklist·invitation | checklist | task 1, 2a, 2b | `_workspace/04_checklist_invitation.md` |
-| 4 | comprehensive review | reviewer | task 1~3 | `_workspace/05_review_report.md` |
+| Order | Task | Responsible | Dependency | Deliverable |
+|-------|------|-------------|------------|-------------|
+| 1 | Timeline design | timeline | None | `_workspace/01_timeline.md` |
+| 2a | Budget management | budget | Task 1 | `_workspace/02_budget.md` |
+| 2b | Vendor comparison | vendor | Task 1 | `_workspace/03_vendor_comparison.md` |
+| 3 | Checklist and invitations | checklist | Tasks 1, 2a, 2b | `_workspace/04_checklist_invitation.md` |
+| 4 | Comprehensive review | reviewer | Tasks 1–3 | `_workspace/05_review_report.md` |
 
-task 2a(budget) and 2b(vendor) ** execution**. task 1(timeline) only dependency when whenworkto do number .
+Tasks 2a (budget) and 2b (vendor) are **executed in parallel**. Both depend only on Task 1 (timeline), so they can start simultaneously.
 
-**teamKRW between flow:**
-- timeline complete → budgetto expense timing, vendorto exampleapprox. period, checklistto monthby to do day deliver
-- budget ↔ vendor: budget Korean also ↔ vendor price 
-- checklist timeline + budget + vendor result integrationto checklist writing
-- reviewer all deliverable cross-verification. 🔴 required revision findings when Request revision from the relevant agent -> rework -> re-verify (up to 2 rounds)
+**Inter-team communication flow:**
+- timeline completes → delivers expenditure timing to budget, booking periods to vendor, monthly tasks to checklist
+- budget ↔ vendor: coordinate budget limits against vendor pricing
+- checklist integrates results from timeline + budget + vendor to produce the checklist
+- reviewer cross-verifies all deliverables. When a 🔴 required fix is found, request revision from the relevant agent → rework → re-verify (up to 2 rounds)
 
-### Phase 3: integration and final deliverable
+### Phase 3: Integration and Final Deliverables
 
-1. `_workspace/` Verify all files in the directory
-2. review reportConfirm that all critical revisions from the review report have been addressed
+1. Verify all files in `_workspace/`
+2. Confirm all 🔴 required fixes from the review report have been addressed
 3. Report the final summary to the user
 
-## task scaleby mode
+## Mode by Request Scope
 
-| user request pattern | execution mode | deploy agent |
-|----------------|----------|-------------|
-| "wedding preparation overall " | **Full pipeline** | 5people beforeKRW |
-| "wedding timeline only " | **timeline mode** | timeline + reviewer |
-| "wedding budget organizationplease do" | **budget mode** | timeline + budget + reviewer |
-| "wedding hall comparisonplease do" | **vendor mode** | vendor + reviewer |
-| "invitation document " | **document mode** | checklist + reviewer |
-| " wedding plan reviewplease do" | **review mode** | reviewer |
+| User Request Pattern | Execution Mode | Agents Deployed |
+|----------------------|----------------|-----------------|
+| "Help me with all wedding preparation" | **Full pipeline** | All 5 agents |
+| "Just build me a wedding timeline" | **Timeline mode** | timeline + reviewer |
+| "Help me organize the wedding budget" | **Budget mode** | timeline + budget + reviewer |
+| "Compare wedding halls for me" | **Vendor mode** | vendor + reviewer |
+| "Write invitation wording for me" | **Wording mode** | checklist + reviewer |
+| "Review this wedding plan" | **Review mode** | reviewer only |
 
-**existing file utilization**: user existing budgettable, vendor list etc. provide applicable stage case.
+**Using existing files**: If the user provides an existing budget table, vendor list, etc., skip the corresponding step.
 
-## data deliver protocol
+## Data Transfer Protocol
 
-| strategy | method | also |
-|------|------|------|
-| File-based | `_workspace/` | Store and share major deliverables |
+| Strategy | Method | Purpose |
+|----------|--------|---------|
+| File-based | `_workspace/` directory | Store and share major deliverables |
 | Message-based | SendMessage | Real-time key information transfer, revision requests |
 | Task-based | TaskCreate/TaskUpdate | Progress tracking, dependency management |
 
-File naming convention: `{}_{agent}_{deliverable}.{extensionspecialist}`
+File naming convention: `{sequence}_{agent}_{deliverable}.{extension}`
 
-## error handling
+## Error Handling
 
-| error type | strategy |
-|----------|------|
-| wedding date un- | 6months/12months after 2degree scenario present |
-| budget un-present | Korean pyeongbalanced wedding cost standardas progress, "budget needed" specify |
-| web search failure | general whentax based task, " information confirm needed" specify |
-| agent failure | Retry once -> proceed without that deliverable, note the gap in the review report |
-| reviewfrom 🔴 findings | Request revision from the relevant agent -> rework -> re-verify (up to 2 rounds) |
+| Error Type | Strategy |
+|------------|----------|
+| Wedding date not set | Present two scenarios: 6 months and 12 months from now |
+| Budget not provided | Proceed based on Korean average wedding costs; note "budget confirmation needed" |
+| Web search failure | Work from general market rates; note "latest information should be verified" |
+| Agent failure | Retry once → if it fails, proceed without that deliverable and note the gap in the review report |
+| 🔴 finding in review | Request revision from the relevant agent → rework → re-verify (up to 2 rounds) |
 
-## test scenario
+## Test Scenarios
 
-### flow
-**Prompt**: "withinyear 5month wedding. guest 200people , budget total 50000,000 KRW. from wedding hall ."
-**expected result**:
-- timeline: D-12months schedule, 5month peak season basis exampleapprox. 
-- budget: 50000,000 KRW itemby allocation, catering cost(200people) proportion High
-- vendor: wedding hall 3 comparison, studio/dress/makeup recommendation
-- checklist: overall checklist + invitation document 4
-- review: consistency matrix beforeitem confirm
+### Normal Flow
+**Prompt**: "I'm getting married in May next year. About 200 guests, total budget ₩50,000,000. Looking for a wedding hall in Gangnam, Seoul."
+**Expected result**:
+- Timeline: D-12 month countdown schedule; emphasize early booking given May peak season
+- Budget: ₩50,000,000 allocated by category; high catering proportion (200 guests)
+- Vendor: Compare 3 Gangnam wedding halls; recommend studio/dress/makeup
+- Checklist: Full checklist + 4 invitation wording styles
+- Review: All items in consistency matrix verified
 
-### existing file utilization flow
-**Prompt**: "wedding hall studio/dress/makeup also . degree checklist budget organization "
-**expected result**:
-- existing decision matters `_workspace/` basisrecord
-- budget + checklist + reviewer deploy
-- timeline between, vendor case
+### Existing File Utilization Flow
+**Prompt**: "We've already decided on the wedding hall and studio/dress/makeup. Help us organize the rest of the checklist and budget."
+**Expected result**:
+- Record existing decisions in `_workspace/`
+- Deploy budget + checklist + reviewer
+- Simplify timeline; skip vendor
 
-### error flow
-**Prompt**: "wedding preparation department ? also plan "
-**expected result**:
-- date un- → timeline 6months/12months 2degree scenario present
-- budget un- → budget scaleby pyeongbalanced budget planwithin
-- stage(date·budget ) guide provide
+### Error Flow
+**Prompt**: "What should I start with for wedding preparation? We haven't decided anything yet."
+**Expected result**:
+- Date not set → timeline presents two scenarios: 6 months and 12 months
+- Budget not set → budget presents average cost ranges by scale
+- Provide a guide for the first steps (agreeing on date and budget)
 
-## agentby extension skill
+## Extension Skills by Agent
 
-| agent | extension skill | also |
-|---------|----------|------|
-| vendor-analyst, budget-controller | `vendor-negotiation-guide` | vendor comparison matrix, price standardtable, negotiation strategy |
-| budget-controller, wedding-reviewer | `wedding-budget-optimizer` | budget allocation official, cost standardtable, approx. strategy |
+| Agent | Extension Skill | Purpose |
+|-------|-----------------|---------|
+| vendor-analyst, budget-controller | `vendor-negotiation-guide` | Vendor comparison matrix, pricing reference table, negotiation strategies |
+| budget-controller, wedding-reviewer | `wedding-budget-optimizer` | Budget allocation formulas, cost reference table, savings strategies |

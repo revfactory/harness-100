@@ -1,135 +1,135 @@
 ---
 name: media-response-templates
-description: "media response template library. press-release-writer and qa-preparer agent press release, statement, Q&A writingto do when reference. 'press release template', 'basisspecialist preparation', 'media Q&A' request when usage. However, actual media deployment basisspecialist scope outside."
+description: "Media response template library. Referenced by the press-release-writer and qa-preparer agents when drafting press releases, statements, and Q&A documents. Use for requests involving 'press release template', 'press conference preparation', or 'media Q&A'. Does not cover actual media distribution or direct journalist outreach."
 ---
 
-# Media Response Templates — media response template
+# Media Response Templates — Media Response Templates
 
-press-release-writer / qa-preparer agent media response document quality tablelevel.
+Standardizes the quality of media response documents produced by the press-release-writer and qa-preparer agents.
 
-## press release structure (un-)
+## Press Release Structure (Inverted Pyramid)
 
 ```
-1. person — core companyactual 1sentence
-2. from — report information 1sentence
-3. (1) — 5W1H summary
-4. body text (2~3) — detailed companyactual, response, person
-5. CEO/versustable comment — official persondocument
-6. response action — specific action plan
-7. boilerplate — company items
-8. annual — promotion person responsible
+1. Headline — Core fact in one sentence
+2. Sub-headline — Supplementary information in one sentence
+3. Lead (1 paragraph) — 5W1H summary
+4. Body (2–3 paragraphs) — Detailed facts, response, quotes
+5. CEO / Executive Comment — Official quotation
+6. Actions Taken — Specific action plan
+7. Boilerplate — Company background
+8. Contact — PR representative contact information
 ```
 
-### crisis press release template
+### Crisis Press Release Template
 
 ```markdown
-# [companypeople], [crisis companyplan] regarding official presentation
+# [Company Name] Issues Official Statement on [Crisis Issue]
 
-**[when], [date]** — [companypeople] [date/time] occurrenceKorean [companyplan summary] and 
-relatedto next and as official .
+**[City], [Date]** — [Company Name] wishes to issue the following official statement
+regarding [summary of incident] that occurred on [date/time].
 
-[companypeople] [companyplan] [persondegreeKorean timing] persondegree, i.e.when [initial response 
-action] implementation.
+[Company Name] became aware of [incident] at [time of awareness] and immediately
+implemented [initial response measures].
 
-currentto identifydone companyactual next and :
-- [companyactual 1]
-- [companyactual 2] 
-- [companyactual 3]
+The following facts have been confirmed to date:
+- [Fact 1]
+- [Fact 2]
+- [Fact 3]
 
-[CEO/versustable name],  "[persondocument — /company and tablecurrent, response degree, 
-re- degree approx.within]" .
+[CEO/Executive Name], [Title], stated: "[Quotation — expressing regret/apology,
+commitment to response, and pledge to prevent recurrence]."
 
-[companypeople] next and action implementation during:
-1. [action 1]
-2. [action 2]
-3. [action 3]
+[Company Name] is implementing the following measures:
+1. [Measure 1]
+2. [Measure 2]
+3. [Measure 3]
 
-after addition information [channel] through planwithinto do example.
+Further information will be provided through [channel] as it becomes available.
 
 ---
-[company items boilerplate]
+[Company boilerplate]
 
-**media document**: [person responsible name], [email], [before]
+**Media Contact**: [Contact Name], [Email], [Phone]
 ```
 
-## Q&A when design
+## Q&A Briefing Sheet Design
 
-### Q&A category
+### Q&A Categories
 
-| category | expected question number | priority |
-|---------|------------|---------|
-| companyactual total | 5~10items | |
-| cause/responsibility | 5~8items | High |
-| /impact | 5~8items | High |
-| response/action | 5~7items | duringbetween |
-| re- degree | 3~5items | duringbetween |
-| legal problem | 3~5items | week |
-| /personcompany | 3~5items | Low |
+| Category | Expected Questions | Priority |
+|----------|--------------------|----------|
+| Facts | 5–10 | Highest |
+| Cause / Accountability | 5–8 | High |
+| Harm / Impact | 5–8 | High |
+| Response / Measures | 5–7 | Medium |
+| Preventive Measures | 3–5 | Medium |
+| Legal Issues | 3–5 | Caution |
+| Management / Personnel | 3–5 | Low |
 
-### Q&A answer structure (ABT)
+### Q&A Answer Structure (ABT)
 
 ```
-A (Acknowledge): question person
-B (Bridge): core message beforeexchange
-T (Tell): preparationdone message deliver
+A (Acknowledge): Acknowledge the question
+B (Bridge): Pivot to core message
+T (Tell): Deliver the prepared message
 
-examplewhen:
-Q: "company cause ?"
-A: "current Korean cause research during."
-B: "confirmdone companyactual ,"
-T: "[specific companyactual], [research schedule]to result ."
+Example:
+Q: "What caused the incident?"
+A: "We are currently investigating the precise cause."
+B: "What I can confirm at this time is:"
+T: "[Specific fact], and we will share the findings by [investigation timeline]."
 ```
 
-### risk question response strategy
+### Handling Risky Questions
 
-| question type | strategy | examplewhen answer |
-|----------|------|----------|
-| also | companyactual only answer | "confirmdone companyactual only number " |
-| comparison question | comparison department | "current situation duringand " |
-| emotion specialist | empathy after beforeexchange | "minute . current ..." |
-| legal | confirm | "team review after answer" |
-| Off the record | department | "all on the record" |
+| Question Type | Strategy | Example Response |
+|--------------|---------|-----------------|
+| Speculation-inducing | Answer facts only | "I can only speak to confirmed facts." |
+| Comparative | Decline comparison | "We are focused on the current situation." |
+| Emotionally charged | Empathize, then pivot | "I fully understand. What we are doing right now is..." |
+| Legal trap | Refer to legal review | "We will respond after our legal team has reviewed this." |
+| Off the record | Decline | "All statements are on the record." |
 
-## basisspecialist checklist
+## Press Conference Checklist
 
-### companybefore preparation
+### Pre-Event Preparation
 
--  presentationdocument (5minute within)
--  Q&A when (30document or more)
--  versusperson rehearsal (minimum 2)
--  prohibited/weekmatters list
--  background material (Fact Sheet)
--  venue/time/ 
+- [ ] Statement finalized (within 5 minutes)
+- [ ] Q&A briefing sheet (30+ questions)
+- [ ] Spokesperson rehearsal (minimum 2 rounds)
+- [ ] Prohibited expressions and caution list
+- [ ] Background materials (Fact Sheet)
+- [ ] Venue, timing, and access control confirmed
 
-### prohibited tablecurrent
+### Prohibited Expressions
 
-| prohibited tablecurrent | versus tablecurrent |
-|----------|----------|
-| "comment" | "current confirm during, identify after planwithin" |
-| "Off the record" | usage prohibited |
-| "itemspersonquality as..." | "official ..." |
-| "100% planbefore" | "possibleKorean all action and " |
-| "responsibility " | "cause research during, result according to action" |
+| Prohibited Expression | Alternative Expression |
+|----------------------|----------------------|
+| "No comment" | "We are currently confirming; we will advise once verified." |
+| "Off the record" | Prohibited entirely |
+| "Personally, I think..." | "The official position is..." |
+| "It is 100% safe." | "We are taking every possible precaution." |
+| "We bear no responsibility." | "We are investigating the cause and will take action based on findings." |
 
-## media response
+## Social Media Response
 
-### platformby response guide
+### Platform-by-Platform Response Guide
 
-| platform | tone | | response within also |
-|--------|-----|------|----------|
-| Twitter/X | between, official | 280specialist | 1time within |
-| Facebook | detailed, empathy | 500specialist | 2time within |
-| Instagram | week+ | 2200specialist | 4time within |
-| blog | detailed description | limitation None | 6time within |
-| | naturepeople | 2~3minute | 12time within |
+| Platform | Tone | Length | Response Time |
+|---------|------|--------|--------------|
+| Twitter/X | Concise, official | 280 characters | Within 1 hour |
+| Facebook | Detailed, empathetic | 500 characters | Within 2 hours |
+| Instagram | Visual + text | 2,200 characters | Within 4 hours |
+| Blog | Detailed explanation | No limit | Within 6 hours |
+| YouTube | Video statement | 2–3 minutes | Within 12 hours |
 
-## quality checklist
+## Quality Checklist
 
-| item | standard |
-|------|------|
-| companyactual accuracy | /current confirm complete |
-| tone | crisis type tone |
-| Q&A | 30document or more, ABT structure |
-| prohibited tablecurrent | prohibited list number |
-| consistency | all channel message day |
-| afterwithin plan | next timing specify |
+| Item | Criterion |
+|------|-----------|
+| Factual Accuracy | Verified by legal and on-site teams |
+| Tone | Appropriate for crisis type |
+| Q&A | 30+ questions, ABT structure applied |
+| Prohibited Expressions | Verified against prohibited list |
+| Consistency | Unified message across all channels |
+| Follow-up Plan | Next update timing specified |
