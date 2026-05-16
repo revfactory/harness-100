@@ -1,0 +1,7 @@
+interface:
+  display_name: "Comic Creator"
+  short_description: "만화 콘티, 대사, 이미지 프롬프트, 편집 지시서 제작"
+  default_prompt: "Use $comic-creator to turn this idea into a 4-panel Korean comic production package."
+
+policy:
+  allow_implicit_invocation: true

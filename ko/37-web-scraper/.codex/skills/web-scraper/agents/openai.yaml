@@ -1,0 +1,7 @@
+interface:
+  display_name: "Web Scraper"
+  short_description: "안전한 웹 스크래핑 분석, 크롤러, 파서, 모니터링"
+  default_prompt: "$web-scraper를 사용해서 이 사이트를 분석하고 _workspace/날짜/순번-작업명 폴더에 준수 가능한 스크래핑 패키지를 만들어줘."
+
+policy:
+  allow_implicit_invocation: true
