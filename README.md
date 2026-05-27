@@ -17,11 +17,19 @@ Production-grade agent team harness collection for [Claude Code](https://docs.an
 
 ## Quick Start
 
-```bash
-# Copy any harness into your project
-cp -r ko/01-youtube-production/.claude/ /path/to/my-project/.claude/
+The Korean harnesses (`ko/`) are published as a **Claude Code plugin marketplace** — install only the harnesses you need:
 
-# Or use the English version
+```bash
+# Add this repo as a marketplace
+claude plugin marketplace add rulewrite/harness-100-plugins
+
+# Install a harness (drop the NN- prefix; e.g. 01-youtube-production)
+claude plugin install youtube-production@harness-100
+```
+
+The English harnesses (`en/`) keep the legacy layout — copy the folder you want:
+
+```bash
 cp -r en/01-youtube-production/.claude/ /path/to/my-project/.claude/
 ```
 
@@ -42,31 +50,36 @@ cp -r en/01-youtube-production/.claude/ /path/to/my-project/.claude/
 
 ## Harness Architecture
 
+Each `ko/` harness is a self-contained Claude Code plugin:
+
 ```
-{NN}-{harness-name}/
-└── .claude/
-    ├── CLAUDE.md                    # Project overview
-    ├── agents/
-    │   ├── {specialist-1}.md        # Domain expert agent
-    │   ├── {specialist-2}.md
-    │   ├── {specialist-3}.md
-    │   ├── {specialist-4}.md
-    │   └── {reviewer/qa}.md         # Cross-validation agent
-    └── skills/
-        ├── {orchestrator}/
-        │   └── skill.md             # Team orchestration
-        ├── {domain-skill-1}/
-        │   └── skill.md             # Agent-extending skill
-        └── {domain-skill-2}/
-            └── skill.md             # Agent-extending skill
+ko/{NN}-{harness-name}/
+├── .claude-plugin/
+│   └── plugin.json                 # Plugin manifest
+├── README.md                       # Harness overview
+├── agents/
+│   ├── {specialist-1}.md           # Domain expert agent
+│   ├── {specialist-2}.md
+│   ├── {specialist-3}.md
+│   ├── {specialist-4}.md
+│   └── {reviewer/qa}.md            # Cross-validation agent
+└── skills/
+    ├── {orchestrator}/
+    │   └── SKILL.md                # Team orchestration
+    ├── {domain-skill-1}/
+    │   └── SKILL.md                # Agent-extending skill
+    └── {domain-skill-2}/
+        └── SKILL.md                # Agent-extending skill
 ```
+
+The `en/` harnesses retain the original `.claude/` (`CLAUDE.md` + `agents/` + `skills/<name>/skill.md`) layout for folder-copy use.
 
 ### Three-Layer Skill System
 
 | Layer | Purpose | Example |
 |-------|---------|---------|
-| **Orchestrator** | Team coordination, workflow, error handling | `youtube-production/skill.md` |
-| **Agent-Extending** | Domain knowledge that amplifies agent expertise | `hook-writing/skill.md`, `thumbnail-psychology/skill.md` |
+| **Orchestrator** | Team coordination, workflow, error handling | `youtube-production/SKILL.md` |
+| **Agent-Extending** | Domain knowledge that amplifies agent expertise | `hook-writing/SKILL.md`, `thumbnail-psychology/SKILL.md` |
 | **External** | Existing tools (Gemini image gen, web search) | `gemini-3-pro-imagegen` |
 
 ## Quality Standards
