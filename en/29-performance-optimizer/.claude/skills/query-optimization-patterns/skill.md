@@ -1,15 +1,15 @@
 ---
 name: query-optimization-patterns
-description: "SQL/NoSQL query optimization pattern, execution plan analysis, index strategy, N+1  resolution etc. database performance optimization guide. 'query optimization', 'execution plan', 'EXPLAIN', 'index ', 'N+1 ', 'slow query', 'slow query', 'DB performance' etc. database query performance improvement  this  for. bottleneck-analystand optimization-engineerof DB performance analysis  -ize. , before system profilingthis benchmark execution this of scope ."
+description: "A database performance optimization guide covering SQL/NoSQL query optimization patterns, execution plan analysis, index strategy, N+1 problem resolution, and more. Use this skill when improving database query performance such as 'query optimization', 'execution plan', 'EXPLAIN', 'index design', 'N+1 problem', 'slow query', and 'DB performance'. It strengthens the DB performance analysis capabilities of bottleneck-analyst and optimization-engineer. However, whole-system profiling and benchmark execution are out of scope for this skill."
 ---
 
 # Query Optimization Patterns — query optimization pattern guide
 
-database query performance systematicas analysisand optimizationlower methodology.
+A methodology for systematically analyzing and optimizing database query performance.
 
-## execution plan analysis
+## Execution plan analysis
 
-### PostgreSQL EXPLAIN 
+### Reading PostgreSQL EXPLAIN
 
 ```sql
 EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT)
@@ -21,136 +21,136 @@ ORDER BY o.total_amount DESC
 LIMIT 10;
 ```
 
-### core metric 
+### Interpreting core metrics
 
-| metric | of | risk  |
+| Metric | Meaning | Warning sign |
 |------|------|----------|
-| **Seq Scan** | before table  | large tablefrom   |
-| **Nested Loop** |   join | external tablethis   |
-| **Hash Join** | hash  join | work_mem exceeding  disk for |
-| **Sort** | sort | memory exceeding  external sort |
-| **Bitmap Heap Scan** | index → table  | lossy map  performance lower |
-| **actual time** | actual  between |   vs before  this |
-| **rows** | estimated vs actual this | 10 or more this → statistics renewal |
+| **Seq Scan** | full table scan | when it occurs on a large table |
+| **Nested Loop** | row-by-row join | when the outer table is large |
+| **Hash Join** | hash-based join | uses disk when work_mem is exceeded |
+| **Sort** | sorting | external sort when memory is exceeded |
+| **Bitmap Heap Scan** | index → table access | performance degrades with a lossy bitmap |
+| **actual time** | actual elapsed time | difference between first row vs all rows |
+| **rows** | estimated vs actual difference | 10x or more difference → refresh statistics |
 
-### risk pattern detection
+### Detecting risky patterns
 
 ```
 ❌ Seq Scan on large_table (rows=10000000)
-   → index addition necessary
+   → index addition needed
 
 ❌ Sort Method: external merge (Disk: 256MB)
-   → work_mem  or index sort
+   → increase work_mem or sort by index
 
 ❌ Nested Loop (actual rows=1000000)
-   → Hash Join or Merge Joinas transition
+   → switch to Hash Join or Merge Join
 
 ❌ estimated=100 actual=100000
-   → ANALYZE executionto statistics renewal
+   → run ANALYZE to refresh statistics
 ```
 
-## index strategy
+## Index strategy
 
-### index typeper for
+### Use by index type
 
-| index type | suitable  | unsuitable  |
+| Index type | Suitable for | Unsuitable for |
 |------------|-----------|-------------|
-| B-Tree (default) | etc., scope, sort | , JSON, before search |
-| Hash | etc. only | scope query |
-| GIN | , JSONB, before search | simple etc./scope |
-| GiST | between, scope type | simple  |
-| BRIN | -basedas sortthe data |  distribution |
+| B-Tree (default) | equality, range, sorting | arrays, JSON, full-text search |
+| Hash | equality comparison only | range queries |
+| GIN | arrays, JSONB, full-text search | simple equality/range |
+| GiST | geospatial, range types | simple scalars |
+| BRIN | physically sorted data | random distribution |
 
-###  index  principle
+### Composite index design principles
 
 ```sql
---   rule (Leftmost Prefix)
+-- Leftmost Prefix rule
 CREATE INDEX idx_orders ON orders(status, created_at, customer_id);
 
--- this index lower query:
+-- Queries this index covers:
 ✅ WHERE status = 'PAID'
 ✅ WHERE status = 'PAID' AND created_at > '2024-01-01'
 ✅ WHERE status = 'PAID' AND created_at > '2024-01-01' AND customer_id = 123
-❌ WHERE created_at > '2024-01-01'  (status )
-❌ WHERE customer_id = 123          (status, created_at )
+❌ WHERE created_at > '2024-01-01'  (status missing)
+❌ WHERE customer_id = 123          (status, created_at missing)
 
--- column  decision criteria:
--- 1. etc. cases column  (optionalalso high )
--- 2. scope cases column 
--- 3. ORDER BY column 
+-- Criteria for deciding column order:
+-- 1. equality-condition columns first (the more selective ones)
+-- 2. range-condition columns next
+-- 3. ORDER BY columns last
 ```
 
-###  index
+### Covering index
 
 ```sql
--- table  this indexonlyas query completed
+-- Complete the query from the index alone, with no table access
 CREATE INDEX idx_covering ON orders(status, created_at) INCLUDE (total_amount);
 
 SELECT total_amount FROM orders
 WHERE status = 'PAID' AND created_at > '2024-01-01';
--- Index Only Scan  → heap  necessary
+-- Index Only Scan occurs → no heap access needed
 ```
 
-## N+1  resolution
+## N+1 problem resolution
 
-###  
+### Diagnosing the problem
 
 ```python
-# N+1 pattern (!)
+# N+1 pattern (slow!)
 orders = Order.objects.filter(status="PAID")  # query 1
 for order in orders:
-    print(order.customer.name)  # query N (order countonly)
-#  query: 1 + N
+    print(order.customer.name)  # query N (one per order)
+# total queries: 1 + N
 
-# Eager Loadingas resolution
+# Resolve with Eager Loading
 orders = Order.objects.filter(status="PAID").select_related("customer")  # query 1 (JOIN)
 # or
 orders = Order.objects.filter(status="PAID").prefetch_related("items")  # query 2 (IN)
 ```
 
-### ORMper resolution
+### Resolution by ORM
 
-| ORM | N+1 resolution |  |
+| ORM | N+1 resolution | Method |
 |-----|---------|------|
 | Django | `select_related` / `prefetch_related` | FK JOIN / Reverse IN |
-| SQLAlchemy | `joinedload` / `subqueryload` | JOIN / query |
+| SQLAlchemy | `joinedload` / `subqueryload` | JOIN / subquery |
 | TypeORM | `relations` / `@JoinColumn` | eager/lazy configuration |
-| Prisma | `include` | automatic  |
+| Prisma | `include` | automatic batching |
 | JPA | `@EntityGraph` / `JOIN FETCH` | JPQL/Criteria |
 
-## thisthis optimization
+## Pagination optimization
 
-|  | SQL | performance | suitable |
+| Method | SQL | Performance | Suitable for |
 |------|-----|------|------|
-| OFFSET | `LIMIT 20 OFFSET 10000` | O(N) —  | , seconds this |
-| Keyset | `WHERE id > 1000 LIMIT 20` | O(1) —  | ,   |
-| Cursor | encryptionthe keyset | O(1) | API, clientfor |
+| OFFSET | `LIMIT 20 OFFSET 10000` | O(N) — slow | small scale, early pages |
+| Keyset | `WHERE id > 1000 LIMIT 20` | O(1) — fast | large scale, infinite scroll |
+| Cursor | encrypted keyset | O(1) | API, client-facing |
 
 ```sql
--- OFFSET (10000from → 10000  after )
+-- OFFSET (from the 10000th → scan 10000 rows then discard them)
 SELECT * FROM orders ORDER BY id LIMIT 20 OFFSET 10000;
 
--- Keyset (immediate corresponding locationas)
+-- Keyset (jump straight to the position)
 SELECT * FROM orders WHERE id > 10000 ORDER BY id LIMIT 20;
 ```
 
-## query pattern
+## Query anti-patterns
 
-| pattern |  | resolution |
+| Anti-pattern | Problem | Resolution |
 |---------|------|------|
-| `SELECT *` | necessary column before | necessary columnonly people |
-| `WHERE func(column)` | index for impossible | transformation constant as this |
-| `LIKE '%keyword%'` |  | before search index(GIN) |
-| query IN () | slow execution | JOINas transition |
-| -based type transformation | index invalid-ize | type day |
+| `SELECT *` | transfers unnecessary columns | specify only the needed columns |
+| `WHERE func(column)` | cannot use the index | move the transformation to the constant side |
+| `LIKE '%keyword%'` | full scan | full-text search index (GIN) |
+| subquery IN (large) | slow execution | switch to a JOIN |
+| implicit type conversion | invalidates the index | match the types |
 
-## query optimization list
+## Query optimization checklist
 
-- [ ] EXPLAIN ANALYZE executionto execution plan confirmation
-- [ ] Seq Scanthis ofalso-based confirmation ( data OK)
-- [ ] estimated vs actual rows this confirmation
-- [ ] necessary index  
-- [ ] N+1 query pattern without confirmation
-- [ ] thisthisthis keyset  confirmation
-- [ ] necessary ORDER BY / DISTINCT removal
-- [ ] transaction scope minimum confirmation
+- [ ] Run EXPLAIN ANALYZE to confirm the execution plan
+- [ ] Confirm whether a Seq Scan is intentional (small data is OK)
+- [ ] Check the estimated vs actual rows difference
+- [ ] Whether the needed index exists
+- [ ] Confirm there are no N+1 query patterns
+- [ ] Confirm pagination is keyset-based
+- [ ] Remove unnecessary ORDER BY / DISTINCT
+- [ ] Confirm the transaction scope is minimal

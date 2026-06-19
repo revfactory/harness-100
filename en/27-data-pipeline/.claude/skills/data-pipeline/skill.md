@@ -1,138 +1,138 @@
 ---
 name: data-pipeline
-description: "data pipelineof count, transformation, -based, verification, monitoring inthisbefore teamthis to ·lower  pipeline. 'data pipeline ', 'ETL pipeline ', 'data count automatic-ize', 'data lower pipeline', 'ELT ', ' pipeline', 'tree pipeline', 'Airflow DAG only', 'dbt model ', 'data  verification ' etc. data pipeline · beforein this  for. existing pipelineof  verificationthis monitoringonly necessary inalso supported. , real-time tree (Flink/Spark Streaming) direct execution,  infrastructure provisioning, database administrator(DBA)  this of scope ."
+description: "A full pipeline where an agent team collaborates to design and implement the ingestion, transformation, loading, quality verification, and monitoring of a data pipeline. Use this skill for the full span of data pipeline design and construction, such as 'design a data pipeline', 'build an ETL pipeline', 'automate data ingestion', 'data warehouse pipeline', 'design an ELT', 'batch pipeline', 'streaming pipeline', 'build me an Airflow DAG', 'design a dbt model', 'data quality verification system'. It also supports cases where only quality verification or monitoring of an existing pipeline is needed. However, directly running a real-time streaming engine (Flink/Spark Streaming), provisioning cloud infrastructure, and database administrator (DBA) work are out of this skill's scope."
 ---
 
-# Data Pipeline — data pipeline ·
+# Data Pipeline — data pipeline design and implementation
 
-data pipelineof count→transformation→-based→verification→monitoring inthisbefore teamthis to  in ·.
+An agent team collaborates to design and implement the ingestion→transformation→loading→quality verification→monitoring of a data pipeline in one pass.
 
-## execution 
+## Execution mode
 
-**inthisbefore team** — 5peoplethis SendMessageas direct and  verification.
+**Agent Team** — 5 members communicate directly via SendMessage and cross-validate.
 
-## inthisbefore setup
+## Agent composition
 
-| inthisbefore | day | role | type |
+| Agent | File | Role | Type |
 |---------|------|------|------|
-| etl-architect | `.claude/agents/etl-architect.md` | analysis, schema, pipeline | general-purpose |
-| data-quality-manager | `.claude/agents/data-quality-manager.md` | verificationrule, profiling, or moredetection | general-purpose |
-| scheduler-engineer | `.claude/agents/scheduler-engineer.md` | DAG, of, retrystrategy | general-purpose |
-| monitoring-specialist | `.claude/agents/monitoring-specialist.md` | metric, alert, dashboard, SLA | general-purpose |
-| pipeline-reviewer | `.claude/agents/pipeline-reviewer.md` | verification, , operationsalso | general-purpose |
+| etl-architect | `.claude/agents/etl-architect.md` | Source analysis, schema design, pipeline structure | general-purpose |
+| data-quality-manager | `.claude/agents/data-quality-manager.md` | Validation rules, profiling, anomaly detection | general-purpose |
+| scheduler-engineer | `.claude/agents/scheduler-engineer.md` | DAG design, dependencies, retry strategy | general-purpose |
+| monitoring-specialist | `.claude/agents/monitoring-specialist.md` | Metrics, alerts, dashboards, SLA | general-purpose |
+| pipeline-reviewer | `.claude/agents/pipeline-reviewer.md` | Cross-validation, consistency, operational readiness | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1:  (this direct count)
+### Phase 1: Preparation (performed directly by the orchestrator)
 
-1. user from :
-    - **data **:  system(DB, API, day, tree)
-    - ** system**: data lower, data this, analysis 
-    - **business required**:  cycle, SLA, data also
-    - ** ** (optional):  vendor, existing stack, budget
-    - **existing day** (optional): user provided schema, query, configuration day
-2. `_workspace/`  project rootin creation
-3.  to `_workspace/00_input.md`in 
-4. existing daythis  `_workspace/`in and corresponding Phase cases
-5. request scopein  **execution  decision** ( " per " )
+1. Extract from the user input:
+    - **Data sources**: source systems (DB, API, files, streaming)
+    - **Target system**: data warehouse, data lake, analytics platform
+    - **Business needs**: reporting cycle, SLA, data freshness
+    - **Technical constraints** (optional): cloud vendor, existing stack, budget
+    - **Existing files** (optional): schemas, queries, and configuration files provided by the user
+2. Create the `_workspace/` directory in the project root
+3. Organize the input and save it to `_workspace/00_input.md`
+4. If existing files are present, copy them into `_workspace/` and skip the corresponding Phase
+5. **Decide the execution mode** based on the scope of the request (see "Modes by work scale" below)
 
-### Phase 2: team setup and execution
+### Phase 2: Team setup and execution
 
-team setupand  .  between of  and :
+Set up the team and assign the work. The dependencies between jobs are as follows:
 
-|  |  | responsible | of |  |
+| Order | Job | Owner | Depends on | Deliverable |
 |------|------|------|------|--------|
-| 1 | ETL architecture  | etl-architect |  | `_workspace/01_etl_architecture.md` |
-| 2a | data  plan | data-quality-manager |  1 | `_workspace/02_data_quality_plan.md` |
-| 2b | scheduling configuration | scheduler-engineer |  1 | `_workspace/03_scheduler_config.md` |
-| 3 | monitoring configuration | monitoring-specialist |  1, 2a, 2b | `_workspace/04_monitoring_setup.md` |
-| 4 | pipeline review | pipeline-reviewer |  1, 2a, 2b, 3 | `_workspace/05_review_report.md` |
+| 1 | ETL architecture design | etl-architect | None | `_workspace/01_etl_architecture.md` |
+| 2a | Data quality plan | data-quality-manager | Job 1 | `_workspace/02_data_quality_plan.md` |
+| 2b | Scheduling configuration | scheduler-engineer | Job 1 | `_workspace/03_scheduler_config.md` |
+| 3 | Monitoring configuration | monitoring-specialist | Jobs 1, 2a, 2b | `_workspace/04_monitoring_setup.md` |
+| 4 | Pipeline review | pipeline-reviewer | Jobs 1, 2a, 2b, 3 | `_workspace/05_review_report.md` |
 
- 2a()and 2b(scheduling) **parallel execution**.    1(architecture)inonly ofloweras in startto count .
+Jobs 2a (quality) and 2b (scheduling) run **in parallel**. Since both depend only on Job 1 (architecture), they can start at the same time.
 
-**team between  :**
-- etl-architect completed → quality-managerto schema·business rule before, schedulerto of·resource required before, monitoringto core metric before
-- quality-manager completed → schedulerto verification  insert location· cases before, monitoringto  metric·SLA before
-- scheduler completed → monitoringto DAG execution metric before
-- reviewer all   verification. 🔴 required modification   corresponding inthisbeforeto modification request →  → verification (maximum 2)
+**Communication flow between team members:**
+- etl-architect done → deliver schema·business rules to quality-manager, deliver dependencies·resource requirements to scheduler, deliver core metrics to monitoring
+- quality-manager done → deliver the validation-job insertion point·halt conditions to scheduler, deliver quality metrics·SLA to monitoring
+- scheduler done → deliver DAG execution metrics to monitoring
+- reviewer cross-validates all deliverables. When a 🔴 required fix is found, request a fix from the relevant agent → rework → re-verify (up to 2 times)
 
-### Phase 3: integrated and final 
+### Phase 3: Integration and final deliverables
 
-reviewerof report as final  :
+Organize the final deliverables based on the reviewer's report:
 
-1. `_workspace/` within all day confirmation
-2. review reportof 🔴 required modificationthis   confirmation
-3. final  userto report:
+1. Confirm all files within `_workspace/`
+2. Confirm that all 🔴 required fixes from the review report have been applied
+3. Report the final summary to the user:
     - ETL architecture — `01_etl_architecture.md`
-    -   plan — `02_data_quality_plan.md`
-    - scheduling configuration — `03_scheduler_config.md`
-    - monitoring configuration — `04_monitoring_setup.md`
-    - review report — `05_review_report.md`
-    - pipeline code — `pipeline_code/`
+    - Quality management plan — `02_data_quality_plan.md`
+    - Scheduling configuration — `03_scheduler_config.md`
+    - Monitoring configuration — `04_monitoring_setup.md`
+    - Review report — `05_review_report.md`
+    - Pipeline code — `pipeline_code/`
 
-##  per 
+## Modes by work scale
 
-user requestof scopein   inthisbefore :
+Adjust which agents are deployed based on the scope of the user's request:
 
-| user request pattern | execution  |  inthisbefore |
+| User request pattern | Execution mode | Deployed agents |
 |----------------|----------|-------------|
-| "data pipeline ", "ETL before " | ** pipeline** | 5people before |
-| "data  verification  only" | ** ** | etl-architect + quality-manager + reviewer |
-| "Airflow DAG " | ** ** | etl-architect + scheduler + reviewer |
-| "pipeline monitoring dashboard setup" | **monitoring ** | monitoring + reviewer |
-| "this pipeline review" | **review ** | reviewer  |
+| "design a data pipeline", "build the whole ETL" | **Full pipeline** | All 5 members |
+| "build a data quality verification system" | **Quality mode** | etl-architect + quality-manager + reviewer |
+| "design an Airflow DAG" | **Schedule mode** | etl-architect + scheduler + reviewer |
+| "set up a pipeline monitoring dashboard" | **Monitoring mode** | monitoring + reviewer |
+| "review this pipeline" | **Review mode** | reviewer alone |
 
-**existing day for**: user schema, DAG code etc. existing day providedlower, corresponding day `_workspace/`of -based locationin and corresponding phaseof inthisbefore cases.
+**Reusing existing files**: When the user provides existing files such as schemas or DAG code, copy those files to the appropriate location in `_workspace/` and skip the agent for that stage.
 
-## data before as
+## Data handoff protocol
 
-| strategy |  | foralso |
+| Strategy | Method | Purpose |
 |------|------|------|
-| day  | `_workspace/`  | week   and shared |
-| message  | SendMessage | real-time core information before, modification request |
-|   | TaskCreate/TaskUpdate | in progress upper tracking, of   |
+| File-based | `_workspace/` directory | Store and share major deliverables |
+| Message-based | SendMessage | Real-time delivery of core information, fix requests |
+| Task-based | TaskCreate/TaskUpdate | Progress tracking, dependency management |
 
-daypeople : `{}_{inthisbefore}_{}.{extension}`
+File naming convention: `{order}_{agent}_{deliverable}.{extension}`
 
-## error 
+## Error handling
 
-| error type | strategy |
+| Error type | Strategy |
 |----------|------|
-|   information  | key placeholder  templateas in progress, in " information " people |
-|  stack people | AWS/GCP/Azure 3 per  , user optional also |
-|  information  | (day 1onlycases)·(day 100onlycases)·(day 1cases) 3phase architecture  |
-| inthisbefore failure | 1 retry → failure  corresponding  this in progress, review reportin  people |
-| reviewfrom 🔴  | corresponding inthisbeforein modification request →  → verification (maximum 2) |
+| Missing source connection details | Architect proceeds with a placeholder-based template, marking "connection info not entered" in the deliverable |
+| Unknown technology stack | List options for the 3 major clouds (AWS/GCP/Azure) side by side and prompt the user to choose |
+| Missing volume information | Present 3-tier architecture options: small (10K/day)·medium (1M/day)·large (100M/day) |
+| Agent failure | Retry once → on failure, proceed without that deliverable and mark the omission in the review report |
+| 🔴 found in review | Request a fix from the relevant agent → rework → re-verify (up to 2 times) |
 
-## test 
+## Test scenarios
 
-### normal 
-****: "PostgreSQL order data BigQuery data loweras -basedlower dayday  pipeline . Airflow as."
-** result**:
-- ETL architecture: PostgreSQL CDC/minutes as strategy, Raw→Staging→Curated→Analytics 4this
--  plan: order data   P0/P1/P2 verification rule, revenue aggregation cross-check
-- scheduling: Airflow DAG code(extract→stage→curate→analytics→quality_check), retry policy
-- monitoring: dayday -based casescount, latencybetween,  count dashboard
-- review: beforeitem  
+### Normal flow
+**Prompt**: "Design a daily batch pipeline that loads PostgreSQL order data into a BigQuery data warehouse. Based on Airflow."
+**Expected result**:
+- ETL architecture: PostgreSQL CDC/incremental load strategy, 4 layers Raw→Staging→Curated→Analytics
+- Quality plan: P0/P1/P2 validation rules based on order data characteristics, revenue aggregation cross-check
+- Scheduling: Airflow DAG code (extract→stage→curate→analytics→quality_check), retry policy
+- Monitoring: dashboard for daily load count, latency, and quality score
+- Review: all-item consistency matrix
 
-### existing day for 
-****: "this dbt model dayin about data  verificationand monitoring " + dbt model day 
-** result**:
-- existing dbt model `_workspace/`in 
--   + monitoring  : quality-manager + monitoring + reviewer 
-- etl-architect, scheduler cases
+### Existing-file reuse flow
+**Prompt**: "Design data quality verification and monitoring for these dbt model files" + dbt model files attached
+**Expected result**:
+- Copy the existing dbt models to `_workspace/`
+- Merge quality mode + monitoring mode: deploy quality-manager + monitoring + reviewer
+- Skip etl-architect and scheduler
 
-### error 
-****: "data pipeline  ,   items   "
-** result**:
-- key day-based  pipeline templateas in progress
-- per  placeholder included, per 3phase  
-- review reportin " information  —  after  necessary" people
+### Error flow
+**Prompt**: "Design a data pipeline quickly; there are several sources but I'm not sure exactly yet"
+**Expected result**:
+- Architect proceeds with a generic multi-source pipeline template
+- Includes per-source connector placeholders, presents 3-tier options by volume
+- Marks "source info not finalized — redesign needed after finalization" in the review report
 
 
-## inthisbeforeper extension 
+## Per-agent extension skills
 
-|  | as | -ize upper inthisbefore | role |
+| Skill | Path | Agent it reinforces | Role |
 |------|------|-----------------|------|
-| data-quality-framework | `.claude/skills/data-quality-framework/skill.md` | data-quality-manager |  6, Great Expectations, dbt tests, data  |
-| dag-orchestration-patterns | `.claude/skills/dag-orchestration-patterns/skill.md` | scheduler-engineer | Airflow DAG pattern, etc., retry, , of |
+| data-quality-framework | `.claude/skills/data-quality-framework/skill.md` | data-quality-manager | Quality 6 dimensions, Great Expectations, dbt tests, data contracts |
+| dag-orchestration-patterns | `.claude/skills/dag-orchestration-patterns/skill.md` | scheduler-engineer | Airflow DAG patterns, idempotency, retries, backfill, dependencies |

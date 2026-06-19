@@ -1,74 +1,74 @@
 ---
 name: community-health-metrics
-description: "open source project community casesalso measurement metric, GitHub project configuration  , contribution  optimization guide. 'community casesalso', 'GitHub configuration', 'this template', 'PR template', 'CONTRIBUTING', 'Code of Conduct', 'contribution ', 'GitHub Actions CI' etc. open source community operations  this  for. community-managerand doc-writerof community   -ize. , license -based analysisthis code refactoring this of scope ."
+description: "Open source project community health metrics, GitHub project configuration best practices, and contributor experience optimization guide. Use this skill for open source community operations such as 'community health', 'GitHub configuration', 'issue template', 'PR template', 'CONTRIBUTING', 'Code of Conduct', 'contributor experience', or 'GitHub Actions CI'. It strengthens the community design capability of community-manager and doc-writer. However, legal license analysis and code refactoring are outside this skill's scope."
 ---
 
-# Community Health Metrics — open source community casesalso guide
+# Community Health Metrics — Open Source Community Health Guide
 
-open source projectof community cases measurementand improvementlower framework.
+A framework for measuring and improving the community health of an open source project.
 
-## casesalso metric 
+## Health Metrics System
 
-### CHAOSS model core metric
+### CHAOSS Model Core Metrics
 
-| category | metric | measurement | cases criteria |
+| Category | Metric | Measurement | Health threshold |
 |---------|------|------|----------|
-| **** | Commit frequency | weekbetween  count | > 5/week |
-| **** | this resolution between | this →as value | < 7day |
-| **** | PR review between | PR → review value | < 48between |
-| **various** |  contribution ratio | monthbetween  contribution count | > 2people/month |
-| **various** | Bus Factor | code 80% contribution minimum  | > 2people |
-| **for** | contribution retention | contribution ratio (6itemsmonth) | > 30% |
-| **for** |  PR  between |  contribution→ | < 1week |
+| **Activity** | Commit frequency | Weekly commit count | > 5/week |
+| **Activity** | Issue resolution time | Median issue open→close | < 7 days |
+| **Activity** | PR review time | Median PR submission→first review | < 48 hours |
+| **Diversity** | New contributor ratio | Monthly first-time contributor count | > 2/month |
+| **Diversity** | Bus Factor | Minimum people contributing 80% of code | > 2 |
+| **Inclusivity** | Contributor retention | Re-contribution rate (6 months) | > 30% |
+| **Inclusivity** | First PR merge time | First contribution→merge | < 1 week |
 
-### GitHub project count 
+### GitHub Project Scorecard
 
 ```markdown
-## project casesalso list
+## Project Health Checklist
 
-### required day (Must-have)
-- [ ] README.md (badge, Quick Start, installation, for)
+### Required Files (Must-have)
+- [ ] README.md (badges, Quick Start, installation, usage)
 - [ ] LICENSE
 - [ ] CONTRIBUTING.md
 - [ ] CODE_OF_CONDUCT.md
 - [ ] CHANGELOG.md
 
-### GitHub configuration
+### GitHub Configuration
 - [ ] .github/ISSUE_TEMPLATE/ (bug, feature, question)
 - [ ] .github/PULL_REQUEST_TEMPLATE.md
-- [ ] .github/workflows/ (CI, )
+- [ ] .github/workflows/ (CI, release)
 - [ ] .github/FUNDING.yml (optional)
-- [ ] .github/SECURITY.md (vulnerability report procedure)
+- [ ] .github/SECURITY.md (vulnerability reporting procedure)
 
-###  also
-- [ ] CI pipeline (test, , )
-- [ ] code  badge
-- [ ] dependency automatic update (Dependabot/Renovate)
-- [ ]  automatic-ize (semantic-release)
+### Quality Tools
+- [ ] CI pipeline (test, lint, build)
+- [ ] Code coverage badge
+- [ ] Automatic dependency updates (Dependabot/Renovate)
+- [ ] Release automation (semantic-release)
 ```
 
-## this template
+## Issue Templates
 
-### the 
+### Bug Report
 
 ```yaml
 # .github/ISSUE_TEMPLATE/bug_report.yml
 name: Bug Report
-description: the lower? notifyweek.
+description: Found a bug? Let us know.
 labels: ["bug", "triage"]
 body:
   - type: textarea
     id: description
     attributes:
-      label: the people
-      description: this ?
+      label: Bug description
+      description: What went wrong?
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label:  procedure
-      description: the lower phase notifyweek.
+      label: Steps to reproduce
+      description: Tell us the steps to reproduce the bug.
       value: |
         1.
         2.
@@ -76,47 +76,47 @@ body:
   - type: textarea
     id: expected
     attributes:
-      label:  
+      label: Expected behavior
   - type: textarea
     id: actual
     attributes:
-      label: actual 
+      label: Actual behavior
   - type: input
     id: version
     attributes:
-      label: before
+      label: Version
   - type: dropdown
     id: os
     attributes:
-      label: operations
+      label: Operating system
       options: [macOS, Windows, Linux, Other]
 ```
 
-## PR template
+## PR Template
 
 ```markdown
 <!-- .github/PULL_REQUEST_TEMPLATE.md -->
-## change matter
-<!--   change? -->
+## Changes
+<!-- What did you change and why? -->
 
-## change type
-- [ ] the modification
-- [ ]  
-- [ ] documentation improvement
-- [ ] refactoring
-- [ ] test addition
+## Change Type
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Documentation improvement
+- [ ] Refactoring
+- [ ] Test addition
 
-## list
-- [ ] test addition/modification
-- [ ] documentation update
-- [ ] CHANGELOG.md update
-- [ ] existing test and.
+## Checklist
+- [ ] Added/updated tests
+- [ ] Updated documentation
+- [ ] Updated CHANGELOG.md
+- [ ] Existing tests pass
 
-## related this
+## Related Issues
 Closes #
 ```
 
-## CI/CD setup 
+## Recommended CI/CD Configuration
 
 ```yaml
 # .github/workflows/ci.yml
@@ -143,42 +143,42 @@ jobs:
       - run: npm run lint
 ```
 
-## contribution  optimization
+## Contributor Journey Optimization
 
 ```
- → README → installation → for → this report →  PR →  contribution
+Discovery → README → Installation → Usage → Issue report → First PR → Regular contributor
 
-each phase optimization:
-1. : SEO,  , 
-2. README: 30seconds within project this possible
-3. installation: 3phase or less, - possible
-4. for: immediate execution possible 
-5. this: templateas   
-6.  PR: "good first issue" , 
-7.  contribution: (CONTRIBUTORS.md), role 
+Optimization at each stage:
+1. Discovery: SEO, social media, conferences
+2. README: project understandable within 30 seconds
+3. Installation: 3 steps or fewer, copy-paste ready
+4. Usage: immediately runnable examples
+5. Issues: lower the entry barrier with templates
+6. First PR: "good first issue" labels, mentoring
+7. Regular contribution: recognition (CONTRIBUTORS.md), assigning roles
 ```
 
-##  contribution onboarding
+## First Contributor Onboarding
 
 ```markdown
-## contributionlower
+## How to Contribute
 
-### items  configuration
-# 1phase:  & 
+### Development Environment Setup
+# Step 1: Fork & clone
 git clone https://github.com/YOUR_ID/project.git
 
-# 2phase: dependency installation
+# Step 2: Install dependencies
 npm install
 
-# 3phase: test execution
+# Step 3: Run tests
 npm test
 
-### good  this 
-"good first issue" this  this confirmationlower.
+### Finding a Good First Issue
+Check issues labeled "good first issue".
 
-### PR  procedure
-1.  creation: git checkout -b fix/issue-123
-2. change after test and confirmation
-3.  message  compliant (Conventional Commits)
-4. PR  after CI and confirmation
+### PR Submission Procedure
+1. Create a branch: git checkout -b fix/issue-123
+2. Confirm tests pass after your change
+3. Follow the commit message convention (Conventional Commits)
+4. Confirm CI passes after submitting the PR
 ```
