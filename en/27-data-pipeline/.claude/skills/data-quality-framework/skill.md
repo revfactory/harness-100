@@ -1,33 +1,33 @@
 ---
 name: data-quality-framework
-description: "data  (accuracy, completeness, timeliness, consistency etc.)per verification rule and Great Expectations, dbt tests etc.of also for guide. 'data ', 'verification rule', 'Great Expectations', 'dbt test', 'data profiling', 'or more detection', 'data ' etc. data    this  for. data-quality-managerof  verification  -ize. , pipeline schedulingthis before architecture  this of scope ."
+description: "A guide to designing validation rules per data quality dimension (accuracy, completeness, timeliness, consistency, etc.) and to using tools such as Great Expectations and dbt tests. Use this skill for data quality management, such as 'data quality', 'validation rules', 'Great Expectations', 'dbt test', 'data profiling', 'anomaly detection', 'data contract'. It reinforces the quality verification capability of data-quality-manager. However, pipeline scheduling and overall architecture design are out of this skill's scope."
 ---
 
-# Data Quality Framework — data  framework guide
+# Data Quality Framework — data quality framework guide
 
-data  systematicas of, measurement, monitoringlower framework.
+A framework for systematically defining, measuring, and monitoring data quality.
 
-## data  6
+## The 6 dimensions of data quality
 
-|  | of | measurement  | threshold example |
+| Dimension | Definition | Measurement method | Threshold example |
 |------|------|----------|-----------|
-| **accuracy** (Accuracy) |    |  , business rule verification | also > 99.9% |
-| **completeness** (Completeness) | required data  | NULL ratio, required  satisfied | NULL < 1% |
-| **timeliness** (Timeliness) |  between within also | latencybetween, data also | latency < 30minutes |
-| **consistency** (Consistency) | system between day |  verification,  integrity | day = 0 |
-| **day** (Uniqueness) |   |  /key ratio |  = 0% |
-| **valid** (Validity) | /scope compliant | , scope  | efficiency > 99% |
+| **Accuracy** | Correctly reflects reality | Source reconciliation, business rule verification | accuracy > 99.9% |
+| **Completeness** | Required data exists | NULL ratio, required field satisfaction | NULL < 1% |
+| **Timeliness** | Arrives within the expected time | Latency, data freshness | latency < 30 min |
+| **Consistency** | Agreement across systems | Cross-validation, referential integrity | mismatches = 0 |
+| **Uniqueness** | No duplicates | Duplicate row/key ratio | duplicates = 0% |
+| **Validity** | Conforms to format/range | Regex, range checks | validity rate > 99% |
 
-## verification rule  pattern
+## Validation rule design patterns
 
-### P0 (required — failure  pipeline )
+### P0 (required — pipeline halts on failure)
 
 ```yaml
 rules:
   - name: pk_uniqueness
     type: uniqueness
     column: order_id
-    threshold: 0  #  0cases
+    threshold: 0  # 0 duplicates
 
   - name: not_null_critical
     type: completeness
@@ -36,8 +36,8 @@ rules:
 
   - name: row_count_sanity
     type: volume
-    min_rows: 1000  # dayday minimum order count
-    max_deviation: 0.5  # beforeday  50% or more   warning
+    min_rows: 1000  # daily minimum order count
+    max_deviation: 0.5  # warn on a ≥50% change vs the prior day
 
   - name: referential_integrity
     type: consistency
@@ -46,7 +46,7 @@ rules:
     match_rate: 1.0
 ```
 
-### P1 (important — warning after in progress)
+### P1 (important — proceed after warning)
 
 ```yaml
 rules:
@@ -60,7 +60,7 @@ rules:
     type: accuracy
     column: total_amount
     min: 0
-    max: 100000000  # 1 exceeding order of
+    max: 100000000  # orders over 100M are suspect
 
   - name: freshness
     type: timeliness
@@ -68,32 +68,32 @@ rules:
     max_age_hours: 24
 ```
 
-## Great Expectations 
+## Great Expectations implementation
 
 ```python
 import great_expectations as gx
 
-#  of
+# Define expectations
 suite = context.add_expectation_suite("orders_quality")
 
-# completeness
+# Completeness
 suite.add_expectation(
     gx.expectations.ExpectColumnValuesToNotBeNull(column="order_id")
 )
 
-# day
+# Uniqueness
 suite.add_expectation(
     gx.expectations.ExpectColumnValuesToBeUnique(column="order_id")
 )
 
-# valid
+# Validity
 suite.add_expectation(
     gx.expectations.ExpectColumnValuesToBeBetween(
         column="total_amount", min_value=0, max_value=100000000
     )
 )
 
-# 
+# Volume
 suite.add_expectation(
     gx.expectations.ExpectTableRowCountToBeBetween(
         min_value=1000, max_value=1000000
@@ -101,7 +101,7 @@ suite.add_expectation(
 )
 ```
 
-## dbt Tests 
+## dbt Tests implementation
 
 ```yaml
 # schema.yml
@@ -131,42 +131,42 @@ models:
           interval: 24
 ```
 
-## data profiling list
+## Data profiling checklist
 
 ```
-columnper profile:
-├── type: actual type vs  type
-├── count(Cardinality): value count
-├── NULL ratio:  pattern
-├── distribution: the, also, also
-├── or more: IQR  this
-├── pattern: date, thisday, before-ize etc.  day
-└── dependency: function-based  
+Per-column profile:
+├── Type: actual type vs declared type
+├── Cardinality: number of distinct values
+├── NULL ratio: missingness pattern
+├── Distribution: histogram, skewness, kurtosis
+├── Outliers: IQR-based outliers
+├── Pattern: regex match rate for dates, emails, phone numbers, etc.
+└── Dependency: functional dependency relationships
 
-tableper profile:
-├──  count:  scope vs actual
-├── : before   
-├──  integrity: FK violated casescount
-└── between distribution: record creation between pattern
+Per-table profile:
+├── Row count: expected range vs actual
+├── Duplicate rate: duplicates among all rows
+├── Referential integrity: count of FK violations
+└── Time distribution: record creation time pattern
 ```
 
-## or more detection 
+## Anomaly detection techniques
 
-|  | -basedfor | / |
+| Technique | Applies to | Formula/method |
 |------|------|----------|
-| Z-Score | distribution data | \|x - μ\| / σ > 3 |
-| IQR | distribution | x < Q1-1.5*IQR or x > Q3+1.5*IQR |
-| thisaverage |   | 7day thisaverage  2σ this |
-| beforeday  | dayday -based | \|today - yesterday\| / yesterday > 0.5 |
+| Z-Score | Normally distributed data | \|x - μ\| / σ > 3 |
+| IQR | Non-normal distribution | x < Q1-1.5*IQR or x > Q3+1.5*IQR |
+| Moving average | Time-series volume | deviation of 2σ from the 7-day moving average |
+| Day-over-day | Daily loads | \|today - yesterday\| / yesterday > 0.5 |
 
-## data  (Data Contract)
+## Data contract (Data Contract)
 
 ```yaml
 # data-contract.yml
 name: orders
 version: "2.0.0"
 owner: order-team
-description: "order data "
+description: "order data contract"
 
 schema:
   - name: order_id

@@ -1,13 +1,13 @@
 ---
 name: dag-orchestration-patterns
-description: "Airflow DAG  pattern, of , retry strategy, etc. ,  strategy etc. data pipeline orchestration guide. 'Airflow DAG', 'DAG ', 'of', 'retry strategy', 'etc.', '', 'pipeline orchestration', 'Dagster', 'Prefect' etc. pipeline scheduling  this  for. scheduler-engineerof DAG   -ize. , data  rule of monitoring dashboard this of scope ."
+description: "A data pipeline orchestration guide covering Airflow DAG design patterns, dependency management, retry strategies, idempotency guarantees, backfill strategies, and more. Use this skill for pipeline scheduling, such as 'Airflow DAG', 'DAG design', 'dependencies', 'retry strategy', 'idempotency', 'backfill', 'pipeline orchestration', 'Dagster', 'Prefect'. It reinforces the DAG design capability of scheduler-engineer. However, defining data quality rules and monitoring dashboards are out of this skill's scope."
 ---
 
 # DAG Orchestration Patterns — pipeline orchestration pattern guide
 
-Airflow of DAG  patternand operations strategy.
+Airflow-centric DAG design patterns and operational strategies.
 
-## DAG  pattern
+## DAG design patterns
 
 ### 1. Extract-Load-Transform (ELT) pattern
 
@@ -25,7 +25,7 @@ with DAG("elt_orders", schedule="0 2 * * *", catchup=False) as dag:
 ### 2. Fan-out/Fan-in pattern
 
 ```python
-#   parallel  → integrated transformation
+# Parallel extraction from multiple sources → unified transformation
 sources = ["mysql", "postgres", "api"]
 extract_tasks = [
     PythonOperator(task_id=f"extract_{src}", python_callable=extract, op_args=[src])
@@ -37,25 +37,25 @@ transform = PythonOperator(task_id="transform", python_callable=transform_data)
 extract_tasks >> merge >> transform
 ```
 
-### 3.   event pending
+### 3. Sensor-based event waiting
 
 ```python
 wait_for_data = S3KeySensor(
     task_id="wait_for_file",
     bucket_name="data-lake",
     bucket_key="raw/orders/{{ ds }}/data.parquet",
-    timeout=3600,  # 1between pending
+    timeout=3600,  # wait 1 hour
     poke_interval=60,
-    mode="reschedule"  # pending   
+    mode="reschedule"  # release the worker while waiting
 )
 ```
 
-## etc.  pattern
+## Idempotency guarantee patterns
 
-### partition replacement ( )
+### Partition replacement (most recommended)
 
 ```sql
--- date partition before replacement (etc.-based)
+-- Full replacement of the date partition (idempotent)
 DELETE FROM analytics.orders WHERE date_partition = '{{ ds }}';
 INSERT INTO analytics.orders
 SELECT * FROM staging.orders WHERE date_partition = '{{ ds }}';
@@ -70,14 +70,14 @@ WHEN MATCHED THEN UPDATE SET t.amount = s.amount, t.updated_at = CURRENT_TIMESTA
 WHEN NOT MATCHED THEN INSERT (id, amount, created_at) VALUES (s.id, s.amount, CURRENT_TIMESTAMP);
 ```
 
-### etc. list
+### Idempotency checklist
 
-- [ ] such as DAG 2 executionalso result identical?
-- [ ] date parameter(`{{ ds }}`) forto scope limitedlower?
-- [ ] INSERT beforein existing data lower?
-- [ ] external API in  request ID forlower?
+- [ ] Does running the same DAG twice produce the same result?
+- [ ] Does it limit the range using the date parameter (`{{ ds }}`)?
+- [ ] Does it clean up existing data before the INSERT?
+- [ ] Does it use a unique request ID for external API calls?
 
-## retry strategy
+## Retry strategy
 
 ```python
 default_args = {
@@ -89,46 +89,46 @@ default_args = {
 }
 ```
 
-### per retry configuration
+### Per-job retry configuration
 
-|  type | retry count | pending between | this |
+| Job type | Retry count | Wait time | Reason |
 |----------|-----------|----------|------|
-| DB  | 3 | 5minutes count backoff | day-based connection  |
-| API  | 5 | 30seconds count backoff | Rate limit, network |
-| transformation (SQL) | 1 | immediate | as error retry of |
-| day as | 3 | 1minutes | network  |
+| DB extraction | 3 | 5 min exponential backoff | Transient connection issues |
+| API call | 5 | 30 sec exponential backoff | Rate limit, network |
+| Transformation (SQL) | 1 | Immediate | Retrying logic errors is pointless |
+| File upload | 3 | 1 min | Network instability |
 
-##  strategy
+## Backfill strategy
 
 ```python
-# safe  configuration
+# Safe backfill configuration
 dag = DAG(
     "daily_orders",
     schedule="0 2 * * *",
     start_date=datetime(2024, 1, 1),
-    catchup=False,  # automatic  inactive
-    max_active_runs=1,  #  execution 
+    catchup=False,  # automatic backfill disabled
+    max_active_runs=1,  # prevent concurrent runs
 )
 
-# CLIas manual 
+# Manual backfill via CLI
 # airflow dags backfill daily_orders -s 2024-01-01 -e 2024-01-31
 ```
 
-###  weekofmatter
+### Backfill cautions
 
-| weekof | people |  |
+| Caution | Description | Mitigation |
 |------|------|------|
-|  execution | such as data scope  processing | `max_active_runs=1` |
-| API Rate Limit |  and data request |  size limited,  insert |
-| resource contention | DB/cluster andlower | parallelalso limited, between variance |
-| data  | and data  change | schema -ize processing as |
+| Concurrent runs | Duplicate processing of the same data range | `max_active_runs=1` |
+| API Rate Limit | Bulk requests for historical data | Limit batch size, insert sleeps |
+| Resource contention | DB/cluster overload | Limit parallelism, spread over time |
+| Data consistency | Structural changes in historical data | Schema evolution handling logic |
 
-## of pattern
+## Dependency patterns
 
-### Cross-DAG of
+### Cross-DAG dependency
 
 ```python
-# DAG Aof completed pending
+# Wait for the completion of DAG A
 wait_for_upstream = ExternalTaskSensor(
     task_id="wait_for_dag_a",
     external_dag_id="dag_a",
@@ -139,7 +139,7 @@ wait_for_upstream = ExternalTaskSensor(
 )
 ```
 
-### Dataset  of (Airflow 2.4+)
+### Dataset-based dependency (Airflow 2.4+)
 
 ```python
 # Producer DAG
@@ -150,12 +150,12 @@ with DAG("produce_orders", schedule="0 2 * * *") as dag:
         task_id="produce", outlets=[orders_dataset]
     )
 
-# Consumer DAG — automatic tree
+# Consumer DAG — triggered automatically
 with DAG("consume_orders", schedule=[orders_dataset]) as dag:
     consume = PythonOperator(task_id="consume", ...)
 ```
 
-## alert strategy
+## Alert strategy
 
 ```python
 def failure_callback(context):
@@ -171,9 +171,9 @@ default_args = {
 }
 ```
 
-| event |  | upper |
+| Event | Channel | Target |
 |--------|------|------|
-| P0  failure | Slack + PagerDuty |  engineer |
-| SLA  | Slack | data team |
-| retry  | Slack (information) | monitoring  |
-|  completed | Slack | request |
+| P0 job failure | Slack + PagerDuty | On-call engineer |
+| SLA breach | Slack | Data team |
+| Retry occurred | Slack (info) | Monitoring channel |
+| Backfill complete | Slack | Requester |

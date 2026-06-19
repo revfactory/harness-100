@@ -1,136 +1,136 @@
 ---
 name: security-audit
-description: "security auditof vulnerability , code security analysis, penetration test  , improvement  inthisbefore teamthis to countlower  security audit pipeline. 'security audit', 'vulnerability ', 'security ', 'code security analysis', 'penetration test report', 'security vulnerability ', 'OWASP ', 'queue  ', 'security improvement ', 'infrastructure security ' etc. security audit beforein this  for. code analysisonly necessarylower improvement only necessary inalso supported. , actual network penetration execution, code analysis, SOC operations, real-time security monitoring this of scope ."
+description: "A full security audit pipeline where an agent team collaborates to perform vulnerability scanning, code security analysis, penetration test scenario writing, and remediation recommendations. Use this skill across all security audit work, including 'run a security audit', 'check for vulnerabilities', 'security assessment', 'code security analysis', 'penetration test report', 'security vulnerability scan', 'OWASP check', 'secure coding review', 'security improvement plan', 'infrastructure security check', and similar requests. It also supports cases where only code analysis or only remediation recommendations are needed. However, actual network penetration execution, malware analysis, SOC operations, and real-time security monitoring are out of scope for this skill."
 ---
 
-# Security Audit — security audit  pipeline
+# Security Audit — full security audit pipeline
 
-security auditof vulnerability→codeanalysis→penetrationtestreport→improvement inthisbefore teamthis to  in count.
+An agent team collaborates to perform the security audit's vulnerability scan → code analysis → penetration test report → remediation recommendations in a single pass.
 
-## execution 
+## Execution mode
 
-**inthisbefore team** — 5peoplethis SendMessageas direct and  verification.
+**Agent Team** — 5 members communicate directly via SendMessage and cross-validate each other.
 
-## inthisbefore setup
+## Agent composition
 
-| inthisbefore | day | role | type |
+| Agent | File | Role | Type |
 |---------|------|------|------|
-| vulnerability-scanner | `.claude/agents/vulnerability-scanner.md` | CVE, dependency, configurationerror  | general-purpose |
-| code-analyst | `.claude/agents/code-analyst.md` | SAST, queue, patterndetection | general-purpose |
-| pentest-reporter | `.claude/agents/pentest-reporter.md` | attack, PoC, impactanalysis | general-purpose |
-| security-consultant | `.claude/agents/security-consultant.md` | improvement, asmap, frameworkmapping | general-purpose |
-| audit-reviewer | `.claude/agents/audit-reviewer.md` | verification, risketc., finalreport | general-purpose |
+| vulnerability-scanner | `.claude/agents/vulnerability-scanner.md` | CVE, dependency, misconfiguration scanning | general-purpose |
+| code-analyst | `.claude/agents/code-analyst.md` | SAST, secure coding, pattern detection | general-purpose |
+| pentest-reporter | `.claude/agents/pentest-reporter.md` | Attack scenarios, PoC, impact analysis | general-purpose |
+| security-consultant | `.claude/agents/security-consultant.md` | Remediation recommendations, roadmap, framework mapping | general-purpose |
+| audit-reviewer | `.claude/agents/audit-reviewer.md` | Cross-validation, risk level adjustment, final report | general-purpose |
 
-## workflow
+## Workflow
 
-### Phase 1:  (this direct count)
+### Phase 1: Preparation (orchestrator performs directly)
 
-1. user from :
-    - **audit upper**: code , infrastructure, this URL
-    - **audit scope**: before/minutes, included/excluded item
-    - ** stack**: language, framework, , DB
-    - ** requiredmatter** (optional): GDPR, itemsinformation, before
-    - **existing report** (optional): thisbefore audit report, vulnerability 
-2. `_workspace/`  project rootin creation
-3.  to `_workspace/00_input.md`in 
-4. audit upper code  analysis scope 
-5. existing daythis  `_workspace/`in and corresponding Phase cases
-6. request scopein  **execution  decision**
+1. Extract from the user input:
+    - **Audit target**: code repository, infrastructure, application URL
+    - **Audit scope**: full/partial, included/excluded items
+    - **Tech stack**: language, framework, cloud, DB
+    - **Regulatory requirements** (optional): GDPR, personal information protection law, electronic financial supervision regulations
+    - **Existing reports** (optional): previous audit reports, vulnerability lists
+2. Create the `_workspace/` directory in the project root
+3. Organize the input and save it to `_workspace/00_input.md`
+4. If there is audit target code, finalize the analysis scope
+5. If existing files are present, copy them into `_workspace/` and skip the corresponding Phase
+6. **Decide the execution mode** based on the request scope
 
-### Phase 2: team setup and execution
+### Phase 2: Team setup and execution
 
-team setupand  .  between of  and :
+Set up the team and assign tasks. The dependencies between tasks are as follows:
 
-|  |  | responsible | of |  |
+| Order | Task | Owner | Depends on | Deliverable |
 |------|------|------|------|--------|
-| 1a | vulnerability  | scanner |  | `_workspace/01_vulnerability_scan.md` |
-| 1b | code security analysis | analyst |  | `_workspace/02_code_analysis.md` |
-| 2 | penetration test report | pentest |  1a, 1b | `_workspace/03_pentest_report.md` |
-| 3 | improvement  | consultant |  1a, 1b, 2 | `_workspace/04_remediation_plan.md` |
-| 4 | audit review | reviewer |  1a, 1b, 2, 3 | `_workspace/05_audit_report.md` |
+| 1a | Vulnerability scan | scanner | None | `_workspace/01_vulnerability_scan.md` |
+| 1b | Code security analysis | analyst | None | `_workspace/02_code_analysis.md` |
+| 2 | Penetration test report | pentest | Tasks 1a, 1b | `_workspace/03_pentest_report.md` |
+| 3 | Remediation recommendations | consultant | Tasks 1a, 1b, 2 | `_workspace/04_remediation_plan.md` |
+| 4 | Audit review | reviewer | Tasks 1a, 1b, 2, 3 | `_workspace/05_audit_report.md` |
 
- 1a()and 1b(codeanalysis) **parallel execution**.   initial ofthis as in startto count .
+Tasks 1a (scan) and 1b (code analysis) run **in parallel**. Since neither has initial dependencies, they can start at the same time.
 
-**team between  :**
-- scanner completed → analystto CWE mapping before, pentestto attack possible vulnerability before
-- analyst completed → pentestto data ·attack  before
-- pentest completed → consultantto business impact·urgentalso before
-- consultant completed → reviewerto before improvement plan before
-- reviewer all   verification. 🔴 required modification   corresponding inthisbeforeto modification request →  → verification (maximum 2)
+**Communication flow between team members:**
+- scanner done → send CWE mapping to analyst, send exploitable vulnerabilities to pentest
+- analyst done → send data flow and attack vectors to pentest
+- pentest done → send business impact and urgency to consultant
+- consultant done → send the full remediation plan to reviewer
+- reviewer cross-validates all deliverables. When a 🔴 required fix is found, send a fix request to the corresponding agent → rework → re-validate (maximum 2 times)
 
-### Phase 3: integrated and final 
+### Phase 3: Integration and final deliverables
 
-reviewerof report as final  :
+Compile the final deliverables based on the reviewer's report:
 
-1. `_workspace/` within all day confirmation
-2. review reportof 🔴 required modificationthis   confirmation
-3. final  userto report:
-    - vulnerability  — `01_vulnerability_scan.md`
-    - code analysis — `02_code_analysis.md`
-    - penetration test — `03_pentest_report.md`
-    - improvement  — `04_remediation_plan.md`
-    - final audit report — `05_audit_report.md`
+1. Confirm all files in `_workspace/`
+2. Confirm that all 🔴 required fixes in the review report have been reflected
+3. Report the final summary to the user:
+    - Vulnerability scan — `01_vulnerability_scan.md`
+    - Code analysis — `02_code_analysis.md`
+    - Penetration test — `03_pentest_report.md`
+    - Remediation recommendations — `04_remediation_plan.md`
+    - Final audit report — `05_audit_report.md`
 
-##  per 
+## Modes by task size
 
-| user request pattern | execution  |  inthisbefore |
+| User request pattern | Execution mode | Agents engaged |
 |----------------|----------|-------------|
-| "security audit before count" | ** audit** | 5people before |
-| "this code security analysis" | **code analysis ** | analyst + reviewer |
-| "vulnerability " | ** ** | scanner + reviewer |
-| "security improvement  only" (existing report) | **consulting ** | consultant + reviewer |
-| "this security report " | **review ** | reviewer  |
+| "Run a full security audit" | **Full audit** | All 5 members |
+| "Analyze the security of this code" | **Code analysis mode** | analyst + reviewer |
+| "Scan for vulnerabilities" | **Scan mode** | scanner + reviewer |
+| "Create a security improvement plan" (existing report) | **Consulting mode** | consultant + reviewer |
+| "Review this security report" | **Review mode** | reviewer alone |
 
-## data before as
+## Data transfer protocol
 
-| strategy |  | foralso |
+| Strategy | Method | Use |
 |------|------|------|
-| day  | `_workspace/`  | week   and shared |
-| message  | SendMessage | real-time core information before, modification request |
-|   | TaskCreate/TaskUpdate | in progress upper tracking, of   |
+| File-based | `_workspace/` directory | Store and share major deliverables |
+| Message-based | SendMessage | Real-time transfer of key information, fix requests |
+| Task-based | TaskCreate/TaskUpdate | Progress tracking, dependency management |
 
-daypeople : `{}_{inthisbefore}_{}.{extension}`
+File naming convention: `{order}_{agent}_{deliverable}.{extension}`
 
-## error 
+## Error handling
 
-| error type | strategy |
+| Error type | Strategy |
 |----------|------|
-| code provided | userto code as request, day security list provided |
-| CVE DB  impossible | as   analysis, " "  |
-|  stack people | code extension/import from automatic detection also |
-| inthisbefore failure | 1 retry → failure  corresponding  this in progress, review reportin  people |
-| reviewfrom 🔴  | corresponding inthisbeforein modification request →  → verification (maximum 2) |
+| Code not provided | Request the code path from the user, provide a general security checklist up front |
+| CVE DB inaccessible | Local knowledge-based analysis, mark as "offline scan" |
+| Tech stack unknown | Attempt automatic detection from code extensions/import statements |
+| Agent failure | Retry once → if it still fails, proceed without that deliverable and note the omission in the review report |
+| 🔴 found in review | Send a fix request to the corresponding agent → rework → re-validate (maximum 2 times) |
 
-## test 
+## Test scenarios
 
-### normal 
-****: "this Node.js Express  codethisin about before security audit count"
-** result**:
-- : npm dependency CVE ,  detection, configuration 
-- codeanalysis: OWASP Top 10 criteria vulnerability(XSS, SQL Injection, CSRF etc.), modification code included
-- penetrationtest: 3~5items attack , MITRE ATT&CK mapping, PoC procedure
-- improvement: NIST CSF  analysis, ·· asmap
-- review:   beforeitem confirmation
+### Normal flow
+**Prompt**: "Run a full security audit on this Node.js Express web app codebase"
+**Expected result**:
+- Scan: npm dependency CVE list, secret detection, configuration check
+- Code analysis: OWASP Top 10 vulnerabilities (XSS, SQL Injection, CSRF, etc.), with fix code included
+- Penetration test: 3–5 attack scenarios, MITRE ATT&CK mapping, PoC procedures
+- Remediation recommendations: NIST CSF gap analysis, short-/mid-/long-term roadmap
+- Review: confirm all items in the consistency matrix
 
-### existing day for 
-****: "thisbefore audit report as improvement in progress upper and addition " + thisbefore report 
-** result**:
-- thisbefore report `_workspace/`in 
-- consulting : consultant + reviewer 
-- thisbefore vulnerability resolution  tracking +  
+### Existing file utilization flow
+**Prompt**: "Based on the previous audit report, check remediation progress and provide additional recommendations" + attach the previous report
+**Expected result**:
+- Copy the previous report into `_workspace/`
+- Consulting mode: engage consultant + reviewer
+- Track whether previous vulnerabilities are resolved + provide new recommendations
 
-### error 
-****: "security , code in "
-** result**:
-- code   day-based security audit listand framework mapping provided
-- "code provided after detailed analysis possible" people
-- infrastructure/configuration count  item within
+### Error flow
+**Prompt**: "Run a security check, I'll give you the code later"
+**Expected result**:
+- When code is absent, provide a general security audit checklist and framework mapping up front
+- Note that "detailed analysis is possible once the code is provided"
+- Guide on infrastructure/configuration level check items
 
 
-## inthisbeforeper extension 
+## Per-agent enhancement skills
 
-|  | as | -ize upper inthisbefore | role |
+| Skill | Path | Target agents to enhance | Role |
 |------|------|-----------------|------|
-| owasp-testing-guide | `.claude/skills/owasp-testing-guide/skill.md` | code-analyst, pentest-reporter | OWASP Top 10 vulnerabilityper test , modification guide |
-| cve-analysis | `.claude/skills/cve-analysis/skill.md` | vulnerability-scanner | CVSS count , dependency  also,  detection |
-| threat-modeling | `.claude/skills/threat-modeling/skill.md` | security-consultant, pentest-reporter | STRIDE, DREAD, Attack Tree, attack  analysis |
+| owasp-testing-guide | `.claude/skills/owasp-testing-guide/skill.md` | code-analyst, pentest-reporter | Per-vulnerability test methods and fix guides for OWASP Top 10 |
+| cve-analysis | `.claude/skills/cve-analysis/skill.md` | vulnerability-scanner | CVSS score interpretation, dependency scanning tools, secret detection |
+| threat-modeling | `.claude/skills/threat-modeling/skill.md` | security-consultant, pentest-reporter | STRIDE, DREAD, Attack Tree, attack surface analysis |
