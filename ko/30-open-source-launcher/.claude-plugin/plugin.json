@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "open-source-launcher",
+  "description": "오픈소스 프로젝트 런칭의 코드정리→문서→라이선스→커뮤니티 구축을 에이전트 팀이 협업하여 수행하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

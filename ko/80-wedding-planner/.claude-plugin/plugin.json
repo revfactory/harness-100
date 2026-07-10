@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "wedding-planner",
+  "description": "결혼 준비 종합의 타임라인설계→예산관리표→업체비교표→체크리스트→청첩장문구를 에이전트 팀이 협업하여 생성하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

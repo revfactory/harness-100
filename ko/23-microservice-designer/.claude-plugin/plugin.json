@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "microservice-designer",
+  "description": "마이크로서비스 아키텍처를 설계·분해·통신·모니터링하는 에이전트 팀 하네스. 도메인 분석부터 관측성 설계까지 풀 파이프라인을 자동화한다.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

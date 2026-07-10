@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "translation-localization",
+  "description": "다국어 번역·현지화·문화적응·용어관리를 에이전트 팀이 협업하여 수행하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

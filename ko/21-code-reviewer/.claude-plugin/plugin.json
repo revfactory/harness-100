@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "code-reviewer",
+  "description": "코드 리뷰 자동화의 스타일→보안→성능→아키텍처 리뷰를 에이전트 팀이 협업하여 수행하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "personal-finance",
+  "description": "개인 재무관리의 수입지출분석→예산설계→투자전략→절세방안→은퇴설계를 에이전트 팀이 협업하여 생성하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "security-audit",
+  "description": "보안 감사의 취약점스캔→코드분석→침투테스트보고→개선권고를 에이전트 팀이 협업하여 수행하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

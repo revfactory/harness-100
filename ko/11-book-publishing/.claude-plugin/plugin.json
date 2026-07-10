@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "book-publishing",
+  "description": "전자책 출판의 원고편집→표지→목차→메타데이터→배포를 에이전트 팀이 협업하여 생성하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

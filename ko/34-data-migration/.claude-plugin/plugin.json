@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "data-migration",
+  "description": "데이터 마이그레이션: 소스분석→스키마매핑→변환스크립트생성→검증쿼리→롤백계획을 에이전트 팀이 협업하여 수행하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "event-organizer",
+  "description": "이벤트 기획·운영: 컨셉→장소→프로그램→홍보→실행→사후평가까지 에이전트 팀이 협업하여 생성하는 하네스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

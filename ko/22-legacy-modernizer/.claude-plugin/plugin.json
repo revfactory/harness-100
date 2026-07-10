@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "legacy-modernizer",
+  "description": "레거시 코드베이스를 현대적 아키텍처로 전환하는 에이전트 팀 하네스. 분석→리팩토링전략→마이그레이션→검증 파이프라인을 자동화한다.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rulewrite"
+  },
+  "license": "Apache-2.0"
+}

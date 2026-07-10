@@ -1,0 +1,510 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "harness-100",
+  "description": "실전 에이전트 팀 하네스 100선",
+  "owner": {
+    "name": "rulewrite"
+  },
+  "plugins": [
+    {
+      "name": "youtube-production",
+      "source": "./ko/01-youtube-production",
+      "description": "YouTube 영상 콘텐츠의 기획→대본→썸네일→SEO를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "podcast-studio",
+      "source": "./ko/02-podcast-studio",
+      "description": "팟캐스트 콘텐츠의 기획→리서치→대본→쇼노트→배포 전략을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "newsletter-engine",
+      "source": "./ko/03-newsletter-engine",
+      "description": "뉴스레터 콘텐츠의 큐레이션→작성→A/B테스트→발송 최적화를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "content-repurposer",
+      "source": "./ko/04-content-repurposer",
+      "description": "1개 원본 콘텐츠를 블로그·SNS·뉴스레터·프레젠테이션·스크립트로 다중 변환하는 에이전트 팀 하네스."
+    },
+    {
+      "name": "game-narrative",
+      "source": "./ko/05-game-narrative",
+      "description": "게임 스토리·퀘스트·대사·분기 시나리오를 에이전트 팀이 협업하여 설계하는 하네스."
+    },
+    {
+      "name": "brand-identity",
+      "source": "./ko/06-brand-identity",
+      "description": "브랜드 아이덴티티의 네이밍→슬로건→톤앤매너→가이드라인을 에이전트 팀이 협업하여 설계하는 하네스."
+    },
+    {
+      "name": "comic-creator",
+      "source": "./ko/07-comic-creator",
+      "description": "4컷/장편 만화 제작의 콘티→대사→이미지생성→편집을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "course-builder",
+      "source": "./ko/08-course-builder",
+      "description": "온라인 강의 설계의 커리큘럼→교안→퀴즈→실습과제를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "documentary-research",
+      "source": "./ko/09-documentary-research",
+      "description": "다큐멘터리 리서치·구성안·인터뷰질문·내레이션 대본을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "social-media-manager",
+      "source": "./ko/10-social-media-manager",
+      "description": "SNS 콘텐츠 달력·포스트작성·해시태그·성과분석을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "ip-portfolio",
+      "source": "./ko/100-ip-portfolio",
+      "description": "지식재산 포트폴리오 관리의 IP현황분석→특허·상표·저작권매핑→갱신일정→라이선스전략→보호전략보고서를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "book-publishing",
+      "source": "./ko/11-book-publishing",
+      "description": "전자책 출판의 원고편집→표지→목차→메타데이터→배포를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "advertising-campaign",
+      "source": "./ko/12-advertising-campaign",
+      "description": "광고 캠페인의 타깃분석→카피→크리에이티브→미디어플랜을 에이전트 팀이 협업하여 설계하는 하네스."
+    },
+    {
+      "name": "presentation-designer",
+      "source": "./ko/13-presentation-designer",
+      "description": "프레젠테이션의 기획→스토리보드→슬라이드→발표노트를 에이전트 팀이 협업하여 제작하는 하네스."
+    },
+    {
+      "name": "translation-localization",
+      "source": "./ko/14-translation-localization",
+      "description": "다국어 번역·현지화·문화적응·용어관리를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "visual-storytelling",
+      "source": "./ko/15-visual-storytelling",
+      "description": "비주얼 스토리텔링의 스토리설계→텍스트집필→AI이미지생성→HTML레이아웃→통합편집을 에이전트 팀이 협업하여 제작하는 하네스."
+    },
+    {
+      "name": "fullstack-webapp",
+      "source": "./ko/16-fullstack-webapp",
+      "description": "풀스택 웹앱의 요구사항→설계→프론트엔드→백엔드→테스트→배포를 에이전트 팀이 협업하여 개발하는 하네스."
+    },
+    {
+      "name": "mobile-app-builder",
+      "source": "./ko/17-mobile-app-builder",
+      "description": "모바일 앱의 UI/UX 설계→네이티브 코드 생성→API 연동→스토어 배포 준비를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "api-designer",
+      "source": "./ko/18-api-designer",
+      "description": "REST/GraphQL API의 설계·문서화·목업·테스트를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "database-architect",
+      "source": "./ko/19-database-architect",
+      "description": "DB 설계의 모델링→마이그레이션→인덱싱→쿼리 최적화를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "cicd-pipeline",
+      "source": "./ko/20-cicd-pipeline",
+      "description": "CI/CD 파이프라인의 설계·구축·모니터링·최적화를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "code-reviewer",
+      "source": "./ko/21-code-reviewer",
+      "description": "코드 리뷰 자동화의 스타일→보안→성능→아키텍처 리뷰를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "legacy-modernizer",
+      "source": "./ko/22-legacy-modernizer",
+      "description": "레거시 코드베이스를 현대적 아키텍처로 전환하는 에이전트 팀 하네스. 분석→리팩토링전략→마이그레이션→검증 파이프라인을 자동화한다."
+    },
+    {
+      "name": "microservice-designer",
+      "source": "./ko/23-microservice-designer",
+      "description": "마이크로서비스 아키텍처를 설계·분해·통신·모니터링하는 에이전트 팀 하네스. 도메인 분석부터 관측성 설계까지 풀 파이프라인을 자동화한다."
+    },
+    {
+      "name": "test-automation",
+      "source": "./ko/24-test-automation",
+      "description": "테스트 자동화 전략 수립부터 테스트 작성, CI 통합, 커버리지 분석까지 에이전트 팀이 협업하는 하네스."
+    },
+    {
+      "name": "incident-postmortem",
+      "source": "./ko/25-incident-postmortem",
+      "description": "장애 사후분석 보고서를 에이전트 팀이 협업하여 생성하는 하네스. 타임라인 재구성→근본원인 분석→영향범위 산정→재발방지 대책→보고서 생성 파이프라인을 자동화한다."
+    },
+    {
+      "name": "infra-as-code",
+      "source": "./ko/26-infra-as-code",
+      "description": "Infrastructure as Code(IaC) 설계 및 구현을 에이전트 팀이 협업하여 수행하는 하네스. Terraform/Pulumi 기반 환경 구성, 보안, 비용 최적화 파이프라인을 자동화한다."
+    },
+    {
+      "name": "data-pipeline",
+      "source": "./ko/27-data-pipeline",
+      "description": "데이터 파이프라인의 수집→변환→적재→품질검증→모니터링을 에이전트 팀이 협업하여 설계·구현하는 하네스."
+    },
+    {
+      "name": "security-audit",
+      "source": "./ko/28-security-audit",
+      "description": "보안 감사의 취약점스캔→코드분석→침투테스트보고→개선권고를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "performance-optimizer",
+      "source": "./ko/29-performance-optimizer",
+      "description": "성능 최적화의 프로파일링→병목분석→최적화→벤치마크를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "open-source-launcher",
+      "source": "./ko/30-open-source-launcher",
+      "description": "오픈소스 프로젝트 런칭의 코드정리→문서→라이선스→커뮤니티 구축을 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "ml-experiment",
+      "source": "./ko/31-ml-experiment",
+      "description": "ML 실험 관리의 데이터준비→모델설계→학습→평가→배포를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "data-analysis",
+      "source": "./ko/32-data-analysis",
+      "description": "데이터 분석 프로젝트의 탐색→정제→분석→시각화→보고서를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "text-processor",
+      "source": "./ko/33-text-processor",
+      "description": "텍스트 처리 파이프라인: 대량 텍스트→요약·분류·개체추출·감성분석→구조화 데이터→보고서를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "data-migration",
+      "source": "./ko/34-data-migration",
+      "description": "데이터 마이그레이션: 소스분석→스키마매핑→변환스크립트생성→검증쿼리→롤백계획을 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "api-client-generator",
+      "source": "./ko/35-api-client-generator",
+      "description": "API 클라이언트 SDK 생성: 스펙파싱→타입생성→클라이언트코드→테스트→사용문서를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "design-system",
+      "source": "./ko/36-design-system",
+      "description": "UI 디자인 시스템 구축: 디자인토큰→컴포넌트라이브러리→스토리북→접근성검증→문서를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "web-scraper",
+      "source": "./ko/37-web-scraper",
+      "description": "웹 스크래핑 시스템의 대상분석→크롤러설계→파싱→저장→모니터링을 에이전트 팀이 협업하여 구축하는 하네스."
+    },
+    {
+      "name": "chatbot-builder",
+      "source": "./ko/38-chatbot-builder",
+      "description": "챗봇 구축의 의도분석→대화설계→NLU→통합→테스트를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "changelog-generator",
+      "source": "./ko/39-changelog-generator",
+      "description": "릴리스 관리의 git이력분석→변경분류→릴리스노트생성→마이그레이션가이드→공지문작성을 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "cli-tool-builder",
+      "source": "./ko/40-cli-tool-builder",
+      "description": "CLI 도구 개발의 명령설계→파서→핸들러→테스트→문서→배포설정을 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "llm-app-builder",
+      "source": "./ko/41-llm-app-builder",
+      "description": "LLM 앱 개발의 프롬프트엔지니어링→RAG파이프라인설계→평가프레임워크→최적화→배포설정을 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "bi-dashboard",
+      "source": "./ko/42-bi-dashboard",
+      "description": "BI 대시보드 구축의 데이터웨어하우스 설계→KPI 정의→시각화→자동 보고를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "startup-launcher",
+      "source": "./ko/43-startup-launcher",
+      "description": "스타트업 런칭의 아이디어 검증→비즈니스 모델→MVP→피칭→투자 유치를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "market-research",
+      "source": "./ko/44-market-research",
+      "description": "시장 조사의 산업분석→경쟁분석→소비자조사→트렌드→보고서를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "gov-funding-plan",
+      "source": "./ko/45-gov-funding-plan",
+      "description": "정부지원사업 사업계획서의 공고요건분석→기술성·사업성작성→예산편성→증빙준비→제출검증을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "product-manager",
+      "source": "./ko/46-product-manager",
+      "description": "PM 업무의 로드맵→PRD→유저스토리→스프린트→회고를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "strategy-framework",
+      "source": "./ko/47-strategy-framework",
+      "description": "조직의 전략 프레임워크를 OKR설계→BSC매핑→SWOT분석→비전·미션선언문→전략실행로드맵 순으로 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "sales-enablement",
+      "source": "./ko/48-sales-enablement",
+      "description": "영업 지원 파이프라인: 고객분석→제안서→프레젠테이션→팔로업을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "customer-support",
+      "source": "./ko/49-customer-support",
+      "description": "고객지원 시스템 구축: FAQ→응대매뉴얼→에스컬레이션→분석을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "pricing-strategy",
+      "source": "./ko/50-pricing-strategy",
+      "description": "가격 전략 수립: 원가분석→경쟁가격→가치기반→시뮬레이션을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "investor-report",
+      "source": "./ko/51-investor-report",
+      "description": "투자자 보고서 생성: 재무실적분석→KPI대시보드→시장동향→전략업데이트→리스크공시를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "scenario-planner",
+      "source": "./ko/52-scenario-planner",
+      "description": "불확실한 환경에서 핵심 변수를 정의하고, 시나리오 매트릭스를 구성하여 영향 분석과 대응 전략을 수립하는 에이전트 팀 하네스."
+    },
+    {
+      "name": "financial-modeler",
+      "source": "./ko/53-financial-modeler",
+      "description": "수익 모델, 비용 구조, 시나리오 분석, 밸류에이션까지 재무 모델링 전 과정을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "grant-writer",
+      "source": "./ko/54-grant-writer",
+      "description": "보조금 및 지원사업 신청을 위한 공고 분석, 사업계획 작성, 예산 편성, 제출 검증까지 에이전트 팀이 협업하는 하네스."
+    },
+    {
+      "name": "rfp-responder",
+      "source": "./ko/55-rfp-responder",
+      "description": "RFI/RFP 응답서 작성을 위한 요구사항 분석, 역량 매칭, 기술 제안, 가격 제안, 차별화 전략까지 에이전트 팀이 협업하는 하네스."
+    },
+    {
+      "name": "language-tutor",
+      "source": "./ko/56-language-tutor",
+      "description": "외국어 학습을 위한 레벨 테스트, 커리큘럼, 레슨, 퀴즈, 복습 관리 에이전트 팀 하네스."
+    },
+    {
+      "name": "exam-prep",
+      "source": "./ko/57-exam-prep",
+      "description": "시험 준비의 출제경향→약점진단→맞춤학습→모의고사→오답분석 에이전트 팀 하네스."
+    },
+    {
+      "name": "thesis-advisor",
+      "source": "./ko/58-thesis-advisor",
+      "description": "논문 작성의 주제선정→문헌조사→방법론→집필→교정 에이전트 팀 하네스."
+    },
+    {
+      "name": "coding-bootcamp",
+      "source": "./ko/59-coding-bootcamp",
+      "description": "코딩 교육의 커리큘럼설계→실습과제→코드리뷰→프로젝트→포트폴리오를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "debate-simulator",
+      "source": "./ko/60-debate-simulator",
+      "description": "토론 시뮬레이션 에이전트 팀 하네스."
+    },
+    {
+      "name": "competency-modeler",
+      "source": "./ko/61-competency-modeler",
+      "description": "역량 모델링의 직무분석→역량사전작성→평가루브릭설계→개발계획수립→역량매트릭스를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "adr-writer",
+      "source": "./ko/62-adr-writer",
+      "description": "아키텍처 결정 기록(ADR) 작성 에이전트 팀 하네스."
+    },
+    {
+      "name": "research-assistant",
+      "source": "./ko/63-research-assistant",
+      "description": "학술 연구 보조 에이전트 팀 하네스."
+    },
+    {
+      "name": "knowledge-base-builder",
+      "source": "./ko/64-knowledge-base-builder",
+      "description": "조직 지식관리 체계 구축 에이전트 팀 하네스."
+    },
+    {
+      "name": "personal-branding",
+      "source": "./ko/65-personal-branding",
+      "description": "개인 브랜딩 에이전트 팀 하네스."
+    },
+    {
+      "name": "contract-analyzer",
+      "source": "./ko/66-contract-analyzer",
+      "description": "계약서 분석·작성·검토·위험 평가를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "compliance-checker",
+      "source": "./ko/67-compliance-checker",
+      "description": "규정 준수 검증 — 법률매핑→현황진단→갭분석→개선계획을 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "patent-drafter",
+      "source": "./ko/68-patent-drafter",
+      "description": "특허 명세서 작성 — 선행기술조사→청구항→명세서→도면설명을 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "privacy-engineer",
+      "source": "./ko/69-privacy-engineer",
+      "description": "개인정보보호 엔지니어링 — GDPR/PIPA 분석→PIA→동의서→프로세스설계를 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "legal-research",
+      "source": "./ko/70-legal-research",
+      "description": "법률 리서치 — 판례검색→법리분석→의견서→전략수립을 에이전트 팀이 협업하여 수행하는 하네스."
+    },
+    {
+      "name": "service-legal-docs",
+      "source": "./ko/71-service-legal-docs",
+      "description": "서비스 법무문서 세트 — 이용약관→개인정보처리방침→쿠키정책→환불정책→저작권고지 일체를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "regulatory-filing",
+      "source": "./ko/72-regulatory-filing",
+      "description": "인허가·신고서류의 요건조사→구비서류목록→신청서작성→첨부자료준비→제출체크리스트를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "meal-planner",
+      "source": "./ko/73-meal-planner",
+      "description": "식단 관리의 영양분석→식단설계→레시피→장보기목록→조리가이드를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "fitness-program",
+      "source": "./ko/74-fitness-program",
+      "description": "운동 프로그램의 목표별설계→주간스케줄→운동가이드→식단연계→진행기록을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "tax-calculator",
+      "source": "./ko/75-tax-calculator",
+      "description": "세금 계산·절세 전략의 소득분석→공제항목최적화→세액계산→절세시뮬레이션→신고자료준비를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "travel-planner",
+      "source": "./ko/76-travel-planner",
+      "description": "여행 계획의 목적지분석→일정→숙소→예산→현지정보를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "space-concept-board",
+      "source": "./ko/77-space-concept-board",
+      "description": "공간 인테리어 컨셉보드의 스타일분석→무드보드→컬러팔레트→가구·소품리스트→예산표→쇼핑가이드를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "personal-finance",
+      "source": "./ko/78-personal-finance",
+      "description": "개인 재무관리의 수입지출분석→예산설계→투자전략→절세방안→은퇴설계를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "side-project-launcher",
+      "source": "./ko/79-side-project-launcher",
+      "description": "사이드프로젝트 기획의 아이디어검증→기술스택선정→MVP스펙→개발로드맵→런칭체크리스트를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "wedding-planner",
+      "source": "./ko/80-wedding-planner",
+      "description": "결혼 준비 종합의 타임라인설계→예산관리표→업체비교표→체크리스트→청첩장문구를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "technical-writer",
+      "source": "./ko/81-technical-writer",
+      "description": "기술 문서 작성의 구조설계→집필→다이어그램→리뷰→버전관리를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "report-generator",
+      "source": "./ko/82-report-generator",
+      "description": "업무 보고서의 데이터수집→분석→시각화→집필→요약을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "sop-writer",
+      "source": "./ko/83-sop-writer",
+      "description": "표준운영절차(SOP)의 프로세스분석→절차서→체크리스트→교육자료→버전관리를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "meeting-strategist",
+      "source": "./ko/84-meeting-strategist",
+      "description": "회의 전략 문서의 안건구조설계→배경자료조사→의사결정프레임워크→회의록템플릿→팔로업플랜을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "public-speaking",
+      "source": "./ko/85-public-speaking",
+      "description": "퍼블릭스피킹 종합의 연설문→발표대본→토론준비서→Q&A예상답변→리허설가이드를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "proposal-writer",
+      "source": "./ko/86-proposal-writer",
+      "description": "제안서의 고객분석→솔루션설계→가격→차별화→디자인을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "crisis-communication",
+      "source": "./ko/87-crisis-communication",
+      "description": "위기 상황 발생 시 상황파악→메시지전략→보도자료→Q&A→모니터링까지 에이전트 팀이 협업하여 통합 위기소통 패키지를 생성하는 하네스."
+    },
+    {
+      "name": "risk-register",
+      "source": "./ko/88-risk-register",
+      "description": "프로젝트 리스크 관리대장: 리스크식별→확률·영향평가→대응전략수립→모니터링계획→상태보고서까지 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "event-organizer",
+      "source": "./ko/89-event-organizer",
+      "description": "이벤트 기획·운영: 컨셉→장소→프로그램→홍보→실행→사후평가까지 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "hiring-pipeline",
+      "source": "./ko/90-hiring-pipeline",
+      "description": "채용 프로세스: JD작성→소싱→스크리닝→면접→평가→오퍼까지 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "onboarding-system",
+      "source": "./ko/91-onboarding-system",
+      "description": "신규입사자 온보딩: 체크리스트→교육→멘토배정→30-60-90일 계획까지 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "operations-manual",
+      "source": "./ko/92-operations-manual",
+      "description": "업무 매뉴얼 자동 생성 하네스. 기존 문서/코드를 분석하여 프로세스 플로차트, 단계별 매뉴얼, FAQ, 교육자료를 에이전트 팀이 협업하여 생성한다."
+    },
+    {
+      "name": "feedback-analyzer",
+      "source": "./ko/93-feedback-analyzer",
+      "description": "고객·직원 피드백 분석 하네스. 데이터 수집부터 감성분석, 주제분류, 트렌드 도출, 인사이트 보고서까지 에이전트 팀이 협업하여 생성한다."
+    },
+    {
+      "name": "audit-report",
+      "source": "./ko/94-audit-report",
+      "description": "내부감사 보고서 생성 하네스. 감사 범위 설정부터 체크리스트 작성, 발견사항 정리, 개선 권고, 추적 대장까지 에이전트 팀이 협업하여 생성한다."
+    },
+    {
+      "name": "procurement-docs",
+      "source": "./ko/95-procurement-docs",
+      "description": "구매 문서세트 생성 하네스. 요구사항 정의부터 벤더 비교표, 평가 기준표, 계약 조건 검토, 검수 기준서까지 에이전트 팀이 협업하여 생성한다."
+    },
+    {
+      "name": "real-estate-analyst",
+      "source": "./ko/96-real-estate-analyst",
+      "description": "부동산 분석 하네스. 시장조사, 입지분석, 수익성 분석, 리스크 평가, 투자 보고서까지 에이전트 팀이 협업하여 생성한다."
+    },
+    {
+      "name": "ecommerce-launcher",
+      "source": "./ko/97-ecommerce-launcher",
+      "description": "이커머스 상품 런칭의 기획→상세페이지→가격전략→마케팅→CS 셋업을 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "academic-paper",
+      "source": "./ko/98-academic-paper",
+      "description": "학술 논문 작성의 연구설계→실험→분석→집필→투고준비를 에이전트 팀이 협업하여 생성하는 하네스."
+    },
+    {
+      "name": "sustainability-audit",
+      "source": "./ko/99-sustainability-audit",
+      "description": "ESG/지속가능성 감사의 환경→사회→거버넌스→보고서→개선계획을 에이전트 팀이 협업하여 생성하는 하네스."
+    }
+  ]
+}

@@ -15,32 +15,36 @@
 
 ## 사용법
 
-원하는 하네스 폴더를 프로젝트에 복사하면 바로 사용할 수 있습니다:
+이 저장소는 **Claude Code 플러그인 마켓플레이스**입니다. 필요한 하네스만 골라 설치하세요:
 
 ```bash
-# 예시: youtube-production 하네스를 내 프로젝트에 적용
-cp -r 01-youtube-production/.claude/ /path/to/my-project/.claude/
+# 마켓플레이스 추가
+claude plugin marketplace add rulewrite/harness-100-plugins
+
+# 하네스 설치 (이름은 NN- 접두어를 뺀 형태, 예: 01-youtube-production)
+claude plugin install youtube-production@harness-100
 ```
 
-각 하네스 폴더의 `CLAUDE.md`에서 구조와 사용법을 확인할 수 있습니다.
+각 하네스 폴더의 `README.md`에서 구조와 사용법을 확인할 수 있습니다.
 
 ## 하네스 구조
 
-모든 하네스는 동일한 구조를 따릅니다:
+각 하네스는 자체 완결적인 플러그인이며 동일한 구조를 따릅니다:
 
 ```
-{NN}-{harness-name}/
-└── .claude/
-    ├── CLAUDE.md                          # 프로젝트 개요
-    ├── agents/
-    │   ├── {agent-1}.md                   # 전문 에이전트 정의
-    │   ├── {agent-2}.md
-    │   ├── {agent-3}.md
-    │   ├── {agent-4}.md
-    │   └── {agent-5}.md (선택)
-    └── skills/
-        └── {skill-name}/
-            └── skill.md                   # 오케스트레이터 스킬
+ko/{NN}-{harness-name}/
+├── .claude-plugin/
+│   └── plugin.json                       # 플러그인 매니페스트
+├── README.md                             # 하네스 개요
+├── agents/
+│   ├── {agent-1}.md                      # 전문 에이전트 정의
+│   ├── {agent-2}.md
+│   ├── {agent-3}.md
+│   ├── {agent-4}.md
+│   └── {agent-5}.md (선택)
+└── skills/
+    └── {skill-name}/
+        └── SKILL.md                      # 오케스트레이터 스킬
 ```
 
 ## 품질 기준
